@@ -18,4 +18,4 @@ const ticketRoutes: Route[] = [
   ],
   
 })
-export class MyTicketModule { }
+export class SystemManagementModule { }

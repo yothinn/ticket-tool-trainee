@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TicketComponent } from './ticket.component';
+import { SettingsComponent } from './settings.component';
 
 
 
 @NgModule({
   declarations: [
-    TicketComponent
+    SettingsComponent
   ],
   imports: [
     CommonModule
   ]
 })
-export class TicketModule { }
+export class SettingsModule { }
