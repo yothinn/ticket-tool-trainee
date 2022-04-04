@@ -1,8 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterButtonComponent } from './components/filter-button/filter-button.component';
+import { PaginatorComponent } from './components/paginator/paginator.component';
+import { StatusIconsComponent } from './components/status-icons/status-icons.component';
+
 
 @NgModule({
+    declarations: [
+        FilterButtonComponent,
+        PaginatorComponent,
+        StatusIconsComponent
+
+    ],
     imports: [
         CommonModule,
         FormsModule,
@@ -11,8 +21,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     exports: [
         CommonModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        // SharedModule
+        FilterButtonComponent,
+        PaginatorComponent,
+        StatusIconsComponent
+
     ]
+    
 })
 export class SharedModule
 {
