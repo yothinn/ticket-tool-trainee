@@ -3,7 +3,7 @@ import { AuthGuard } from 'app/core/auth/guards/auth.guard';
 import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
 import { LayoutComponent } from 'app/layout/layout.component';
 import { InitialDataResolver } from 'app/app.resolvers';
-import { TicketComponent } from './modules/my-ticket/ticket/ticket.component';
+// import { TicketComponent } from './modules/my-ticket/ticket/ticket.component';
 
 // @formatter:off
 /* eslint-disable max-len */
@@ -81,21 +81,18 @@ export const appRoutes: Route[] = [
 
 
 
-    {
-        path       : '',
-        canActivate: [AuthGuard],
-        canActivateChild: [AuthGuard],
-        component  : LayoutComponent,
-        resolve    : {
-            initialData: InitialDataResolver,
-        },
-        children   : [
-            {path: 'ticket', loadChildren: () => import('app/modules/my-ticket/my-ticket.module').then(m => m.MyTicketModule)},
-        ]
-    },
-
     // {
-    //     path:'ticket',
-    //     component:TicketComponent
-    // }
+    //     path       : '',
+    //     canActivate: [AuthGuard],
+    //     canActivateChild: [AuthGuard],
+    //     component  : LayoutComponent,
+    //     resolve    : {
+    //         initialData: InitialDataResolver,
+    //     },
+    //     children   : [
+    //         {path: 'ticket', loadChildren: () => import('app/modules/my-ticket/my-ticket.module').then(m => m.MyTicketModule)},
+    //     ]
+    // },
+
+  
 ];
