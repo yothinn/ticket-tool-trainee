@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TicketManagementComponent } from './ticket-management.component';
+import { TicketManagementRoutingModule } from './ticket-management-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { TicketManagementComponent } from './ticket-management.component';
     TicketManagementComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TicketManagementRoutingModule
   ]
 })
 export class TicketManagementModule { }

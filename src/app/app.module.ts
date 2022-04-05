@@ -11,12 +11,13 @@ import { appConfig } from 'app/core/config/app.config';
 import { mockApiServices } from 'app/mock-api';
 import { LayoutModule } from 'app/layout/layout.module';
 import { AppComponent } from 'app/app.component';
-import { appRoutes } from 'app/app.routing';
+import { AppRoutingModule } from './app-routing.module';
+// import { appRoutes } from 'app/app-routing.module';
 
-const routerConfig: ExtraOptions = {
-    preloadingStrategy       : PreloadAllModules,
-    scrollPositionRestoration: 'enabled'
-};
+// const routerConfig: ExtraOptions = {
+//     preloadingStrategy       : PreloadAllModules,
+//     scrollPositionRestoration: 'enabled'
+// };
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ const routerConfig: ExtraOptions = {
     imports     : [
         BrowserModule,
         BrowserAnimationsModule,
-        RouterModule.forRoot(appRoutes, routerConfig),
+        AppRoutingModule,
+        // RouterModule.forRoot(appRoutes, routerConfig),
 
         // Fuse, FuseConfig & FuseMockAPI
         FuseModule,
@@ -48,3 +50,7 @@ const routerConfig: ExtraOptions = {
 export class AppModule
 {
 }
+// function appRoutes(appRoutes: any, routerConfig: ExtraOptions): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
+//     throw new Error('Function not implemented.');
+// }
+

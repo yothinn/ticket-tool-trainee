@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MyTicketComponent } from './my-ticket.component';
+import { MyTicketRoutingModule } from './my-ticket-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { MyTicketComponent } from './my-ticket.component';
     MyTicketComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MyTicketRoutingModule
   ]
 })
 export class MyTicketModule { }
