@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProblemManagementComponent } from './problem-management.component';
+import { ProblemManagementRoutingModule } from './problem-management-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { ProblemManagementComponent } from './problem-management.component';
     ProblemManagementComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ProblemManagementRoutingModule
   ]
 })
 export class ProblemManagementModule { }

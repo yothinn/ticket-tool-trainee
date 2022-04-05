@@ -5,6 +5,7 @@ import { TeamInfoViewComponent } from './team-info-view/team-info-view.component
 import { TeamContactViewComponent } from './team-contact-view/team-contact-view.component';
 import { TeamContactEditComponent } from './team-contact-edit/team-contact-edit.component';
 import { TeamInfoEditComponent } from './team-info-edit/team-info-edit.component';
+import { TeamManagementRoutingModule } from './team-management-routing.module';
 
 
 
@@ -17,7 +18,7 @@ import { TeamInfoEditComponent } from './team-info-edit/team-info-edit.component
     TeamInfoEditComponent
   ],
   imports: [
-    CommonModule
+    TeamManagementRoutingModule
   ]
 })
 export class TeamManagementModule { }
