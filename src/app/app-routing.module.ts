@@ -61,17 +61,6 @@ const routes: Routes = [
     loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule),
   },
   {
-    path: 'settings',
-    component: LayoutComponent,
-    data: {
-      layout: 'dense'
-    },
-    resolve: {
-      initialData: InitialDataResolver,
-    },
-    loadChildren: () => import('./modules/settings/settings.module').then(m => m.SettingsModule),
-  },
-  {
     path: '**',
     redirectTo: 'dashboard'
   }

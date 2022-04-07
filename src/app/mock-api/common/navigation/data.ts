@@ -50,13 +50,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
         link : '/profile'
-    },
-    {
-        id   : 'settings',
-        title: 'Settings',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/settings'
     }
 ];
 export const compactNavigation: FuseNavigationItem[] = [
