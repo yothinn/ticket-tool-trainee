@@ -9,6 +9,7 @@ import { TeamInfoEditComponent } from './components/team-info-edit/team-info-edi
 import { TeamInformationComponent } from './team-information/team-information.component';
 import { TeamInformationViewComponent } from './components/team-information-view/team-information-view.component';
 import { TeamInformationEditComponent } from './components/team-information-edit/team-information-edit.component';
+import { SharedModule } from 'app/shared/shared.module';
 
 
 
@@ -25,7 +26,8 @@ import { TeamInformationEditComponent } from './components/team-information-edit
     TeamInformationEditComponent
   ],
   imports: [
-    TeamManagementRoutingModule
+    TeamManagementRoutingModule,
+    SharedModule
   ]
 })
 export class TeamManagementModule { }
