@@ -7,8 +7,6 @@ import { TeamContactViewComponent } from './components/team-contact-view/team-co
 import { TeamContactEditComponent } from './components/team-contact-edit/team-contact-edit.component';
 import { TeamInfoEditComponent } from './components/team-info-edit/team-info-edit.component';
 import { TeamInformationComponent } from './team-information/team-information.component';
-import { TeamInformationViewComponent } from './components/team-information-view/team-information-view.component';
-import { TeamInformationEditComponent } from './components/team-information-edit/team-information-edit.component';
 import { SharedModule } from 'app/shared/shared.module';
 
 
@@ -21,9 +19,7 @@ import { SharedModule } from 'app/shared/shared.module';
     TeamContactViewComponent,
     TeamContactEditComponent,
     TeamCardInfoComponent,
-    TeamInformationComponent,
-    TeamInformationViewComponent,
-    TeamInformationEditComponent
+    TeamInformationComponent
   ],
   imports: [
     TeamManagementRoutingModule,

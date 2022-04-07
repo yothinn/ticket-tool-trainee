@@ -1,8 +1,8 @@
 <div class="flex flex-col h-full">
 
-    <div class="flex flex-row w-full">
+    <div class="flex flex-row w-full pt-4 pb-4" style="border-bottom: 1px solid #d4dde7;">
         <div class="flex-initial w-5/12 text-center">
-            
+
         </div>
         <div class="flex-initial w-1/12 text-center">
             <span>
@@ -19,29 +19,56 @@
                 <strong>Updated</strong>
             </span>
         </div>
-        <mat-divider></mat-divider>
     </div>
-    <div class="flex flex-row w-full">
-        <div class="flex-initial w-5/12 text-center">
-            1
+
+    <!-- <mat-divider></mat-divider> -->
+
+    <div class="flex flex-row w-full pt-4 pb-4" style="border-bottom: 1px solid #d4dde7;"
+        *ngFor="let item of dateMock" (click)="onDetail(item)"
+    >
+        <div class="flex-initial w-5/12 text-left">
+            <div class="flex flex-col">
+                <div class="w-full">
+                    <span>{{item.teamName}}</span>
+                </div>
+                <div class="w-full">
+                    <span>{{item.teamDiscription}}</span>
+                </div>
+            </div>
         </div>
+
         <div class="flex-initial w-1/12 text-center">
-            2
+            <span>{{item.status}}</span>
         </div>
+
         <div class="flex-initial w-3/12 text-center">
-            3
+            <div class="flex flex-col">
+                <div class="w-full">
+                    <span>{{item.created.firstName + ' ' + item.created.lastName}}</span>
+                </div>
+                <div class="w-full">
+                    <span>{{ item.created.date}}</span>
+                </div>
+            </div>
         </div>
+        
         <div class="flex-initial w-3/12 text-center">
-            4
+            <div class="flex flex-col">
+                <div class="w-full">
+                    <span>{{item.updated.firstName + ' ' + item.updated.lastName}}</span>
+                </div>
+                <div class="w-full">
+                    <span>{{ item.updated.date}}</span>
+                </div>
+            </div>
         </div>
-        <mat-divider></mat-divider>
     </div>
-    
 
 
 
 
-    
+
+
     <div class="flex flex-row w-full">
         <div class="flex-initial w-6/12">
             <div class="flex-initial w-12/12 text-start">
