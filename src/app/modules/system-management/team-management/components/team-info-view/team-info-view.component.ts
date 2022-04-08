@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-team-info-view',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team-info-view.component.scss']
 })
 export class TeamInfoViewComponent implements OnInit {
+  @Input() infoTest?: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.infoTest)
   }
 
 }

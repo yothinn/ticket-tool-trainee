@@ -1,1 +1,29 @@
-<p>team-contact-edit works!</p>
+<form [formGroup]="contactForm">
+    <div>
+        <div> <b> Contact Name </b> </div>
+        <mat-form-field  appearance="outline">
+            <mat-label  class="text-lime-500"> Input </mat-label>
+            <input matInput formControlName="contactName">
+        </mat-form-field>
+    </div>
+        <div>
+            <div> <b> Contact Email </b> </div>
+            <mat-form-field  appearance="outline">
+                <mat-label  class="text-lime-500"> Input </mat-label>
+                <input matInput formControlName="contactEmail">
+            </mat-form-field>
+
+        </div>
+
+        <div>
+            <div> <b> Contact Email </b> </div>
+            <mat-form-field  appearance="outline">
+                <mat-label  class="text-lime-500"> Input </mat-label>
+                <input matInput formControlName="contactEmail">
+            </mat-form-field>
+        </div>
+    
+
+        <button type="button" class=" bg-lime-500 "  mat-raised-button (click)="saveFrom()"  [disabled]="contactForm.invalid"> Save </button>
+
+</form>

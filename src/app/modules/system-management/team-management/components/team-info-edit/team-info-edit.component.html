@@ -1,1 +1,23 @@
-<p>team-info-edit works!</p>
+<form [formGroup]="infoFrom">
+    <div>
+        <div> <b> Team Name </b> </div>
+        
+        <mat-form-field  appearance="outline" >
+            <label class="text-lime-500"> Input </label>
+            <input  class="border-2 border-lime-500/75 ..." matInput formControlName="teamName">
+        </mat-form-field>
+    </div>
+        <div>
+            <div> <b> Team Description </b> </div>
+            
+            <mat-form-field  appearance="outline">
+                <mat-label class="text-lime-500"> Input </mat-label>
+                <textarea matInput formControlName="teamDescription"></textarea>
+            </mat-form-field>
+
+        </div>
+    
+
+        <button type="button" class=" text-red font-semibold "  mat-raised-button (click)="saveFrom()"  [disabled]="infoFrom.invalid"> Save </button>
+
+</form>
