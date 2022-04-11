@@ -1,79 +1,64 @@
 <div class="flex flex-col w-full h-full">
-    <div class="flex flex-row w-full mt-0 mb-2 p-2 items-center" 
-        style="border-bottom: 1px solid #d4dde7;"
-    >
+    <div class="flex flex-row w-full pt-2 pb-2 items-center">
         <div class="flex-initial w-5/12">
             <h1>Team Information</h1>
         </div>
         <div class="flex-initial w-3/12">
             <span>Status : Active</span>
         </div>
-        <div class="flex-initial w-3/12 text-center m-auto">
-            <button mat-flat-button color="primary">
+        <div class="flex-initial w-3/12 text-center">
+            <button mat-flat-button color="primary" class="w-4/6">
                 Edit
             </button>
         </div>
-        <div class="flex-initial w-1/12 text-center">
+        <div class="flex-initial w-1/12">
             <button mat-icon-button>
                 <mat-icon>close</mat-icon>
             </button>
         </div>
     </div>
 
+    <mat-divider></mat-divider>
+
     <div class="flex flex-row w-full mt-2 mb-2">
-        <div class="w-3/6 mr-1 p-1 border-2 border-gray-300 rounded">
-            <div class="flex flex-col">
-                <div class="w-full mb-1">
-                    <h1>Team Name View</h1>
-                </div>
-                <div class="w-full">
-                    <app-team-info-view></app-team-info-view>
-                </div>
+        <div class="flex flex-col w-3/6 mr-1 p-1 border-2 border-gray-300 rounded">
+            <h1 class="w-full mb-1">Team Name View</h1>
+            <div class="w-full">
+                <app-team-info-view></app-team-info-view>
             </div>
         </div>
-        <div class="w-3/6 ml-1 p-1 border-2 border-gray-300 rounded">
-            <div class="flex flex-col">
-                <div class="w-full mb-1">
-                    <h1>Team Contact View</h1>
-                </div>
-                <div class="w-full">
-                    <app-team-contact-view></app-team-contact-view>
-                </div>
+        <div class="flex flex-col w-3/6 ml-1 p-1 border-2 border-gray-300 rounded">
+            <h1 class="w-full mb-1">Team Contact View</h1>
+            <div class="w-full">
+                <app-team-contact-view></app-team-contact-view>
             </div>
         </div>
     </div>
 
-    <div class="flex flex-row w-full mt-2 mb-2">
-        <div class="flex flex-col w-full mr-1 p-1 border-2 border-gray-300 rounded">
-            <div class="flex h-13 mt-0 mb-1 pb-1 items-center" style="border-bottom: 1px solid #d4dde7;">
-                <div class="w-full">
-                    <h1>Team Member (3)</h1>
-                </div>
-            </div>
+    <div class="flex flex-col w-full mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
+        <h1 class="mb-1">Team Member (3)</h1>
 
-            <!-- Content Team Member -->
-            <app-team-member-view></app-team-member-view>
-        </div>
+        <mat-divider></mat-divider>
+
+        <!-- Content Team Member -->
+        <app-team-member-view></app-team-member-view>
     </div>
 
-    <div class="flex flex-row w-full mt-2 mb-2">
-        <div class="flex flex-col w-full mr-1 p-1 border-2 border-gray-300 rounded">
-            <div class="flex h-13 mt-0 mb-1 pb-1 items-center" style="border-bottom: 1px solid #d4dde7;">
-                <div class="w-full">
-                    <h1>Problem Support (2)</h1>
-                </div>
-            </div>
+    <div class="flex flex-col w-full mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
+        <h1 class="mb-1">Problem Support (2)</h1>
 
-            <!-- Content Problem Support -->
-            <app-problem-support-view></app-problem-support-view>
-        </div>
+        <mat-divider></mat-divider>
+
+        <!-- Content Problem Support -->
+        <app-problem-support-view></app-problem-support-view>
     </div>
 
-    <div class="flex flex-row h-9 w-full text-right pr-10">
+    <div class="flex flex-row w-full text-right pr-15">
         <div class="w-full">
             <button mat-flat-button color="primary">
                 Delete
             </button>
         </div>
     </div>
+
 </div>

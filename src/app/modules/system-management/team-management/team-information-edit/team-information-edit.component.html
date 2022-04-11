@@ -1,7 +1,5 @@
 <div class="flex flex-col w-full h-full">
-    <div class="flex flex-row w-full mt-0 mb-2 p-2 items-center" 
-        style="border-bottom: 1px solid #d4dde7;"
-    >
+    <div class="flex flex-row w-full pt-2 pb-2 items-center">
         <div class="flex-initial w-8/12">
             <h1>Create Team</h1>
         </div>
@@ -12,64 +10,62 @@
         </div>
     </div>
 
+    <mat-divider></mat-divider>
+
     <div class="flex flex-row w-full mt-2 mb-2">
-        <div class="w-3/6 mr-1 p-1 border-2 border-gray-300 rounded">
-            <div class="flex flex-col">
-                <div class="w-full">
-                    <app-team-info-edit></app-team-info-edit>
-                </div>
+        <div class="flex flex-col w-3/6 mr-1 p-1 border-2 border-gray-300 rounded">
+            <div class="w-full">
+                <app-team-info-edit></app-team-info-edit>
             </div>
         </div>
-        <div class="w-3/6 ml-1 p-1 border-2 border-gray-300 rounded">
-            <div class="flex flex-col">
-                <div class="w-full">
-                    <app-team-contact-edit></app-team-contact-edit>
-                </div>
+        <div class="flex flex-col w-3/6 ml-1 p-1 border-2 border-gray-300 rounded">
+            <div class="w-full">
+                <app-team-contact-edit></app-team-contact-edit>
             </div>
         </div>
     </div>
 
-    <div class="flex flex-row w-full mt-2 mb-2">
-        <div class="flex flex-col w-full mr-1 p-1 border-2 border-gray-300 rounded">
-            <div class="flex mt-0 mb-1 pb-1 items-center" style="border-bottom: 1px solid #d4dde7;">
-                <div class="w-3/6">
-                    <h1>Team Member (3)</h1>
-                </div>
-                <div class="w-3/6 text-right">
-                    <button mat-flat-button color="primary"
-                        (click)="openTeamMemberDialog()"
-                    >
-                        Add Member
-                    </button>
-                </div>
+    <div class="flex flex-col w-full mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
+        <div class="flex items-center mb-1">
+            <div class="w-3/6">
+                <h1>Team Member (3)</h1>
             </div>
-
-            <!-- Content Team Member -->
-            <app-team-member-edit></app-team-member-edit>
+            <div class="w-3/6 text-right">
+                <button mat-flat-button color="primary"
+                    (click)="openTeamMemberDialog()"
+                >
+                    Add Member
+                </button>
+            </div>
         </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- Content Team Member -->
+        <app-team-member-edit></app-team-member-edit>
     </div>
 
-    <div class="flex flex-row w-full mt-2 mb-2">
-        <div class="flex flex-col w-full mr-1 p-1 border-2 border-gray-300 rounded">
-            <div class="flex mt-0 mb-1 pb-1 items-center" style="border-bottom: 1px solid #d4dde7;">
-                <div class="w-3/6">
-                    <h1>Problem Support (2)</h1>
-                </div>
-                <div class="w-3/6 text-right">
-                    <button mat-flat-button color="primary"
-                        (click)="openProblemDialog()"
-                    >
-                        Add Problem
-                    </button>
-                </div>
+    <div class="flex flex-col w-full mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
+        <div class="flex items-center mb-1">
+            <div class="w-3/6">
+                <h1>Problem Support (2)</h1>
             </div>
-
-            <!-- Content Problem Support -->
-            <app-problem-support-edit></app-problem-support-edit>
+            <div class="w-3/6 text-right">
+                <button mat-flat-button color="primary"
+                (click)="openProblemDialog()"
+                >
+                    Add Problem
+                </button>
+            </div>
         </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- Content Problem Support -->
+        <app-problem-support-edit></app-problem-support-edit>
     </div>
 
-    <div class="flex flex-row h-9 w-full text-right pr-10">
+    <div class="flex flex-row h-9 w-full text-right">
         <div class="w-full">
             <button mat-flat-button color="primary" class="ml-2 mr-2">
                 Cancel
@@ -79,4 +75,5 @@
             </button>
         </div>
     </div>
+    
 </div>
