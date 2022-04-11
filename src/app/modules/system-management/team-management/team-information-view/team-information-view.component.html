@@ -21,7 +21,22 @@
     <mat-divider></mat-divider>
 
     <div class="flex flex-row w-full mt-2 mb-2">
-        <div class="flex flex-col w-3/6 mr-1 p-1 border-2 border-gray-300 rounded">
+        <div class="grid grid-cols-2 w-full">
+            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
+                <h1 class="mb-1">Team Name View</h1>
+                <div class="w-full">
+                    <app-team-info-view></app-team-info-view>
+                </div>
+            </div>
+
+            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
+                <h1 class="mb-1">Team Contact View</h1>
+                <div class="w-full">
+                    <app-team-contact-view></app-team-contact-view>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="flex flex-col w-3/6 mr-1 p-1 border-2 border-gray-300 rounded">
             <h1 class="w-full mb-1">Team Name View</h1>
             <div class="w-full">
                 <app-team-info-view></app-team-info-view>
@@ -32,7 +47,7 @@
             <div class="w-full">
                 <app-team-contact-view></app-team-contact-view>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="flex flex-col w-full mt-2 mb-2 p-1 border-2 border-gray-300 rounded">

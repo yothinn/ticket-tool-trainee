@@ -26,23 +26,25 @@
 
     <div class="flex flex-col m-2">
 
-        <div class="grid grid-cols-4">
+        <div class="grid grid-cols-4 border-b-2 border-gray-300">
             <div></div>
             <div>Name</div>
             <div>Email</div>
             <div>Member fo</div>
         </div>
 
-        <div class="grid grid-cols-4" *ngFor="let item of dataMock">
-            <div>
-                <mat-checkbox></mat-checkbox>
-            </div>
-            <div>{{item.firstName + ' ' + item.lastName}}</div>
-            <div>{{item.email}}</div>
-            <div>
-                <span *ngFor="let member of item.members">
-                    {{member}}
-                </span>
+        <div class="overflow-auto">
+            <div class="grid grid-cols-4 border-b-2 border-gray-300 mt-2 mb-2" *ngFor="let item of dataMock">
+                <div>
+                    <mat-checkbox></mat-checkbox>
+                </div>
+                <div>{{item.firstName + ' ' + item.lastName}}</div>
+                <div>{{item.email}}</div>
+                <div>
+                    <span *ngFor="let member of item.members">
+                        {{member}}
+                    </span>
+                </div>
             </div>
         </div>
     </div>

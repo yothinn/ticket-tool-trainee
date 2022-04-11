@@ -13,7 +13,20 @@
     <mat-divider></mat-divider>
 
     <div class="flex flex-row w-full mt-2 mb-2">
-        <div class="flex flex-col w-3/6 mr-1 p-1 border-2 border-gray-300 rounded">
+        <div class="grid grid-cols-2 w-full">
+            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
+                <div class="w-full">
+                    <app-team-info-edit></app-team-info-edit>
+                </div>
+            </div>
+            
+            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
+                <div class="w-full">
+                    <app-team-contact-edit></app-team-contact-edit>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="flex flex-col w-3/6 mr-1 p-1 border-2 border-gray-300 rounded">
             <div class="w-full">
                 <app-team-info-edit></app-team-info-edit>
             </div>
@@ -22,7 +35,7 @@
             <div class="w-full">
                 <app-team-contact-edit></app-team-contact-edit>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="flex flex-col w-full mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
@@ -31,9 +44,7 @@
                 <h1>Team Member (3)</h1>
             </div>
             <div class="w-3/6 text-right">
-                <button mat-flat-button color="primary"
-                    (click)="openTeamMemberDialog()"
-                >
+                <button mat-flat-button color="primary" (click)="openTeamMemberDialog()">
                     Add Member
                 </button>
             </div>
@@ -51,9 +62,7 @@
                 <h1>Problem Support (2)</h1>
             </div>
             <div class="w-3/6 text-right">
-                <button mat-flat-button color="primary"
-                (click)="openProblemDialog()"
-                >
+                <button mat-flat-button color="primary" (click)="openProblemDialog()">
                     Add Problem
                 </button>
             </div>
@@ -75,5 +84,5 @@
             </button>
         </div>
     </div>
-    
+
 </div>
