@@ -9,6 +9,13 @@ import { TeamInfoEditComponent } from './components/team-info-edit/team-info-edi
 import { SharedModule } from 'app/shared/shared.module';
 import { TeamInformationEditComponent } from './team-information-edit/team-information-edit.component';
 import { TeamInformationViewComponent } from './team-information-view/team-information-view.component';
+import { TeamMemberViewComponent } from './components/team-member-view/team-member-view.component';
+import { TeamMemberEditComponent } from './components/team-member-edit/team-member-edit.component';
+import { ProblemSupportViewComponent } from './components/problem-support-view/problem-support-view.component';
+import { ProblemSupportEditComponent } from './components/problem-support-edit/problem-support-edit.component';
+import { TeamMemberDialogComponent } from './dialogs/team-member-dialog/team-member-dialog.component';
+import { ProblemDialogComponent } from './dialogs/problem-dialog/problem-dialog.component';
+
 
 
 
@@ -21,7 +28,13 @@ import { TeamInformationViewComponent } from './team-information-view/team-infor
     TeamContactEditComponent,
     TeamCardInfoComponent,
     TeamInformationEditComponent,
-    TeamInformationViewComponent
+    TeamInformationViewComponent,
+    TeamMemberViewComponent,
+    TeamMemberEditComponent,
+    ProblemSupportViewComponent,
+    ProblemSupportEditComponent,
+    TeamMemberDialogComponent,
+    ProblemDialogComponent
   ],
   imports: [
     TeamManagementRoutingModule,

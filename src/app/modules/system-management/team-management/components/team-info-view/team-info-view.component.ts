@@ -6,12 +6,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./team-info-view.component.scss']
 })
 export class TeamInfoViewComponent implements OnInit {
-  @Input() infoTest?: any;
+  // @Input() infoTest?: any;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.infoTest)
+    // console.log(this.infoTest);
   }
 
 }

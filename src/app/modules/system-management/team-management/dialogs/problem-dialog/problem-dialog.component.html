@@ -1,0 +1,63 @@
+<div class="flex flex-col h-full p-1">
+    <div class="flex flex-row w-full mt-0 mb-2 p-2 items-center" style="border-bottom: 1px solid #d4dde7;">
+        <div class="w-5/6 text-left mt-auto mb-auto mr-4">
+            <h1>Add Problem to team : Team Name 1</h1>
+        </div>
+        <div class="w-1/6 text-right m-auto">
+            <button mat-icon-button (click)="close()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="flex flex-row w-full">
+        <div class="w-3/6 text-center mt-auto mb-auto mr-4">
+            <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="Input">
+            </mat-form-field>
+        </div>
+        <div class="w-3/6 text-center m-auto">
+            <span>0 person selected</span>
+        </div>
+    </div>
+
+    <div class="flex flex-row w-full">
+
+        <table class="w-full">
+            <thead>
+                <tr>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        2
+                    </td>
+                    <td>
+                        3
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of dataMock">
+                    <td>
+                        <mat-checkbox></mat-checkbox>
+                    </td>
+                    <td>
+                        {{item.firstName + ' ' + item.lastName}}
+                    </td>
+                    <td>
+                        {{item.email}}
+                    </td>
+                    <td>
+                        <span *ngFor="let member of item.members">{{member}},</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

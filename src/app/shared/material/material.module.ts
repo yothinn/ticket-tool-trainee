@@ -7,7 +7,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
-
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [],
@@ -19,7 +22,11 @@ import { MatDividerModule } from '@angular/material/divider';
     MatInputModule,
     MatFormFieldModule,
     MatToolbarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatExpansionModule,
+    MatSlideToggleModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   exports:[
     MatSidenavModule,
@@ -28,7 +35,11 @@ import { MatDividerModule } from '@angular/material/divider';
     MatInputModule,
     MatFormFieldModule,
     MatToolbarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatExpansionModule,
+    MatSlideToggleModule,
+    MatDialogModule,
+    MatCheckboxModule
   ]
 })
 export class MaterialModule { }

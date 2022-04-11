@@ -6,13 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./team-contact-view.component.scss']
 })
 export class TeamContactViewComponent implements OnInit {
-  @Input() contactTest?: any;
+  // @Input() contactTest?: any;
 
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.contactTest)
+    // console.log(this.contactTest);
   }
 
 }

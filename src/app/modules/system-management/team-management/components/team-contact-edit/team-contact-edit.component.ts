@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-team-contact-edit',
@@ -7,18 +7,26 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./team-contact-edit.component.scss']
 })
 export class TeamContactEditComponent implements OnInit {
+
   contactForm?: FormGroup;
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
-    this.contactForm = new FormGroup ({
-      contactName: new FormControl('',Validators.required),
-      contactEmail: new FormControl('', [Validators.required, Validators.email]),
+    this.contactForm = this.createContactForm();
+  }
+
+  createContactForm(): FormGroup {
+    return this.formBuilder.group({
+      contactName: ['', Validators.required],
+      contactEmail: ['', Validators.required],
+      contactMobile: ['', Validators.required]
     });
   }
   saveFrom(): void {
-    let payload = this.contactForm?.value;
+    const payload = this.contactForm?.value;
     console.log(payload);
   }
 

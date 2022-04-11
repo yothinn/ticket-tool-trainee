@@ -1,23 +1,30 @@
-<form [formGroup]="infoFrom">
-    <div>
-        <div> <b> Team Name </b> </div>
-        
-        <mat-form-field  appearance="outline" >
-            <label class="text-lime-500"> Input </label>
-            <input  class="border-2 border-lime-500/75 ..." matInput formControlName="teamName">
-        </mat-form-field>
-    </div>
-        <div>
-            <div> <b> Team Description </b> </div>
-            
-            <mat-form-field  appearance="outline">
-                <mat-label class="text-lime-500"> Input </mat-label>
-                <textarea matInput formControlName="teamDescription"></textarea>
-            </mat-form-field>
-
+<div class="flex h-full w-full">
+    <form [formGroup]="infoFrom" class="flex flex-col w-full">
+        <div class="flex flex-row w-full mt-1">
+            <div class="flex flex-col w-full">
+                <div class="w-full">
+                    <mat-label>Team Name</mat-label>
+                </div>
+                <div class="w-full">
+                    <mat-form-field class="w-full" appearance="outline">
+                        <input matInput formControlName="teamName" placeholder="Input">
+                    </mat-form-field>
+                </div>
+            </div>
         </div>
-    
+        <div class="flex flex-row w-full mt-1">
+            <div class="flex flex-col w-full">
+                <div class="w-full">
+                    <mat-label>Team Description</mat-label>
+                </div>
+                <div class="w-full">
+                    <mat-form-field class="w-full" appearance="outline">
+                        <textarea matInput [rows]="3" formControlName="description"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 
-        <button type="button" class=" text-red font-semibold "  mat-raised-button (click)="saveFrom()"  [disabled]="infoFrom.invalid"> Save </button>
-
-</form>
+<!-- style="border: 1px solid red;" -->

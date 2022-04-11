@@ -1,103 +1,71 @@
 <div class="flex flex-col w-full h-full">
-    <div class="flex flex-row w-full mt-2 mb-2 p-2 items-center" 
+    <div class="flex flex-row w-full mt-0 mb-2 p-2 items-center" 
         style="border-bottom: 1px solid #d4dde7;"
     >
-        <div class="flex-initial w-9/12">
+        <div class="flex-initial w-8/12">
             <h1>Create Team</h1>
         </div>
-        <div class="flex-initial w-3/12">
-            <span>Status : Active</span>
+        <div class="flex-initial w-4/12">
+            <mat-slide-toggle>
+                <span>Status : Active</span>
+            </mat-slide-toggle>
         </div>
     </div>
 
-    <div class="flex flex-row h-30 w-full mt-2 mb-2">
-        <div class="w-3/6">
-            <h1>Team Name Edit</h1>
+    <div class="flex flex-row w-full mt-2 mb-2">
+        <div class="w-3/6 mr-1 p-1 border-2 border-gray-300 rounded">
+            <div class="flex flex-col">
+                <div class="w-full">
+                    <app-team-info-edit></app-team-info-edit>
+                </div>
+            </div>
         </div>
-        <div class="w-3/6">
-            <h1>Team Contact Edit</h1>
+        <div class="w-3/6 ml-1 p-1 border-2 border-gray-300 rounded">
+            <div class="flex flex-col">
+                <div class="w-full">
+                    <app-team-contact-edit></app-team-contact-edit>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="flex flex-row h-30 w-full mt-2 mb-2">
-        <div class="flex flex-col w-full">
-
-            <!-- <div class="w-full">
-                <h1>Team Member (3)</h1>
-            </div> -->
-            <div class="flex ">
+    <div class="flex flex-row w-full mt-2 mb-2">
+        <div class="flex flex-col w-full mr-1 p-1 border-2 border-gray-300 rounded">
+            <div class="flex mt-0 mb-1 pb-1 items-center" style="border-bottom: 1px solid #d4dde7;">
                 <div class="w-3/6">
                     <h1>Team Member (3)</h1>
                 </div>
-                <div class="w-3/6">
-                    <button mat-flat-button color="primary">
-                        test
+                <div class="w-3/6 text-right">
+                    <button mat-flat-button color="primary"
+                        (click)="openTeamMemberDialog()"
+                    >
+                        Add Member
                     </button>
                 </div>
             </div>
 
             <!-- Content Team Member -->
-            <div class="flex flex-row">
-                <div class="w-1/2">
-                    <div class="flex flex-col">
-                        <div class="w-full">
-                            <p>1. FirstName LastName</p>
-                            <p>2. FirstName LastName</p>
-                            <p>3. FirstName LastName</p>
-                            <p>4. FirstName LastName</p>
-                            <p>5. FirstName LastName</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-1/2">
-                    <div class="flex flex-col">
-                        <div class="w-full">
-                            <p>EmailTest1@gmail.com</p>
-                            <p>EmailTest2@gmail.com</p>
-                            <p>EmailTest3@gmail.com</p>
-                            <p>EmailTest4@gmail.com</p>
-                            <p>EmailTest5@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <app-team-member-edit></app-team-member-edit>
         </div>
     </div>
 
-    <div class="flex flex-row h-30 w-full mt-2 mb-2">
-        <div class="flex flex-col w-full">
-
-            <!-- <div class="w-full">
-                <h1>Problem Support (2)</h1>
-            </div> -->
-            <!-- <div class="flex">
+    <div class="flex flex-row w-full mt-2 mb-2">
+        <div class="flex flex-col w-full mr-1 p-1 border-2 border-gray-300 rounded">
+            <div class="flex mt-0 mb-1 pb-1 items-center" style="border-bottom: 1px solid #d4dde7;">
                 <div class="w-3/6">
                     <h1>Problem Support (2)</h1>
                 </div>
-                <div class="w-3/6">
-                    <button mat-flat-button color="primary">
-                        test
-                    </button>
-                </div>
-            </div> -->
-            <div class="flex ">
-                <div class="w-3/6">
-                    <h1>Team Member (3)</h1>
-                </div>
-                <div class="w-3/6">
-                    <button mat-flat-button color="primary">
-                        test
+                <div class="w-3/6 text-right">
+                    <button mat-flat-button color="primary"
+                        (click)="openProblemDialog()"
+                    >
+                        Add Problem
                     </button>
                 </div>
             </div>
 
             <!-- Content Problem Support -->
-            <div class="flex flex-row">
-                <div class="w-full">
-                    Content
-                </div>
-            </div>
+            <app-problem-support-edit></app-problem-support-edit>
         </div>
     </div>
 
