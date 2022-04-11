@@ -17,31 +17,40 @@ export class ProblemDialogComponent implements OnInit {
   ngOnInit(): void {
     this.dataMock = [
       {
-        firstName: 'Lex1',
-        lastName: 'Test1',
-        email:'Lex1@gmail.com',
-        members:[
-          'Team 1',
-          'Team 2',
-        ]
+        No: 'PB0000001',
+        problemName: 'Problem Name 1',
+        description:'Description',
+        category:'Category 1',
+        criticality:{
+          text:'Critical 4Hrs',
+          iconName:'circle',
+          color:'#c42a2e',
+          mode:1
+        }
       },
       {
-        firstName: 'Lex2',
-        lastName: 'Test2',
-        email:'Lex2@gmail.com',
-        member:[
-          'Team 1',
-          'Team 2',
-        ]
+        No: 'PB0000001',
+        problemName: 'Problem Name 1',
+        description:'Description',
+        category:'Category 1',
+        criticality:{
+          text:'Critical 4Hrs',
+          iconName:'circle',
+          color:'#c42a2e',
+          mode:1
+        }
       },
       {
-        firstName: 'Lex3',
-        lastName: 'Test3',
-        email:'Lex3@gmail.com',
-        member:[
-          'Team 1',
-          'Team 2',
-        ]
+        No: 'PB0000001',
+        problemName: 'Problem Name 1',
+        description:'Description',
+        category:'Category 1',
+        criticality:{
+          text:'Critical 4Hrs',
+          iconName:'circle',
+          color:'#c42a2e',
+          mode:1
+        }
       }
     ];
   }

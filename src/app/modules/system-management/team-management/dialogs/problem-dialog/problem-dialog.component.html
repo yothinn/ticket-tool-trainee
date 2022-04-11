@@ -21,43 +21,41 @@
         </div>
     </div>
 
-    <div class="flex flex-row w-full">
+    <div class="flex flex-col w-full h-5/6">
+        <div class="grid grid-cols-5 h-8">
+            <div>No</div>
+            <div>Problem Name</div>
+            <div>Description</div>
+            <div>Problem Cetegory</div>
+            <div>Criticallty</div>
+        </div>
 
-        <table class="w-full">
-            <thead>
-                <tr>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        3
-                    </td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of dataMock">
-                    <td>
-                        <mat-checkbox></mat-checkbox>
-                    </td>
-                    <td>
-                        {{item.firstName + ' ' + item.lastName}}
-                    </td>
-                    <td>
-                        {{item.email}}
-                    </td>
-                    <td>
-                        <span *ngFor="let member of item.members">{{member}},</span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="grid grid-cols-5 h-8" *ngFor="let item of dataMock">
+            <div> <mat-checkbox></mat-checkbox> {{item.No}}</div>
+            <div>{{item.problemName}}</div>
+            <div>{{item.description}}</div>
+            <div>{{item.category}}</div>
+            <div>
+                <app-criticality-icon 
+                    [text]="item.criticality.text" 
+                    [iconName]="item.criticality.iconName" 
+                    [color]="item.criticality.color"
+                    [mode]="item.criticality.mode"
+                >                       
+                </app-criticality-icon>
+            </div>
+            <!-- <mat-divider style="background-color: blue;"></mat-divider> -->
+        </div>
+      
 
     </div>
 
+    <div style="background-color: aqua; height: auto;">
+        <button mat-flat-button color="primary" >
+            Ca
+        </button>
+        <button mat-flat-button color="primary" >
+            Create
+        </button>
+    </div>
 </div>
