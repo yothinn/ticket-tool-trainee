@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProblemSupportViewComponent implements OnInit {
 
+  data:object []=[
+    {text:'Critical',iconName:'circle',color:'#c42a2e',mode:0},
+    {text:'Medium',iconName:'circle',color:'#9bb94f',mode:0}
+  ]
+
   panelOpenState = false;
   constructor() { }
 

@@ -11,15 +11,13 @@
 
 <div *ngIf="mode === criticalityMode.Small" 
     class="flex flex-col items-center h-auto w-16" 
-    
 >
     <mat-icon *ngIf="!iconUrl" [ngStyle]="{'color': color}">
         {{iconName}}
     </mat-icon>
-    <mat-icon *ngIf="iconUrl">
-        {{iconName}}
+    <mat-icon *ngIf="iconUrl" [ngStyle]="{'color': color}">
+        <!--TODO iconUrl -->
     </mat-icon>
-
 
     <span class="text-xs">
         {{text}}
@@ -28,13 +26,12 @@
 
 <div *ngIf="mode === criticalityMode.Medium" 
     class="flex flex-row items-center h-auto w-16" 
-    [ngStyle]="{'color': color}"
 >
-    <mat-icon *ngIf="!iconUrl">
+    <mat-icon *ngIf="!iconUrl" [ngStyle]="{'color': color}">
         {{iconName}}
     </mat-icon>
-    <mat-icon *ngIf="iconUrl">
-        {{iconName}}
+    <mat-icon *ngIf="iconUrl" [ngStyle]="{'color': color}">
+        <!--TODO iconUrl -->
     </mat-icon>
 
     <span class="text-xs">

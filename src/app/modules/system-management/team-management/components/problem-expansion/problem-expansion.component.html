@@ -1,10 +1,13 @@
-<div class="flex flex-row w-full p-1 items-center">
+<div *ngFor="let item of data" class="flex flex-row w-full p-1 items-center">
     <mat-accordion class="w-full">
         <mat-expansion-panel class="p-2" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
             <mat-expansion-panel-header class="p-0">
                 <mat-panel-title>
-                    <app-criticality-icon [text]="data[0].text" [iconName]="data[0].iconName" [color]="data[0].color"
-                        [mode]="data[0].mode">
+                    <app-criticality-icon 
+                        [text]="item.text" 
+                        [iconName]="item.iconName" 
+                        [color]="item.color"
+                        [mode]="item.mode">
                     </app-criticality-icon>
                     <span> Problem Name 1 </span>
                 </mat-panel-title>
