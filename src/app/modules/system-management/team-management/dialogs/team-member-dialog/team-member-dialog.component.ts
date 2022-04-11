@@ -29,18 +29,18 @@ export class TeamMemberDialogComponent implements OnInit {
         firstName: 'Lex2',
         lastName: 'Test2',
         email:'Lex2@gmail.com',
-        member:[
-          'Team 1',
-          'Team 2',
+        members:[
+          'Team 3',
+          'Team 4',
         ]
       },
       {
         firstName: 'Lex3',
         lastName: 'Test3',
         email:'Lex3@gmail.com',
-        member:[
-          'Team 1',
-          'Team 2',
+        members:[
+          'Team 5',
+          'Team 6',
         ]
       }
     ];
