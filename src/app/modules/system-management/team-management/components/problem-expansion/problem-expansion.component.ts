@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProblemExpansionComponent implements OnInit {
   @Input() data:object;
-  panelOpenState = false;
+
   constructor() { }
   
   ngOnInit(): void {
