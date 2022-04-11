@@ -1,42 +1,15 @@
-<div class="flex flex-row items-center">
-    <div class="w-full p-1">
-        <mat-accordion>
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                <mat-expansion-panel-header class="h-15">
-                    <mat-panel-title class="w-full" >
-                        <app-criticality-icon 
-                            [text]="data[0].text" 
-                            [iconName]="data[0].iconName"
-                            [color]="data[0].color"
-                            [mode]="data[0].mode"
-                        >
-                        </app-criticality-icon>
-                        <span> Problem Name 1 </span>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <p>I'm visible because I am open</p>
-            </mat-expansion-panel>
-        </mat-accordion>
-    </div>
+<div class="flex flex-row w-full p-1 items-center">
+    <mat-accordion class="w-full">
+        <mat-expansion-panel class="p-2" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header class="p-0">
+                <mat-panel-title>
+                    <app-criticality-icon [text]="data[0].text" [iconName]="data[0].iconName" [color]="data[0].color"
+                        [mode]="data[0].mode">
+                    </app-criticality-icon>
+                    <span> Problem Name 1 </span>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+    </mat-accordion>
 </div>
-
-<div class="flex flex-row items-center">
-    <div class="w-full p-1">
-        <mat-accordion>
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                <mat-expansion-panel-header>
-                    <mat-panel-title  class="w-full">
-                        <app-criticality-icon 
-                            [text]="data[1].text" 
-                            [mode]="data[1].mode"
-                        >
-                        </app-criticality-icon>
-                        <span> Problem Name 2 </span>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <p>I'm visible because I am open</p>
-            </mat-expansion-panel>
-        </mat-accordion>
-    </div>
-</div>
-<!-- <app-criticality-icon></app-criticality-icon> -->
