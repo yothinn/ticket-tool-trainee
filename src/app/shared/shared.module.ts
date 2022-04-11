@@ -5,13 +5,15 @@ import { FilterButtonComponent } from './components/filter-button/filter-button.
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { StatusIconsComponent } from './components/status-icons/status-icons.component';
 import { MaterialModule } from './material/material.module';
+import { CriticalityIconComponent } from './components/criticality-icon/criticality-icon.component';
 
 
 @NgModule({
     declarations: [
         FilterButtonComponent,
         PaginatorComponent,
-        StatusIconsComponent
+        StatusIconsComponent,
+        CriticalityIconComponent
 
     ],
     imports: [
@@ -28,7 +30,8 @@ import { MaterialModule } from './material/material.module';
         // SharedModule
         FilterButtonComponent,
         PaginatorComponent,
-        StatusIconsComponent
+        StatusIconsComponent,
+        CriticalityIconComponent
 
     ]
 })

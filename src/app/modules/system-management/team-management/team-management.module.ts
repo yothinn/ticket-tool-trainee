@@ -15,6 +15,7 @@ import { ProblemSupportViewComponent } from './components/problem-support-view/p
 import { ProblemSupportEditComponent } from './components/problem-support-edit/problem-support-edit.component';
 import { TeamMemberDialogComponent } from './dialogs/team-member-dialog/team-member-dialog.component';
 import { ProblemDialogComponent } from './dialogs/problem-dialog/problem-dialog.component';
+import { ProblemExpansionComponent } from './components/problem-expansion/problem-expansion.component';
 
 
 
@@ -34,7 +35,8 @@ import { ProblemDialogComponent } from './dialogs/problem-dialog/problem-dialog.
     ProblemSupportViewComponent,
     ProblemSupportEditComponent,
     TeamMemberDialogComponent,
-    ProblemDialogComponent
+    ProblemDialogComponent,
+    ProblemExpansionComponent
   ],
   imports: [
     TeamManagementRoutingModule,
