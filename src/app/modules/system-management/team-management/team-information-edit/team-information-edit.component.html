@@ -15,15 +15,12 @@
     <div class="flex flex-row w-full mt-2 mb-2">
         <div class="grid grid-cols-2 w-full">
             <div class="mr-1 p-1 border-2 border-gray-300 rounded">
-                <div class="w-full">
-                    <app-team-info-edit></app-team-info-edit>
-                </div>
+                <app-team-info-edit></app-team-info-edit>
             </div>
             
             <div class="mr-1 p-1 border-2 border-gray-300 rounded">
-                <div class="w-full">
-                    <app-team-contact-edit></app-team-contact-edit>
-                </div>
+                
+                <app-team-contact-edit></app-team-contact-edit>
             </div>
         </div>
         <!-- <div class="flex flex-col w-3/6 mr-1 p-1 border-2 border-gray-300 rounded">
@@ -74,15 +71,13 @@
         <app-problem-support-edit></app-problem-support-edit>
     </div>
 
-    <div class="flex flex-row h-9 w-full text-right">
-        <div class="w-full">
-            <button mat-flat-button color="primary" class="ml-2 mr-2">
-                Cancel
-            </button>
-            <button mat-flat-button color="primary" class="ml-2 mr-2">
-                Save
-            </button>
-        </div>
+    <div class="flex flex-row justify-end gap-4 pr-4">
+        <button mat-flat-button color="primary">
+            Cancel
+        </button>
+        <button mat-flat-button color="primary">
+            Save
+        </button>
     </div>
 
 </div>
