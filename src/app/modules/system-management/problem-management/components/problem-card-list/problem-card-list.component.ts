@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-problem-card-list',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./problem-card-list.component.scss']
 })
 export class ProblemCardListComponent implements OnInit {
-
+  @Output() selectPageEventChanged: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onClick(event:any){
+    // console.log(event)
+    this.selectPageEventChanged.emit(event);
+  }
 }

@@ -5,4 +5,4 @@
     <div>Updated</div>
 </div>
 
-<app-problem-card-info></app-problem-card-info>
+<app-problem-card-info *ngFor="let item of [0,1,2,3]" (click)="onClick(item)" ></app-problem-card-info>

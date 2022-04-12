@@ -15,7 +15,7 @@
             </div>
         </div>
         <app-filter-button  [data]="button"></app-filter-button>
-        <app-problem-card-list class="w-7/8"></app-problem-card-list>
+        <app-problem-card-list (selectPageEventChanged)="onDetail($event)"></app-problem-card-list>
         <!-- <app-team-card-info (selectTeam)="onDetail($event)"></app-team-card-info> -->
 
         <!-- <div style="background-color: aqua; ">item per page</div> -->

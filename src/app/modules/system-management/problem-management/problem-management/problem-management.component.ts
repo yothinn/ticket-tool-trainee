@@ -19,10 +19,11 @@ export class ProblemManagementComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // onDetail(item: any): void {
-  //   this.isViewMode = true;
-  //   this.drawerDetail?.toggle();
-  // }
+  onDetail(event: any): void {
+    console.log(event)
+    this.isViewMode = true;
+    this.drawerDetail?.toggle();
+  }
 
   onCreate(): void {
     this.isViewMode = false;
@@ -30,4 +31,8 @@ export class ProblemManagementComponent implements OnInit {
       this.drawerDetail?.toggle();
     }
   }
+
+  // selectPageEventChanged(event:any){
+  //   console.log(event)
+  // }
 }

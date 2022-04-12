@@ -1,88 +1,54 @@
 <div class="flex flex-col w-full h-full">
-    <div class="flex flex-row w-full pt-2 pb-2 items-center">
-        <div class="flex-initial w-8/12">
-            <h1>Create Team</h1>
-        </div>
-        <div class="flex-initial w-4/12">
-            <mat-slide-toggle>
-                <span>Status : Active</span>
-            </mat-slide-toggle>
-        </div>
+    <div class="flex flex-row  pt-2 pb-2">
+        <h1 class="flex-auto">Create Problem</h1>
+        <mat-slide-toggle class="flex-initial">
+            <span>Status : Active</span>
+        </mat-slide-toggle>
     </div>
 
     <mat-divider></mat-divider>
 
-    <div class="flex flex-row w-full mt-2 mb-2">
-        <div class="grid grid-cols-2 w-full">
-            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
-                <div class="w-full">
-                    <!-- <app-team-info-edit></app-team-info-edit> -->
-                </div>
-            </div>
-            
-            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
-                <div class="w-full">
-                    <!-- <app-team-contact-edit></app-team-contact-edit> -->
-                </div>
-            </div>
-        </div>
-        <!-- <div class="flex flex-col w-3/6 mr-1 p-1 border-2 border-gray-300 rounded">
-            <div class="w-full">
-                <app-team-info-edit></app-team-info-edit>
-            </div>
-        </div>
-        <div class="flex flex-col w-3/6 ml-1 p-1 border-2 border-gray-300 rounded">
-            <div class="w-full">
-                <app-team-contact-edit></app-team-contact-edit>
-            </div>
-        </div> -->
+    <div class="flex flex-wrap gap-2 mb-2">
+        <app-problem-info-edit class="p-1 border-2 border-gray-300 rounded  flex-auto">
+        </app-problem-info-edit>
+
+        <app-problem-control-edit class=" p-1 border-2 border-gray-300 rounded flex-auto">
+        </app-problem-control-edit>
     </div>
 
-    <div class="flex flex-col w-full mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
-        <div class="flex items-center mb-1">
-            <div class="w-3/6">
-                <h1>Team Member (3)</h1>
-            </div>
-            <div class="w-3/6 text-right">
-                <button mat-flat-button color="primary">
-                    Add Member
-                </button>
-            </div>
-        </div>
-
-        <mat-divider></mat-divider>
-
-        <!-- Content Team Member -->
-        <!-- <app-team-member-edit></app-team-member-edit> -->
-    </div>
-
-    <div class="flex flex-col w-full mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
-        <div class="flex items-center mb-1">
-            <div class="w-3/6">
-                <h1>Problem Support (2)</h1>
-            </div>
-            <div class="w-3/6 text-right">
-                <button mat-flat-button color="primary">
-                    Add Problem
-                </button>
-            </div>
-        </div>
-
-        <mat-divider></mat-divider>
-
-        <!-- Content Problem Support -->
-        <!-- <app-problem-support-edit></app-problem-support-edit> -->
-    </div>
-
-    <div class="flex flex-row h-9 w-full text-right">
-        <div class="w-full">
-            <button mat-flat-button color="primary" class="ml-2 mr-2">
-                Cancel
-            </button>
-            <button mat-flat-button color="primary" class="ml-2 mr-2">
-                Save
+    <div class="flex flex-col p-1 mb-2 border-2 border-gray-300 rounded">
+        <div class="flex flex-row items-center">
+            <h1 class="flex-auto">Request Data</h1>
+            <button class="flex-initial" mat-flat-button color="primary">
+                Add Request Data
             </button>
         </div>
+        <mat-divider></mat-divider>
+
+        <app-request-data-edit></app-request-data-edit>
+
+    </div>
+
+    <div class="flex flex-col mb-2 p-1 border-2 border-gray-300 rounded">
+        <div class="flex flex-row items-center">
+            <h1 class="flex-auto">Team Owner</h1>
+            <button class="flex-initial" mat-flat-button color="primary">
+                Add Team Owner
+            </button>
+        </div>
+        <mat-divider></mat-divider>
+
+        <app-team-owner-edit></app-team-owner-edit>
+
+    </div>
+
+    <div class="flex flex-row justify-end gap-2">
+        <button mat-flat-button color="primary">
+            Cancel
+        </button>
+        <button mat-flat-button color="primary">
+            Save
+        </button>
     </div>
 
 </div>

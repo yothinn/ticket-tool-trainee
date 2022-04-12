@@ -6,11 +6,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./problem-card-info.component.scss']
 })
 export class ProblemCardInfoComponent implements OnInit {
+ 
   @Input() data :any;
   constructor() { }
 
   ngOnInit(): void {
-    // this.data = 
+    
   }
+
+ 
 
 }
