@@ -1,29 +1,36 @@
 
 <mat-drawer-container class=" w-full h-full">
-    <mat-drawer-content class="flex flex-col w-full h-full p-4">
-        <div class="flex flex-row">
-            <div class="w-5/6 mt-auto mb-auto mr-4">
-                <mat-form-field appearance="outline" class="w-full">
+    <mat-drawer-content class="flex flex-col h-full p-4">
+        <div class="flex flex-row w-full">
+                <mat-form-field appearance="outline" 
+                    class="flex-auto mt-auto mb-auto mr-4"
+                >
                     <mat-label>Search</mat-label>
                     <input matInput placeholder="Input">
                 </mat-form-field>
-            </div>
-            <div class="w-1/6 m-auto">
-                <button mat-flat-button color="primary" (click)="onCreate()">
+                <button mat-flat-button color="primary"
+                    (click)="onCreate()" class="flex-initial"
+                >
                     Create
                 </button>
-            </div>
         </div>
 
-        <app-team-card-info (selectTeam)="onDetail($event)"></app-team-card-info>
+        <app-team-card-list (selectTeam)="onDetail($event)">
+
+        </app-team-card-list>
+
     </mat-drawer-content>
 
     <mat-drawer #drawerDetail style="width: 50%;" 
         [mode]="isViewMode ? 'side' : 'over' " position="end"
     >
         <div class="p-2">
-            <app-team-information-view *ngIf="isViewMode"></app-team-information-view>
-            <app-team-information-edit *ngIf="!isViewMode"></app-team-information-edit>
+            <app-team-information-view *ngIf="isViewMode">
+
+            </app-team-information-view>
+            <app-team-information-edit *ngIf="!isViewMode">
+                
+            </app-team-information-edit>
         </div>
     </mat-drawer>
 

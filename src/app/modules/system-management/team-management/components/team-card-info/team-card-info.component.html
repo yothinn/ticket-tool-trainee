@@ -1,63 +1,29 @@
-<div class="flex flex-col w-full h-full">
-
-    <div class="flex flex-row w-full pt-4 pb-4" style="border-bottom: 1px solid #d4dde7;">
-        <div class="flex-initial w-5/12 text-center">
-
-        </div>
-        <div class="flex-initial w-1/12 text-center">
+<div class="grid grid-cols-5 pt-2 pb-2 hover:bg-gray-300 cursor-pointer">
+        <p class="grid grid-cols-1 col-span-2">
             <span>
-                <strong>Status</strong>
+                {{teamData.teamName}}
             </span>
-        </div>
-        <div class="flex-initial w-3/12 text-center">
             <span>
-                <strong>Created</strong>
+                {{teamData.teamDiscription}}
             </span>
-        </div>
-        <div class="flex-initial w-3/12 text-center">
+        </p>
+        <p>{{teamData.status}}</p>
+        <p class="grid grid-cols-1">
             <span>
-                <strong>Updated</strong>
+                {{teamData.created.firstName + ' ' + teamData.created.lastName}}
             </span>
-        </div>
-    </div>
-
-    <div class="flex flex-row w-full pt-4 pb-4" style="border-bottom: 1px solid #d4dde7;" *ngFor="let item of dateMock"
-        (click)="onDetail(item)">
-        <div class="flex-initial w-5/12 text-left">
-            <div class="flex flex-col">
-                <div class="w-full">
-                    <span>{{item.teamName}}</span>
-                </div>
-                <div class="w-full">
-                    <span>{{item.teamDiscription}}</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex-initial w-1/12 text-center">
-            <span>{{item.status}}</span>
-        </div>
-
-        <div class="flex-initial w-3/12 text-center">
-            <div class="flex flex-col">
-                <div class="w-full">
-                    <span>{{item.created.firstName + ' ' + item.created.lastName}}</span>
-                </div>
-                <div class="w-full">
-                    <span>{{ item.created.date}}</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex-initial w-3/12 text-center">
-            <div class="flex flex-col">
-                <div class="w-full">
-                    <span>{{item.updated.firstName + ' ' + item.updated.lastName}}</span>
-                </div>
-                <div class="w-full">
-                    <span>{{ item.updated.date}}</span>
-                </div>
-            </div>
-        </div>
-    </div>
+            <span>
+                {{ teamData.created.date}}
+            </span>
+        </p>
+        <p class="grid grid-cols-1">
+            <span>
+                {{teamData.updated.firstName + ' ' + teamData.updated.lastName}}
+            </span>
+            <span>
+                {{ teamData.updated.date}}
+            </span>
+        </p>
 </div>
+
+<mat-divider></mat-divider>

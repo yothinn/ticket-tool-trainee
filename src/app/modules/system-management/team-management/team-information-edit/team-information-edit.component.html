@@ -1,74 +1,64 @@
 <div class="flex flex-col w-full h-full">
     <div class="flex flex-row w-full pt-2 pb-2 items-center">
-        <div class="flex-initial w-8/12">
-            <h1>Create Team</h1>
-        </div>
-        <div class="flex-initial w-4/12">
-            <mat-slide-toggle>
+            <h1 class="flex-auto">Create Team</h1>
+            <mat-slide-toggle class="flex-initial pr-5">
                 <span>Status : Active</span>
             </mat-slide-toggle>
-        </div>
     </div>
 
     <mat-divider></mat-divider>
 
     <div class="flex flex-row w-full mt-2 mb-2">
-        <div class="grid grid-cols-2 w-full">
+        <div class="grid grid-cols-2 w-full gap-1">
             <div class="mr-1 p-1 border-2 border-gray-300 rounded">
-                <app-team-info-edit></app-team-info-edit>
+                <app-team-info-edit>
+
+                </app-team-info-edit>
             </div>
             
             <div class="mr-1 p-1 border-2 border-gray-300 rounded">
                 
-                <app-team-contact-edit></app-team-contact-edit>
+                <app-team-contact-edit>
+
+                </app-team-contact-edit>
             </div>
         </div>
-        <!-- <div class="flex flex-col w-3/6 mr-1 p-1 border-2 border-gray-300 rounded">
-            <div class="w-full">
-                <app-team-info-edit></app-team-info-edit>
-            </div>
-        </div>
-        <div class="flex flex-col w-3/6 ml-1 p-1 border-2 border-gray-300 rounded">
-            <div class="w-full">
-                <app-team-contact-edit></app-team-contact-edit>
-            </div>
-        </div> -->
     </div>
 
     <div class="flex flex-col w-full mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
         <div class="flex items-center mb-1">
-            <div class="w-3/6">
-                <h1>Team Member (3)</h1>
-            </div>
-            <div class="w-3/6 text-right">
-                <button mat-flat-button color="primary" (click)="openTeamMemberDialog()">
+                <h1 class="flex-auto">Team Member (3)</h1>
+                <button mat-flat-button color="primary" 
+                    (click)="openTeamMemberDialog()" class="flex-initial"
+                >
                     Add Member
                 </button>
-            </div>
         </div>
 
         <mat-divider></mat-divider>
 
         <!-- Content Team Member -->
-        <app-team-member-edit></app-team-member-edit>
+        <app-team-member-edit>
+
+        </app-team-member-edit>
     </div>
 
     <div class="flex flex-col w-full mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
         <div class="flex items-center mb-1">
-            <div class="w-3/6">
-                <h1>Problem Support (2)</h1>
-            </div>
-            <div class="w-3/6 text-right">
-                <button mat-flat-button color="primary" (click)="openProblemDialog()">
+                <h1 class="flex-auto">Problem Support (2)</h1>
+                <button mat-flat-button color="primary" 
+                    (click)="openProblemDialog()" class="flex-initial"
+                >
                     Add Problem
                 </button>
-            </div>
         </div>
 
         <mat-divider></mat-divider>
 
         <!-- Content Problem Support -->
-        <app-problem-support-edit></app-problem-support-edit>
+        <app-problem-support-edit>
+
+        </app-problem-support-edit>
     </div>
 
     <div class="flex flex-row justify-end gap-4 pr-4">

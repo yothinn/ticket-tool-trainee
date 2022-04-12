@@ -23,7 +23,7 @@
             <div>Member fo</div>
         </div>
 
-        <div class="grid grid-cols-3 p-4 border-b-2 border-neutral-300 hover:bg-sky-300" *ngFor="let item of dataMock">
+        <div *ngFor="let item of dataMock" class="grid grid-cols-3 p-4 border-b-2 border-neutral-300 hover:bg-gray-300">
             <div>
                 <mat-checkbox></mat-checkbox>
                 <span>
@@ -36,7 +36,6 @@
                     {{member}}
                 </span>
             </div>
-            <!-- <mat-divider style="background-color: blue;"></mat-divider> -->
         </div>
     </div>
 

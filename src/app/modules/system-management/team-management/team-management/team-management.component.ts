@@ -18,6 +18,7 @@ export class TeamManagementComponent implements OnInit {
   }
 
   onDetail(item: any): void {
+    console.log(item);
     this.isViewMode = true;
     this.drawerDetail?.toggle();
   }
