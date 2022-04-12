@@ -1,52 +1,51 @@
 <div class="flex flex-col w-full h-full p-1">
-    <div class="flex flex-row pt-0 pb-2 items-center">
-        <div class="w-5/6 text-left mt-auto mb-auto mr-4">
-            <h1>Add Member to team : Team Name 1</h1>
-        </div>
-        <div class="w-1/6 text-right m-auto">
-            <button mat-icon-button (click)="close()">
-                <mat-icon>close</mat-icon>
-            </button>
-        </div>
+    <div class="flex flex-row  mt-0 mb-2 p-2">
+        <h1 class="flex-auto text-left mr-4">Add Problem to team : Team Name 1</h1>
+        <button class="flex-initial text-right " mat-icon-button (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
     </div>
 
-    <mat-divider></mat-divider>
+    <mat-divider class="mb-2"></mat-divider>
 
-    <div class="flex flex-row mt-2">
-        <div class="w-3/6 text-center mt-auto mb-auto mr-4">
-            <mat-form-field appearance="outline" class="w-full">
-                <mat-label>Search</mat-label>
-                <input matInput placeholder="Input">
-            </mat-form-field>
-        </div>
-        <div class="w-3/6 text-center m-auto">
-            <span>0 person selected</span>
-        </div>
+    <div class="flex-row">
+        <mat-form-field appearance="outline" class="w-4/6 mr-4">
+            <mat-label>Search</mat-label>
+            <input matInput placeholder="Input">
+        </mat-form-field>
+        <span class="w-2/6 text-center">0 person selected</span>
     </div>
 
-    <div class="flex flex-col m-2">
-
-        <div class="grid grid-cols-4 border-b-2 border-gray-300">
-            <div></div>
+    <div class="flex flex-col h-5/6 mb-6 overflow-auto">
+        <div class="grid grid-cols-3 p-4 font-bold  border-b-2 border-neutral-300">
             <div>Name</div>
             <div>Email</div>
             <div>Member fo</div>
         </div>
 
-        <div class="overflow-auto">
-            <div class="grid grid-cols-4 border-b-2 border-gray-300 mt-2 mb-2" *ngFor="let item of dataMock">
-                <div>
-                    <mat-checkbox></mat-checkbox>
-                </div>
-                <div>{{item.firstName + ' ' + item.lastName}}</div>
-                <div>{{item.email}}</div>
-                <div>
-                    <span *ngFor="let member of item.members">
-                        {{member}}
-                    </span>
-                </div>
+        <div class="grid grid-cols-3 p-4 border-b-2 border-neutral-300 hover:bg-sky-300" *ngFor="let item of dataMock">
+            <div>
+                <mat-checkbox></mat-checkbox>
+                <span>
+                    {{item.firstName + ' ' + item.lastName}}
+                </span>
             </div>
+            <div>{{item.email}}</div>
+            <div>
+                <span *ngFor="let member of item.members">
+                    {{member}}
+                </span>
+            </div>
+            <!-- <mat-divider style="background-color: blue;"></mat-divider> -->
         </div>
     </div>
 
+    <div class="flex flex-row justify-end gap-2">
+        <button mat-flat-button color="primary" (click)="close()">
+            Cancel
+        </button>
+        <button mat-flat-button color="primary">
+            Save
+        </button>
+    </div>
 </div>

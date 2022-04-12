@@ -1,0 +1,24 @@
+<div *ngFor="let item of [2,2,2,2]" 
+    class="grid grid-flow-col grid-cols-5 p-3 border-b-2 border-neutral-300 hover:bg-sky-300" >
+
+    <div class="col-span-2 flex flex-row"> 
+        <app-criticality-icon ></app-criticality-icon> 
+        <div class=" flex flex-col">
+            <span> Problem Name 1</span>
+            <span> Problem Name Description</span>
+        </div>
+    </div>
+
+    <div>Active</div>
+    
+    <div class="flex flex-col">
+        <span>firstname lastname 1</span>
+        <span> 10 Mar 2022 20:00 </span>
+    </div>
+
+    <div class="flex flex-col">
+        <span>firstname lastname 2</span>
+        <span> 10 Mar 2022 20:00 </span>
+    </div>
+
+</div>

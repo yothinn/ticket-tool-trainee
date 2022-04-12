@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
-import { ProblemManagementComponent } from './problem-management.component';
+import { ProblemManagementComponent } from './problem-management/problem-management.component';
+
 
 const routes: Route[] = [
   {

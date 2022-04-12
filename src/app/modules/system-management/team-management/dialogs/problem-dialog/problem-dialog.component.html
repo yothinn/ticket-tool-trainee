@@ -1,28 +1,22 @@
 <div class="flex flex-col h-full p-1 w-full">
-    <div class="flex flex-row  mt-0 mb-2 p-2 items-center border-b-2 border-neutral-300" >
-        <div class="w-5/6 text-left mt-auto mb-auto mr-4">
-            <h1>Add Problem to team : Team Name 1</h1>
-        </div>
-        <div class="w-1/6 text-right m-auto">
-            <button mat-icon-button (click)="close()">
+    <div class="flex flex-row p-2 mt-0">
+            <h1 class="flex-auto text-left">Assign Problem to team : Team Name 1</h1>
+            <button class="flex-initial text-right" mat-icon-button (click)="close()">
                 <mat-icon>close</mat-icon>
             </button>
-        </div>
     </div>
+    <mat-divider class="mb-2" ></mat-divider>
+
     <div class="flex-row">
-        <!-- <div > -->
-            <mat-form-field appearance="outline" class="w-4/6  mt-auto mb-auto mr-4">
+            <mat-form-field appearance="outline" class="w-4/6 mr-4">
                 <mat-label>Search</mat-label>
                 <input matInput placeholder="Input">
             </mat-form-field>
-        <!-- </div> -->
-        <!-- <div > -->
-            <span class="w-2/6 text-center m-auto">0 person selected</span>
-        <!-- </div> -->
+            <span class="w-2/6 text-center">0 person selected</span>
     </div>
 
-    <div class="flex flex-col  h-5/6 mt-6 mb-6 overflow-auto">
-        <div class="grid grid-cols-5 h-8 font-bold mb-4 border-b-2 border-neutral-300" >
+    <div class="flex flex-col h-5/6 mb-6 overflow-auto">
+        <div class="grid grid-cols-5 p-3 font-bold  border-b-2 border-neutral-300" >
             <div>No</div>
             <div>Problem Name</div>
             <div>Description</div>
@@ -30,35 +24,33 @@
             <div>Criticallty</div>
         </div>
         
-        <div class="grid grid-cols-5 h-8 mb-4 border-b-2 border-neutral-300 " *ngFor="let item of data">
+        <div class="grid grid-cols-5 p-3 border-b-2 border-neutral-300 hover:bg-sky-300" *ngFor="let item of data">
             <div> 
                 <mat-checkbox></mat-checkbox> 
-                {{item.No}}
+                <span>
+                    {{item.No}}
+                </span>
             </div>
             <div>{{item.problemName}}</div>
             <div>{{item.description}}</div>
             <div>{{item.category}}</div>
-            <div>
-                <app-criticality-icon 
+            <app-criticality-icon 
                     [text]="item.criticality.text" 
                     [iconName]="item.criticality.iconName" 
                     [color]="item.criticality.color"
                     [mode]="criticalityMode"
                 >                       
-                </app-criticality-icon>
-            </div>
+            </app-criticality-icon>
             <!-- <mat-divider style="background-color: blue;"></mat-divider> -->
         </div>
     </div>
 
-    <div class="grid grid-cols justify-items-end ">
-        <div>
-            <button mat-flat-button color="primary" class="mr-4 w-auto" (click)="close()">
+    <div class="flex flex-row justify-end gap-2">
+            <button mat-flat-button color="primary" (click)="close()">
                 Cancel
             </button>
-            <button mat-flat-button color="primary" class="w-auto" >
+            <button mat-flat-button color="primary">
                 Save
             </button>
-        </div>
     </div>
 </div>
