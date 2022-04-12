@@ -1,39 +1,31 @@
 <div class="flex flex-col w-full h-full">
-    <div class="flex flex-row w-full pt-2 pb-2 items-center">
-        <div class="flex-initial w-5/12">
-            <h1>Team Information</h1>
-        </div>
-        <div class="flex-initial w-3/12">
-            <span>Status : Active</span>
-        </div>
-        <div class="flex-initial w-3/12 text-center">
-            <button mat-flat-button color="primary" class="w-4/6">
-                Edit
-            </button>
-        </div>
-        <div class="flex-initial w-1/12">
-            <button mat-icon-button>
-                <mat-icon>close</mat-icon>
-            </button>
-        </div>
+    <div class="flex flex-row pt-2 pb-2 items-center gap-2">
+        <h1 class="flex-auto">Team Information</h1>
+        <span class="flex-initial ">Status : Active</span>
+        <button mat-flat-button class="flex-initial text-center" color="primary">
+            Edit
+        </button>
+        <button mat-icon-button class="flex-initial">
+            <mat-icon>close</mat-icon>
+        </button>
     </div>
 
     <mat-divider></mat-divider>
 
-    <div class="flex flex-row w-full mt-2 mb-2">
+    <div class="flex flex-row mt-2 mb-2">
         <div class="grid grid-cols-2 w-full">
             <div class="mr-1 p-1 border-2 border-gray-300 rounded">
                 <h1 class="mb-1">Team Name View</h1>
-                <div class="w-full">
-                    <app-team-info-view></app-team-info-view>
-                </div>
+
+                <app-team-info-view></app-team-info-view>
+
             </div>
 
             <div class="mr-1 p-1 border-2 border-gray-300 rounded">
                 <h1 class="mb-1">Team Contact View</h1>
-                <div class="w-full">
-                    <app-team-contact-view></app-team-contact-view>
-                </div>
+
+                <app-team-contact-view></app-team-contact-view>
+
             </div>
         </div>
         <!-- <div class="flex flex-col w-3/6 mr-1 p-1 border-2 border-gray-300 rounded">
@@ -50,7 +42,7 @@
         </div> -->
     </div>
 
-    <div class="flex flex-col w-full mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
+    <div class="flex flex-col mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
         <h1 class="mb-1">Team Member (3)</h1>
 
         <mat-divider></mat-divider>
@@ -68,12 +60,10 @@
         <app-problem-support-view></app-problem-support-view>
     </div>
 
-    <div class="flex flex-row w-full text-right pr-15">
-        <div class="w-full">
-            <button mat-flat-button color="primary">
-                Delete
-            </button>
-        </div>
+    <div class="flex flex-row justify-end pr-15">
+        <button mat-flat-button color="primary">
+            Delete
+        </button>
     </div>
 
 </div>
