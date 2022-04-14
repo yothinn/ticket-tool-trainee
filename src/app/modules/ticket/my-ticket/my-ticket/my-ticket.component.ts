@@ -2,11 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
-  selector: 'app-team-management',
-  templateUrl: './team-management.component.html',
-  styleUrls: ['./team-management.component.scss']
+  selector: 'app-my-ticket',
+  templateUrl: './my-ticket.component.html',
+  styleUrls: ['./my-ticket.component.scss']
 })
-export class TeamManagementComponent implements OnInit {
+export class MyTicketComponent implements OnInit {
 
   @ViewChild('drawerDetail') drawerDetail: MatSidenav;
   isViewMode: boolean = false;
