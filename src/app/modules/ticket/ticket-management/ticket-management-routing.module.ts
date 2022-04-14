@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { TicketManagementComponent } from './ticket-management.component';
+import { TicketManagementComponent } from './ticket-management/ticket-management.component';
 
 
 const routes: Routes = [
