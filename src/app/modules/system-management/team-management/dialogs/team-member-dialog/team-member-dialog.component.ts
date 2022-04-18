@@ -42,7 +42,43 @@ export class TeamMemberDialogComponent implements OnInit {
           'Team 5',
           'Team 6',
         ]
-      }
+      },
+      {
+        firstName: 'Lex3',
+        lastName: 'Test3',
+        email:'Lex3@gmail.com',
+        members:[
+          'Team 5',
+          'Team 6',
+        ]
+      },
+      {
+        firstName: 'Lex3',
+        lastName: 'Test3',
+        email:'Lex3@gmail.com',
+        members:[
+          'Team 5',
+          'Team 6',
+        ]
+      },
+      {
+        firstName: 'Lex3',
+        lastName: 'Test3',
+        email:'Lex3@gmail.com',
+        members:[
+          'Team 5',
+          'Team 6',
+        ]
+      },
+      {
+        firstName: 'Lex3',
+        lastName: 'Test3',
+        email:'Lex3@gmail.com',
+        members:[
+          'Team 5',
+          'Team 6',
+        ]
+      },
     ];
   }
 
