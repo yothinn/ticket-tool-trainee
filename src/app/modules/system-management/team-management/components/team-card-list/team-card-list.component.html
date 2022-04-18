@@ -1,4 +1,4 @@
-<div class="flex flex-col h-full w-full">
+<div class="flex flex-col w-full h-90 overflow-auto">
     <div class="grid grid-cols-5 pt-5">
         <p class="col-span-2"></p>
         <p><strong>Status</strong></p>
@@ -8,12 +8,15 @@
 
     <mat-divider></mat-divider>
 
-    <ng-container *ngFor="let item of dateMock" class="h-80 overflow-auto">
-        <app-team-card-info  
+    <ng-container *ngFor="let item of dateMock">
+        <app-team-card-info
             [teamData]="item" (click)="onDetail(item)"
         >
 
         </app-team-card-info>
+
+        <mat-divider></mat-divider>
+
     </ng-container>
 
 </div>
