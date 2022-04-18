@@ -1,0 +1,46 @@
+<div class="flex flex-col h-full p-1 w-full">
+    <div class="flex flex-row p-2 mt-0">
+            <h1 class="flex-auto text-left">Select Team Owner :</h1>
+            <button class="flex-initial text-right" mat-icon-button >
+                <mat-icon>close</mat-icon>
+            </button>
+    </div>
+    <mat-divider [inset]="true" class="mb-2" ></mat-divider>
+
+    <mat-form-field appearance="outline" class="max-w-screen-sm" >
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Input">
+    </mat-form-field>
+            <!-- <span class="w-2/6 text-center">0 person selected</span> -->
+   
+
+    <div class="flex flex-col h-5/6 mb-6 overflow-auto">
+        <div class="grid grid-cols-3 p-3 font-bold  border-b-2 border-neutral-300" >
+            <div>Team Name</div>
+            <div>Description</div>
+            <div>Total of Members</div>
+        </div>
+        
+        <div *ngFor="let item of data" class="grid grid-cols-3 p-3 border-b-2 border-neutral-300 hover:bg-sky-300"  >
+            <div> 
+                <mat-radio-button></mat-radio-button>
+                <span>
+                    {{item.name}}
+                </span>
+            </div>
+            <div>{{item.description}}</div>
+            <div>{{item.total}}</div>
+
+            <!-- <mat-divider style="background-color: blue;"></mat-divider> -->
+        </div>
+    </div>
+
+    <div class="flex flex-row justify-end gap-2">
+        <button mat-flat-button color="primary" >
+            Cancel
+        </button>
+        <button mat-flat-button color="primary">
+            Save
+        </button>
+    </div>
+</div>

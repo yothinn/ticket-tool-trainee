@@ -15,6 +15,8 @@ import { RequestDataEditComponent } from './components/request-data-edit/request
 import { RequestDataViewComponent } from './components/request-data-view/request-data-view.component';
 import { TeamOwnerViewComponent } from './components/team-owner-view/team-owner-view.component';
 import { TeamOwnerEditComponent } from './components/team-owner-edit/team-owner-edit.component';
+import { RequestDataDialogComponent } from './dialogs/request-data-dialog/request-data-dialog.component';
+import { TeamOwnerDialogComponent } from './dialogs/team-owner-dialog/team-owner-dialog.component';
 
 
 
@@ -32,7 +34,9 @@ import { TeamOwnerEditComponent } from './components/team-owner-edit/team-owner-
     RequestDataEditComponent,
     RequestDataViewComponent,
     TeamOwnerViewComponent,
-    TeamOwnerEditComponent
+    TeamOwnerEditComponent,
+    RequestDataDialogComponent,
+    TeamOwnerDialogComponent
   ],
   imports: [
     CommonModule,

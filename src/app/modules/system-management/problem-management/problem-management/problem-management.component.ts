@@ -11,16 +11,19 @@ export class ProblemManagementComponent implements OnInit {
   @ViewChild('drawerDetail') drawerDetail: MatSidenav;
   // @ViewChild('drawer') drawer: MatSidenav;
   isViewMode: boolean = false;
-  button:Filter[]= [{name:"All",total:20},{name:"Acitvie",total:10},{name:"inActive",total:5}]
+  button: Filter[]= [
+    {name:'All',total:20},
+    {name:'Acitvie',total:10},
+    {name:'inActive',total:5}
+  ];
 
-  
   constructor() { }
 
   ngOnInit(): void {
   }
 
   onDetail(event: any): void {
-    console.log(event)
+    console.log(event);
     this.isViewMode = true;
     this.drawerDetail?.toggle();
   }
