@@ -1,8 +1,8 @@
 <div class="flex flex-col w-full h-full">
-    <div class="flex flex-row items-center gap-2 pt-2 pb-2">
+    <div class="flex flex-row pt-2 pb-2 items-center gap-2">
         <h1 class="flex-auto">Create Information</h1>
         <span class="flex-initial ">Status : Active</span>
-        <button mat-flat-button class="flex-initial" color="primary">
+        <button mat-flat-button class="flex-initial text-center" color="primary">
             Edit
         </button>
         <button mat-icon-button class="flex-initial">
@@ -12,36 +12,64 @@
 
     <mat-divider></mat-divider>
 
-    <div class="flex flex-wrap gap-2 mb-2">
+    <div class="flex flex-row mt-2 mb-2">
+        <div class="grid grid-cols-2 w-full gap-1">
+            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
+
+                <app-problem-info-view>
+
+                </app-problem-info-view>
+
+            </div>
+
+            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
+
+                <app-problem-control-view>
+
+                </app-problem-control-view>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="flex flex-wrap gap-2 mb-2">
         <app-problem-info-view class="p-1 border-2 border-gray-300 rounded flex-auto">
         </app-problem-info-view>
 
         <app-problem-control-view class=" p-1 border-2 border-gray-300 rounded flex-auto">
         </app-problem-control-view>
-    </div>
+    </div> -->
 
-    <div class="flex flex-col p-1 mb-2 border-2 border-gray-300 rounded">
-        <h1 class="flex-auto">Request Data</h1>
+    <div class="flex flex-col mb-2 p-1 border-2 border-gray-300 rounded">
+        <h1 class="mb-1">Request Data</h1>
+
         <mat-divider></mat-divider>
 
-        <app-request-data-view></app-request-data-view>
+        <!-- Request Data -->
+        <app-request-data-view>
+            
+        </app-request-data-view>
 
     </div>
 
-    <div class="flex flex-row gap-2">
+    <div class="flex flex-row mt-2 mb-2 gap-2">
         <span>External Operation</span>
         <mat-slide-toggle class="flex-initial"></mat-slide-toggle>
     </div>
     
 
     <div class="flex flex-col mb-2 p-1 border-2 border-gray-300 rounded">
-        <h1 class="flex-auto">Team Owner</h1>
+        <h1 class="mb-1">Team Owner</h1>
+
+        <!-- Team Owner -->
         <mat-divider></mat-divider>
 
-        <app-team-owner-view></app-team-owner-view>
+        <app-team-owner-view>
+
+        </app-team-owner-view>
     </div>
 
-    <div class="flex justify-end">
+    <div class="flex flex-row justify-end pr-7">
         <button mat-flat-button color="primary">
             Delete
         </button>
