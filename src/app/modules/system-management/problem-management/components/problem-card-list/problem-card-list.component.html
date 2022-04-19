@@ -1,22 +1,22 @@
-<div class="flex flex-col">
-    <div class="grid grid-cols-5 p-3 font-bold">
-        <div class="col-span-2"></div>
-        <div>Status</div>
-        <div>Created</div>
-        <div>Updated</div>
+<div class="flex flex-col w-full h-90 overflow-auto">
+    <div class="grid grid-cols-5 pt-5">
+        <p class="col-span-2"></p>
+        <p><strong>Status</strong></p>
+        <p><strong>Created</strong></p>
+        <p><strong>Updated</strong></p>
     </div>
 
     <mat-divider></mat-divider>
 
-    <div>
-        <ng-container>
-            <app-problem-card-info 
-                *ngFor="let item of [0,1,2,3]" 
-                (click)="onClick(item)" 
-            >
-            
-            </app-problem-card-info>
-            <mat-divider [inset]="true"></mat-divider>
-        </ng-container>
-    </div>
+    <ng-container *ngFor="let item of problemDataMocks">
+        <app-problem-card-info 
+            [problemData]="item" (click)="onDetail(item)"
+        >
+
+        </app-problem-card-info>
+
+        <mat-divider></mat-divider>
+
+    </ng-container>
+
 </div>

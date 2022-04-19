@@ -1,11 +1,15 @@
 <mat-drawer-container class=" w-full h-full">
     <mat-drawer-content class="flex flex-col h-full p-4">
         <div class="flex flex-row w-full">
-            <mat-form-field appearance="outline" class="flex-auto mt-auto mb-auto mr-4">
+            <mat-form-field appearance="outline" 
+                class="flex-auto mt-auto mb-auto mr-4"
+            >
                 <mat-label>Search</mat-label>
                 <input matInput placeholder="Input">
             </mat-form-field>
-            <button mat-flat-button color="primary" (click)="onCreate()" class="flex-initial">
+            <button mat-flat-button color="primary"
+                (click)="onCreate()" class="flex-initial"
+            >
                 Create
             </button>
         </div>
@@ -14,7 +18,7 @@
 
         </app-filter-button>
 
-        <app-team-card-list (selectTeam)="onDetail($event)">
+        <app-team-card-list (selectTeamItem)="onDetail($event)">
 
         </app-team-card-list>
 

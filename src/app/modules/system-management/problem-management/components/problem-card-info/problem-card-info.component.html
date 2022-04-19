@@ -1,23 +1,32 @@
-<div class="grid grid-flow-col grid-cols-5 p-3 border-b-2 border-neutral-300 hover:bg-sky-300" >
-
-    <div class="col-span-2 flex flex-row"> 
+<div class="grid grid-flow-col grid-cols-5 pt-2 pb-2 hover:bg-gray-300 cursor-pointer">
+    <p class="flex flex-row col-span-2"> 
         <app-criticality-icon ></app-criticality-icon> 
-        <div class=" flex flex-col">
-            <span> Problem Name 1</span>
-            <span> Problem Name Description</span>
-        </div>
-    </div>
+        <span class=" flex flex-col">
+            <span>
+                {{problemData.problemName}}
+            </span>
+            <span>
+                {{problemData.problemDescription}}
+            </span>
+        </span>
+    </p>
+    <p>Active</p>
+    <p class="flex flex-col">
+        <span>
+            {{problemData.created.firstName + ' ' + problemData.created.lastName}}
+        </span>
+        <span>
+            {{ problemData.created.date}}
+        </span>
+    </p>
 
-    <div>Active</div>
-    
-    <div class="flex flex-col">
-        <span>firstname lastname 1</span>
-        <span> 10 Mar 2022 20:00 </span>
-    </div>
-
-    <div class="flex flex-col">
-        <span>firstname lastname 2</span>
-        <span> 10 Mar 2022 20:00 </span>
-    </div>
+    <p class="flex flex-col">
+        <span>
+            {{problemData.updated.firstName + ' ' + problemData.updated.lastName}}
+        </span>
+        <span>
+            {{ problemData.updated.date}}
+        </span>
+    </p>
 
 </div>
