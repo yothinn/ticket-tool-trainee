@@ -3,32 +3,24 @@
         Add Request Data
     </button>
 
-    <mat-menu #requestDataMenu="matMenu" class="member-menu">
-        <div fxLayout="column" fxLayoutGap="0.5em">
+    <mat-menu #requestDataMenu="matMenu">
+        <div class="flex flex-col p-2 gap-2">
             <mat-checkbox 
-            *ngFor="let item of [1,1,1,1,1,2] " 
-            (click)="$event.stopPropagation()" 
+                *ngFor="let item of requestData " 
+                (click)="$event.stopPropagation()"
+                (change)="onSelectData($event, item)"
             >
-                <div fxLayout="row" fxLayoutGap="0.5em">
-                    <button mat-icon-button class="user-button" fxLayoutAlign="center center">
-                        ddddd
-                    </button>
-                    <!-- <span fxLayoutAlign="start center">
-                        ddd
-                    </span> -->
-                </div>
+                <spam> {{item}} </spam>
             </mat-checkbox>
-        </div>
 
-        <div fxFlex fxLayout="row" fxLayoutGap="0.5em" fxLayoutAlign="end center">
-            <button mat-raised-button color="primary" >
-                Cancel
-            </button>
-            <button mat-raised-button >
-                Select
-            </button>
-           
+            <div class="flex flex-row justify-end gap-2" >
+                <button mat-flat-button>
+                    Cancel
+                </button>
+                <button mat-flat-button  color="primary">
+                    Select
+                </button>
+            </div>
         </div>
-        
     </mat-menu>
 </div>

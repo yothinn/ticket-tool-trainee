@@ -10,6 +10,8 @@ import { TeamOwnerDialogComponent } from '../dialogs/team-owner-dialog/team-owne
 })
 export class ProblemInformationEditComponent implements OnInit {
 
+  requestData:any = ['Ticket Description','Order No','Attachment file','XXXXXXX','XXXXXXXX'];
+
   constructor(
     public dialog: MatDialog
   ) { }

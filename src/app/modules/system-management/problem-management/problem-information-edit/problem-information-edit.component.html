@@ -19,10 +19,7 @@
     <div class="flex flex-col p-1 mb-2 border-2 border-gray-300 rounded">
         <div class="flex flex-row items-center">
             <h1 class="flex-auto">Request Data</h1>
-            <app-request-data-info></app-request-data-info>
-            <!-- <button (click)="openRequestDataDialog()" class="flex-initial" mat-flat-button color="primary">
-                Add Request Data
-            </button> -->
+            <app-request-data-info [requestData]='requestData'></app-request-data-info>
         </div>
         <mat-divider></mat-divider>
 
