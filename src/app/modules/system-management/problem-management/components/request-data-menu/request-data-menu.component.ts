@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-request-data-info',
-  templateUrl: './request-data-info.component.html',
-  styleUrls: ['./request-data-info.component.scss']
+  selector: 'app-request-data-menu',
+  templateUrl: './request-data-menu.component.html',
+  styleUrls: ['./request-data-menu.component.scss']
 })
-export class RequestDataInfoComponent implements OnInit {
+export class RequestDataMenuComponent implements OnInit {
   @Input() requestData:string[]
   @Output() closed = new EventEmitter<any>();
   

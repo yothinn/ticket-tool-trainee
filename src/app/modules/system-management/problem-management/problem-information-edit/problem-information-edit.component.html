@@ -19,8 +19,13 @@
     <div class="flex flex-col p-1 mb-2 border-2 border-gray-300 rounded">
         <div class="flex flex-row items-center">
             <h1 class="flex-auto">Request Data</h1>
-            <app-request-data-info [requestData]='requestData'></app-request-data-info>
+            <app-request-data-menu 
+                class="flex-initial"
+                [requestData]='requestData'
+            >
+            </app-request-data-menu>
         </div>
+
         <mat-divider></mat-divider>
 
         <app-request-data-edit></app-request-data-edit>
@@ -35,10 +40,13 @@
     <div class="flex flex-col mb-2 p-1 border-2 border-gray-300 rounded">
         <div class="flex flex-row items-center">
             <h1 class="flex-auto">Team Owner</h1>
-            <button (click)="openTeamOwnerDialog()" class="flex-initial" mat-flat-button color="primary">
+            <button mat-flat-button color="primary"
+                (click)="openTeamOwnerDialog()" class="flex-initial"
+            >
                 Add Team Owner
             </button>
         </div>
+
         <mat-divider></mat-divider>
 
         <app-team-owner-edit></app-team-owner-edit>
