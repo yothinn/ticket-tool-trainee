@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./request-data-info.component.scss']
 })
 export class RequestDataInfoComponent implements OnInit {
-  @Input() requestData:any
+  @Input() requestData:string[]
   @Output() closed = new EventEmitter<any>();
   
   constructor() { }

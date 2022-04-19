@@ -1,32 +1,32 @@
 <div class="grid grid-flow-col grid-cols-5 pt-2 pb-2 hover:bg-gray-300 cursor-pointer">
-    <p class="flex flex-row col-span-2"> 
+    <div class="flex flex-row col-span-2"> 
         <app-criticality-icon ></app-criticality-icon> 
-        <span class=" flex flex-col">
+        <div class=" flex flex-col">
             <span>
                 {{problemData.problemName}}
             </span>
             <span>
                 {{problemData.problemDescription}}
             </span>
-        </span>
-    </p>
-    <p>Active</p>
-    <p class="flex flex-col">
+        </div>
+    </div>
+    <div>Active</div>
+    <div class="flex flex-col">
         <span>
             {{problemData.created.firstName + ' ' + problemData.created.lastName}}
         </span>
         <span>
             {{ problemData.created.date}}
         </span>
-    </p>
+    </div>
 
-    <p class="flex flex-col">
+    <div class="flex flex-col">
         <span>
             {{problemData.updated.firstName + ' ' + problemData.updated.lastName}}
         </span>
         <span>
             {{ problemData.updated.date}}
         </span>
-    </p>
+    </div>
 
 </div>
