@@ -1,6 +1,5 @@
 <mat-drawer-container class="w-full h-full">
-    <mat-drawer-content class="flex flex-col h-full">
-
+    <mat-drawer-content class="flex flex-col h-full p-4">
         <div class="flex flex-row w-full">
             <mat-form-field appearance="outline" 
                 class="flex-auto mt-auto mb-auto mr-4"
@@ -15,18 +14,30 @@
             </button>
         </div>
 
-        <app-filter-button  [data]="button"></app-filter-button>
+        <app-filter-button  [data]="button">
 
-        <app-problem-card-list (selectPageEventChanged)="onDetail($event)"></app-problem-card-list>
+        </app-filter-button>
+
+        <app-problem-card-list (selectProblemItem)="onDetail($event)">
+
+        </app-problem-card-list>
       
-        <app-paginator></app-paginator>
+        <app-paginator>
+
+        </app-paginator>
         
     </mat-drawer-content>
 
-    <mat-drawer #drawerDetail class="w-2/4"  [mode]="isViewMode ? 'side' : 'over' " position="end">
-        <div class="p-4">
-            <app-problem-information-view *ngIf="isViewMode"></app-problem-information-view>
-            <app-problem-information-edit *ngIf="!isViewMode"></app-problem-information-edit>
+    <mat-drawer #drawerDetail style="width: 50%;"  
+        [mode]="isViewMode ? 'side' : 'over' " position="end"
+    >
+        <div class="p-2">
+            <app-problem-information-view *ngIf="isViewMode">
+
+            </app-problem-information-view>
+            <app-problem-information-edit *ngIf="!isViewMode">
+
+            </app-problem-information-edit>
         </div>
     </mat-drawer>
 

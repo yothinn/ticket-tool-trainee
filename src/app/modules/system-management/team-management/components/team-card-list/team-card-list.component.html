@@ -8,7 +8,7 @@
 
     <mat-divider></mat-divider>
 
-    <ng-container *ngFor="let item of dateMock">
+    <ng-container *ngFor="let item of teamDataMocks">
         <app-team-card-info
             [teamData]="item" (click)="onDetail(item)"
         >
