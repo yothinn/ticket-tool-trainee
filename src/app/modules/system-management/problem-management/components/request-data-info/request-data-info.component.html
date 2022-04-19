@@ -1,1 +1,34 @@
-<p>request-data-info works!</p>
+<div>
+    <button class="flex-initial" mat-flat-button color="primary" [matMenuTriggerFor]="requestDataMenu">
+        Add Request Data
+    </button>
+
+    <mat-menu #requestDataMenu="matMenu" class="member-menu">
+        <div fxLayout="column" fxLayoutGap="0.5em">
+            <mat-checkbox 
+            *ngFor="let item of [1,1,1,1,1,2] " 
+            (click)="$event.stopPropagation()" 
+            >
+                <div fxLayout="row" fxLayoutGap="0.5em">
+                    <button mat-icon-button class="user-button" fxLayoutAlign="center center">
+                        ddddd
+                    </button>
+                    <!-- <span fxLayoutAlign="start center">
+                        ddd
+                    </span> -->
+                </div>
+            </mat-checkbox>
+        </div>
+
+        <div fxFlex fxLayout="row" fxLayoutGap="0.5em" fxLayoutAlign="end center">
+            <button mat-raised-button color="primary" >
+                Cancel
+            </button>
+            <button mat-raised-button >
+                Select
+            </button>
+           
+        </div>
+        
+    </mat-menu>
+</div>
