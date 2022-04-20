@@ -1,7 +1,7 @@
 <div class="flex flex-col w-full h-full p-1">
-    <div class="flex flex-row mt-0 mb-2 p-2">
-        <h1 class="flex-auto text-left mr-4">Add Problem to team : Team Name 1</h1>
-        <button class="flex-initial text-right " mat-icon-button (click)="close()">
+    <div class="flex flex-row p-2 items-center">
+        <h1 class="flex-auto justify-start mr-4">Add Problem to team : Team Name 1</h1>
+        <button class="flex-initial justify-center" mat-icon-button (click)="close()">
             <mat-icon>close</mat-icon>
         </button>
     </div>
@@ -32,7 +32,9 @@
                 border-neutral-300 hover:bg-gray-300"
         >
             <div>
-                <mat-checkbox></mat-checkbox>
+                <mat-checkbox>
+                    
+                </mat-checkbox>
                 <span>
                     {{item.firstName + ' ' + item.lastName}}
                 </span>

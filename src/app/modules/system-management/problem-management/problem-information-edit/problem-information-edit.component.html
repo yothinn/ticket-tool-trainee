@@ -1,23 +1,31 @@
 <div class="flex flex-col w-full h-full">
-    <div class="flex flex-row  pt-2 pb-2">
+    <div class="flex flex-row w-full pt-2 pb-2 items-center">
         <h1 class="flex-auto">Create Problem</h1>
-        <mat-slide-toggle class="flex-initial">
+        <mat-slide-toggle class="flex-initial pr-5">
             <span>Status : Active</span>
         </mat-slide-toggle>
     </div>
 
     <mat-divider></mat-divider>
 
-    <div class="flex flex-wrap gap-2 mb-2">
-        <app-problem-info-edit class="p-1 border-2 border-gray-300 rounded flex-auto ">
-        </app-problem-info-edit>
+    <div class="flex flex-row gap-2 mb-2">
+        <div class="grid grid-cols-2 w-full gap-1">
+            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
+                <app-problem-info-edit>
 
-        <app-problem-control-edit class=" p-1 border-2 border-gray-300 rounded flex-auto">
-        </app-problem-control-edit>
+                </app-problem-info-edit>
+            </div>
+            
+            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
+                <app-problem-control-edit>
+
+                </app-problem-control-edit>
+            </div>
+        </div>
     </div>
 
-    <div class="flex flex-col p-1 mb-2 border-2 border-gray-300 rounded">
-        <div class="flex flex-row items-center">
+    <div class="flex flex-col mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
+        <div class="flex items-center mb-1">
             <h1 class="flex-auto">Request Data</h1>
             <app-request-data-menu 
                 class="flex-initial"
@@ -28,17 +36,21 @@
 
         <mat-divider></mat-divider>
 
-        <app-request-data-edit></app-request-data-edit>
+        <!-- Content Request Data -->
+        <app-request-data-edit>
 
+        </app-request-data-edit>
     </div>
 
-    <div class="flex flex-row gap-2">
+    <div class="flex flex-row mt-2 mb-2 gap-2">
         <span>External Operation</span>
-        <mat-slide-toggle class="flex-initial"></mat-slide-toggle>
+        <mat-slide-toggle class="flex-initial">
+
+        </mat-slide-toggle>
     </div>
     
-    <div class="flex flex-col mb-2 p-1 border-2 border-gray-300 rounded">
-        <div class="flex flex-row items-center">
+    <div class="flex flex-col mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
+        <div class="flex items-center mb-1">
             <h1 class="flex-auto">Team Owner</h1>
             <button mat-flat-button color="primary"
                 (click)="openTeamOwnerDialog()" class="flex-initial"
@@ -49,11 +61,14 @@
 
         <mat-divider></mat-divider>
 
-        <app-team-owner-edit></app-team-owner-edit>
+        <!-- Content Team Owner -->
+        <app-team-owner-edit>
+
+        </app-team-owner-edit>
 
     </div>
 
-    <div class="flex flex-row justify-end gap-2">
+    <div class="flex flex-row justify-end gap-4 pr-4">
         <button mat-flat-button color="primary">
             Cancel
         </button>
