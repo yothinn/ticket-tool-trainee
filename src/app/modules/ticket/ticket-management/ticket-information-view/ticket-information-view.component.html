@@ -1,9 +1,11 @@
 <div class="flex flex-col w-full h-full">
     <div class="flex flex-row pt-2 pb-2 items-center gap-2">
         <h1 class="flex-auto">Ticket No : TK 0000000</h1>
-        <button mat-flat-button class="flex-initial text-center" color="primary">
-            Analyze
-        </button>
+        <button mat-flat-button color="primary" 
+                    (click)="openTicketDialog()" class="flex-initial"
+                >
+                    Analyze
+                </button>
         <button mat-icon-button class="flex-initial">
             <mat-icon>close</mat-icon>
         </button>
@@ -17,19 +19,25 @@
         <app-ticket-info-view>
 
         </app-ticket-info-view>
+
     </div>
 
     <div class="flex flex-row mt-2 mb-2">
         <div class="grid grid-cols-2 w-full gap-1">
             <div class="mr-1 p-1 border-2 border-gray-300 rounded">
+                <h1 class="mb-1">Ticket Information</h1>
+
+                <mat-divider></mat-divider>
 
                 <app-ticket-order-info-view>
-
                 </app-ticket-order-info-view>
 
             </div>
 
             <div class="mr-1 p-1 border-2 border-gray-300 rounded">
+                <h1 class="mb-1">Contact Information</h1>
+
+                <mat-divider></mat-divider>
 
                 <app-ticket-contact-info-view>
 
@@ -38,5 +46,4 @@
             </div>
         </div>
     </div>
-
 </div>

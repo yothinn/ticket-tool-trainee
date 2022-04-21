@@ -38,6 +38,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
         link : '/system/problem-management'
     },
     {
+        id   : 'problem-category',
+        title: 'Problem Category',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/system/problem-category'
+    },
+    {
         id   : 'team-management',
         title: 'Team Management',
         type : 'basic',

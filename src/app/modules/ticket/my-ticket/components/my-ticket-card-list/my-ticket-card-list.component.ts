@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class MyTicketCardListComponent implements OnInit {
 
-  @Output() selectTeam = new EventEmitter<any>();
+  @Output() selectMyTicket = new EventEmitter<any>();
 
   dateMock: any[];
 
@@ -16,408 +16,129 @@ export class MyTicketCardListComponent implements OnInit {
   ngOnInit(): void {
     this.dateMock = [
       {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
+        myTicketTk: 'TK0000000001',
+        myTicketCategcry: 'Categcry',
+        myTicketName: 'Ticket Problem Name 1',
+        myTicketCat: 'Product Problem',
+        status: {
+        data: 'Created',
+        Name: 'Status'
+      },
         created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+          date: '10 Mar 2022 20:00',
+          Name: 'Opened'
         }
       },
       {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        myTicketTk: 'TK0000000002',
+        myTicketCategcry: 'Categcry',
+        myTicketName: 'Ticket Problem Name 2',
+        myTicketCat: 'Other Problem',
+        status: {
+          data: 'Created',
+          Name: 'Status'
         },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        created: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Waited to approne'
         }
       },
       {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        myTicketTk: 'TK0000000003',
+        myTicketCategcry: 'Categcry',
+        myTicketName: 'Ticket Problem Name 3',
+        myTicketCat: 'Network Problem',
+        status: {
+          data: 'Created',
+          Name: 'Status'
         },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        created: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Assigned'
         }
       },
       {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        myTicketTk: 'TK0000000004',
+        myTicketCategcry: 'Categcry',
+        myTicketName: 'Ticket Problem Name 4',
+        myTicketCat: 'Product Problem',
+        status: {
+          data: 'Created',
+          Name: 'Status'
         },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        created: {
+          date: '10 Mar 2022 20:00',
+          Name: 'On process'
         }
       },
       {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        myTicketTk: 'TK0000000005',
+        myTicketCategcry: 'Categcry',
+        myTicketName: 'Ticket Problem Name 5',
+        myTicketCat: 'Other Problem',
+        status: {
+          data: 'Created',
+          Name: 'Status'
         },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        created: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Opened'
         }
       },
       {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        myTicketTk: 'TK0000000006',
+        myTicketCategcry: 'Categcry',
+        myTicketName: 'Ticket Problem Name 6',
+        myTicketCat: 'Network Problem',
+        status: {
+          data: 'Created',
+          Name: 'Status'
         },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        created: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Waited to approne'
         }
       },
       {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        myTicketTk: 'TK0000000007',
+        myTicketCategcry: 'Categcry',
+        myTicketName: 'Ticket Problem Name 7',
+        myTicketCat: 'Product Problem',
+        status: {
+          data: 'Created',
+          Name: 'Status'
         },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        created: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Assigned'
         }
       },
       {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        myTicketTk: 'TK0000000008',
+        myTicketCategcry: 'Categcry',
+        myTicketName: 'Ticket Problem Name 8',
+        myTicketCat: 'Product Problem',
+        status: {
+          data: 'Created',
+          firstName: 'Status'
         },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        created: {
+          date: '10 Mar 2022 20:00',
+          firstName: 'On process'
         }
       },
       {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+        myTicketTk: 'TK0000000009',
+        myTicketCategcry: 'Categcry',
+        myTicketName: 'Ticket Problem Name 9',
+        myTicketCat: 'Product Problem',
+        status: {
+          data: 'Created',
+          Name: 'Status'
         },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
         created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        }
-      },
-      {
-        teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
-        status: 'Active',
-        created: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
-        },
-        updated: {
-          date: '10/09/2022',
-          firstName: 'Test1',
-          lastName: 'Test2'
+          date: '10 Mar 2022 20:00',
+          Name: 'Opened'
         }
       },
     ];
@@ -425,6 +146,6 @@ export class MyTicketCardListComponent implements OnInit {
 
   onDetail(item: any): void {
     console.log(item);
-    this.selectTeam.emit(item);
+    this.selectMyTicket.emit(item);
   }
 }

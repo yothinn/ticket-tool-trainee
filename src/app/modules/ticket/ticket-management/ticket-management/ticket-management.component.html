@@ -1,32 +1,33 @@
-
-<mat-drawer-container class=" w-full h-full">
-    <mat-drawer-content class="flex flex-col h-full p-4">
-        <div class="flex flex-row w-full">
-                <mat-form-field appearance="outline" 
-                    class="flex-auto mt-auto mb-auto mr-4"
-                >
+<mat-drawer-container class="w-full h-full">
+    <mat-drawer-content class="flex flex-col h-full w-full">
+        <div class="flex flex-row h-15 ">
+            <div class="w-5/6 mt-auto mb-auto mr-4">
+                <mat-form-field appearance="outline" class="w-full">
                     <mat-label>Search</mat-label>
                     <input matInput placeholder="Input">
                 </mat-form-field>
+            </div>
 
-                <mat-form-field appearance="outline"
+            <mat-form-field appearance="outline"
                 class="flex-initial mt-auto mb-auto mr-4"
-                >
-                    <mat-label>Sort By</mat-label>
-                    <mat-select>
-                      <mat-option value="one">First option</mat-option>
-                      <mat-option value="two">Second option</mat-option>
-                    </mat-select>
-                  </mat-form-field>
+            >
+                <mat-label>Sort By</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
 
         <app-ticket-card-list (selectTeam)="onDetail($event)">
 
         </app-ticket-card-list>
 
+        <app-paginator></app-paginator>
+
     </mat-drawer-content>
 
-    <mat-drawer #drawerDetail style="width: 50%;" 
+    <mat-drawer #drawerDetail class="w-3/5" 
         [mode]="isViewMode ? 'side' : 'over' " position="end"
     >
         <div class="p-2">
