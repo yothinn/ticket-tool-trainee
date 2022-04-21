@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { TicketAnalyzeDialogComponent } from '../dialogs/ticket-analyze-dialog/ticket-analyze-dialog.component';
+
 
 @Component({
   selector: 'app-ticket-information-view',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TicketInformationViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
   }
 
+    openTicketDialog(): void {
+      const dialogRef = this.dialog.open(TicketAnalyzeDialogComponent, {
+        height:'580px',
+        width: '80%'
+        // data: {},
+      });
+  
+      dialogRef.afterClosed().subscribe((result: any) => {
+        console.log('The dialog was closed');
+        // this.animal = result;
+      });
+    }
 }

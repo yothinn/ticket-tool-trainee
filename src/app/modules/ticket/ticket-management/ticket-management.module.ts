@@ -9,6 +9,8 @@ import { TicketInformationViewComponent } from './ticket-information-view/ticket
 import { TicketCardListComponent } from './components/ticket-card-list/ticket-card-list.component';
 import { TicketCardInfoComponent } from './components/ticket-card-info/ticket-card-info.component';
 import { SharedModule } from 'app/shared/shared.module';
+import { TicketAnalyzeDialogComponent } from './dialogs/ticket-analyze-dialog/ticket-analyze-dialog.component';
+
 
 
 
@@ -20,12 +22,15 @@ import { SharedModule } from 'app/shared/shared.module';
     TicketInfoViewComponent,
     TicketInformationViewComponent,
     TicketCardListComponent,
-    TicketCardInfoComponent
+    TicketCardInfoComponent,
+    TicketAnalyzeDialogComponent
+    
   ],
   imports: [
     CommonModule,
     TicketManagementRoutingModule,
     SharedModule
+    
   ]
 })
 export class TicketManagementModule { }

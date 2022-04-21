@@ -1,0 +1,83 @@
+<div class="flex flex-col w-full h-full">
+    <div class="flex flex-row p-2">
+        <h1 class="flex-auto text-left text-2xl font-bold">Ticket Analyze</h1>
+        <button class="flex-initial text-right " mat-icon-button (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="flex flex-row w-full pt-3 ">
+        <div class="flex flex-row w-full ">
+            <div class="grid grid-cols-2 w-full">
+                <div>
+                    <p class="break-all">Ticket No:</p>
+                    <p class="pb-15 break-all">Reason for reject</p>
+                    <p class="break-all">Last Update:</p>
+                </div>
+                <div>
+                    <p class="break-all">T0000000001</p>
+                    <p class="break-all">Text............</p>
+                    <p class="break-all">Description 1 </p>
+                    <p class="break-all">Description line 2</p>
+                    <p class="break-all">Description line 2</p>
+                    <p class="break-all">10 Mar 2022 20.00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col w-full ">
+            <div class="grid grid-cols ">
+                <p>Problem Name</p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Please Select</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                
+                <p>Problem Category</p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Please Select</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <p>Criticality</p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Please Select</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <p>Assign to team</p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Please Select</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-row justify-end gap-3 ">
+        <button mat-flat-button class="flex-initial" color="primary">
+            Cancel
+        </button>
+        <button mat-flat-button class="flex-initial"  color="primary">
+            Save
+        </button>
+    </div>
+</div>
