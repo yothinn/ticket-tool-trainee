@@ -6,12 +6,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./problem-expansion.component.scss']
 })
 export class ProblemExpansionComponent implements OnInit {
-  @Input() data:object;
+  @Input() data: any;
 
   constructor() { }
-  
+
   ngOnInit(): void {
-    console.log(this.data)
+    console.log(this.data);
   }
 
 }

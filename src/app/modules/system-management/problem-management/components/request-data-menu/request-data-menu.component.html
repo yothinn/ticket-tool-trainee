@@ -1,0 +1,26 @@
+<div>
+    <button mat-flat-button color="primary" [matMenuTriggerFor]="requestDataMenu">
+        Add Request Data
+    </button>
+
+    <mat-menu #requestDataMenu="matMenu">
+        <div class="flex flex-col p-2 gap-2">
+            <mat-checkbox 
+                *ngFor="let item of requestData " 
+                (click)="$event.stopPropagation()"
+                (change)="onSelectData($event, item)"
+            >
+                <spam> {{item}} </spam>
+            </mat-checkbox>
+
+            <div class="flex flex-row justify-end gap-2" >
+                <button mat-flat-button>
+                    Cancel
+                </button>
+                <button mat-flat-button  color="primary">
+                    Select
+                </button>
+            </div>
+        </div>
+    </mat-menu>
+</div>

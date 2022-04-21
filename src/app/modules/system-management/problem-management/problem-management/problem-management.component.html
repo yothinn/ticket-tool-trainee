@@ -1,31 +1,43 @@
 <mat-drawer-container class="w-full h-full">
-    <mat-drawer-content class="flex flex-col h-full w-full">
-        <div class="flex flex-row h-15 ">
-            <div class="w-5/6 mt-auto mb-auto mr-4">
-                <mat-form-field appearance="outline" class="w-full">
-                    <mat-label>Search</mat-label>
-                    <input matInput placeholder="Input">
-                </mat-form-field>
-            </div>
-
-            <div class="flex w-1/6 m-auto justify-center">
-                <button mat-flat-button color="primary" (click)="onCreate()">
-                    Create
-                </button>
-            </div>
+    <mat-drawer-content class="flex flex-col h-full p-4">
+        <div class="flex flex-row w-full">
+            <mat-form-field appearance="outline" 
+                class="flex-auto mt-auto mb-auto mr-4"
+            >
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="Input">
+            </mat-form-field>
+            <button mat-flat-button color="primary"
+                (click)="onCreate()" class="flex-initial"
+            >
+                Create
+            </button>
         </div>
-        <app-filter-button  [data]="button"></app-filter-button>
-        <app-problem-card-list (selectPageEventChanged)="onDetail($event)"></app-problem-card-list>
-        <!-- <app-team-card-info (selectTeam)="onDetail($event)"></app-team-card-info> -->
 
-        <!-- <div style="background-color: aqua; ">item per page</div> -->
-        <app-paginator></app-paginator>
+        <app-filter-button  [data]="button">
+
+        </app-filter-button>
+
+        <app-problem-card-list (selectProblemItem)="onDetail($event)">
+
+        </app-problem-card-list>
+      
+        <app-paginator>
+
+        </app-paginator>
+        
     </mat-drawer-content>
 
-    <mat-drawer #drawerDetail class="w-2/4" [mode]="isViewMode ? 'side' : 'over' " position="end">
-        <div class="p-4">
-            <app-problem-information-view *ngIf="isViewMode"></app-problem-information-view>
-            <app-problem-information-edit *ngIf="!isViewMode"></app-problem-information-edit>
+    <mat-drawer #drawerDetail style="width: 50%;"  
+        [mode]="isViewMode ? 'side' : 'over' " position="end"
+    >
+        <div class="p-2">
+            <app-problem-information-view *ngIf="isViewMode">
+
+            </app-problem-information-view>
+            <app-problem-information-edit *ngIf="!isViewMode">
+
+            </app-problem-information-edit>
         </div>
     </mat-drawer>
 

@@ -1,14 +1,14 @@
 <div class="grid grid-cols-5 pt-2 pb-2 hover:bg-gray-300 cursor-pointer">
-        <p class="grid grid-cols-1 col-span-2">
+        <p class="flex flex-col col-span-2">
             <span>
                 {{teamData.teamName}}
             </span>
             <span>
-                {{teamData.teamDiscription}}
+                {{teamData.teamDescription}}
             </span>
         </p>
         <p>{{teamData.status}}</p>
-        <p class="grid grid-cols-1">
+        <p class="flex flex-col">
             <span>
                 {{teamData.created.firstName + ' ' + teamData.created.lastName}}
             </span>
@@ -16,7 +16,7 @@
                 {{ teamData.created.date}}
             </span>
         </p>
-        <p class="grid grid-cols-1">
+        <p class="flex flex-col">
             <span>
                 {{teamData.updated.firstName + ' ' + teamData.updated.lastName}}
             </span>
@@ -25,5 +25,3 @@
             </span>
         </p>
 </div>
-
-<mat-divider></mat-divider>

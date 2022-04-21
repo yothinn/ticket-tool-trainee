@@ -1,6 +1,6 @@
 <div class="flex flex-col w-full h-full p-1">
     <div class="flex flex-row p-2 items-center">
-        <h1 class="flex-auto justify-start mr-4">Assign Problem to team : Team Name 1</h1>
+        <h1 class="flex-auto justify-start mr-4">Select Team Owner :</h1>
         <button class="flex-initial justify-center" mat-icon-button (click)="close()">
             <mat-icon>close</mat-icon>
         </button>
@@ -15,40 +15,30 @@
             <mat-label>Search</mat-label>
             <input matInput placeholder="Input">
         </mat-form-field>
-        <p class="flex-initial">0 person selected</p>
     </div>
 
     <div class="flex flex-col h-5/6 mb-6 overflow-auto">
-        <div class="grid grid-cols-5 p-4 font-bold  
-            border-b-2 border-neutral-300"
-        >
-            <div>No</div>
-            <div>Problem Name</div>
+        <div class="grid grid-cols-3 p-4 font-bold  
+            border-b-2 border-neutral-300">
+            <div>Team Name</div>
             <div>Description</div>
-            <div>Problem Cetegory</div>
-            <div>Criticallty</div>
+            <div>Total of Members</div>
         </div>
 
-        <div *ngFor="let item of data" 
-            class="grid grid-cols-5 p-4 border-b-2 
+        <div *ngFor="let item of teamOwnerDataMocks" 
+            class="grid grid-cols-3 p-4 border-b-2 
                 border-neutral-300 hover:bg-gray-300"
         >
-        <div> 
-            <mat-checkbox></mat-checkbox> 
-            <span>
-                {{item.No}}
-            </span>
-        </div>
-        <div>{{item.problemName}}</div>
-        <div>{{item.description}}</div>
-        <div>{{item.category}}</div>
-        <app-criticality-icon 
-                [text]="item.criticality.text" 
-                [iconName]="item.criticality.iconName" 
-                [color]="item.criticality.color"
-                [mode]="criticalityMode"
-            >                       
-        </app-criticality-icon>
+            <div>
+                <mat-radio-button>
+
+                </mat-radio-button>
+                <span>
+                    {{item.name}}
+                </span>
+            </div>
+            <div>{{item.description}}</div>
+            <div>{{item.total}}</div>
         </div>
     </div>
 
