@@ -7,17 +7,17 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class TeamCardListComponent implements OnInit {
 
-  @Output() selectTeam = new EventEmitter<any>();
+  @Output() selectTeamItem = new EventEmitter<any>();
 
-  dateMock: any[];
+  teamDataMocks: any[];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.dateMock = [
+    this.teamDataMocks = [
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -32,7 +32,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -47,7 +47,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -62,7 +62,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -77,7 +77,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -92,7 +92,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -107,7 +107,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -122,7 +122,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -137,7 +137,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -152,7 +152,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -167,7 +167,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -182,7 +182,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -197,7 +197,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -212,7 +212,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -227,7 +227,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -242,7 +242,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -257,7 +257,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -272,7 +272,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -287,7 +287,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -302,7 +302,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -317,7 +317,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -332,7 +332,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -347,7 +347,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -362,7 +362,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -377,7 +377,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -392,7 +392,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -407,7 +407,7 @@ export class TeamCardListComponent implements OnInit {
       },
       {
         teamName: 'Team Name1',
-        teamDiscription: 'Team Name Description',
+        teamDescription: 'Team Name Description',
         status: 'Active',
         created: {
           date: '10/09/2022',
@@ -425,7 +425,7 @@ export class TeamCardListComponent implements OnInit {
 
   onDetail(item: any): void {
     console.log(item);
-    this.selectTeam.emit(item);
+    this.selectTeamItem.emit(item);
   }
 
 }

@@ -8,12 +8,11 @@ import { CriticalityMode } from 'app/shared/components/criticality-icon/critical
   styleUrls: ['./problem-dialog.component.scss']
 })
 export class ProblemDialogComponent implements OnInit {
-  criticalityMode = CriticalityMode.Medium;
+  criticalityMode = CriticalityMode.medium;
   data: any[];
 
   constructor(
     public dialogRef: MatDialogRef<ProblemDialogComponent>
-    
   ) { }
 
   ngOnInit(): void {

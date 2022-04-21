@@ -1,60 +1,50 @@
+<div class="flex justify-end mt-5 bg-gray-200">
+    <div class="items-center">
 
-<div class="flex justify-end" style="background-color: rgb(138, 138, 138);">
-    <div class="flex justify-end basis-1/5 items-center h-11"  style="background-color: rgb(207, 207, 207);">
-     
         <span class="mr-2">
-             Items Per Page
+            Items Per Page
         </span>
-        <mat-form-field class="mt-5 w-14" appearance="outline">
-            <mat-select value="1">
-                <mat-option 
-                    *ngFor="let item of pageSize" 
-                    value="1" 
-                    (click)="onPageEvent(item)"
-                >
+        <mat-form-field class="w-15" appearance="outline">
+            <mat-select value="1" class="pt-2">
+                <mat-option *ngFor="let item of pageSize" value="1" (click)="onPageEvent(item)">
                     {{item}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
-   
+
     </div>
 
-    
-    <div class="flex  basis-1/5 items-center" style="background-color: rgb(207, 207, 207)">
-        <mat-icon *ngIf="statusBackPage"  (click)="plusMinusPage(false)" >
+    <div class="flex items-center">
+        <mat-icon *ngIf="statusBackPage" (click)="plusMinusPage(false)">
             arrow_left
         </mat-icon>
 
-        <mat-icon  *ngIf="!statusBackPage"  style="opacity: 0.4;">
+        <mat-icon *ngIf="!statusBackPage" style="opacity: 0.4;">
             arrow_left
         </mat-icon>
-        
-        
-        <div *ngIf="statusPage === true" > .... </div>
-        
+
+        <div *ngIf="statusPage === true"> .... </div>
 
         <button *ngFor="let item of numberArray; let i = index" mat-icon-button>
-            <div class="mx-3" *ngIf="i < maxPageNumber "> 
-                <div (click)="clickPageNo(item.number)" *ngIf="statusPage === false "> 
-                    {{item.number}} 
+            <div class="mx-3" *ngIf="i < maxPageNumber ">
+                <div (click)="clickPageNo(item.number)" *ngIf="statusPage === false ">
+                    {{item.number}}
                 </div>
                 <div (click)="clickPageNo(item.number+nextPageNumber)" 
-                    *ngIf="item.number+nextPageNumber > 1 && 
-                    statusPage === true && 
-                    item.number+nextPageNumber <= pageNumber"
-                >
-                   
-                    {{item.number+nextPageNumber}} 
+                    *ngIf="item.number+nextPageNumber 
+                    > 
+                    1 && statusPage === true && 
+                    item.number+nextPageNumber <= pageNumber">
+                    {{item.number+nextPageNumber}}
                 </div>
             </div>
         </button>
-      
-        
-        <div  *ngIf="seletePageNo <= maxPageNumber && statusPage === false " > .... </div>
-        
+
+        <div *ngIf="seletePageNo <= maxPageNumber && statusPage === false "> .... </div>
+
         <mat-icon *ngIf="statusNextPage" (click)="plusMinusPage(true)">arrow_right</mat-icon>
-        <mat-icon *ngIf="!statusNextPage"  style="opacity: 0.4;">arrow_right</mat-icon>
- 
+        <mat-icon *ngIf="!statusNextPage" style="opacity: 0.4;">arrow_right</mat-icon>
+
     </div>
 
 </div>

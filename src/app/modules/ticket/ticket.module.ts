@@ -5,12 +5,16 @@ import { SharedModule } from 'app/shared/shared.module';
 
 
 
+
+
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     TicketRoutingModule,
-    SharedModule
+    SharedModule,
+    
+    
   ]
 })
 export class TicketModule { }

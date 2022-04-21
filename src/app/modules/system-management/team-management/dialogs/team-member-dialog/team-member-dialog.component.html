@@ -1,31 +1,40 @@
 <div class="flex flex-col w-full h-full p-1">
-    <div class="flex flex-row  mt-0 mb-2 p-2">
-        <h1 class="flex-auto text-left mr-4">Add Problem to team : Team Name 1</h1>
-        <button class="flex-initial text-right " mat-icon-button (click)="close()">
+    <div class="flex flex-row p-2 items-center">
+        <h1 class="flex-auto justify-start mr-4">Add Problem to team : Team Name 1</h1>
+        <button class="flex-initial justify-center" mat-icon-button (click)="close()">
             <mat-icon>close</mat-icon>
         </button>
     </div>
 
     <mat-divider class="mb-2"></mat-divider>
 
-    <div class="flex-row">
-        <mat-form-field appearance="outline" class="w-4/6 mr-4">
+    <div class="flex flex-row w-full items-center">
+        <mat-form-field appearance="outline" 
+            class="flex-auto mt-auto mb-auto mr-4"
+        >
             <mat-label>Search</mat-label>
             <input matInput placeholder="Input">
         </mat-form-field>
-        <span class="w-2/6 text-center">0 person selected</span>
+        <p class="flex-initial">0 person selected</p>
     </div>
 
     <div class="flex flex-col h-5/6 mb-6 overflow-auto">
-        <div class="grid grid-cols-3 p-4 font-bold  border-b-2 border-neutral-300">
+        <div class="grid grid-cols-3 p-4 font-bold  
+            border-b-2 border-neutral-300"
+        >
             <div>Name</div>
             <div>Email</div>
             <div>Member fo</div>
         </div>
 
-        <div *ngFor="let item of dataMock" class="grid grid-cols-3 p-4 border-b-2 border-neutral-300 hover:bg-gray-300">
+        <div *ngFor="let item of dataMock" 
+            class="grid grid-cols-3 p-4 border-b-2 
+                border-neutral-300 hover:bg-gray-300"
+        >
             <div>
-                <mat-checkbox></mat-checkbox>
+                <mat-checkbox>
+                    
+                </mat-checkbox>
                 <span>
                     {{item.firstName + ' ' + item.lastName}}
                 </span>
