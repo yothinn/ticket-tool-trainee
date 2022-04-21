@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-my-ticket-card-info',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-ticket-card-info.component.scss']
 })
 export class MyTicketCardInfoComponent implements OnInit {
+  @Input() myTicketData?: any;
 
   constructor() { }
 
