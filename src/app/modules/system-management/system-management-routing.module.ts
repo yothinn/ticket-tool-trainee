@@ -8,6 +8,10 @@ const routes: Routes = [
         loadChildren: () => import('./problem-management/problem-management.module').then(m => m.ProblemManagementModule)
     },
     {
+        path: 'problem-category',
+        loadChildren: () => import('./problem-category/problem-category.module').then(m => m.ProblemCategoryModule)
+    },
+    {
         path: 'team-management',
         loadChildren: () => import('./team-management/team-management.module').then(m => m.TeamManagementModule)
     }

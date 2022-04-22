@@ -18,7 +18,6 @@ import { TeamOwnerEditComponent } from './components/team-owner-edit/team-owner-
 import { RequestDataDialogComponent } from './dialogs/request-data-dialog/request-data-dialog.component';
 import { TeamOwnerDialogComponent } from './dialogs/team-owner-dialog/team-owner-dialog.component';
 import { RequestDataMenuComponent } from './components/request-data-menu/request-data-menu.component';
-// import { RequestDataInfoComponent } from './components/request-data-menu/request-data-menu.component';
 
 
 
@@ -40,7 +39,6 @@ import { RequestDataMenuComponent } from './components/request-data-menu/request
     RequestDataDialogComponent,
     TeamOwnerDialogComponent,
     RequestDataMenuComponent
-    // RequestDataInfoComponent
   ],
   imports: [
     CommonModule,
