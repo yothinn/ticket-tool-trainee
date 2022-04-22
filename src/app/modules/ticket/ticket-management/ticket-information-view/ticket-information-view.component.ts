@@ -20,7 +20,7 @@ export class TicketInformationViewComponent implements OnInit {
     openTicketDialog(): void {
       const dialogRef = this.dialog.open(TicketAnalyzeDialogComponent, {
         height:'580px',
-        width: '80%'
+        width: '60%'
         // data: {},
       });
   

@@ -10,6 +10,7 @@ import { TicketCardListComponent } from './components/ticket-card-list/ticket-ca
 import { TicketCardInfoComponent } from './components/ticket-card-info/ticket-card-info.component';
 import { SharedModule } from 'app/shared/shared.module';
 import { TicketAnalyzeDialogComponent } from './dialogs/ticket-analyze-dialog/ticket-analyze-dialog.component';
+import { TicketChangeDialogComponent } from './dialogs/ticket-change-dialog/ticket-change-dialog.component';
 
 
 
@@ -23,7 +24,8 @@ import { TicketAnalyzeDialogComponent } from './dialogs/ticket-analyze-dialog/ti
     TicketInformationViewComponent,
     TicketCardListComponent,
     TicketCardInfoComponent,
-    TicketAnalyzeDialogComponent
+    TicketAnalyzeDialogComponent,
+    TicketChangeDialogComponent
     
   ],
   imports: [
