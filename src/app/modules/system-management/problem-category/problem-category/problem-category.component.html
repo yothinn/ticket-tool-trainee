@@ -1,1 +1,26 @@
-<p>problem-category works!</p>
+
+<mat-drawer-container class=" w-full h-full">
+    <mat-drawer-content class="flex flex-col p-4">
+        <div class="flex flex-row ">
+                <mat-form-field appearance="outline" 
+                    class="flex-auto mt-auto mb-auto mr-10"
+                >
+                    <mat-label>Search</mat-label>
+                    <input matInput placeholder="Input">
+                </mat-form-field>
+
+                <button mat-flat-button color="primary">
+                Add Problem Category
+                </button>
+        </div>
+
+        <app-problem-category-list>
+
+        </app-problem-category-list>
+
+        <app-paginator>
+
+        </app-paginator>
+
+    </mat-drawer-content>
+</mat-drawer-container>
