@@ -1,0 +1,50 @@
+<div class="flex flex-col w-full h-full gap-3">
+    <div class="flex flex-row items-center ">
+        <h1 class="flex-auto">Chang Status</h1>
+        <button class="flex-initial" mat-icon-button (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="grid grid-cols-3 gap-3">
+        <p>Ticket No :</p>
+        <p>Problem Name :</p>
+        
+        <p>123456789123</p>
+        <p>Ticket Problem</p>
+    </div>
+
+        <mat-radio-group (change)="onChangeStatus($event)" aria-label="Option">
+            <mat-radio-button value="Closed">Closed</mat-radio-button>
+            <mat-radio-button value="Unresolved">Unresolved</mat-radio-button>
+        </mat-radio-group>
+    
+
+    <div class="flex flex-col w-full ">        
+        <p>Problem Cause</p>
+        <mat-form-field appearance="outline">
+            <mat-label>Please Select</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let Cause of Causes" [value]="Cause.value">
+                    {{Cause.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+                
+        <mat-label>Reason</mat-label>
+        <mat-form-field appearance="outline" >
+            <textarea matInput [rows]="3"></textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="flex flex-row justify-end gap-3 ">
+        <button mat-flat-button color="primary">
+            Cancel
+        </button>
+        <button mat-flat-button color="primary">
+            Save
+        </button>
+    </div>
+</div>

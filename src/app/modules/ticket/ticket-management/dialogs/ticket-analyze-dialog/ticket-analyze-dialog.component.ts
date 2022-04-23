@@ -8,10 +8,10 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class TicketAnalyzeDialogComponent implements OnInit {
 
-  foods: any[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
+  problems: any[] = [
+    {value: 'problem-0', viewValue: 'problem1'},
+    {value: 'problem-1', viewValue: 'problem2'},
+    {value: 'problem-2', viewValue: 'problem3'},
   ];
   
   constructor(
