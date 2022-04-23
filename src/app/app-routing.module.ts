@@ -8,9 +8,6 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: LayoutComponent,
-    data: {
-      layout: 'dense'
-    },
     resolve: {
       initialData: InitialDataResolver,
     },
@@ -19,9 +16,6 @@ const routes: Routes = [
   {
     path: 'reports',
     component: LayoutComponent,
-    data: {
-      layout: 'dense'
-    },
     resolve: {
       initialData: InitialDataResolver,
     },
@@ -30,9 +24,6 @@ const routes: Routes = [
   {
     path: 'ticket',
     component: LayoutComponent,
-    data: {
-      layout: 'dense'
-    },
     resolve: {
       initialData: InitialDataResolver,
     },
@@ -41,9 +32,6 @@ const routes: Routes = [
   {
     path: 'system',
     component: LayoutComponent,
-    data: {
-      layout: 'dense'
-    },
     resolve: {
       initialData: InitialDataResolver,
     },
@@ -52,9 +40,6 @@ const routes: Routes = [
   {
     path: 'profile',
     component: LayoutComponent,
-    data: {
-      layout: 'dense'
-    },
     resolve: {
       initialData: InitialDataResolver,
     },

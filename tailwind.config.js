@@ -12,7 +12,7 @@ const themePalettes = require('./theme-palettes');
  */
 const customPalettes = {
     brand: generatePalette('#2196F3'),
-    primaryTheme: generatePalette(themePalettes.primaryPalette),
+    appPrimaryTheme: generatePalette(themePalettes.primaryPalette),
 };
 
 /**
@@ -39,9 +39,14 @@ const themes = {
     },
     // Rest of the themes will use the 'default' as the base theme
     // and extend them with their given configuration
+    'ais': {
+        primary  : {
+            ...customPalettes.appPrimaryTheme,
+            DEFAULT: customPalettes.appPrimaryTheme[500]
+        },
+    },
     'brand' : {
-        // primary: customPalettes.brand
-        primary: customPalettes.primaryTheme
+        primary: customPalettes.brand
     },
     'teal'  : {
         primary: {
