@@ -2,6 +2,7 @@ const path = require('path');
 const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
 const generatePalette = require(path.resolve(__dirname, ('src/@fuse/tailwind/utils/generate-palette')));
+const themePalettes = require('./theme-palettes');
 
 /**
  * Custom palettes
@@ -10,7 +11,8 @@ const generatePalette = require(path.resolve(__dirname, ('src/@fuse/tailwind/uti
  * Tailwind-like color palettes automatically
  */
 const customPalettes = {
-    brand: generatePalette('#2196F3')
+    brand: generatePalette('#2196F3'),
+    primaryTheme: generatePalette(themePalettes.primaryPalette),
 };
 
 /**
@@ -38,7 +40,8 @@ const themes = {
     // Rest of the themes will use the 'default' as the base theme
     // and extend them with their given configuration
     'brand' : {
-        primary: customPalettes.brand
+        // primary: customPalettes.brand
+        primary: customPalettes.primaryTheme
     },
     'teal'  : {
         primary: {
