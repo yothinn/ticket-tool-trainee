@@ -5,6 +5,7 @@ import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
 import { Navigation } from 'app/core/navigation/navigation.types';
 import { NavigationService } from 'app/core/navigation/navigation.service';
+import { environment } from 'environments/environment';
 
 @Component({
     selector     : 'dense-layout',
@@ -16,6 +17,9 @@ export class DenseLayoutComponent implements OnInit, OnDestroy
     isScreenSmall: boolean;
     navigation: Navigation;
     navigationAppearance: 'default' | 'dense' = 'dense';
+
+    appName: string = environment.appName;
+
     private _unsubscribeAll: Subject<any> = new Subject<any>();
 
     /**
@@ -63,16 +67,10 @@ export class DenseLayoutComponent implements OnInit, OnDestroy
         this._fuseMediaWatcherService.onMediaChange$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(({matchingAliases}) => {
-                console.log(matchingAliases)
-
                 // Check if the screen is small
                 this.isScreenSmall = !matchingAliases.includes('sm');
-                console.log(this.isScreenSmall)
-                
-
                 // Change the navigation appearance
                 this.navigationAppearance = this.isScreenSmall ? 'dense' : 'default';
-                console.log(this.navigationAppearance)
             });
     }
 
@@ -102,7 +100,6 @@ export class DenseLayoutComponent implements OnInit, OnDestroy
 
         if ( navigation )
         {
-            console.log(navigation)
             // Toggle the opened status
             navigation.toggle();
         }
@@ -114,6 +111,5 @@ export class DenseLayoutComponent implements OnInit, OnDestroy
     toggleNavigationAppearance(): void
     {
         this.navigationAppearance = (this.navigationAppearance === 'default' ? 'dense' : 'default');
-        console.log(this.navigationAppearance)
     }
 }
