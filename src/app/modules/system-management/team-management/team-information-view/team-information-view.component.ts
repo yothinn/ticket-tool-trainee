@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-team-information-view',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamInformationViewComponent implements OnInit {
 
+  @Output() closed = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onClose(): void {
+    console.log('close');
+    this.closed.emit(undefined);
   }
 
 }

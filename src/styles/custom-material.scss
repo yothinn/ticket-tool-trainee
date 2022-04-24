@@ -1,12 +1,40 @@
-.mat-form-field-infix {
-    padding: 0.5em 0;
-    border-top: 0em solid transparent;
-}
+/*
+* Custom Angular material with ais theme
+*/
 
-.mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 0.7em 0 0.7em 0;
-}
 
-.mat-form-field-wrapper {
-    padding-bottom: 0em;
+/* mat-form-field */
+.mat-form-field.mat-form-field-appearance-outline {
+
+    & .mat-form-field-wrapper {
+        padding-bottom: 0em;
+
+        & .mat-form-field-infix {
+            padding: 0.4em 0 0.2em 0;
+            border-top: 0em solid transparent;
+    
+            input.mat-input-element {
+                color: var(--fuse-primary-500);
+    
+                &::placeholder {
+                    color: var(--fuse-primary-500) !important;
+                }    
+            }
+    
+        }
+
+        & .mat-form-field-suffix {
+            
+            .mat-icon {
+                color: var(--fuse-primary-500);
+                font-size: 1.25rem;
+            }
+        }
+
+        & .mat-form-field-flex {
+            & .mat-form-field-outline {
+                color: var(--fuse-primary-500) !important;
+            }
+        }
+    }
 }

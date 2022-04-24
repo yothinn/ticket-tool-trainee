@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { ProblemService } from 'app/core/problem/problem.service';
+import { Problem } from 'app/core/problem/problem.types';
 import { Filter } from 'app/shared/components/filter-button/filter-button-interface';
 
 @Component({
@@ -11,6 +13,7 @@ export class ProblemManagementComponent implements OnInit {
 
   @ViewChild('drawerDetail') drawerDetail: MatSidenav;
 
+  problems: Problem[] = [];
   isViewMode: boolean = false;
 
   button: Filter[] = [
@@ -19,7 +22,9 @@ export class ProblemManagementComponent implements OnInit {
     { name: 'inActive', total: 5 }
   ];
 
-  constructor() { }
+  constructor(
+    private problemService: ProblemService,
+  ) { }
 
   ngOnInit(): void {
   }

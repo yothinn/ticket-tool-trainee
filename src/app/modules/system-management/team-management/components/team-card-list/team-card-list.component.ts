@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class TeamCardListComponent implements OnInit {
 
-  @Output() selectTeamItem = new EventEmitter<any>();
+  @Output() selected = new EventEmitter<any>();
 
   teamDataMocks: any[];
 
@@ -425,7 +425,7 @@ export class TeamCardListComponent implements OnInit {
 
   onDetail(item: any): void {
     console.log(item);
-    this.selectTeamItem.emit(item);
+    this.selected.emit(item);
   }
 
 }
