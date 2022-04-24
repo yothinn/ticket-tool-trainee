@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, ReplaySubject, tap } from 'rxjs';
+import { Observable, of, ReplaySubject, tap } from 'rxjs';
 import { Navigation } from 'app/core/navigation/navigation.types';
+import { defaultNavigation, compactNavigation, futuristicNavigation, horizontalNavigation } from './navigation.data';
 
 @Injectable({
     providedIn: 'root'
@@ -38,10 +39,24 @@ export class NavigationService
      */
     get(): Observable<Navigation>
     {
-        return this._httpClient.get<Navigation>('api/common/navigation').pipe(
-            tap((navigation) => {
-                this._navigation.next(navigation);
-            })
-        );
+        const _navigation: Navigation = {
+            compact: compactNavigation,
+            default: defaultNavigation,
+            futuristic: futuristicNavigation,
+            horizontal: horizontalNavigation,
+        };
+
+        return of(_navigation).pipe(
+                tap((navigation) => {
+                    this._navigation.next(navigation);
+                })
+            );
+
+        // 24/4/2022 : Fuse not use
+        // return this._httpClient.get<Navigation>('api/common/navigation').pipe(
+        //     tap((navigation) => {
+        //         this._navigation.next(navigation);
+        //     })
+        // );
     }
 }

@@ -27,12 +27,14 @@ import { AppRoutingModule } from './app-routing.module';
         BrowserModule,
         BrowserAnimationsModule,
         AppRoutingModule,
-        // RouterModule.forRoot(appRoutes, routerConfig),
 
         // Fuse, FuseConfig & FuseMockAPI
         FuseModule,
         FuseConfigModule.forRoot(appConfig),
-        FuseMockApiModule.forRoot(mockApiServices),
+
+        // 24/4/2022: Fuse, not use
+        // RouterModule.forRoot(appRoutes, routerConfig),
+        // FuseMockApiModule.forRoot(mockApiServices),
 
         // Core module of your application
         CoreModule,
@@ -50,6 +52,9 @@ import { AppRoutingModule } from './app-routing.module';
 export class AppModule
 {
 }
+
+
+// 24/4/2022 : Fuse, not use -> move to appRoutingModule
 // function appRoutes(appRoutes: any, routerConfig: ExtraOptions): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
 //     throw new Error('Function not implemented.');
 // }
