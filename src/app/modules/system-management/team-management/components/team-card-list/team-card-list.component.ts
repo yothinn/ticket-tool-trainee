@@ -1,4 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { PageResponse } from 'app/core/base/pageResponse.types';
+import { Team } from 'app/core/team/team.types';
 
 @Component({
   selector: 'app-team-card-list',
@@ -7,6 +9,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class TeamCardListComponent implements OnInit {
 
+  @Input() teams?: PageResponse<Team[]>;
+  @Input() activeTeam?: Team;
+
   @Output() selected = new EventEmitter<any>();
 
   teamDataMocks: any[];
@@ -14,6 +19,9 @@ export class TeamCardListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    console.log(this.teams);
+
     this.teamDataMocks = [
       {
         teamName: 'Team Name1',

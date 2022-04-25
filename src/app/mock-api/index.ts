@@ -22,6 +22,9 @@ import { ShortcutsMockApi } from 'app/mock-api/common/shortcuts/api';
 import { TasksMockApi } from 'app/mock-api/apps/tasks/api';
 import { UserMockApi } from 'app/mock-api/common/user/api';
 import { TeamMockApi } from './tickettools/team/api';
+import { ProblemMockApi } from './tickettools/problem/api';
+import { ProblemCategoryMockApi } from './tickettools/problem-category/api';
+import { ProblemCauseMockApi } from './tickettools/problem-cause/api';
 
 export const mockApiServices = [
     AcademyMockApi,
@@ -48,4 +51,7 @@ export const mockApiServices = [
     TasksMockApi,
     UserMockApi,
     TeamMockApi,
+    ProblemMockApi,
+    ProblemCategoryMockApi,
+    ProblemCauseMockApi,
 ];

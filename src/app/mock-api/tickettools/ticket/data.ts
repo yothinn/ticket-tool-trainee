@@ -1,17 +1,11 @@
 /* eslint-disable */
-import { Team } from 'app/core/team/team.types';
+import { Ticket } from 'app/core/ticket/ticket.types';
 import * as moment from 'moment';
 
-export const teams: Team[] = [
+export const tickets: Ticket[] = [
     {
         id: '0001',
-        name: '',
-        description: '',
-        contactName: '',
-        contactEmail: '',
-        contactMobile: '',
-        members: [],
-
+       
         created: new Date('2022-04-25'),
         createBy: '',
 
@@ -20,13 +14,7 @@ export const teams: Team[] = [
     },
     {
         id: '0001',
-        name: '',
-        description: '',
-        contactName: '',
-        contactEmail: '',
-        contactMobile: '',
-        members: [],
-
+     
         created: new Date('2022-04-25'),
         createBy: '',
 

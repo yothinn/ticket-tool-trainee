@@ -21,9 +21,11 @@
 
         </app-filter-button>
 
-        <app-team-card-list (selected)="onDetail($event)">
-
-        </app-team-card-list>
+        <ng-container *ngIf="teams$ | async as teams">
+            <app-team-card-list [teams]="teams" (selected)="onDetail($event)">
+            </app-team-card-list>   
+        </ng-container>
+        
 
         <app-paginator>
 

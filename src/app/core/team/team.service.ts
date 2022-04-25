@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { PageResponse } from '../base/pageResponse.types';
 import { Response } from '../base/response.types';
-import { GetTeamsParameter } from '../parameters/getTeamsParameter.entity';
+import { GetTeamParameter } from '../parameters/getTeamParameter.entity';
 import { Team } from './team.types';
 
 @Injectable({
@@ -16,11 +16,22 @@ export class TeamService {
     teamUrl: 'api/v1/teams',
   };
 
+  private _activeTeam: BehaviorSubject<Team> = new BehaviorSubject<Team>(undefined);
+
   constructor(
     private _httpClient: HttpClient
   ) { }
 
-  getTeams(param: GetTeamsParameter): Observable<PageResponse<Team[]>> {
+  set activeTeam(team: Team) {
+    this._activeTeam.next(team);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  get activeTeam$(): Observable<Team> {
+    return this._activeTeam.asObservable();
+  }
+
+  getTeams(param: GetTeamParameter): Observable<PageResponse<Team[]>> {
     const options = { params: param.toHttpParams() };
 
     return this._httpClient.get<PageResponse<Team[]>>(this.apiUrl.teamUrl, options);

@@ -1,7 +1,6 @@
 import { BaseInterface } from '../base/baseInterface.types';
 
-export interface Problem extends BaseInterface{
+export interface ProblemCause extends BaseInterface{
     id: string;
     name: string;
-    description: string;
 }

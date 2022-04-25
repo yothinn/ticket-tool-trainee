@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { PageResponse } from 'app/core/base/pageResponse.types';
-import { GetTeamsParameter } from 'app/core/parameters/getTeamsParameter.entity';
+import { GetTeamParameter } from 'app/core/parameters/getTeamParameter.entity';
 import { TeamService } from 'app/core/team/team.service';
 import { Team } from 'app/core/team/team.types';
 import { Filter } from 'app/shared/components/filter-button/filter-button-interface';
-import { Subject, takeUntil } from 'rxjs';
+import { Observable, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-team-management',
@@ -16,39 +16,40 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
 
   @ViewChild('drawerDetail') drawerDetail: MatSidenav;
 
-  teams: Team[] = [];
+  teams$?: Observable<PageResponse<Team[]>>;
+
   isViewMode: boolean = false;
 
   button: Filter[] = [{ name: 'All', total: 20 }, { name: 'Acitvie', total: 10 }, { name: 'inActive', total: 5 }];
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 
-
   constructor(
     private _teamService: TeamService,
-  ) { }
+  ) {
+    this.getTeams();
+  }
 
   ngOnInit(): void {
-    this.getTeams();
+
   }
 
   ngOnDestroy(): void {
     this._unsubscribeAll.next(null);
     this._unsubscribeAll.complete();
   }
-
+;
   getTeams(): void {
-    const params = new GetTeamsParameter();
+    const params = new GetTeamParameter();
 
-    this._teamService.getTeams(params)
-      .pipe(takeUntil(this._unsubscribeAll))
-      .subscribe((result: PageResponse<Team[]>) => {
-        console.log(result);
-      });
+    this.teams$ = this._teamService.getTeams(params);
   }
 
-  onDetail(item: Team): void {
-    // console.log(item);
+  onDetail(team: Team): void {
+    console.log(team);
+
+    this._teamService.activeTeam = team;
+
     this.isViewMode = true;
     if (!this.drawerDetail.opened) {
       this.drawerDetail?.toggle();

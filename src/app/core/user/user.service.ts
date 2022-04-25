@@ -32,6 +32,7 @@ export class UserService
         this._user.next(value);
     }
 
+    // eslint-disable-next-line @typescript-eslint/member-ordering
     get user$(): Observable<User>
     {
         return this._user.asObservable();
