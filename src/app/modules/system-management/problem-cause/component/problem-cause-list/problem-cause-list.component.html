@@ -1,0 +1,20 @@
+<div class="flex flex-col w-full h-90 overflow-auto ">
+    <div class="grid grid-cols-4">
+        <p class="col-span-4"></p>
+        <p><strong>No</strong></p>
+        <p><strong>Problem Cause</strong></p>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <ng-container *ngFor="let item of dateMock" >
+        <app-problem-cause-info 
+            [problemCauseData]="item" (click)="onDetail(item)"
+        >
+        </app-problem-cause-info>
+
+        <mat-divider [inset]="true"></mat-divider>
+
+    </ng-container>
+</div>
+    
