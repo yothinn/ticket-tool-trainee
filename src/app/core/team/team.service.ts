@@ -17,19 +17,19 @@ export class TeamService {
   };
 
   constructor(
-    private httpClient: HttpClient
+    private _httpClient: HttpClient
   ) { }
 
   getTeams(param: GetTeamsParameter): Observable<PageResponse<Team[]>> {
     const options = { params: param.toHttpParams() };
 
-    return this.httpClient.get<PageResponse<Team[]>>(this.apiUrl.teamUrl, options);
+    return this._httpClient.get<PageResponse<Team[]>>(this.apiUrl.teamUrl, options);
   }
 
   getTeam(id: string): Observable<Response<Team>> {
     const apiUrl = `${this.apiUrl.teamUrl}/${id}`;
 
-    return this.httpClient.get<Response<Team>>(apiUrl);
+    return this._httpClient.get<Response<Team>>(apiUrl);
   }
 
 }

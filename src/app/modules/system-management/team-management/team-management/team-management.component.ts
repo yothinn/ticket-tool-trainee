@@ -25,7 +25,7 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
 
 
   constructor(
-    private teamService: TeamService,
+    private _teamService: TeamService,
   ) { }
 
   ngOnInit(): void {
@@ -40,7 +40,7 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
   getTeams(): void {
     const params = new GetTeamsParameter();
 
-    this.teamService.getTeams(params)
+    this._teamService.getTeams(params)
       .pipe(takeUntil(this._unsubscribeAll))
       .subscribe((result: PageResponse<Team[]>) => {
         console.log(result);

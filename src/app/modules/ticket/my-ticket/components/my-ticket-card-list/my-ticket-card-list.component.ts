@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class MyTicketCardListComponent implements OnInit {
 
-  @Output() selectMyTicket = new EventEmitter<any>();
+  @Output() selected = new EventEmitter<any>();
 
   dateMock: any[];
 
@@ -146,6 +146,6 @@ export class MyTicketCardListComponent implements OnInit {
 
   onDetail(item: any): void {
     console.log(item);
-    this.selectMyTicket.emit(item);
+    this.selected.emit(item);
   }
 }
