@@ -34,7 +34,7 @@ import { AppRoutingModule } from './app-routing.module';
 
         // 24/4/2022: Fuse, not use
         // RouterModule.forRoot(appRoutes, routerConfig),
-        // FuseMockApiModule.forRoot(mockApiServices),
+        FuseMockApiModule.forRoot(mockApiServices),
 
         // Core module of your application
         CoreModule,
