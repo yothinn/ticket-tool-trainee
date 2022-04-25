@@ -44,6 +44,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
         link : '/system/problem-category'
     },
     {
+        id   : 'problem-cause',
+        title: 'Problem Cause',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/system/problem-cause'
+    },
+    {
         id   : 'team-management',
         title: 'Team Management',
         type : 'basic',
