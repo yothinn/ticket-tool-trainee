@@ -86,7 +86,7 @@ const config = {
             '2xl' : '1.25rem',
             '3xl' : '1.5rem',
             '4xl' : '2rem',
-            '5xl' : '2.25rem',
+            '5xl' : ['2.25rem', { letterSpacing: '2px'}],
             '6xl' : '2.5rem',
             '7xl' : '3rem',
             '8xl' : '4rem',

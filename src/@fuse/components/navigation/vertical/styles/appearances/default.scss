@@ -242,6 +242,11 @@ fuse-vertical-navigation {
 
                 .fuse-vertical-navigation-item-icon {
                     margin-right: 16px;
+                    background-color: #202020;
+                    
+                    .mat-icon {
+                        @apply text-primary;
+                    }
                 }
 
                 .fuse-vertical-navigation-item-title-wrapper {
@@ -518,7 +523,7 @@ fuse-vertical-navigation-collapsable-item {
                     }
 
                     .fuse-vertical-navigation-item-title {
-                        @apply opacity-100;
+                        @apply opacity-100 text-primary-500;
                     }
 
                     .fuse-vertical-navigation-item-subtitle {

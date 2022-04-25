@@ -91,10 +91,19 @@
 
     <!-- Icon -->
     <ng-container *ngIf="item.icon">
-        <mat-icon
+        <button mat-icon-button class="fuse-vertical-navigation-item-icon">
+            <mat-icon
+                [ngClass]="item.classes?.icon"
+                [svgIcon]="item.icon">
+            </mat-icon>
+        </button>
+
+        <!-- Old version : Comment By Yothin 26/4/2022
+            <mat-icon
             class="fuse-vertical-navigation-item-icon"
             [ngClass]="item.classes?.icon"
-            [svgIcon]="item.icon"></mat-icon>
+            [svgIcon]="item.icon"></mat-icon> 
+        -->
     </ng-container>
 
     <!-- Title & Subtitle -->
