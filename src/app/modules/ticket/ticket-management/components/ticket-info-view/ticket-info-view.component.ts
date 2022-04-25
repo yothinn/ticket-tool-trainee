@@ -18,7 +18,7 @@ export class TicketInfoViewComponent implements OnInit {
 
   openTicketChangeDialog(): void {
     const dialogRef = this.dialog.open(TicketChangeDialogComponent, {
-      height:'460px',
+      height:'480px',
       width: '30%'
       // data: {},
     });

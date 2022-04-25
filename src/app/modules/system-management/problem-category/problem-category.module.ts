@@ -4,6 +4,7 @@ import { ProblemCategoryInfoComponent } from './components/problem-category-info
 import { ProblemCategoryListComponent } from './components/problem-category-list/problem-category-list.component';
 import { ProblemCategoryRoutingModule } from './problem-category-routing.module';
 import { ProblemCategoryComponent } from './problem-category/problem-category.component';
+import { ProblemCategoryEditDialogsComponent } from './dialogs/problem-category-edit-dialogs/problem-category-edit-dialogs.component';
 
 
 
@@ -12,7 +13,8 @@ import { ProblemCategoryComponent } from './problem-category/problem-category.co
   declarations: [
     ProblemCategoryComponent,
     ProblemCategoryInfoComponent,
-    ProblemCategoryListComponent
+    ProblemCategoryListComponent,
+    ProblemCategoryEditDialogsComponent
   ],
   imports: [
     ProblemCategoryRoutingModule,

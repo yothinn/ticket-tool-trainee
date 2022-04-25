@@ -7,19 +7,20 @@
     </div>
 
     <mat-divider></mat-divider>
+    <div class="flex flex-row w-full">
+        <div class="grid grid-cols-2 gap-2 w-full">
+            <p>Ticket No :</p>
+            <p>123456789123</p>
 
-    <div class="grid grid-cols-3 gap-3">
-        <p>Ticket No :</p>
-        <p>Problem Name :</p>
-        
-        <p>123456789123</p>
-        <p>Ticket Problem</p>
-    </div>
+            <p>Problem Name :</p>
+            <p>Ticket Problem</p>
+        </div>
 
         <mat-radio-group (change)="onChangeStatus($event)" aria-label="Option">
             <mat-radio-button value="Closed">Closed</mat-radio-button>
             <mat-radio-button value="Unresolved">Unresolved</mat-radio-button>
         </mat-radio-group>
+    </div>
     
 
     <div class="flex flex-col w-full ">        

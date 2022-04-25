@@ -8,66 +8,61 @@
 
     <mat-divider></mat-divider>
 
-    <div class="flex flex-row w-full  ">
-        <!-- <div> -->
-            <div class="grid grid-cols-2 ">
-                <p>Ticket No:</p>
-                <p>T000000000001</p>
+    <div class="flex flex-row w-full ">
+        <div class="grid grid-cols-2 w-full">
+            <p>Ticket No:</p>
+            <p>T000000000001</p>
 
-                <p>Reason for reject:</p>
-                <p>Text..............</p>
+            <p>Reason for reject:</p>
+            <p>Text..............</p>
                 
-                <p></p>
-                <p>Description 1 Description line2 Description line3</p>
+            <p></p>
+            <p>Description 1 Description line2 Description line 3 </p>
                 
-                <p>Last Update</p>
-                <p>10 Mar 2022 20.00</p>
-                
-            </div>
-        <!-- </div> -->
+            <p>Last Update</p>
+            <p>10 Mar 2022 20.00</p> 
+        </div>
 
-        <div class="flex flex-col ">
-            <!-- <div class="grid grid-cols "> -->
-                <p>Problem Name</p>
-                <mat-form-field appearance="outline">
-                    <mat-label>Please Select</mat-label>
-                    <mat-select>
-                        <mat-option *ngFor="let problem of problems" [value]="problem.value">
-                            {{problem.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
+        <div class="grid grid-cols w-full">
+            <p>Problem Name</p>
+            <mat-form-field appearance="outline">
+                <mat-label>Please Select</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let problem of problems" [value]="problem.value">
+                        {{problem.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
                 
-                <p>Problem Category</p>
-                <mat-form-field appearance="outline">
-                    <mat-label>Please Select</mat-label>
-                    <mat-select>
-                        <mat-option *ngFor="let problem of problems" [value]="problem.value">
-                            {{problem.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
+            <p>Problem Category</p>
+            <mat-form-field appearance="outline">
+                <mat-label>Please Select</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let problem of problems" [value]="problem.value">
+                        {{problem.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
 
-                <p>Criticality</p>
-                <mat-form-field appearance="outline">
-                    <mat-label>Please Select</mat-label>
-                    <mat-select>
-                        <mat-option *ngFor="let problem of problems" [value]="problem.value">
-                            {{problem.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
+            <p>Criticality</p>
+            <mat-form-field appearance="outline">
+                <mat-label>Please Select</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let problem of problems" [value]="problem.value">
+                        {{problem.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
 
-                <p>Assign to team</p>
-                <mat-form-field appearance="outline">
-                    <mat-label>Please Select</mat-label>
-                    <mat-select>
-                        <mat-option *ngFor="let problem of problems" [value]="problem.value">
-                            {{problem.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            <!-- </div> -->
+            <p>Assign to team</p>
+            <mat-form-field appearance="outline">
+                <mat-label>Please Select</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let problem of problems" [value]="problem.value">
+                        {{problem.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>           
         </div>
     </div>
 
