@@ -9,7 +9,7 @@ import { Team } from 'app/core/team/team.types';
 })
 export class TeamCardListComponent implements OnInit {
 
-  @Input() teams?: PageResponse<Team[]>;
+  @Input() teams?: Team[];
   @Input() activeTeam?: Team;
 
   @Output() selected = new EventEmitter<any>();

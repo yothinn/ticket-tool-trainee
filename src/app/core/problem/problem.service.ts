@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { PageResponse } from '../base/pageResponse.types';
 import { Response } from '../base/response.types';
 import { GetProblemParameter } from '../parameters/getProblemParameter.entity';
@@ -15,9 +15,21 @@ export class ProblemService {
     problemUrl: 'api/v1/problems',
   };
 
+  private _activeProblem: BehaviorSubject<Problem> = new BehaviorSubject<Problem>(undefined);
+
   constructor(
     private _httpClient: HttpClient
   ) { }
+
+  set activeProblem(problem: Problem) {
+    this._activeProblem.next(problem);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  get activeProblem$(): Observable<Problem> {
+    return this._activeProblem.asObservable();
+  }
+
 
   getProblems(param: GetProblemParameter): Observable<PageResponse<Problem[]>> {
     const options = { params: param.toHttpParams() };

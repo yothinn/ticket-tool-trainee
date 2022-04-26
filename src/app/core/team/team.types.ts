@@ -8,6 +8,7 @@ export interface Team extends BaseInterface {
     contactName: string;
     contactEmail: string;
     contactMobile: string;
+    status: string;
 
     members?: TeamMember[];
 }
