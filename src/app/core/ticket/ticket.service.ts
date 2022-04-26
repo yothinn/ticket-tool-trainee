@@ -26,7 +26,7 @@ export class TicketService {
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
-  get activeProblemCause$(): Observable<Ticket> {
+  get activeTicket$(): Observable<Ticket> {
     return this._activeTicket.asObservable();
   }
 
