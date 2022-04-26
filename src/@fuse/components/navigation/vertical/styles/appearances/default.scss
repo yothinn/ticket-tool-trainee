@@ -520,6 +520,11 @@ fuse-vertical-navigation-collapsable-item {
 
                     .fuse-vertical-navigation-item-icon {
                         @apply opacity-100;
+                        background-color: var(--fuse-primary);
+
+                        .mat-icon {
+                            @apply text-black;
+                        }
                     }
 
                     .fuse-vertical-navigation-item-title {
