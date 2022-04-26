@@ -61,6 +61,7 @@ export class DenseLayoutComponent implements OnInit, OnDestroy
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((navigation: Navigation) => {
                 this.navigation = navigation;
+                console.log(this.navigation)
             });
 
         // Subscribe to media changes

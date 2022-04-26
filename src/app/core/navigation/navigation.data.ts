@@ -1,6 +1,7 @@
 import { FuseNavigationItem } from '@fuse/components/navigation';
 
 export const defaultNavigation: FuseNavigationItem[] = [
+    
     {
         id   : 'dashboard',
         title: 'Dashboard',
@@ -32,23 +33,70 @@ export const defaultNavigation: FuseNavigationItem[] = [
     {
         id   : 'problem-management',
         title: 'Problem Management',
-        type : 'basic',
+        type : 'collapsable',
         icon : 'heroicons_outline:chart-pie',
-        link : '/system/problem-management'
+        // link : '/system/problem-management',
+        children: [
+            {
+                id   : 'Problem',
+                title: 'Problem',
+                type : 'basic',
+                icon : '',
+                link : '/system/problem-management'
+            },
+            {
+                id   : 'Problem-Category',
+                title: 'Problem Category',
+                type : 'basic',
+                icon : '',
+                link : '/system/problem-category'
+            },
+            {
+                id   : 'Problem-Cause',
+                title: 'Problem Cause',
+                type : 'basic',
+                icon : '',
+                link : '/system/problem-cause'
+            },
+            {
+                id   : 'Request-Data',
+                title: 'Request Data',
+                type : 'basic',
+                icon : '',
+                link : '',
+               
+            }
+        ]
     },
     {
-        id   : 'problem-category',
-        title: 'Problem Category',
-        type : 'basic',
+        id   : 'sla-management',
+        title: 'SLA Management',
+        type : 'collapsable',
         icon : 'heroicons_outline:chart-pie',
-        link : '/system/problem-category'
-    },
-    {
-        id   : 'problem-cause',
-        title: 'Problem Cause',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/system/problem-cause'
+        // link : '/system/problem-management',
+        children: [
+            {
+                id   : 'criticality',
+                title: 'Criticality',
+                type : 'basic',
+                icon : '',
+                link : ''
+            },
+            {
+                id   : 'working-day-time',
+                title: 'Working-Day-Time',
+                type : 'basic',
+                icon : '',
+                link : ''
+            },
+            {
+                id   : 'holiday',
+                title: 'Holiday',
+                type : 'basic',
+                icon : '',
+                link : ''
+            }
+        ]
     },
     {
         id   : 'team-management',
@@ -57,13 +105,14 @@ export const defaultNavigation: FuseNavigationItem[] = [
         icon : 'heroicons_outline:chart-pie',
         link : '/system/team-management'
     },
-    {
-        id   : 'profile',
-        title: 'Profile',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/profile'
-    }
+    // {
+    //     id   : 'profile',
+    //     title: 'Profile',
+    //     type : 'basic',
+    //     icon : 'heroicons_outline:chart-pie',
+    //     link : '/profile'
+    // },
+
 ];
 
 

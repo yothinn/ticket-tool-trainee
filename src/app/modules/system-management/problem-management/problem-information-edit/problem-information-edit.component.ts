@@ -13,28 +13,14 @@ export class ProblemInformationEditComponent implements OnInit {
   requestData:string[] = ['Ticket Description','Order No','Attachment file','XXXXXXX','XXXXXXXX'];
 
   constructor(
-    public dialog: MatDialog
+    private _dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
   }
 
-  openRequestDataDialog(): void{
-    const dialogRef = this.dialog.open(RequestDataDialogComponent, {
-      height:'580px',
-      width: '90%'
-      // data: {},
-    });
-
-    dialogRef.afterClosed().subscribe((result: any) => {
-      console.log('The dialog was closed');
-      // this.animal = result;
-    });
-  }
-
-
   openTeamOwnerDialog(): void{
-    const dialogRef = this.dialog.open(TeamOwnerDialogComponent, {
+    const dialogRef = this._dialog.open(TeamOwnerDialogComponent, {
       height:'580px',
       width: '90%'
       // data: {},

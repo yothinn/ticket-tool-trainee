@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Problem } from 'app/core/problem/problem.types';
 
 @Component({
   selector: 'app-problem-card-info',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProblemCardInfoComponent implements OnInit {
 
-  @Input() problemData?: any;
+  @Input() problemData?: Problem;
 
   constructor() { }
 
