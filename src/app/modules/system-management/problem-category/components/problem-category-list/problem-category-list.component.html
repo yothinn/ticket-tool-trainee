@@ -9,9 +9,9 @@
     <mat-divider></mat-divider>
 
     
-        <ng-container *ngFor="let item of dateMock" >
+        <ng-container *ngFor="let item of problemCategories" >
             <app-problem-category-info 
-            [problemCategoryData]="item" (click)="onDetail(item)"
+            [ProblemCategory]="item" (click)="onDetail($event)"
             >
             </app-problem-category-info>
 

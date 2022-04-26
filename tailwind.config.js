@@ -13,6 +13,9 @@ const themePalettes = require('./theme-palettes');
 const customPalettes = {
     brand: generatePalette('#2196F3'),
     appPrimaryTheme: generatePalette(themePalettes.primaryPalette),
+    // appSecondaryTheme: generatePalette(themePalettes.secondaryPalette),
+    // appAccentTheme: generatePalette(themePalettes.accentPalette),
+    appNeutralTheme: generatePalette(themePalettes.neutralPalette),
 };
 
 /**
@@ -35,6 +38,10 @@ const themes = {
         },
         'on-warn': {
             500: colors.red['50']
+        },
+        neutral: {
+            ...customPalettes.appNeutralTheme,
+            DEFAULT: customPalettes.appNeutralTheme[500]
         }
     },
     // Rest of the themes will use the 'default' as the base theme
@@ -43,7 +50,7 @@ const themes = {
         primary  : {
             ...customPalettes.appPrimaryTheme,
             DEFAULT: customPalettes.appPrimaryTheme[500]
-        },
+        }
     },
     'brand' : {
         primary: customPalettes.brand
