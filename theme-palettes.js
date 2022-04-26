@@ -56,6 +56,7 @@ const errorColor = '#C$2A2E';
 module.exports = {
     primaryPalette: primaryPalette,
     secondaryPalette: secondaryPalette,
+    neutralPalette: neutralPalette,
     accentPalette: accentPalette,
     errorColor: errorColor
 }

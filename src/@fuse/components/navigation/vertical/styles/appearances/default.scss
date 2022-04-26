@@ -242,8 +242,8 @@ fuse-vertical-navigation {
 
                 .fuse-vertical-navigation-item-icon {
                     margin-right: 16px;
-                    background-color: #202020;
-                    
+                    background-color: var(--fuse-neutral-300);
+
                     .mat-icon {
                         @apply text-primary;
                     }
