@@ -1,13 +1,12 @@
 <div class="flex justify-end mt-5 bg-gray-200">
     <div class="items-center">
 
-        <span class="mr-2">
-            Items Per Page
-        </span>
+        <span class="mr-2"> Items Per Page</span>
+        
         <mat-form-field class="w-15" appearance="outline">
-            <mat-select value="1" class="pt-2">
-                <mat-option *ngFor="let item of pageSize" value="1" (click)="onPageEvent(item)">
-                    {{item}}
+            <mat-select class="pt-2">
+                <mat-option *ngFor="let option of pageSizeOptions" (click)="changeItemPerPage(option)">
+                    {{ option }}
                 </mat-option>
             </mat-select>
         </mat-form-field>
@@ -15,35 +14,28 @@
     </div>
 
     <div class="flex items-center">
-        <mat-icon *ngIf="statusBackPage" (click)="plusMinusPage(false)">
-            arrow_left
-        </mat-icon>
-
-        <mat-icon *ngIf="!statusBackPage" style="opacity: 0.4;">
-            arrow_left
-        </mat-icon>
-
-        <div *ngIf="statusPage === true"> .... </div>
-
-        <button *ngFor="let item of numberArray; let i = index" mat-icon-button>
-            <div class="mx-3" *ngIf="i < maxPageNumber ">
-                <div (click)="clickPageNo(item.number)" *ngIf="statusPage === false ">
-                    {{item.number}}
-                </div>
-                <div (click)="clickPageNo(item.number+nextPageNumber)" 
-                    *ngIf="item.number+nextPageNumber 
-                    > 
-                    1 && statusPage === true && 
-                    item.number+nextPageNumber <= pageNumber">
-                    {{item.number+nextPageNumber}}
-                </div>
-            </div>
+        <button mat-icon-button [disabled]="!canBackPage" (click)="prevPage()">
+            <mat-icon>arrow_left</mat-icon>
         </button>
+        
+        <div *ngIf="morePrevView"> .... </div>
 
-        <div *ngIf="seletePageNo <= maxPageNumber && statusPage === false "> .... </div>
+        <ng-container *ngFor="let page of pageViews;" >
+            <button mat-icon-button 
+                (click)="clickPageNo(page + addPageViewNo)" 
+                [ngClass]="{
+                    'bg-primary' : pageNo === page + addPageViewNo
+                }"
+            >
+                {{ page + addPageViewNo }}
+            </button>
+        </ng-container>
+        
+        <div *ngIf="moreNextView"> .... </div>
 
-        <mat-icon *ngIf="statusNextPage" (click)="plusMinusPage(true)">arrow_right</mat-icon>
-        <mat-icon *ngIf="!statusNextPage" style="opacity: 0.4;">arrow_right</mat-icon>
+        <button mat-icon-button [disabled]="!canNextPage" (click)="nextPage()">
+            <mat-icon>arrow_right</mat-icon>
+        </button>
 
     </div>
 

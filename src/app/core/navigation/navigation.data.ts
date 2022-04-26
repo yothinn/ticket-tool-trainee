@@ -1,7 +1,11 @@
 import { FuseNavigationItem } from '@fuse/components/navigation';
 
+export const raiserNavigation = ['myTicket'];
+export const dispatcherNavigation = ['dashboard', 'myTicket', 'ticketManagement'];
+export const ownerNavigation = ['dashboard', 'myTicket', 'ticketManagement'];
+
 export const defaultNavigation: FuseNavigationItem[] = [
-    
+
     {
         id   : 'dashboard',
         title: 'Dashboard',
@@ -17,59 +21,58 @@ export const defaultNavigation: FuseNavigationItem[] = [
         link : '/reports'
     },
     {
-        id   : 'my-ticket',
+        id   : 'myTicket',
         title: 'My Ticket',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
         link : '/ticket/myticket'
     },
     {
-        id   : 'ticket-management',
+        id   : 'ticketManagement',
         title: 'Ticket Management',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
         link : '/ticket/ticket-management'
     },
     {
-        id   : 'problem-management',
+        id   : 'problemManagement',
         title: 'Problem Management',
         type : 'collapsable',
         icon : 'heroicons_outline:chart-pie',
         // link : '/system/problem-management',
         children: [
             {
-                id   : 'Problem',
+                id   : 'problem',
                 title: 'Problem',
                 type : 'basic',
                 icon : '',
                 link : '/system/problem-management'
             },
             {
-                id   : 'Problem-Category',
+                id   : 'problemCategory',
                 title: 'Problem Category',
                 type : 'basic',
                 icon : '',
                 link : '/system/problem-category'
             },
             {
-                id   : 'Problem-Cause',
+                id   : 'problemCause',
                 title: 'Problem Cause',
                 type : 'basic',
                 icon : '',
                 link : '/system/problem-cause'
             },
             {
-                id   : 'Request-Data',
+                id   : 'requestData',
                 title: 'Request Data',
                 type : 'basic',
                 icon : '',
                 link : '',
-               
             }
         ]
     },
     {
-        id   : 'sla-management',
+        id   : 'slaManagement',
         title: 'SLA Management',
         type : 'collapsable',
         icon : 'heroicons_outline:chart-pie',
@@ -83,8 +86,8 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 link : ''
             },
             {
-                id   : 'working-day-time',
-                title: 'Working-Day-Time',
+                id   : 'workingDayTime',
+                title: 'Working Day&Time',
                 type : 'basic',
                 icon : '',
                 link : ''
@@ -99,7 +102,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
         ]
     },
     {
-        id   : 'team-management',
+        id   : 'teamManagement',
         title: 'Team Management',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',

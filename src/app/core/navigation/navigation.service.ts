@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, ReplaySubject, tap } from 'rxjs';
 import { Navigation } from 'app/core/navigation/navigation.types';
-import { defaultNavigation, compactNavigation, futuristicNavigation, horizontalNavigation } from './navigation.data';
+import { defaultNavigation, compactNavigation, futuristicNavigation, horizontalNavigation, ownerNavigation, raiserNavigation } from './navigation.data';
+import { FuseNavigationItem } from '@fuse/components/navigation';
 
 @Injectable({
     providedIn: 'root'
@@ -39,12 +40,17 @@ export class NavigationService
      */
     get(): Observable<Navigation>
     {
+        // Use for other role : filter navigation
+        // const navigation = defaultNavigation.filter((nav: FuseNavigationItem) => raiserNavigation.includes(nav.id));
         const _navigation: Navigation = {
             compact: compactNavigation,
             default: defaultNavigation,
+            // default: navigation,
             futuristic: futuristicNavigation,
             horizontal: horizontalNavigation,
         };
+
+        console.log('pass this');
 
         return of(_navigation).pipe(
                 tap((navigation) => {
