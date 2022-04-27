@@ -21,6 +21,9 @@ export class ProblemCauseService {
     private _httpClient: HttpClient
   ) { }
 
+<<<<<<< HEAD
+  getProblemCauses(param: GetProblemCauseParameter): Observable<PageResponse<ProblemCause[]>> {
+=======
   set activeProblemCause(problemCause: ProblemCause) {
     this._activeProblemCause.next(problemCause);
   }
@@ -31,12 +34,13 @@ export class ProblemCauseService {
   }
 
   getProblemCategories(param: GetProblemCauseParameter): Observable<PageResponse<ProblemCause[]>> {
+>>>>>>> 21a6de776ea997ca7140c9eb402937af5c676c27
     const options = { params: param.toHttpParams() };
 
     return this._httpClient.get<PageResponse<ProblemCause[]>>(this.apiUrl.problemCauseUrl, options);
   }
 
-  getProblemCategory(id: string): Observable<Response<ProblemCause>> {
+  getProblemCause(id: string): Observable<Response<ProblemCause>> {
     const apiUrl = `${this.apiUrl.problemCauseUrl}/${id}`;
 
     return this._httpClient.get<Response<ProblemCause>>(apiUrl);

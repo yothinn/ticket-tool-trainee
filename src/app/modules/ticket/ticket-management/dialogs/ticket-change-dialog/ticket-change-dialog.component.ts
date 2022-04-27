@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { valid } from 'chroma-js';
 
 @Component({
   selector: 'app-ticket-change-dialog',
@@ -9,6 +10,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class TicketChangeDialogComponent implements OnInit {
 
   isViewMode: boolean = false;
+  isValid: boolean = true;
 
   Causes: any[] = [
     {value: 'Cause-0', viewValue: 'Cause1'},
@@ -30,4 +32,9 @@ export class TicketChangeDialogComponent implements OnInit {
   onChangeStatus(event: any ): void {
     console.log(event);
   }
+
+  changeValue(valid: boolean) {
+    this.isValid = valid
+  }
 }
+ 
