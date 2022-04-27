@@ -72,6 +72,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
         ]
     },
     {
+        id   : 'teamManagement',
+        title: 'Team Management',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/system/team-management'
+    },
+    {
         id   : 'slaManagement',
         title: 'SLA Management',
         type : 'collapsable',
@@ -100,13 +107,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 link : ''
             }
         ]
-    },
-    {
-        id   : 'teamManagement',
-        title: 'Team Management',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/system/team-management'
     },
     // {
     //     id   : 'profile',

@@ -4,7 +4,7 @@ import { PageResponse } from 'app/core/base/pageResponse.types';
 import { GetTeamParameter } from 'app/core/parameters/getTeamParameter.entity';
 import { ProblemService } from 'app/core/problem/problem.service';
 import { Problem } from 'app/core/problem/problem.types';
-import { Filter } from 'app/shared/components/filter-button/filter-button-interface';
+import { FilterButton } from 'app/shared/components/filter-button/filter-button-interface';
 import { Observable, Subject } from 'rxjs';
 
 @Component({
@@ -20,7 +20,7 @@ export class ProblemManagementComponent implements OnInit, OnDestroy {
 
   isViewMode: boolean = false;
 
-  button: Filter[] = [
+  buttons: FilterButton[] = [
     { name: 'All', total: 20 },
     { name: 'Acitvie', total: 10 },
     { name: 'inActive', total: 5 }

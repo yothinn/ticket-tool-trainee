@@ -4,7 +4,7 @@ import { PageResponse } from 'app/core/base/pageResponse.types';
 import { GetTeamParameter } from 'app/core/parameters/getTeamParameter.entity';
 import { TeamService } from 'app/core/team/team.service';
 import { Team } from 'app/core/team/team.types';
-import { Filter } from 'app/shared/components/filter-button/filter-button-interface';
+import { FilterButton } from 'app/shared/components/filter-button/filter-button-interface';
 import { Observable, Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -20,7 +20,7 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
 
   isViewMode: boolean = false;
 
-  button: Filter[] = [{ name: 'All', total: 20 }, { name: 'Acitvie', total: 10 }, { name: 'inActive', total: 5 }];
+  buttons: FilterButton[] = [{ name: 'All', total: 20 }, { name: 'Acitvie', total: 10 }, { name: 'inActive', total: 5 }];
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 
