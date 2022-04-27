@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { PageResponse } from '../base/pageResponse.types';
 import { Response } from '../base/response.types';
 import { GetProblemCauseParameter } from '../parameters/getProblemCauseParameter.entity';
@@ -15,11 +15,26 @@ export class ProblemCauseService {
     problemCauseUrl: 'api/v1/problem-causes',
   };
 
+  private _activeProblemCause: BehaviorSubject<ProblemCause> = new BehaviorSubject<ProblemCause>(undefined);
+
   constructor(
     private _httpClient: HttpClient
   ) { }
 
+<<<<<<< HEAD
   getProblemCauses(param: GetProblemCauseParameter): Observable<PageResponse<ProblemCause[]>> {
+=======
+  set activeProblemCause(problemCause: ProblemCause) {
+    this._activeProblemCause.next(problemCause);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  get activeProblemCause$(): Observable<ProblemCause> {
+    return this._activeProblemCause.asObservable();
+  }
+
+  getProblemCategories(param: GetProblemCauseParameter): Observable<PageResponse<ProblemCause[]>> {
+>>>>>>> 21a6de776ea997ca7140c9eb402937af5c676c27
     const options = { params: param.toHttpParams() };
 
     return this._httpClient.get<PageResponse<ProblemCause[]>>(this.apiUrl.problemCauseUrl, options);

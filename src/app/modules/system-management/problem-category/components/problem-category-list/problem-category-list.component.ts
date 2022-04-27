@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ProblemCategory } from 'app/core/problem-category/problem-category.types';
 
 @Component({
   selector: 'app-problem-category-list',
@@ -7,11 +8,19 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class ProblemCategoryListComponent implements OnInit {
   @Output() selectProblem = new EventEmitter<any>();
+  
+  @Input() problemCategories?: ProblemCategory[];
+
+  @Input() activeProblemCategory?: ProblemCategory;
+
   dateMock: any[];
 
   constructor() { }
 
   ngOnInit(): void {
+
+    console.log(this.problemCategories);
+
     this.dateMock = [
       {
         problemNo: 'PB0000001',

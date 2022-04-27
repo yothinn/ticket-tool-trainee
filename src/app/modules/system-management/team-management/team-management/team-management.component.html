@@ -1,36 +1,37 @@
 <mat-drawer-container class=" w-full h-full">
     <mat-drawer-content class="flex flex-col h-full p-4">
-        <div class="flex flex-row gap-x-2 items-end">
-            <div class="flex flex-col flex-auto">
-                <span class="text-xl pl-4">
-                    Search
-                </span>
-                <mat-form-field appearance="outline" >
-                    <input matInput placeholder="Input">
-                    <mat-icon matSuffix>search</mat-icon>
-                </mat-form-field>
+        <ng-container *ngIf="teamResponse$ | async as teamResponse">
+            <div class="flex flex-row gap-x-2 items-end">
+                <div class="flex flex-col flex-auto">
+                    <span class="text-xl pl-4">
+                        Search
+                    </span>
+                    <mat-form-field appearance="outline" >
+                        <input matInput placeholder="Input">
+                        <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="flex-initial pb-2" >
+                    <button mat-flat-button color="primary" (click)="onCreate()">
+                        Create
+                    </button>
+                </div>
             </div>
-            <div class="flex-initial pb-2" >
-                <button mat-flat-button color="primary" (click)="onCreate()">
-                    Create
-                </button>
-            </div>
-        </div>
 
-        <app-filter-button [data]="button">
+            <app-filter-button [data]="button">
 
-        </app-filter-button>
+            </app-filter-button>
 
-        <ng-container *ngIf="teams$ | async as teams">
-            <app-team-card-list [teams]="teams" (selected)="onDetail($event)">
-            </app-team-card-list>   
-        </ng-container>
+
+                <app-team-card-list [teams]="teamResponse.data" (selected)="onDetail($event)">
+                </app-team-card-list>   
         
+            
 
-        <app-paginator>
+            <app-paginator>
 
-        </app-paginator>
-
+            </app-paginator>
+        </ng-container>
     </mat-drawer-content>
 
     <mat-drawer #drawerDetail style="width: 50%;" 

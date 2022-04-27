@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { PageResponse } from '../base/pageResponse.types';
 import { Response } from '../base/response.types';
 import { GetTicketParameter } from '../parameters/getTicketParameter.entity';
@@ -15,9 +15,20 @@ export class TicketService {
     ticketUrl: 'api/v1/tickets',
   };
 
+  private _activeTicket: BehaviorSubject<Ticket> = new BehaviorSubject<Ticket>(undefined);
+
   constructor(
     private _httpClient: HttpClient
   ) { }
+
+  set activeTicket(ticket: Ticket) {
+    this._activeTicket.next(ticket);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  get activeTicket$(): Observable<Ticket> {
+    return this._activeTicket.asObservable();
+  }
 
   getTickets(param: GetTicketParameter): Observable<PageResponse<Ticket[]>> {
     const options = { params: param.toHttpParams() };

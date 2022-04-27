@@ -1,4 +1,4 @@
-<div class="flex flex-col w-full h-90 overflow-auto">
+<div class="flex flex-col w-full">
     <div class="grid grid-cols-5 pt-5">
         <div class="col-span-2"></div>
         <div><strong>Status</strong></div>
@@ -8,9 +8,9 @@
 
     <mat-divider></mat-divider>
 
-    <ng-container *ngFor="let item of problemDataMocks">
+    <ng-container *ngFor="let problem of problemDatas">
         <app-problem-card-info 
-            [problemData]="item" (click)="onDetail(item)"
+            [problemData]="problem" (click)="onDetail($event)"
         >
 
         </app-problem-card-info>

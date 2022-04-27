@@ -10,6 +10,7 @@ export const teams: Team[] = [
         contactName: '',
         contactEmail: '',
         contactMobile: '',
+        status: '',
         members: [],
 
         created: new Date('2022-04-25'),
@@ -25,6 +26,7 @@ export const teams: Team[] = [
         contactName: '',
         contactEmail: '',
         contactMobile: '',
+        status: '',
         members: [],
 
         created: new Date('2022-04-25'),

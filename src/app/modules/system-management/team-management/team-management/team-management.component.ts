@@ -16,7 +16,7 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
 
   @ViewChild('drawerDetail') drawerDetail: MatSidenav;
 
-  teams$?: Observable<PageResponse<Team[]>>;
+  teamResponse$?: Observable<PageResponse<Team[]>>;
 
   isViewMode: boolean = false;
 
@@ -42,7 +42,7 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
   getTeams(): void {
     const params = new GetTeamParameter();
 
-    this.teams$ = this._teamService.getTeams(params);
+    this.teamResponse$ = this._teamService.getTeams(params);
   }
 
   onDetail(team: Team): void {

@@ -1,6 +1,11 @@
 import { FuseNavigationItem } from '@fuse/components/navigation';
 
+export const raiserNavigation = ['myTicket'];
+export const dispatcherNavigation = ['dashboard', 'myTicket', 'ticketManagement'];
+export const ownerNavigation = ['dashboard', 'myTicket', 'ticketManagement'];
+
 export const defaultNavigation: FuseNavigationItem[] = [
+
     {
         id   : 'dashboard',
         title: 'Dashboard',
@@ -16,54 +21,101 @@ export const defaultNavigation: FuseNavigationItem[] = [
         link : '/reports'
     },
     {
-        id   : 'my-ticket',
+        id   : 'myTicket',
         title: 'My Ticket',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
         link : '/ticket/myticket'
     },
     {
-        id   : 'ticket-management',
+        id   : 'ticketManagement',
         title: 'Ticket Management',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
         link : '/ticket/ticket-management'
     },
     {
-        id   : 'problem-management',
+        id   : 'problemManagement',
         title: 'Problem Management',
-        type : 'basic',
+        type : 'collapsable',
         icon : 'heroicons_outline:chart-pie',
-        link : '/system/problem-management'
+        // link : '/system/problem-management',
+        children: [
+            {
+                id   : 'problem',
+                title: 'Problem',
+                type : 'basic',
+                icon : '',
+                link : '/system/problem-management'
+            },
+            {
+                id   : 'problemCategory',
+                title: 'Problem Category',
+                type : 'basic',
+                icon : '',
+                link : '/system/problem-category'
+            },
+            {
+                id   : 'problemCause',
+                title: 'Problem Cause',
+                type : 'basic',
+                icon : '',
+                link : '/system/problem-cause'
+            },
+            {
+                id   : 'requestData',
+                title: 'Request Data',
+                type : 'basic',
+                icon : '',
+                link : '',
+            }
+        ]
     },
     {
-        id   : 'problem-category',
-        title: 'Problem Category',
-        type : 'basic',
+        id   : 'slaManagement',
+        title: 'SLA Management',
+        type : 'collapsable',
         icon : 'heroicons_outline:chart-pie',
-        link : '/system/problem-category'
+        // link : '/system/problem-management',
+        children: [
+            {
+                id   : 'criticality',
+                title: 'Criticality',
+                type : 'basic',
+                icon : '',
+                link : ''
+            },
+            {
+                id   : 'workingDayTime',
+                title: 'Working Day&Time',
+                type : 'basic',
+                icon : '',
+                link : ''
+            },
+            {
+                id   : 'holiday',
+                title: 'Holiday',
+                type : 'basic',
+                icon : '',
+                link : ''
+            }
+        ]
     },
     {
-        id   : 'problem-cause',
-        title: 'Problem Cause',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/system/problem-cause'
-    },
-    {
-        id   : 'team-management',
+        id   : 'teamManagement',
         title: 'Team Management',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
         link : '/system/team-management'
     },
-    {
-        id   : 'profile',
-        title: 'Profile',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/profile'
-    }
+    // {
+    //     id   : 'profile',
+    //     title: 'Profile',
+    //     type : 'basic',
+    //     icon : 'heroicons_outline:chart-pie',
+    //     link : '/profile'
+    // },
+
 ];
 
 

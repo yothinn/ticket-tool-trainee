@@ -1,160 +1,99 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-paginator',
   templateUrl: './paginator.component.html',
   styleUrls: ['./paginator.component.scss']
 })
-export class PaginatorComponent implements OnInit {
-  @Output() onPageEventChanged: EventEmitter<any> = new EventEmitter();
-  statusNextPage: boolean = true;
-  statusBackPage: boolean = false;
-  // test:boolean = true;
-  statusPage: boolean = false;
-  seletePageNo = 1;
-  pageSize = [10, 15, 20] //จำนวนข้อมูลใน 1 page
-  pageNumber: number = 20; //จำนวนหน้า
-  seletePageSize: number = this.pageSize[0]; //เก็บค่าPageSize เริ่มต้นให้เท่ากับ 10
-  numberArray: any = [];
-  maxPageNumber: number = 5; //เลขจำนวนหน้าที่ให้เลิอก
-  nextPageNumber: number = 1;
+export class PaginatorComponent implements OnInit  {
+
+  @Input() pageNo: number = 1;
+  @Input() pageSize: number = 10;
+  @Input() pageSizeOptions: number[] = [10, 20, 50];
+  @Input() maxPageView: number = 5;
+
+  @Output() pageChanged: EventEmitter<any> = new EventEmitter();
+
+  pageViews: number[] = [];
+
+  addPageViewNo: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
-    this.calculateMaxPageNumber();
-  }
-  plusMinusPage(plus: boolean){
-    console.log(this.seletePageNo)
-    if(plus){
-      this.statusBackPage = true
-      this.plusPage();
-      if(this.pageNumber === this.seletePageNo){
-        this.statusNextPage = false 
-      }
-    }else{
-      this.minusPage();
-      this.statusNextPage = true 
-      if(this.seletePageNo === 1){
-        this.statusBackPage = false 
-      }
-    }
-    // this.statusNextPage = true;
-    // this.statusNextPage = false;
-  }
-  // counter(i: number) {
-  //   return new Array(i);
-  //   // console.log(this.test)
-  // }
-
-  // seletePageSize(page:number){
-  //   const pageSize = page
-  //   this.onPageEvent(pageSize)
-  // }
-
-  plusPage(): void { //กดเลื่อนไปด้ายขวา
-    const numberArray = this.numberArray[this.maxPageNumber-1].number + this.nextPageNumber //
-
-    if (this.seletePageNo < this.pageNumber) {
-      this.seletePageNo = this.seletePageNo + 1;
-
-      // console.log(this.seletePageNo)
-      if (this.seletePageNo >= this.maxPageNumber) {
-        this.statusPage = true; //เช็ตเพื่อกำหนดเเสดงเครื่องหมาย ...
-      }
-    } else {
-      console.log(this.seletePageNo);
-    }
-
-    if (this.seletePageNo > this.maxPageNumber && this.nextPageNumber <= this.pageNumber - 6 
-      && this.seletePageNo === numberArray) {
-      this.nextPageNumber++;
-      // this.statusPage = true 
-      console.log(this.nextPageNumber);
-
-    }
-
-    this.onPageEvent(this.seletePageSize);
+    // Generate 1...5 array
+    this.pageViews = [...Array(this.maxPageView).keys()].map(i => i + 1);
   }
 
-  minusPage(): void { //กดเลื่อนไปด้านซ้าย
-
-    if (this.seletePageNo > 1) {
-      this.seletePageNo = this.seletePageNo - 1;
-      console.log(this.seletePageNo);
-      if (this.seletePageNo <= 2) {
-        this.statusPage = false; //เช็ตเพื่อกำหนดเเสดงเครื่องหมาย ...
-
-        console.log(this.nextPageNumber);
-      }
-    } else {
-      console.log(this.seletePageNo);
-    }
-    this.onPageEvent(this.seletePageSize);
-    if (this.seletePageNo <= this.pageNumber-this.maxPageNumber +1  && this.nextPageNumber > 1 
-        && this.seletePageNo === this.numberArray[0].number + this.nextPageNumber) {
-      // && this.seletePageNo === this.numberArray[0] + this.nextPageNumber
-      // console.log(this.numberArray[0].number + this.nextPageNumber)
-      this.nextPageNumber--;
-    }
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  get canNextPage(): boolean {
+    return (this.pageNo < this.pageSize) ? true : false;
   }
 
-  onPageEvent(pageSize: number): void {
-    this.seletePageSize = pageSize;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  get canBackPage(): boolean {
+    return (this.pageNo > 1 ) ? true : false;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  get morePrevView(): boolean {
+    return this.pageNo > this.maxPageView;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  get moreNextView(): boolean {
+    return (this.pageNo <= this.maxPageView);
+  }
+
+  clickPageNo(pageNo: number): void {
+    this.pageNo = pageNo;
+    this.onPageChanged();
+  }
+
+  //กดเลื่อนไปด้ายขวา
+  nextPage(): void {
+
+    if (this.pageNo < this.pageSize) {
+      this.pageNo++;
+
+      const lastPageNo = this.pageViews[this.pageViews.length - 1] + this.addPageViewNo;
+      if ((this.pageNo > this.maxPageView) && (this.pageNo > lastPageNo)) {
+        this.addPageViewNo++;
+      }
+    }
+
+    this.onPageChanged();
+  }
+
+  //กดเลื่อนไปด้านซ้าย
+  prevPage(): void {
+
+    if (this.pageNo > 1) {
+      this.pageNo--;
+    }
+
+    const startPageNo = this.pageViews[0] + this.addPageViewNo;
+    if (this.pageNo <= this.pageSize-this.maxPageView + 1
+        && this.pageNo < startPageNo) {
+      this.addPageViewNo--;
+    }
+
+    this.onPageChanged();
+  }
+
+  changeItemPerPage(size: number): void {
+    this.pageSize = size;
+    this.onPageChanged();
+  }
+
+  onPageChanged(): void {
     const page = {
-      pageIndex: this.seletePageNo,
-      pageSize: this.seletePageSize
+      pageNo: this.pageNo,
+      pageSize: this.pageSize
     };
-    this.onPageEventChanged.emit(page);
 
-
+    console.log(page);
+    this.pageChanged.emit(page);
   }
 
-  calculateMaxPageNumber(): void {
-    //คำควณเพื่อเเสดงตัวเลขในเเถบเมนู
-    for (let number = 1; number <= this.maxPageNumber; number++) { 
-      console.log(number);
-      var result = Array({ number });//.fill(i);;
-      this.numberArray = this.numberArray.concat(result);
-      console.log(this.numberArray);
-    }
-  }
-
-  clickPageNo(seletePageNo: number): void {
-    if(seletePageNo > 1 ){
-      
-      this.statusBackPage = true
-    }else{
-      this.statusBackPage = false
-    }
-
-    if(seletePageNo < this.pageNumber){
-      this.statusNextPage = true
-    }else{
-      this.statusNextPage = false
-    }
-
-    this.seletePageNo = seletePageNo
-    this.onPageEvent(this.seletePageSize);
-  }
-
-
-  // test(){
-  //   const str = ["Hello,", "how", "are", "you", "today?"];
-  //   var array = str.split(" ",2); 
-  //   // const words = str.split(' ');
-  //   // console.log(words[3]);
-  //   console.log(lastWord);
-  // }
-
-
-  // calculateQty(document:any) {
-  //   let resultItem = document.items;
-  //   let items = [];
-  //   resultItem.forEach(function (value) {
-  //     const result = Array(value.quantity).fill(value);
-  //     items = items.concat(result);
-  //   });
-  //   this.quantityItems = items;
-  //   console.log(this.quantityItems);
-  // }
 }
