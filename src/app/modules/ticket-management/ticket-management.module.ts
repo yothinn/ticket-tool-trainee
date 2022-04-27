@@ -26,13 +26,11 @@ import { TicketChangeDialogComponent } from './dialogs/ticket-change-dialog/tick
     TicketCardInfoComponent,
     TicketAnalyzeDialogComponent,
     TicketChangeDialogComponent
-    
   ],
   imports: [
     CommonModule,
     TicketManagementRoutingModule,
     SharedModule
-    
   ]
 })
 export class TicketManagementModule { }

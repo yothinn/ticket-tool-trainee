@@ -52,7 +52,6 @@ export class NavigationService
 
         return of(_navigation).pipe(
                 tap((navigation) => {
-                    console.log(navigation);
                     this._navigation.next(navigation);
                 })
             );

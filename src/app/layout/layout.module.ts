@@ -40,7 +40,7 @@ const layoutModules = [
     imports     : [
         SharedModule,
         SettingsModule,
-        ...layoutModules
+        ...layoutModules,
     ],
     exports     : [
         LayoutComponent,

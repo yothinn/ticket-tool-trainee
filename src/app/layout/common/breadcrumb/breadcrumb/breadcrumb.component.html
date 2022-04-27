@@ -1,0 +1,6 @@
+<div class="text-primary">
+    <span *ngFor="let breadcrumb of (breadcrumb$ | async)">
+        {{breadcrumb}}
+        <span>{{ breadcrumb.label }} </span>
+    </span>
+</div>

@@ -25,11 +25,12 @@ export class ProblemManagementComponent implements OnInit, OnDestroy {
     { name: 'Acitvie', total: 10 },
     { name: 'inActive', total: 5 }
   ];
-  
+
   private _unsubscribeAll: Subject<any> = new Subject<any>();
+
   constructor(
     private _problemService: ProblemService,
-  ) { 
+  ) {
     this.getProblemsData();
   }
 

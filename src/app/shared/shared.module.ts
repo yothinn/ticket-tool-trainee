@@ -7,14 +7,12 @@ import { StatusIconsComponent } from './components/status-icons/status-icons.com
 import { MaterialModule } from './material/material.module';
 import { CriticalityIconComponent } from './components/criticality-icon/criticality-icon.component';
 
-
 @NgModule({
     declarations: [
         FilterButtonComponent,
         PaginatorComponent,
         StatusIconsComponent,
         CriticalityIconComponent
-
     ],
     imports: [
         CommonModule,
@@ -27,12 +25,11 @@ import { CriticalityIconComponent } from './components/criticality-icon/critical
         FormsModule,
         MaterialModule,
         ReactiveFormsModule,
-        // SharedModule
+
         FilterButtonComponent,
         PaginatorComponent,
         StatusIconsComponent,
         CriticalityIconComponent
-
     ]
 })
 export class SharedModule

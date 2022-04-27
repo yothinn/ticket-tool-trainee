@@ -25,14 +25,14 @@ export const defaultNavigation: FuseNavigationItem[] = [
         title: 'My Ticket',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/ticket/myticket'
+        link : '/myticket'
     },
     {
         id   : 'ticketManagement',
         title: 'Ticket Management',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/ticket/ticket-management'
+        link : '/ticket-management'
     },
     {
         id   : 'problemManagement',
