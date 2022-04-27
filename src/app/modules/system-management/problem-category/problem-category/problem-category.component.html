@@ -1,30 +1,21 @@
 <mat-drawer-container class=" w-full h-full">
     <mat-drawer-content class="flex flex-col p-4">
         <ng-container *ngIf="problemCategoryResponse$ | async as problemCategoryResponse">
-            <div class="flex flex-row ">
-                    <mat-form-field appearance="outline" 
-                        class="flex-auto mt-auto mb-auto mr-10"
-                    >
-                        <mat-label>Search</mat-label>
-                        <input matInput placeholder="Input">
-                    </mat-form-field>
+            <div class="flex flex-row gap-x-4 ">
+                <mat-form-field appearance="outline" class="flex-auto">
+                    <mat-label>Search</mat-label>
+                    <input matInput placeholder="Input">
+                </mat-form-field>
 
-                    <button mat-flat-button color="primary"
-                    (click)="openProblemCategoryDialog()"
-                    >
+                <button mat-flat-button color="primary" (click)="openProblemCategoryDialog()">
                     Add Problem Category
-                    </button>
+                </button>
             </div>
 
-        
-            <app-problem-category-list [problemCategories]="problemCategoryResponse.data" 
-            (selectCategory)="onDetail($event)"
-            > 
+            <app-problem-category-list [problemCategories]="problemCategoryResponse.data"> 
             </app-problem-category-list>  
         
-
             <app-paginator>
-
             </app-paginator>
 
         </ng-container>

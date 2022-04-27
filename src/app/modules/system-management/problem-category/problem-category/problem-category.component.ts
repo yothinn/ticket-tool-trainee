@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSidenav } from '@angular/material/sidenav';
 import { PageResponse } from 'app/core/base/pageResponse.types';
@@ -13,21 +13,16 @@ import { ProblemCategoryEditDialogsComponent } from '../dialogs/problem-category
   templateUrl: './problem-category.component.html',
   styleUrls: ['./problem-category.component.scss']
 })
-export class ProblemCategoryComponent implements OnInit {
-
-  @ViewChild('drawerDetail') drawerDetail: MatSidenav;
+export class ProblemCategoryComponent implements OnInit, OnDestroy {
 
   problemCategoryResponse$?: Observable<PageResponse< ProblemCategory[]>>;
-
-  isViewMode: boolean = false;
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 
   constructor(
-    public dialog: MatDialog,
-
+    private _dialog: MatDialog,
     private _problemCategoryService:  ProblemCategoryService
-  ) { 
+  ) {
     this.getProblemCategories();
   }
 
@@ -38,9 +33,9 @@ export class ProblemCategoryComponent implements OnInit {
     this._unsubscribeAll.next(null);
     this._unsubscribeAll.complete();
   }
-  
+
   openProblemCategoryDialog(): void {
-    const dialogRef = this.dialog.open(ProblemCategoryEditDialogsComponent, {
+    const dialogRef = this._dialog.open(ProblemCategoryEditDialogsComponent, {
       height:'230px',
       width: '40%'
     });
@@ -54,25 +49,6 @@ export class ProblemCategoryComponent implements OnInit {
     const params = new GetProblemCategoryParameter();
 
     this.problemCategoryResponse$ = this._problemCategoryService.getProblemCategories(params);
-  }
-
-
-  onDetail(problemCategory: ProblemCategory): void {
-    console.log(problemCategory);
-
-    this._problemCategoryService.activeProblemCategory = problemCategory;
-
-    this.isViewMode = true;
-    if (!this.drawerDetail.opened) {
-      this.drawerDetail?.toggle();
-    }
-  }
-
-  onCreate(): void {
-    this.isViewMode = false;
-    if (!this.drawerDetail.opened) {
-      this.drawerDetail?.toggle();
-    }
   }
 
 }

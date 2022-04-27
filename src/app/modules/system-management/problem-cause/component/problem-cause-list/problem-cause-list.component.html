@@ -1,16 +1,16 @@
 <div class="flex flex-col w-full h-90 overflow-auto ">
     <div class="grid grid-cols-4">
-        <p class="col-span-4"></p>
         <p><strong>No</strong></p>
-        <p><strong>Problem Cause</strong></p>
+        <p class="col-span-2">
+            <strong>Problem Cause</strong>
+        </p>
+        <p></p>
     </div>
 
     <mat-divider></mat-divider>
 
-    <ng-container *ngFor="let item of problemCauses" >
-        <app-problem-cause-info 
-            [ProblemCauses]="item" (click)="onDetail(item)"
-        >
+    <ng-container *ngFor="let cause of problemCauses" >
+        <app-problem-cause-info [problemCause]="cause">
         </app-problem-cause-info>
 
         <mat-divider [inset]="true"></mat-divider>

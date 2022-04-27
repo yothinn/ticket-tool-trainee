@@ -1,12 +1,16 @@
-<div class="grid grid-cols-3 pt-2 pb-2 hover:bg-gray-300 cursor-pointer">
+<div class="grid grid-cols-4 py-2 hover:bg-gray-300 cursor-pointer">
     <p>
-            {{ ProblemCategory.id }}
+        {{ problemCategory.id }}
     </p>
-    <p>
-            {{ ProblemCategory.name }}
+    <p class="col-span-2">
+        {{ problemCategory.name }}
     </p>
-    <p>
-            <mat-icon aria-hidden="false" aria-label="Example edit icon"> edit </mat-icon>
-            <mat-icon aria-hidden="false" aria-label="Example delete icon"> delete </mat-icon>
-    </p>
+    <div class="flex flex-row gap-x-4">
+        <mat-icon>
+                edit 
+        </mat-icon>
+        <mat-icon> 
+                delete 
+        </mat-icon>
+    </div>
 </div>

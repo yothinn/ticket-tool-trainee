@@ -34,5 +34,5 @@ export class ProblemCategoryEditDialogsComponent implements OnInit {
     console.log(payload);
 
   }
-  
+
 }

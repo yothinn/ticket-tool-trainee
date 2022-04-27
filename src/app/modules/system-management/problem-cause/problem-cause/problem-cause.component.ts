@@ -16,7 +16,7 @@ export class ProblemCauseComponent implements OnInit {
 
   constructor(
     private _problemCauseService: ProblemCauseService
-  ) { 
+  ) {
     this.getProblemCauses();
   }
 
@@ -29,9 +29,4 @@ export class ProblemCauseComponent implements OnInit {
     this.problemCauseResponse$ = this._problemCauseService.getProblemCauses(params);
   }
 
-  onDetail(problemCause: ProblemCause): void {
-    console.log(problemCause);
-
-  
-  }
 }

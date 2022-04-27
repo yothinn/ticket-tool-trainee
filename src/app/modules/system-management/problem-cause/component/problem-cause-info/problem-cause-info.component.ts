@@ -8,10 +8,9 @@ import { ProblemCause } from 'app/core/problem-cause/problem-cause.types';
     styleUrls: ['./problem-cause-info.component.scss']
 })
 export class ProblemCauseInfoComponent implements OnInit {
-  
-  @Input() problemCauses: ProblemCause;
-  // @Input() problemCauseData?: any;
-  
+
+  @Input() problemCause: ProblemCause;
+
   constructor() { }
 
   ngOnInit(): void {

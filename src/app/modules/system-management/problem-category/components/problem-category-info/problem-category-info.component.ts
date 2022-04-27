@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ProblemCategory } from 'app/core/problem-category/problem-category.types';
 
 @Component({
   selector: 'app-problem-category-info',
@@ -6,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./problem-category-info.component.scss']
 })
 export class ProblemCategoryInfoComponent implements OnInit {
-  @Input() ProblemCategory?: any;
+
+  @Input() problemCategory?: ProblemCategory;
 
   constructor() { }
 

@@ -1,11 +1,8 @@
 <mat-drawer-container class=" w-full h-full">
     <mat-drawer-content class="flex flex-col p-4">
         <ng-container *ngIf="problemCauseResponse$ | async as problemCausesResponse">
-            {{ problemCauseResponse | json}}
-            <div class="flex flex-row ">
-                <mat-form-field appearance="outline" 
-                    class="flex-auto mt-auto mb-auto mr-10"
-                >
+            <div class="flex flex-row gap-x-4">
+                <mat-form-field appearance="outline" class="flex-auto">
                     <mat-label>Search</mat-label>
                     <input matInput placeholder="Input">
                 </mat-form-field>
