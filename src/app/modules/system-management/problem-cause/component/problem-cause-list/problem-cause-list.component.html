@@ -7,9 +7,9 @@
 
     <mat-divider></mat-divider>
 
-    <ng-container *ngFor="let item of dateMock" >
+    <ng-container *ngFor="let item of problemCauses" >
         <app-problem-cause-info 
-            [problemCauseData]="item" (click)="onDetail(item)"
+            [ProblemCauses]="item" (click)="onDetail(item)"
         >
         </app-problem-cause-info>
 

@@ -19,13 +19,13 @@ export class ProblemCauseService {
     private _httpClient: HttpClient
   ) { }
 
-  getProblemCategories(param: GetProblemCauseParameter): Observable<PageResponse<ProblemCause[]>> {
+  getProblemCauses(param: GetProblemCauseParameter): Observable<PageResponse<ProblemCause[]>> {
     const options = { params: param.toHttpParams() };
 
     return this._httpClient.get<PageResponse<ProblemCause[]>>(this.apiUrl.problemCauseUrl, options);
   }
 
-  getProblemCategory(id: string): Observable<Response<ProblemCause>> {
+  getProblemCause(id: string): Observable<Response<ProblemCause>> {
     const apiUrl = `${this.apiUrl.problemCauseUrl}/${id}`;
 
     return this._httpClient.get<Response<ProblemCause>>(apiUrl);

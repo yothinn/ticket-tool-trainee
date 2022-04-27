@@ -10,6 +10,9 @@ import { Problem } from './problem.types';
   providedIn: 'root'
 })
 export class ProblemService {
+  getProblemCause(params: GetProblemParameter): Observable<PageResponse<import("../problem-cause/problem-cause.types").ProblemCause[]>> {
+    throw new Error('Method not implemented.');
+  }
 
   readonly apiUrl = {
     problemUrl: 'api/v1/problems',
