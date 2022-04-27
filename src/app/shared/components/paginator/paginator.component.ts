@@ -73,8 +73,7 @@ export class PaginatorComponent implements OnInit  {
     }
 
     const startPageNo = this.pageViews[0] + this.addPageViewNo;
-    if (this.pageNo <= this.pageSize-this.maxPageView + 1
-        && this.pageNo < startPageNo) {
+    if ((this.pageNo <= this.pageSize-this.maxPageView + 1) && (this.pageNo < startPageNo)) {
       this.addPageViewNo--;
     }
 
