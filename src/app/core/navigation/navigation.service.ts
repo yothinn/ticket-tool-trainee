@@ -50,8 +50,6 @@ export class NavigationService
             horizontal: horizontalNavigation,
         };
 
-        console.log('pass this');
-
         return of(_navigation).pipe(
                 tap((navigation) => {
                     this._navigation.next(navigation);
