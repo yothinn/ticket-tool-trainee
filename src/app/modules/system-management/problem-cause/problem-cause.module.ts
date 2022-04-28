@@ -4,6 +4,7 @@ import { ProblemCauseRoutingModule } from './problem-cause-routing.module';
 import { ProblemCauseListComponent } from './component/problem-cause-list/problem-cause-list.component';
 import { ProblemCauseInfoComponent } from './component/problem-cause-info/problem-cause-info.component';
 import { SharedModule } from 'app/shared/shared.module';
+import { ProblemCauseEditDialogsComponent } from './dialogs/problem-cause-edit-dialogs/problem-cause-edit-dialogs.component';
 
 
 
@@ -11,7 +12,8 @@ import { SharedModule } from 'app/shared/shared.module';
   declarations: [
     ProblemCauseComponent,
     ProblemCauseListComponent,
-    ProblemCauseInfoComponent
+    ProblemCauseInfoComponent,
+    ProblemCauseEditDialogsComponent
   ],
   imports: [
     ProblemCauseRoutingModule,
