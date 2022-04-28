@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ProblemCategory } from 'app/core/problem-category/problem-category.types';
 
 @Component({
   selector: 'app-problem-category-edit-dialogs',
@@ -8,31 +9,31 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./problem-category-edit-dialogs.component.scss']
 })
 export class ProblemCategoryEditDialogsComponent implements OnInit {
-  categoryForm?: FormGroup;
+
+  problemCategory?: ProblemCategory;
+  isNew: boolean = true;
+
+  categoryName: string = '';
 
   constructor(
-    public dialogRef: MatDialogRef<ProblemCategoryEditDialogsComponent>,
+    @Inject(MAT_DIALOG_DATA) private _data: any,
+    private _dialogRef: MatDialogRef<ProblemCategoryEditDialogsComponent>,
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.categoryForm = this.createCategoryForm();
-  }
+    this.problemCategory = this._data;
+    this.isNew = (this.problemCategory) ? false : true;
+    this.categoryName = this.problemCategory?.name;
 
-  createCategoryForm(): FormGroup {
-    return this.formBuilder.group({
-      categoryName: ['', Validators.required]
-    });
+    console.log(this._data);
   }
 
   close(): void {
-    this.dialogRef.close();
+    this._dialogRef.close();
   }
 
-  saveFrom(): void {
-    const payload = this.categoryForm?.value;
-    console.log(payload);
-
+  save(): void {
+    this._dialogRef.close(this.categoryName);
   }
-
 }
