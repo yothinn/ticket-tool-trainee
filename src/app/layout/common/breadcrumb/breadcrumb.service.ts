@@ -18,13 +18,9 @@ export class BreadcrumbService {
       // Filter the NavigationEnd events as the breadcrumb is updated only when the route reaches its end
       filter((event: any) => event instanceof NavigationEnd),
       distinctUntilChanged(),
-    ).subscribe((event: any) => {
+    ).subscribe(() => {
 
-      console.log(this._activeRoute);
-      console.log(this._activeRoute.root.firstChild.firstChild.firstChild.snapshot.data);
-      const root = this._router.routerState.snapshot.root;
-      //console.log(this._router);
-
+      const root = this._activeRoute.root.firstChild.snapshot;
       const breadcrumbs: Breadcrumb[] = [];
 
       this.addBreadcrumb(root, [], breadcrumbs);
@@ -40,9 +36,22 @@ export class BreadcrumbService {
 
   private addBreadcrumb(route: ActivatedRouteSnapshot, parentUrl: string[], breadcrumbs: Breadcrumb[]): void {
     if (route) {
+
+      const data = route.data;
       const routeUrl = parentUrl.concat(route.url.map(url => url.path));
 
-      console.log(routeUrl);
+      // Add an element for the current route part
+      if (data?.breadcrumb) {
+        breadcrumbs.push({
+          label: route.data.breadcrumb,
+          url: '/' + routeUrl.join('/')
+        });
+      }
+
+      // Add another element for the next route part
+      if (route.children.length > 0) {
+        this.addBreadcrumb(route.firstChild, routeUrl, breadcrumbs);
+      }
     }
   }
 }

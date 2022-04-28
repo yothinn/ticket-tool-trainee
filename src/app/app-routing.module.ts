@@ -12,48 +12,37 @@ const routes: Routes = [
     resolve: {
       initialData: InitialDataResolver,
     },
+    data: { breadcrumb: 'Home'},
     children : [
       {
         path: 'dashboard',
         loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
-        data: {
-          breadcrumb: 'Dashboard'
-        }
+        data: { breadcrumb: 'Dashboard' }
       },
       {
         path: 'reports',
         loadChildren: () => import('./modules/reports/reports.module').then(m => m.ReportsModule),
-        data: {
-          breadcrumb: 'Reports'
-        }
+        data: { breadcrumb: 'Reports' }
       },
       {
         path: 'myticket',
         loadChildren: () => import('./modules/my-ticket/my-ticket.module').then(m => m.MyTicketModule),
-        data: {
-          breadcrumb: 'My Ticket',
-        }
+        data: { breadcrumb: 'My Ticket' }
       },
       {
         path: 'ticket-management',
         loadChildren: () => import('./modules/ticket-management/ticket-management.module').then(m => m.TicketManagementModule),
-        data: {
-          breadcrumb: 'Ticket Management',
-        }
+        data: { breadcrumb: 'Ticket Management' }
       },
       {
         path: 'team-management',
         loadChildren: () => import('./modules/team-management/team-management.module').then(m => m.TeamManagementModule),
-        data: {
-            breadcrumb: 'Team Management'
-        }
+        data: { breadcrumb: 'Team Management' }
       },
       {
         path: 'problem-management',
         loadChildren: () => import('./modules/problem-management/problem-management.module').then(m => m.ProblemManagementModule),
-        data: {
-          breadcrumb: null,
-        }
+        data: { breadcrumb: 'Problem Management' }
       },
       {
         path: 'profile',

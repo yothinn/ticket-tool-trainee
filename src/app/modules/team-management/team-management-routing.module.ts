@@ -5,7 +5,8 @@ import { TeamManagementComponent } from './team-management/team-management.compo
 const routes: Route[] = [
     {
         path: '',
-        component: TeamManagementComponent
+        component: TeamManagementComponent,
+        data: { breadcrumb: null }
     }
 ];
 

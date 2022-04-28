@@ -8,6 +8,7 @@ const routes: Routes = [
   {
     path: '',
     component: TicketManagementComponent,
+    data: { breadcrumb: null }
   }
 ];
 

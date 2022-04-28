@@ -7,6 +7,7 @@ const routes: Routes = [
     {
         path: '',
         component: ReportsComponent,
+        data: { breadcrumb: null }
     }
 ];
 
