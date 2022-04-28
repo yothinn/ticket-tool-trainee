@@ -12,7 +12,9 @@
                 </button>
             </div>
 
-            <app-problem-cause-list [problemCauses]="problemCausesResponse.data">
+            <app-problem-cause-list [problemCauses]="problemCausesResponse.data" 
+                (edit)="openProblemCauseDialog($event)">
+            >
             
             </app-problem-cause-list>
 

@@ -1,28 +1,24 @@
 <div class="flex flex-col w-full h-full p-1" >
     <div class="flex flex-row ">
-        <h1 class="flex-auto justify-start "> Edit Problem Cause </h1>
+        <h1 class="flex-auto justify-start " *ngIf="isNew"> Add Problem Cause </h1>
+        <h1 class="flex-auto justify-start " *ngIf="!isNew"> Edit Problem Cause </h1>
         <button class="flex-initial" mat-icon-button (click)="close()">
             <mat-icon>close</mat-icon>
         </button>
     </div>
     <mat-divider></mat-divider>
 
-    <div class="flex h-full w-full">
-        <form [formGroup]="causeForm" class="flex flex-col w-full">
-            <div class="flex flex-col ">
-                <mat-label>Cause Name</mat-label>
-                <mat-form-field appearance="outline">
-                    <input matInput formControlName="causeName" placeholder="Problem cause">
-                </mat-form-field>
-            </div>
-        </form>
+    <div class="flex flex-col h-full w-full">
+        <mat-label>Cause Name</mat-label>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="causeName">
+        </mat-form-field>
     </div>
-
-    <div class="flex flex-row justify-end gap-3 ">
+    <div class="flex flex-row justify-end gap-x-2 ">
         <button mat-flat-button color="primary" (click)="close()">
             Cancel
         </button>
-        <button mat-flat-button color="primary" (click)="saveFrom()">
+        <button mat-flat-button color="primary" (click)="save()" [disabled]="!causeName">
             OK
         </button>
     </div>

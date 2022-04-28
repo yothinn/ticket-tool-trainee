@@ -27,16 +27,20 @@ export class ProblemCauseComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openProblemCauseDialog(problemCause:any): void {
+  openProblemCauseDialog(data?: any): void {
+    console.log(data);
+
     const dialogRef = this._dialog.open(ProblemCauseEditDialogsComponent, {
       height:'230px',
       width: '40%',
-      data: problemCause
-      
+      data: data?.problemCause
     });
 
-    dialogRef.afterClosed().subscribe((result: any) => {
+    dialogRef.afterClosed().subscribe((causeName: string) => {
       console.log('The dialog was closed');
+      if (causeName) {
+        // Save to backend
+      }
     });
   }
 

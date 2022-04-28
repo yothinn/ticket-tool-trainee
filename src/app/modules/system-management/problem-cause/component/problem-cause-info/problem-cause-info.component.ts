@@ -9,14 +9,14 @@ export class ProblemCauseInfoComponent implements OnInit {
 
   @Input() problemCause: ProblemCause;
 
-  @Output() select = new EventEmitter<any>();
+  @Output() edit = new EventEmitter<ProblemCause>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  selectEdit(event:any): void {
-    this.select.emit(event);
+  onSelectEdit(problemCause: ProblemCause): void {
+    this.edit.emit(problemCause);
   }
 }

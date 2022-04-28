@@ -9,8 +9,8 @@
 
     <mat-divider></mat-divider>
 
-    <ng-container *ngFor="let cause of problemCauses" >
-        <app-problem-cause-info [problemCause]="cause" (select)="openProblemCauseDialog($event)">
+    <ng-container *ngFor="let cause of problemCauses; let i = index" >
+        <app-problem-cause-info [problemCause]="cause" (edit)="onSelectEdit($event, i)">
         </app-problem-cause-info>
 
         <mat-divider [inset]="true"></mat-divider>
