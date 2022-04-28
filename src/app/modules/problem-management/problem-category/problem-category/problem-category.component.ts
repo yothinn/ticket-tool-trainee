@@ -1,10 +1,10 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PageResponse } from 'app/core/base/pageResponse.types';
 import { GetProblemCategoryParameter } from 'app/core/parameters/getProblemCategoryParameter.entity';
 import { ProblemCategoryService } from 'app/core/problem-category/problem-category.service';
 import { ProblemCategory } from 'app/core/problem-category/problem-category.types';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ProblemCategoryEditDialogsComponent } from '../dialogs/problem-category-edit-dialogs/problem-category-edit-dialogs.component';
 
 @Component({
@@ -49,8 +49,4 @@ export class ProblemCategoryComponent implements OnInit {
 
     this.problemCategoryResponse$ = this._problemCategoryService.getProblemCategories(params);
   }
-
-  // onEdit(event: any ): void {
-  //   console.log(event);
-  // }
 }
