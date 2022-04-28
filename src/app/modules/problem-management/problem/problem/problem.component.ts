@@ -8,11 +8,11 @@ import { FilterButton } from 'app/shared/components/filter-button/filter-button-
 import { Observable, Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-problem-management',
-  templateUrl: './problem-management.component.html',
-  styleUrls: ['./problem-management.component.scss']
+  selector: 'app-problem',
+  templateUrl: './problem.component.html',
+  styleUrls: ['./problem.component.scss']
 })
-export class ProblemManagementComponent implements OnInit, OnDestroy {
+export class ProblemComponent implements OnInit, OnDestroy {
   @ViewChild('drawerDetail') drawerDetail: MatSidenav;
 
   // problems: Problem[] = [];

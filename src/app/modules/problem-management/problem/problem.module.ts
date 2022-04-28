@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProblemManagementRoutingModule } from './problem-management-routing.module';
-import { ProblemManagementComponent } from './problem-management/problem-management.component';
+import { ProblemRoutingModule } from './problem-routing.module';
+import { ProblemComponent } from './problem/problem.component';
 import { ProblemInformationEditComponent } from './problem-information-edit/problem-information-edit.component';
 import { ProblemInformationViewComponent } from './problem-information-view/problem-information-view.component';
 import { SharedModule } from 'app/shared/shared.module';
@@ -23,7 +23,7 @@ import { RequestDataMenuComponent } from './components/request-data-menu/request
 
 @NgModule({
   declarations: [
-    ProblemManagementComponent,
+    ProblemComponent,
     ProblemInformationEditComponent,
     ProblemInformationViewComponent,
     ProblemCardInfoComponent,
@@ -42,8 +42,8 @@ import { RequestDataMenuComponent } from './components/request-data-menu/request
   ],
   imports: [
     CommonModule,
-    ProblemManagementRoutingModule,
+    ProblemRoutingModule,
     SharedModule
   ]
 })
-export class ProblemManagementModule { }
+export class ProblemModule { }

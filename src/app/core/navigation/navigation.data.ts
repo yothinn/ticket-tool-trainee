@@ -46,21 +46,21 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: 'Problem',
                 type : 'basic',
                 icon : '',
-                link : '/system/problem-management'
+                link : '/problem-management/problem'
             },
             {
                 id   : 'problemCategory',
                 title: 'Problem Category',
                 type : 'basic',
                 icon : '',
-                link : '/system/problem-category'
+                link : '/problem-management/problem-category'
             },
             {
                 id   : 'problemCause',
                 title: 'Problem Cause',
                 type : 'basic',
                 icon : '',
-                link : '/system/problem-cause'
+                link : '/problem-management/problem-cause'
             },
             {
                 id   : 'requestData',
@@ -76,7 +76,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
         title: 'Team Management',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/system/team-management'
+        link : '/team-management'
     },
     {
         id   : 'slaManagement',

@@ -42,8 +42,15 @@ const routes: Routes = [
         }
       },
       {
-        path: 'system',
-        loadChildren: () => import('./modules/system-management/system-management.module').then(m => m.SystemManagementModule),
+        path: 'team-management',
+        loadChildren: () => import('./modules/team-management/team-management.module').then(m => m.TeamManagementModule),
+        data: {
+            breadcrumb: 'Team Management'
+        }
+      },
+      {
+        path: 'problem-management',
+        loadChildren: () => import('./modules/problem-management/problem-management.module').then(m => m.ProblemManagementModule),
         data: {
           breadcrumb: null,
         }

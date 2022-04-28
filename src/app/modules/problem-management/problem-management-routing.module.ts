@@ -4,8 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     {
-        path: 'problem-management',
-        loadChildren: () => import('./problem-management/problem-management.module').then(m => m.ProblemManagementModule),
+        path: 'problem',
+        loadChildren: () => import('./problem/problem.module').then(m => m.ProblemModule),
         data: {
             breadcrumb: 'Problem Management'
         }
@@ -15,13 +15,6 @@ const routes: Routes = [
         loadChildren: () => import('./problem-category/problem-category.module').then(m => m.ProblemCategoryModule),
         data: {
             breadcrumb: 'Problem Category'
-        }
-    },
-    {
-        path: 'team-management',
-        loadChildren: () => import('./team-management/team-management.module').then(m => m.TeamManagementModule),
-        data: {
-            breadcrumb: 'Team Management'
         }
     },
     {
@@ -41,4 +34,4 @@ const routes: Routes = [
     ],
 
 })
-export class SystemManagementRoutingModule { }
+export class ProblemManagementRoutingModule { }

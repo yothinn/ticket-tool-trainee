@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
-import { ProblemManagementComponent } from './problem-management/problem-management.component';
+import { ProblemComponent } from './problem/problem.component';
 
 
 const routes: Route[] = [
   {
       path     : '',
-      component: ProblemManagementComponent
+      component: ProblemComponent
   }
 ];
 
@@ -17,4 +17,4 @@ const routes: Route[] = [
       RouterModule.forChild(routes)
   ],
 })
-export class ProblemManagementRoutingModule { }
+export class ProblemRoutingModule { }
