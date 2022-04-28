@@ -7,22 +7,18 @@
     </div>
     <mat-divider></mat-divider>
 
-    <div class="flex h-full w-full">
-        <form [formGroup]="categoryForm" class="flex flex-col w-full">
-            <div class="flex flex-col ">
-                <mat-label>Category Name</mat-label>
-                <mat-form-field appearance="outline">
-                    <input matInput formControlName="categoryName" placeholder="Input">
-                </mat-form-field>
-            </div>
-        </form>
+    <div class="flex flex-col h-full w-full">
+        <mat-label>Category Name</mat-label>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="categoryName">
+        </mat-form-field>
     </div>
 
     <div class="flex flex-row justify-end gap-3 ">
         <button mat-flat-button color="primary" (click)="close()">
             Cancel
         </button>
-        <button mat-flat-button color="primary" (click)="saveFrom()">
+        <button mat-flat-button color="primary" (click)="save()" [disabled]="!categoryName">
             OK
         </button>
     </div>

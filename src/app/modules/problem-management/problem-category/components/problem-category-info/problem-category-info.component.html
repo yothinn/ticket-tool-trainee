@@ -6,11 +6,11 @@
         {{ problemCategory.name }}
     </p>
     <div class="flex flex-row gap-x-4">
-        <mat-icon>
-                edit 
+        <mat-icon (click)="onSelectEdit(problemCategory)">
+            edit 
         </mat-icon>
         <mat-icon> 
-                delete 
+            delete 
         </mat-icon>
     </div>
 </div>

@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSidenav } from '@angular/material/sidenav';
 import { PageResponse } from 'app/core/base/pageResponse.types';
 import { GetProblemCategoryParameter } from 'app/core/parameters/getProblemCategoryParameter.entity';
 import { ProblemCategoryService } from 'app/core/problem-category/problem-category.service';
@@ -13,13 +12,12 @@ import { ProblemCategoryEditDialogsComponent } from '../dialogs/problem-category
   templateUrl: './problem-category.component.html',
   styleUrls: ['./problem-category.component.scss']
 })
-export class ProblemCategoryComponent implements OnInit, OnDestroy {
+export class ProblemCategoryComponent implements OnInit {
 
   problemCategoryResponse$?: Observable<PageResponse< ProblemCategory[]>>;
 
-  private _unsubscribeAll: Subject<any> = new Subject<any>();
-
   constructor(
+
     private _dialog: MatDialog,
     private _problemCategoryService:  ProblemCategoryService
   ) {
@@ -29,19 +27,20 @@ export class ProblemCategoryComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 
-  ngOnDestroy(): void {
-    this._unsubscribeAll.next(null);
-    this._unsubscribeAll.complete();
-  }
+  openProblemCategoryDialog(data?: {index: number; problemCategory: ProblemCategory}): void {
+    console.log(data);
 
-  openProblemCategoryDialog(): void {
     const dialogRef = this._dialog.open(ProblemCategoryEditDialogsComponent, {
       height:'230px',
-      width: '40%'
+      width: '40%',
+      data: data?.problemCategory
     });
 
-    dialogRef.afterClosed().subscribe((result: any) => {
+    dialogRef.afterClosed().subscribe((categoryName: string) => {
       console.log('The dialog was closed');
+      if (categoryName) {
+
+      }
     });
   }
 
@@ -51,4 +50,7 @@ export class ProblemCategoryComponent implements OnInit, OnDestroy {
     this.problemCategoryResponse$ = this._problemCategoryService.getProblemCategories(params);
   }
 
+  // onEdit(event: any ): void {
+  //   console.log(event);
+  // }
 }

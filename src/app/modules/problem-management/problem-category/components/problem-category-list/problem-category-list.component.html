@@ -10,8 +10,8 @@
 
     <mat-divider></mat-divider>
 
-    <ng-container *ngFor="let category of problemCategories">
-        <app-problem-category-info [problemCategory]="category">
+    <ng-container *ngFor="let category of problemCategories; let i = index">
+        <app-problem-category-info [problemCategory]="category" (edit)="onSelectEdit($event, i)">
         </app-problem-category-info>
 
         <mat-divider [inset]="true"></mat-divider>

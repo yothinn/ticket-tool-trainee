@@ -12,12 +12,14 @@
                 </button>
             </div>
 
-            <app-problem-category-list [problemCategories]="problemCategoryResponse.data"> 
+            <app-problem-category-list [problemCategories]="problemCategoryResponse.data"
+                (edit)="openProblemCategoryDialog($event)"
+            > 
             </app-problem-category-list>  
         
             <app-paginator>
             </app-paginator>
-
+            
         </ng-container>
     </mat-drawer-content>
 </mat-drawer-container>
