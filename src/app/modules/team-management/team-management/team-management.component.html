@@ -1,5 +1,5 @@
-<mat-drawer-container class=" w-full h-full">
-    <mat-drawer-content class="flex flex-col h-full p-4">
+<mat-drawer-container class="w-full h-full">
+    <mat-drawer-content cdkscrollable class="flex flex-col absolute inset-0">
         <ng-container *ngIf="teamResponse$ | async as teamResponse">
             <div class="flex flex-row gap-x-2 items-end">
                 <div class="flex flex-col flex-auto">
@@ -23,8 +23,8 @@
             </app-filter-button>
 
 
-                <app-team-card-list [teams]="teamResponse.data" (selected)="onDetail($event)">
-                </app-team-card-list>   
+            <app-team-card-list [teams]="teamResponse.data" (selected)="onDetail($event)">
+            </app-team-card-list>   
         
             
 
@@ -34,7 +34,7 @@
         </ng-container>
     </mat-drawer-content>
 
-    <mat-drawer #drawerDetail style="width: 50%;" 
+    <mat-drawer #drawerDetail class="md:w-4/12 w-5/12 xl:w-6/12" 
         [mode]="isViewMode ? 'side' : 'over' " position="end"
     >
         <div class="p-2">

@@ -108,6 +108,29 @@ export const defaultNavigation: FuseNavigationItem[] = [
             }
         ]
     },
+    {
+        id   : 'userManagement',
+        title: 'User Management',
+        type : 'collapsable',
+        icon : 'heroicons_outline:chart-pie',
+        // link : '/system/problem-management',
+        children: [
+            {
+                id   : 'userPermission',
+                title: 'User Permission',
+                type : 'basic',
+                icon : '',
+                link : '/user-management/permission'
+            },
+            {
+                id   : 'userGroup',
+                title: 'User Group',
+                type : 'basic',
+                icon : '',
+                link : '/user-management/usergroup'
+            }
+        ]
+    },
     // {
     //     id   : 'profile',
     //     title: 'Profile',

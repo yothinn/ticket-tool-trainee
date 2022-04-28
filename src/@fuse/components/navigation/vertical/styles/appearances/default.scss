@@ -588,6 +588,34 @@ fuse-vertical-navigation-collapsable-item {
             }
         }
     }
+
+    &.fuse-vertical-navigation-item-expanded-active {
+
+        > .fuse-vertical-navigation-item-wrapper {
+
+            .fuse-vertical-navigation-item {
+
+                .fuse-vertical-navigation-item-icon {
+                    @apply opacity-100;
+                    background-color: var(--fuse-primary);
+
+                    .mat-icon {
+                        @apply text-black;
+                    }
+                    
+                }
+
+                .fuse-vertical-navigation-item-title {
+                    @apply opacity-100 text-primary-500;
+                }
+
+                .fuse-vertical-navigation-item-subtitle {
+                    @apply opacity-100;
+                }
+            }
+        }
+
+    }
 }
 
 /* Group */

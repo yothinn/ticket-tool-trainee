@@ -48,9 +48,12 @@ export class FuseVerticalNavigationCollapsableItemComponent implements OnInit, O
      */
     @HostBinding('class') get classList(): any
     {
+        const hasActiveChild = this._hasActiveChild(this.item, this._router.url);
+
         return {
             'fuse-vertical-navigation-item-collapsed': this.isCollapsed,
             'fuse-vertical-navigation-item-expanded' : this.isExpanded,
+            'fuse-vertical-navigation-item-expanded-active' : hasActiveChild,
         };
     }
 
