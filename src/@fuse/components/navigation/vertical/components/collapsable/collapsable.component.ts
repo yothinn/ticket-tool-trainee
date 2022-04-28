@@ -50,7 +50,7 @@ export class FuseVerticalNavigationCollapsableItemComponent implements OnInit, O
     {
         return {
             'fuse-vertical-navigation-item-collapsed': this.isCollapsed,
-            'fuse-vertical-navigation-item-expanded' : this.isExpanded
+            'fuse-vertical-navigation-item-expanded' : this.isExpanded,
         };
     }
 
@@ -146,6 +146,7 @@ export class FuseVerticalNavigationCollapsableItemComponent implements OnInit, O
                 // If the item has a children that has a matching url with the current url, expand...
                 if ( this._hasActiveChild(this.item, event.urlAfterRedirects) )
                 {
+
                     this.expand();
                 }
                 // Otherwise...

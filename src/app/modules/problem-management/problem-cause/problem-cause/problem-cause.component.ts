@@ -27,7 +27,7 @@ export class ProblemCauseComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openProblemCauseDialog(data?: any): void {
+  openProblemCauseDialog(data?: {index: number; problemCause: ProblemCause}): void {
     console.log(data);
 
     const dialogRef = this._dialog.open(ProblemCauseEditDialogsComponent, {

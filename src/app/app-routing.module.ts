@@ -45,6 +45,11 @@ const routes: Routes = [
         data: { breadcrumb: 'Problem Management' }
       },
       {
+        path: 'sla-management',
+        loadChildren: () => import('./modules/sla-management/sla-management.module').then(m => m.SlaManagementModule),
+        data: { breadcrumb: 'SLA Management' }
+      },
+      {
         path: 'profile',
         loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule),
         data: {

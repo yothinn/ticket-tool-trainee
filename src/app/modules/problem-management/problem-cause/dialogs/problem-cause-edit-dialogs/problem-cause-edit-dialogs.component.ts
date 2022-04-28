@@ -1,5 +1,4 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProblemCause } from 'app/core/problem-cause/problem-cause.types';
 
@@ -18,7 +17,7 @@ export class ProblemCauseEditDialogsComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) private _data: any,
     private _dialogRef: MatDialogRef<ProblemCauseEditDialogsComponent>,
-    private _formBuilder: FormBuilder
+
   ) { }
 
   ngOnInit(): void {

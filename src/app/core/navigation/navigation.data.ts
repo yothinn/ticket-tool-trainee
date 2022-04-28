@@ -67,7 +67,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: 'Request Data',
                 type : 'basic',
                 icon : '',
-                link : '',
+                link : '/problem-management/request-data',
             }
         ]
     },
@@ -90,21 +90,21 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: 'Criticality',
                 type : 'basic',
                 icon : '',
-                link : ''
+                link : '/sla-management/criticality'
             },
             {
                 id   : 'workingDayTime',
                 title: 'Working Day&Time',
                 type : 'basic',
                 icon : '',
-                link : ''
+                link : '/sla-management/workingDay'
             },
             {
                 id   : 'holiday',
                 title: 'Holiday',
                 type : 'basic',
                 icon : '',
-                link : ''
+                link : '/sla-management/holiday'
             }
         ]
     },

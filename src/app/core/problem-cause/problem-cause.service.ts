@@ -15,20 +15,9 @@ export class ProblemCauseService {
     problemCauseUrl: 'api/v1/problem-causes',
   };
 
-  private _activeProblemCause: BehaviorSubject<ProblemCause> = new BehaviorSubject<ProblemCause>(undefined);
-
   constructor(
     private _httpClient: HttpClient
   ) { }
-
-  set activeProblemCause(problemCause: ProblemCause) {
-    this._activeProblemCause.next(problemCause);
-  }
-
-  // eslint-disable-next-line @typescript-eslint/member-ordering
-  get activeProblemCause$(): Observable<ProblemCause> {
-    return this._activeProblemCause.asObservable();
-  }
 
   getProblemCauses(param: GetProblemCauseParameter): Observable<PageResponse<ProblemCause[]>> {
     const options = { params: param.toHttpParams() };
