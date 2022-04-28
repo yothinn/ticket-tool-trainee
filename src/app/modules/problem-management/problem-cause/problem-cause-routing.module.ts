@@ -5,7 +5,8 @@ import { ProblemCauseComponent } from './problem-cause/problem-cause.component';
 const routes: Route[] = [
     {
         path: '',
-        component: ProblemCauseComponent
+        component: ProblemCauseComponent,
+        data: { breadcrumb: null }
     }
 ];
 

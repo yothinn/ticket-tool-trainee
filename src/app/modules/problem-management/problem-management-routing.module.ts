@@ -6,23 +6,17 @@ const routes: Routes = [
     {
         path: 'problem',
         loadChildren: () => import('./problem/problem.module').then(m => m.ProblemModule),
-        data: {
-            breadcrumb: 'Problem Management'
-        }
+        data: { breadcrumb: 'Problem' }
     },
     {
         path: 'problem-category',
         loadChildren: () => import('./problem-category/problem-category.module').then(m => m.ProblemCategoryModule),
-        data: {
-            breadcrumb: 'Problem Category'
-        }
+        data: { breadcrumb: 'Problem Category' }
     },
     {
         path: 'problem-cause',
         loadChildren: () => import('./problem-cause/problem-cause.module').then(m => m.ProblemCauseModule),
-        data: {
-            breadcrumb: 'Problem Cause'
-        }
+        data: { breadcrumb: 'Problem Cause' }
     }
 ];
 

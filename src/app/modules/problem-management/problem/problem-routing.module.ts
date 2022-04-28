@@ -7,7 +7,8 @@ import { ProblemComponent } from './problem/problem.component';
 const routes: Route[] = [
   {
       path     : '',
-      component: ProblemComponent
+      component: ProblemComponent,
+      data: { breadcrumb: null }
   }
 ];
 

@@ -5,7 +5,8 @@ import { ProblemCategoryComponent } from './problem-category/problem-category.co
 const routes: Route[] = [
     {
         path: '',
-        component: ProblemCategoryComponent
+        component: ProblemCategoryComponent,
+        data: { breadcrumb: null }
     }
 ];
 
