@@ -1,0 +1,26 @@
+<div class="flex flex-col w-full h-full p-1" >
+    <div class="flex flex-row ">
+        <h1 class="flex-auto justify-start " *ngIf="isNew"> Add Request Data </h1>
+        <h1 class="flex-auto justify-start " *ngIf="!isNew"> Edit Request Data </h1>
+        <button class="flex-initial" mat-icon-button (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="flex flex-col">
+        <mat-label> Name </mat-label>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="requesty">
+        </mat-form-field>
+    </div>
+    <div class="flex flex-row justify-end gap-x-2 ">
+        <button mat-flat-button color="primary" (click)="close()">
+            Cancel
+        </button>
+        <button mat-flat-button color="primary" (click)="save()" [disabled]="!requesty">
+            OK
+        </button>
+    </div>
+</div>
+

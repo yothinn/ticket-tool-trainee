@@ -1,0 +1,20 @@
+<div class="grid grid-cols-4 py-2 hover:bg-gray-300 cursor-pointer">
+    <p>
+        {{requestDatas.keyName}}
+    </p>
+    <p>
+        {{requestDatas.displayName}}
+    </p>
+    <p>
+        {{requestDatas.controlType}} 
+    </p>
+    <div class="flex flex-row gap-x-4">
+        <mat-icon (click)="onSelectEdit(requestData)">
+            edit  
+        </mat-icon>
+        <mat-icon> 
+            delete 
+        </mat-icon>
+    </div>
+</div>
+<!-- (click)="onSelectEdit(requestData)" -->

@@ -17,6 +17,11 @@ const routes: Routes = [
         path: 'problem-cause',
         loadChildren: () => import('./problem-cause/problem-cause.module').then(m => m.ProblemCauseModule),
         data: { breadcrumb: 'Problem Cause' }
+    },
+    {
+        path: 'request-data',
+        loadChildren: () => import('./request-data/request-data.module').then(m => m.RequestDataModule),
+        data: { breadcrumb: 'Request Data' }
     }
 ];
 

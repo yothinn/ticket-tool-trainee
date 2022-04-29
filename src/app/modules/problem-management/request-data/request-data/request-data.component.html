@@ -1,0 +1,25 @@
+<mat-drawer-container class=" w-full h-full">
+    <mat-drawer-content class="flex flex-col p-4">
+        <!-- <ng-container *ngIf="requestDataResponse$ | async as requestDataResponse"> -->
+            
+
+            <div class="grid grid-cols-6">
+                <p class="col-span-5">Request Data </p>
+
+                <p class="col-span-1">
+                    <button mat-flat-button color="primary" (click)="openRequestDataDialog()">
+                        Add Request Data
+                    </button>
+                </p>
+                    
+            </div>
+
+            <app-request-data-list 
+            >
+            <!-- [requestDatas]="requestDataResponse.data"
+                (edit)="openRequestDataDialog($event)" -->
+            </app-request-data-list>
+
+        <!-- </ng-container> -->
+    </mat-drawer-content>
+</mat-drawer-container>

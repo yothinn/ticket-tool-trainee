@@ -7,7 +7,7 @@ import { RequestData } from 'app/core/request-data/request-data.types';
 @Injectable({
     providedIn: 'root'
 })
-export class HolidayMockApi
+export class RequestDataMockApi
 {
     private _requestDatas: RequestData[] = requestDatas;
 
