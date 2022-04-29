@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-    // {
-    //     path: 'holiday',
-    //     loadChildren: () => import('./holiday/holiday.module').then(m => m.HolidayModule),
-    //     data: { breadcrumb: 'Holiday' }
-    // },
+    {
+        path: 'holiday',
+        loadChildren: () => import('./sla-holiday/sla-holiday.module').then(m => m.SlaHolidayModule),
+        data: { breadcrumb: 'Holiday' }
+    }
     // {
     //     path: 'problem-category',
     //     loadChildren: () => import('./problem-category/problem-category.module').then(m => m.ProblemCategoryModule),

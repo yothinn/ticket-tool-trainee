@@ -1,0 +1,17 @@
+<mat-drawer-container class=" w-full h-full">
+    <mat-drawer-content class="flex flex-col p-4">
+        <div class="flex flex-row gap-x-4">
+            <mat-form-field appearance="outline" class="flex-auto">
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="Input">
+            </mat-form-field>
+
+            <button mat-flat-button color="primary" (click)="openHolidayDialog()">
+                Add Holiday
+            </button>
+        </div>
+
+        <app-sla-holiday-list>
+        </app-sla-holiday-list>
+    </mat-drawer-content>
+</mat-drawer-container>

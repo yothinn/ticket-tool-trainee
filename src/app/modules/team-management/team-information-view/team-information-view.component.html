@@ -2,8 +2,8 @@
     <div class="flex flex-row pt-2 pb-2 items-center gap-2">
         <h1 class="flex-auto">Team Information</h1>
         <span class="flex-initial ">Status : Active</span>
-        <button mat-flat-button class="flex-initial text-center" color="primary">
-            Edit
+        <button mat-flat-button class="button-normal flex-initial text-center" color="primary">
+            {{ 'Edit' | uppercase }}
         </button>
         <button mat-icon-button class="flex-initial" (click)="onClose()">
             <mat-icon>close</mat-icon>
