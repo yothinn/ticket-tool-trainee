@@ -2,4 +2,13 @@
 /*  @ Import/write your custom styles here.
 /*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
 /* ----------------------------------------------------------------------------------------------------- */
-@import "./custom-material"
+@import "./custom-material";
+
+button {
+    &.button-normal {
+        font-size: 1.5rem;
+        height: 40px;
+        max-height: 40px;
+        width: 130px;
+    }
+}    

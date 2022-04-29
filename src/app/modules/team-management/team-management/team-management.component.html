@@ -6,14 +6,14 @@
                     <span class="text-xl pl-4">
                         Search
                     </span>
-                    <mat-form-field appearance="outline" >
+                    <mat-form-field appearance="outline">
                         <input matInput placeholder="Input">
                         <mat-icon matSuffix>search</mat-icon>
                     </mat-form-field>
                 </div>
-                <div class="flex-initial pb-2" >
-                    <button mat-flat-button color="primary" (click)="onCreate()">
-                        Create
+                <div class="flex-initial pb-1" >
+                    <button  class="button-normal" mat-flat-button color="primary" (click)="onCreate()">
+                        {{ 'Create' | uppercase }}
                     </button>
                 </div>
             </div>

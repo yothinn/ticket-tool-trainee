@@ -1,10 +1,9 @@
-<div class="flex justify-end mt-5 bg-gray-200">
-    <div class="items-center">
+<div class="flex flex-row">
+    <div class="flex flex-row items-center gap-x-4">
 
-        <span class="mr-2"> Items Per Page</span>
-        
-        <mat-form-field class="w-15" appearance="outline">
-            <mat-select class="pt-2">
+        <span> Items Per Page</span>
+        <mat-form-field appearance="outline">
+            <mat-select>
                 <mat-option *ngFor="let option of pageSizeOptions" (click)="changeItemPerPage(option)">
                     {{ option }}
                 </mat-option>
