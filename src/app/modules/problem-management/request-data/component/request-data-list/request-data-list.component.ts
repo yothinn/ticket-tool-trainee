@@ -10,9 +10,9 @@ export class RequestDataListComponent implements OnInit {
 
   @Input() requestDatas?: RequestData[];
 
-  @Output() edit= new EventEmitter<any>();
+  @Output() edit = new EventEmitter<any>();
 
-  @Output() selected = new EventEmitter<any>();
+  @Output() selected = new EventEmitter<RequestData>();
 
   dateMock: any[];
 
@@ -43,7 +43,7 @@ export class RequestDataListComponent implements OnInit {
     });
   }
 
-  onDetail(item: any): void {
+  onDetail(item: RequestData): void {
     console.log(item);
     this.selected.emit(item);
   }

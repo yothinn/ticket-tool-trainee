@@ -17,13 +17,12 @@ export class SlaHolidayComponent implements OnInit {
   holidayResponse$: Observable<PageResponse<Holiday[]>>;
 
   constructor(
-
     private _dialog: MatDialog,
     private _holidayService: HolidayService
   ) {
-    this.getSlaHoliday
-   }
-  
+    this.getSlaHoliday();
+  }
+
   ngOnInit(): void {
   }
 
@@ -49,5 +48,5 @@ export class SlaHolidayComponent implements OnInit {
 
     this.holidayResponse$ = this._holidayService.getSlaHoliday(params);
   }
-    
+
 }

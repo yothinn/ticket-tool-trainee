@@ -25,6 +25,8 @@ import { TeamMockApi } from './tickettools/team/api';
 import { ProblemMockApi } from './tickettools/problem/api';
 import { ProblemCategoryMockApi } from './tickettools/problem-category/api';
 import { ProblemCauseMockApi } from './tickettools/problem-cause/api';
+import { RequestDataMockApi } from './tickettools/request-data/api';
+import { HolidayMockApi } from './tickettools/holiday/api';
 
 export const mockApiServices = [
     AcademyMockApi,
@@ -54,4 +56,6 @@ export const mockApiServices = [
     ProblemMockApi,
     ProblemCategoryMockApi,
     ProblemCauseMockApi,
+    RequestDataMockApi,
+    HolidayMockApi,
 ];

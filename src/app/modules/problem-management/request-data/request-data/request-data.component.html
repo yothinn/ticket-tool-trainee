@@ -1,7 +1,6 @@
 <mat-drawer-container class=" w-full h-full">
     <mat-drawer-content class="flex flex-col p-4">
-        <!-- <ng-container *ngIf="requestDataResponse$ | async as requestDataResponse"> -->
-            
+        <ng-container *ngIf="requestDataResponse$ | async as requestDataResponse">
 
             <div class="grid grid-cols-6">
                 <p class="col-span-5">Request Data </p>
@@ -14,12 +13,11 @@
                     
             </div>
 
-            <app-request-data-list 
+            <app-request-data-list [requestDatas]="requestDataResponse.data"
+                (edit)="openRequestDataDialog($event)"
             >
-            <!-- [requestDatas]="requestDataResponse.data"
-                (edit)="openRequestDataDialog($event)" -->
             </app-request-data-list>
 
-        <!-- </ng-container> -->
+        </ng-container>
     </mat-drawer-content>
 </mat-drawer-container>
