@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Team } from 'app/core/team/team.types';
 
 @Component({
   selector: 'app-team-card-info',
@@ -7,12 +8,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class TeamCardInfoComponent implements OnInit {
 
-  @Input() teamData?: any;
+  @Input() team?: Team;
+  @Input() isActive: boolean = false;
+  @Output() selected = new EventEmitter<Team>();
 
   constructor() { }
 
   ngOnInit(): void {
 
+  }
+
+  onSelected(): void {
+    this.selected.emit(this.team);
   }
 
 }

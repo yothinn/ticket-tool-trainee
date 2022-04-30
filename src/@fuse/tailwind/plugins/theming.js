@@ -1,3 +1,4 @@
+const { red } = require('@tailwindcss/typography/src/styles');
 const chroma = require('chroma-js');
 const _ = require('lodash');
 const path = require('path');
@@ -185,7 +186,7 @@ const theming = plugin.withOptions((options) => ({
                             light: {
                                 'bg-app-bar'   : '#FFFFFF',
                                 'bg-card'      : '#FFFFFF',
-                                'bg-default'   : colors.slate[100],
+                                'bg-default'   : '#FFFFFF',
                                 'bg-dialog'    : '#FFFFFF',
                                 'bg-hover'     : chroma(colors.slate[400]).alpha(0.12).css(),
                                 'bg-status-bar': colors.slate[300]

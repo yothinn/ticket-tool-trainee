@@ -1,18 +1,17 @@
 <div class="flex flex-col w-full">
-    <div class="grid grid-cols-5 pt-5">
+    <div class="grid grid-cols-5">
         <p class="col-span-2"></p>
-        <p><strong>Status</strong></p>
-        <p><strong>Created</strong></p>
-        <p><strong>Updated</strong></p>
+        <p class="font-semibold">Status</p>
+        <p class="font-semibold">Created</p>
+        <p class="font-semibold">Updated</p>
     </div>
 
     <mat-divider></mat-divider>
-
-    <ng-container *ngFor="let item of teamDataMocks">
-        <app-team-card-info
-            [teamData]="item" (click)="onDetail(item)"
+    <ng-container *ngFor="let team of teams; let i = index">
+        <app-team-card-info [team]="team" 
+            [isActive]="team.id === activeTeam?.id"
+            (selected)="onSelected($event, i)"
         >
-
         </app-team-card-info>
 
         <mat-divider></mat-divider>

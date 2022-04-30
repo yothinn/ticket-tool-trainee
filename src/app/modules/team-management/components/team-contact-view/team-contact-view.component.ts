@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Team } from 'app/core/team/team.types';
 
 @Component({
   selector: 'app-team-contact-view',
@@ -6,13 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./team-contact-view.component.scss']
 })
 export class TeamContactViewComponent implements OnInit {
-  // @Input() contactTest?: any;
-
+  @Input() team: Team;
 
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.contactTest);
   }
 
 }

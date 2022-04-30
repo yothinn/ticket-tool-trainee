@@ -3,12 +3,24 @@
 /*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
 /* ----------------------------------------------------------------------------------------------------- */
 @import "./custom-material";
+@tailwind base;
 
-button {
-    &.button-normal {
-        font-size: 1.5rem;
-        height: 40px;
-        max-height: 40px;
-        width: 130px;
+@layer base {
+    .button-normal {
+        @apply text-3xl h-10 max-h-10 w-32 #{'!important'};
     }
-}    
+
+    .button-icon {
+        @apply min-h-5 min-w-5 w-5 h-5 #{'!important'};
+    }
+    
+    .card-active {
+        background-color: var(--fuse-secondary-600) !important;
+    }
+
+    .card-hover {
+        background-color: var(--fuse-secondary-600) !important;
+    }
+
+    
+}

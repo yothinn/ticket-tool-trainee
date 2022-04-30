@@ -1,22 +1,4 @@
-// :host ::ng-deep .mat-form-field-infix {
-//     padding: 0.5em 0;
-//     border-top: 0em solid transparent;
-// }
-
-// :host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
-//     padding: 0.4em 0 0.7em 0;
-// }
-
-// :host ::ng-deep .mat-form-field-wrapper {
-//     padding-bottom: 0em;
-// }
-
-:host .mat-icon-button {
-    border: 1px solid red;
-    font-size: 24px;
-    font-weight: 500;
-    min-height: 24px;
-    width: 24px;
-    height: 24px;
-    color: #181818;
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+    padding: 0 0.5em 0 0.5em;
+    margin-top: 0em;
 }

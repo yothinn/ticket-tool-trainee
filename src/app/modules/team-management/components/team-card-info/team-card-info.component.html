@@ -1,27 +1,31 @@
-<div class="grid grid-cols-5 pt-2 pb-2 hover:bg-gray-300 cursor-pointer">
-        <p class="flex flex-col col-span-2">
-            <span>
-                {{teamData.teamName}}
-            </span>
-            <span>
-                {{teamData.teamDescription}}
-            </span>
-        </p>
-        <p>{{teamData.status}}</p>
-        <p class="flex flex-col">
-            <span>
-                {{teamData.created.firstName + ' ' + teamData.created.lastName}}
-            </span>
-            <span>
-                {{ teamData.created.date}}
-            </span>
-        </p>
-        <p class="flex flex-col">
-            <span>
-                {{teamData.updated.firstName + ' ' + teamData.updated.lastName}}
-            </span>
-            <span>
-                {{ teamData.updated.date}}
-            </span>
-        </p>
-</div>
+<mat-card class="grid grid-cols-5 py-2 cursor-pointer hover:card-hover" 
+    [ngClass]="{ 'card-active' : isActive }"
+    (click)="onSelected()"
+>
+    <p class="flex flex-col col-span-2">
+        <span>
+            {{team?.name}}
+        </span>
+        <span>
+            {{team?.description}}
+        </span>
+    </p>
+    <p> {{team?.status | titlecase}} </p>
+    
+    <p class="flex flex-col">
+        <span>
+            {{team?.createBy}}
+        </span>
+        <span>
+            {{ team?.created | date}}
+        </span>
+    </p>
+    <p class="flex flex-col">
+        <span>
+            {{team?.updateBy}}
+        </span>
+        <span>
+            {{ team?.updated | date}}
+        </span>
+    </p>
+</mat-card>

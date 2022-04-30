@@ -1,24 +1,42 @@
-<div class="flex flex-col w-full">
-    <div class="grid grid-cols-3">
-        <p>Contact</p>
-        <p class="col-span-2 break-all">Thanayut Test11111111111111111</p>
+<div class="grid grid-cols-4 p-2">
+    <p class="text-primary">
+        Contact
+    </p>
+    <p class="col-span-3 break-all">
+        {{ team?.contactName }}
+    </p>
 
-        <p>Email</p>
-        <p class="col-span-2 break-all">Test@gmail.com</p>
+    <p class="text-primary">
+        Email
+    </p>
+    <p class="col-span-3 break-all">
+        {{ team?.contactEmail }}
+    </p>
 
-        <p>Mobile</p>
-        <p class="col-span-2 break-all">0856541234</p>
+    <p class="text-primary">
+        Mobile
+    </p>
+    <p class="col-span-3 break-all">
+        {{ team?.contactMobile }}
+    </p>
 
-        <p>Created</p>
-        <p class="col-span-2 break-all">Thanayut Test1</p>
+    <p class="text-primary">
+        Created
+    </p>
+    <p class="col-span-3 break-all">
+        {{ team?.createBy }}
+    </p>
 
-        <p></p>
-        <p class="col-span-2 break-all">10 Mar 2022 20:00</p>
+    <p></p>
+    <p class="col-span-3 break-all">{{ team?.created | date }}</p>
 
-        <p>Updated</p>
-        <p class="col-span-2 break-all">Thanayut Test1</p>
+    <p class="text-primary">
+        Updated
+    </p>
+    <p class="col-span-3 break-all">
+        {{ team?.updateBy }}
+    </p>
 
-        <p></p>
-        <p class="col-span-2 break-all">10 Mar 2022 20:00</p>
-    </div>
+    <p></p>
+    <p class="col-span-3 break-all">{{ team?.updated | date}} </p>
 </div>

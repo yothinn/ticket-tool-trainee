@@ -1,10 +1,13 @@
-<div class="flex flex-row">
-    <div class="flex flex-row items-center gap-x-4">
+<div class="flex flex-row justify-end">
+    <div class="flex flex-row  items-center gap-x-4">
 
         <span> Items Per Page</span>
-        <mat-form-field appearance="outline">
-            <mat-select>
-                <mat-option *ngFor="let option of pageSizeOptions" (click)="changeItemPerPage(option)">
+        <mat-form-field appearance="outline" class="items-center min-w-18 w-18">
+            <mat-select [value]="pageSize">
+                <mat-option *ngFor="let option of pageSizeOptions" [value]="option" 
+                    class="h-9"
+                    (click)="changeItemPerPage(option)"
+                >
                     {{ option }}
                 </mat-option>
             </mat-select>
@@ -21,6 +24,7 @@
 
         <ng-container *ngFor="let page of pageViews;" >
             <button mat-icon-button 
+                class="text-3xl font-medium min-h-6 w-6 h-6"
                 (click)="clickPageNo(page + addPageViewNo)" 
                 [ngClass]="{
                     'bg-primary' : pageNo === page + addPageViewNo

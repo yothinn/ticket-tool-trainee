@@ -1,3 +1,8 @@
-<ng-container *ngFor="let item of data" class="flex flex-col w-full p-2">
-    <app-problem-expansion [data]="item" ></app-problem-expansion>
-</ng-container>
+<div>
+    <h1 class="mb-1">Problem Support (2)</h1>
+
+    <mat-divider></mat-divider>
+    <ng-container *ngFor="let item of data" class="flex flex-col w-full p-2">
+        <app-problem-expansion [data]="item" ></app-problem-expansion>
+    </ng-container>
+</div>

@@ -1,8 +1,8 @@
 
-<div class="flex flex-row flex-wrap" >
-    <div *ngFor="let button of buttons" class="mx-2 my-2 w-1/6">
-        <button (click)="onClick(button)" class="w-full" mat-raised-button>
+<div class="flex flex-row flex-wrap gap-x-2 items-center" >
+    <ng-container *ngFor="let button of buttons " >
+        <button mat-stroked-button color="primary" class="button-normal" (click)="onClick(button)" >
             {{button.name}} ({{button.total}})
         </button>
-    </div>
+    </ng-container>
 </div>

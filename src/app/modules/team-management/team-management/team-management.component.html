@@ -1,50 +1,54 @@
-<mat-drawer-container class="w-full h-full">
-    <mat-drawer-content cdkscrollable class="flex flex-col absolute inset-0">
+<mat-drawer-container class="w-full h-full flex flex-auto">
+    <mat-drawer-content cdkscrollable class="absolute inset-0">
         <ng-container *ngIf="teamResponse$ | async as teamResponse">
-            <div class="flex flex-row gap-x-2 items-end">
-                <div class="flex flex-col flex-auto">
-                    <span class="text-xl pl-4">
-                        Search
-                    </span>
-                    <mat-form-field appearance="outline">
-                        <input matInput placeholder="Input">
-                        <mat-icon matSuffix>search</mat-icon>
-                    </mat-form-field>
+            <div class="flex flex-col px-4 flex-auto max-w-6xl mx-auto">
+                <div class="z-50 sticky top-0 flex flex-col bg-default">
+                    <div class="flex flex-row gap-x-2 items-end">
+                        <div class="flex flex-col flex-auto">
+                            <span class="text-xl pl-4">
+                                Search
+                            </span>
+                            <mat-form-field appearance="outline">
+                                <input matInput placeholder="Input">
+                                <mat-icon matSuffix>search</mat-icon>
+                            </mat-form-field>
+                        </div>
+                        <div class="flex-initial pb-1" >
+                            <button  class="button-normal" mat-flat-button color="primary" (click)="onCreate()">
+                                {{ 'Create' | uppercase }}
+                            </button>
+                        </div>
+                    </div>
+                    <app-filter-button [buttons]="filters" (selected)="onFilter($event)" >
+
+                    </app-filter-button>
                 </div>
-                <div class="flex-initial pb-1" >
-                    <button  class="button-normal" mat-flat-button color="primary" (click)="onCreate()">
-                        {{ 'Create' | uppercase }}
-                    </button>
-                </div>
-            </div>
-
-            <app-filter-button [buttons]="buttons">
-
-            </app-filter-button>
 
 
-            <app-team-card-list [teams]="teamResponse.data" (selected)="onDetail($event)">
-            </app-team-card-list>   
-        
+                <app-team-card-list  #teamListComp [teams]="teamResponse.data" (selected)="onViewOpened($event)">
+                </app-team-card-list>   
             
+                
+                <app-paginator>
+                </app-paginator>
 
-            <app-paginator>
-
-            </app-paginator>
+            </div>
         </ng-container>
     </mat-drawer-content>
 
-    <mat-drawer #drawerDetail class="md:w-4/12 w-5/12 xl:w-6/12" 
+    <mat-drawer #drawerDetail class="w-6/12" 
         [mode]="isViewMode ? 'side' : 'over' " position="end"
+        class="mb-4"
     >
-        <div class="p-2">
-            <app-team-information-view *ngIf="isViewMode" (closed)="drawerDetail.toggle()">
+        <app-team-information-view *ngIf="isViewMode" 
+            [team]="activeTeam"
+            (closed)="onViewClosed($event)"
+        >
 
-            </app-team-information-view>
-            <app-team-information-edit *ngIf="!isViewMode">
+        </app-team-information-view>
+        <app-team-information-edit *ngIf="!isViewMode">
 
-            </app-team-information-edit>
-        </div>
+        </app-team-information-edit>
     </mat-drawer>
 
 </mat-drawer-container>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Team } from 'app/core/team/team.types';
 
 @Component({
   selector: 'app-problem-support-view',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./problem-support-view.component.scss']
 })
 export class ProblemSupportViewComponent implements OnInit {
+
+  @Input() team?: Team;
 
   data:object []=[
     {text:'Critical',iconName:'circle',color:'#c42a2e',mode:0},

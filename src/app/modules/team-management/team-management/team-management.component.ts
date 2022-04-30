@@ -6,6 +6,7 @@ import { TeamService } from 'app/core/team/team.service';
 import { Team } from 'app/core/team/team.types';
 import { FilterButton } from 'app/shared/components/filter-button/filter-button-interface';
 import { Observable, Subject, takeUntil } from 'rxjs';
+import { TeamCardListComponent } from '../components/team-card-list/team-card-list.component';
 
 @Component({
   selector: 'app-team-management',
@@ -15,12 +16,14 @@ import { Observable, Subject, takeUntil } from 'rxjs';
 export class TeamManagementComponent implements OnInit, OnDestroy {
 
   @ViewChild('drawerDetail') drawerDetail: MatSidenav;
+  @ViewChild('teamListComp') teamListComp: TeamCardListComponent;
 
   teamResponse$?: Observable<PageResponse<Team[]>>;
 
   isViewMode: boolean = false;
 
-  buttons: FilterButton[] = [{ name: 'All', total: 20 }, { name: 'Acitvie', total: 10 }, { name: 'inActive', total: 5 }];
+  filters: FilterButton[] = [{ name: 'All', total: 20 }, { name: 'Active', total: 10 }, { name: 'InActive', total: 5 }];
+  currFilter?: FilterButton;
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 
@@ -38,29 +41,45 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
     this._unsubscribeAll.next(null);
     this._unsubscribeAll.complete();
   }
-;
+
   getTeams(): void {
     const params = new GetTeamParameter();
 
     this.teamResponse$ = this._teamService.getTeams(params);
   }
 
-  onDetail(team: Team): void {
+  onViewOpened(team: Team): void {
     console.log(team);
 
     this._teamService.activeTeam = team;
 
     this.isViewMode = true;
+    this._openDetail();
+  }
+
+  onViewClosed(): void {
+    this.drawerDetail.toggle();
+    this._teamService.activeTeam = undefined;
+    this.teamListComp.activeTeam = undefined;
+  }
+
+  onCreate(): void {
+    this.isViewMode = false;
+    this._openDetail();
+  }
+
+  onFilter(filter: FilterButton): void {
+    this.currFilter = filter;
+
+    // call get team
+  }
+
+  private _openDetail(): void {
     if (!this.drawerDetail.opened) {
       this.drawerDetail?.toggle();
     }
   }
 
-  onCreate(): void {
-    this.isViewMode = false;
-    if (!this.drawerDetail.opened) {
-      this.drawerDetail?.toggle();
-    }
-  }
+ 
 
 }

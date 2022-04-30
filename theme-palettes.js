@@ -50,7 +50,8 @@ const accentPalette = {
     900: null 
 };
 
-const errorColor = '#C$2A2E';
+const warnColor = '#C42A2E';
+const errorColor = '#C42A2E';
  
 
 module.exports = {
@@ -58,5 +59,6 @@ module.exports = {
     secondaryPalette: secondaryPalette,
     neutralPalette: neutralPalette,
     accentPalette: accentPalette,
-    errorColor: errorColor
+    errorColor: errorColor,
+    warnColor: warnColor,
 }
