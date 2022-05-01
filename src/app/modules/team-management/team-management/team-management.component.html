@@ -37,9 +37,9 @@
                 </app-team-card-list>   
               
                 <app-paginator class="pr-4" 
-                    [pageNo]="1"
-                    [pageSize]="10"
-                    [totalRecords]="10200"
+                    [pageNo]="teamResponse.pageNo"
+                    [pageSize]="teamResponse.pageSize"
+                    [totalRecord]="teamResponse.totalRecord"
                 >
                 </app-paginator>
             </div>

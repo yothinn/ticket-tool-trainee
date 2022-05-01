@@ -9,7 +9,7 @@ export class PaginatorComponent implements OnInit, OnChanges  {
 
   @Input() pageNo: number = 1;
   @Input() pageSize: number = 10;
-  @Input() totalRecords?: number;
+  @Input() totalRecord?: number;
   @Input() pageSizeOptions: number[] = [10, 20, 50];
   @Input() maxPageView: number = 5;
 
@@ -25,11 +25,14 @@ export class PaginatorComponent implements OnInit, OnChanges  {
   ngOnInit(): void {
     // Generate 1...5 array
     this.pageViews = [...Array(this.maxPageView).keys()].map(i => i + 1);
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-      if (this.totalRecords) {
-        this.totalPages = this._calTotalPages(this.pageSize, this.totalRecords);
+      if (this.totalRecord) {
+        this.totalPages = this._calTotalPages(this.pageSize, this.totalRecord);
+
+        console.log(this.totalRecord);
       }
   }
 
@@ -132,8 +135,8 @@ export class PaginatorComponent implements OnInit, OnChanges  {
     this.addNextPageGroup = Math.ceil((this.pageNo / this.maxPageView) - 1) * this.maxPageView;
 
     // Calculate total page
-    if (this.totalRecords) {
-      this.totalPages = this._calTotalPages(this.pageSize, this.totalRecords);
+    if (this.totalRecord) {
+      this.totalPages = this._calTotalPages(this.pageSize, this.totalRecord);
     }
 
     this.onPageChanged();
