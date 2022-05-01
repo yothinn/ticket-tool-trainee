@@ -80,6 +80,4 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
     }
   }
 
- 
-
 }

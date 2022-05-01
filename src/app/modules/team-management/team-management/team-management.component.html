@@ -1,8 +1,8 @@
 <mat-drawer-container class="w-full h-full flex flex-auto">
     <mat-drawer-content cdkscrollable class="absolute inset-0">
         <ng-container *ngIf="teamResponse$ | async as teamResponse">
-            <div class="flex flex-col px-4 flex-auto max-w-6xl mx-auto">
-                <div class="z-50 sticky top-0 flex flex-col bg-default">
+            <div class="flex flex-col px-4 flex-auto max-w-6xl mx-auto gap-y-2">
+                <div class="z-20 sticky top-0 flex flex-col bg-default">
                     <div class="flex flex-row gap-x-2 items-end">
                         <div class="flex flex-col flex-auto">
                             <span class="text-xl pl-4">
@@ -22,23 +22,32 @@
                     <app-filter-button [buttons]="filters" (selected)="onFilter($event)" >
 
                     </app-filter-button>
-                </div>
 
+                    <!-- <div class="grid grid-cols-5">
+                        <p class="col-span-2"></p>
+                        <p class="font-semibold">Status</p>
+                        <p class="font-semibold">Created</p>
+                        <p class="font-semibold">Updated</p>
+                    </div>
+                
+                    <mat-divider></mat-divider> -->
+                </div>
 
                 <app-team-card-list  #teamListComp [teams]="teamResponse.data" (selected)="onViewOpened($event)">
                 </app-team-card-list>   
-            
-                
-                <app-paginator>
+              
+                <app-paginator class="pr-4" 
+                    [pageNo]="1"
+                    [pageSize]="10"
+                    [totalRecords]="10200"
+                >
                 </app-paginator>
-
             </div>
         </ng-container>
     </mat-drawer-content>
 
     <mat-drawer #drawerDetail class="w-6/12" 
         [mode]="isViewMode ? 'side' : 'over' " position="end"
-        class="mb-4"
     >
         <app-team-information-view *ngIf="isViewMode" 
             [team]="activeTeam"

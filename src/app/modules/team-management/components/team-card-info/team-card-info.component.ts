@@ -9,7 +9,7 @@ import { Team } from 'app/core/team/team.types';
 export class TeamCardInfoComponent implements OnInit {
 
   @Input() team?: Team;
-  @Input() isActive: boolean = false;
+  @Input() actived: boolean = false;
   @Output() selected = new EventEmitter<Team>();
 
   constructor() { }

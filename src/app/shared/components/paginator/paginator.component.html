@@ -1,4 +1,4 @@
-<div class="flex flex-row justify-end">
+<div class="flex flex-row justify-end gap-x-4">
     <div class="flex flex-row  items-center gap-x-4">
 
         <span> Items Per Page</span>
@@ -16,28 +16,58 @@
     </div>
 
     <div class="flex items-center">
-        <button mat-icon-button [disabled]="!canBackPage" (click)="prevPage()">
-            <mat-icon>arrow_left</mat-icon>
+        <button mat-icon-button (click)="prevPageGroup(true)"
+            [disabled]="!canPrevPageGroup"
+            class="min-w-6 min-h-6 w-6 h-6"
+        >
+            <mat-icon>skip_previous</mat-icon>
         </button>
+        
+
+        <button mat-icon-button (click)="prevPageGroup()" 
+            [disabled]="!canPrevPageGroup"
+            class="min-w-6 min-h-6 w-6 h-6"
+        >
+            <mat-icon> arrow_left </mat-icon>
+        </button>
+
+
         
         <div *ngIf="morePrevView"> .... </div>
 
         <ng-container *ngFor="let page of pageViews;" >
-            <button mat-icon-button 
-                class="text-3xl font-medium min-h-6 w-6 h-6"
-                (click)="clickPageNo(page + addPageViewNo)" 
-                [ngClass]="{
-                    'bg-primary' : pageNo === page + addPageViewNo
-                }"
-            >
-                {{ page + addPageViewNo }}
-            </button>
+            <ng-container *ngIf="(page + addNextPageGroup) as currPage">
+                <button mat-icon-button 
+                    class="font-medium min-h-6 w-6 h-6"
+                    [ngClass]="{
+                        'text-2xl': currPage.toString().length < 4,
+                        'text-lg' : currPage.toString().length >= 4,
+                        'bg-primary' : pageNo === currPage
+                    }"
+                    (click)="clickPageNo(currPage)" 
+                    [disabled]="totalPages && (currPage > totalPages)"
+                >
+                    {{ currPage }}
+                </button>
+            </ng-container>
         </ng-container>
         
         <div *ngIf="moreNextView"> .... </div>
 
-        <button mat-icon-button [disabled]="!canNextPage" (click)="nextPage()">
+        <button mat-icon-button
+            [disabled]="!canNextPageGroup"
+            class="min-w-6 min-h-6 w-6 h-6"
+            (click)="nextPageGroup()"
+        >
             <mat-icon>arrow_right</mat-icon>
+        </button>
+
+        <button mat-icon-button
+            [disabled]="(totalPages === undefined) || !canNextPageGroup"
+            class="min-w-6 min-h-6 w-6 h-6"
+            (click)="nextPageGroup(true)"
+        > 
+            <mat-icon>skip_next</mat-icon>
         </button>
 
     </div>

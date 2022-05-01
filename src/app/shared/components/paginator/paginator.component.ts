@@ -1,22 +1,24 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-paginator',
   templateUrl: './paginator.component.html',
   styleUrls: ['./paginator.component.scss']
 })
-export class PaginatorComponent implements OnInit  {
+export class PaginatorComponent implements OnInit, OnChanges  {
 
   @Input() pageNo: number = 1;
   @Input() pageSize: number = 10;
+  @Input() totalRecords?: number;
   @Input() pageSizeOptions: number[] = [10, 20, 50];
   @Input() maxPageView: number = 5;
 
   @Output() pageChanged: EventEmitter<any> = new EventEmitter();
 
+  totalPages?: number;
   pageViews: number[] = [];
 
-  addPageViewNo: number = 0;
+  addNextPageGroup: number = 0;
 
   constructor() { }
 
@@ -25,24 +27,41 @@ export class PaginatorComponent implements OnInit  {
     this.pageViews = [...Array(this.maxPageView).keys()].map(i => i + 1);
   }
 
-  // eslint-disable-next-line @typescript-eslint/member-ordering
-  get canNextPage(): boolean {
-    return (this.pageNo < this.pageSize) ? true : false;
+  ngOnChanges(changes: SimpleChanges): void {
+      if (this.totalRecords) {
+        this.totalPages = this._calTotalPages(this.pageSize, this.totalRecords);
+      }
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
-  get canBackPage(): boolean {
-    return (this.pageNo > 1 ) ? true : false;
+  get canNextPageGroup(): boolean {
+    if (this.totalPages) {
+      const tmpAddNextPageGroup = this.addNextPageGroup + this.maxPageView;
+
+      return tmpAddNextPageGroup < this.totalPages;
+    }
+    return true;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  get canPrevPageGroup(): boolean {
+    return this.addNextPageGroup > 0;
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   get morePrevView(): boolean {
-    return this.pageNo > this.maxPageView;
+    return this.addNextPageGroup > 0;
+    // return this.pageNo > this.maxPageView;
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   get moreNextView(): boolean {
-    return (this.pageNo <= this.maxPageView);
+    if (this.totalPages) {
+      const tmpAddNextPageGroup = this.addNextPageGroup + this.maxPageView;
+
+      return tmpAddNextPageGroup < this.totalPages;
+    }
+    return true;
   }
 
   clickPageNo(pageNo: number): void {
@@ -51,37 +70,72 @@ export class PaginatorComponent implements OnInit  {
   }
 
   //กดเลื่อนไปด้ายขวา
-  nextPage(): void {
+  nextPageGroup(skipLast: boolean = false): void {
 
-    if (this.pageNo < this.pageSize) {
-      this.pageNo++;
+    const tmpAddNextPageGroup = this.addNextPageGroup + this.maxPageView;
 
-      const lastPageNo = this.pageViews[this.pageViews.length - 1] + this.addPageViewNo;
-      if ((this.pageNo > this.maxPageView) && (this.pageNo > lastPageNo)) {
-        this.addPageViewNo++;
+    if ((this.totalPages === undefined) || (tmpAddNextPageGroup < this.totalPages)) {
+      if (skipLast) {
+        if (this.totalPages) {
+          const lastPageGroup = Math.ceil(this.totalPages / this.maxPageView);
+          this.addNextPageGroup = this.maxPageView * (lastPageGroup - 1);
+        }
+      } else {
+        this.addNextPageGroup = tmpAddNextPageGroup;
       }
+
+      console.log(this.addNextPageGroup);
+      this.pageNo = this.addNextPageGroup + 1;
+
+      this.onPageChanged();
     }
 
-    this.onPageChanged();
+
   }
 
   //กดเลื่อนไปด้านซ้าย
-  prevPage(): void {
+  prevPageGroup(skipFirst: boolean = false): void {
 
-    if (this.pageNo > 1) {
-      this.pageNo--;
+    if (this.addNextPageGroup > 0) {
+      if (skipFirst) {
+        this.addNextPageGroup = 0;
+      } else {
+        this.addNextPageGroup -= this.maxPageView;
+      }
+
+      this.pageNo = this.addNextPageGroup + 1;
+
+      this.onPageChanged();
     }
 
-    const startPageNo = this.pageViews[0] + this.addPageViewNo;
-    if ((this.pageNo <= this.pageSize-this.maxPageView + 1) && (this.pageNo < startPageNo)) {
-      this.addPageViewNo--;
-    }
-
-    this.onPageChanged();
   }
 
-  changeItemPerPage(size: number): void {
-    this.pageSize = size;
+
+  changeItemPerPage(newSize: number): void {
+    const oldPageSize = this.pageSize;
+
+    this.pageSize = newSize;
+
+    // Calculate new page no
+    if (newSize > oldPageSize) {
+      const currRecord = this.pageNo * oldPageSize;
+      this.pageNo = Math.ceil(currRecord / newSize);
+    } else {
+      const currRecord = (this.pageNo * oldPageSize) - (oldPageSize - 1);
+      console.log(currRecord);
+      this.pageNo = Math.ceil(currRecord / newSize);
+
+      console.log(this.pageNo);
+    }
+
+    // Calculate addNextPageGroup
+    this.addNextPageGroup = Math.ceil((this.pageNo / this.maxPageView) - 1) * this.maxPageView;
+
+    // Calculate total page
+    if (this.totalRecords) {
+      this.totalPages = this._calTotalPages(this.pageSize, this.totalRecords);
+    }
+
     this.onPageChanged();
   }
 
@@ -93,6 +147,10 @@ export class PaginatorComponent implements OnInit  {
 
     console.log(page);
     this.pageChanged.emit(page);
+  }
+
+  private _calTotalPages(pageSize: number, totalRecords: number): number {
+    return Math.ceil(totalRecords / pageSize);
   }
 
 }
