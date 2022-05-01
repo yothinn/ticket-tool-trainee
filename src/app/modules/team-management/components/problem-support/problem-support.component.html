@@ -1,0 +1,18 @@
+<div>
+    <div class="flex items-center">
+        <h1 class="flex-auto">Problem Support (2)</h1>
+        <button mat-flat-button color="primary"
+            *ngIf="mode === 'edit' " 
+            class="flex-initial button-normal"
+            (click)="clickAdd.emit(undefined)" 
+        >
+            Add Problem
+        </button>
+    </div>
+    
+    <mat-divider></mat-divider>
+
+    <ng-container *ngFor="let item of data" class="flex flex-col w-full p-2">
+        <app-problem-expansion [data]="item" ></app-problem-expansion>
+    </ng-container>
+</div>

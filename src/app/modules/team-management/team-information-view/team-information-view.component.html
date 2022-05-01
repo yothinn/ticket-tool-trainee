@@ -7,7 +7,9 @@
                 </p>
                 <span class="flex-initial ">Status : {{ activeTeam?.status | titlecase }}</span>
                 
-                <button mat-flat-button class="button-normal flex-initial text-center" color="primary">
+                <button mat-flat-button class="button-normal flex-initial text-center" color="primary"
+                    (click)="onEdit()"
+                >
                     {{ 'Edit' | uppercase }}
                 </button>
                 <button mat-icon-button class="flex-initial" (click)="onClose()">
@@ -34,13 +36,13 @@
         </div>
 
         
-        <app-team-member-view class="border-2 border-gray-300 rounded">
+        <app-team-member [team]="activeTeam" class="border-2 border-gray-300 rounded">
 
-        </app-team-member-view>
+        </app-team-member>
              
-        <app-problem-support-view class="border-2 border-gray-300 rounded">
+        <app-problem-support [team]="activeTeam" class="border-2 border-gray-300 rounded">
             
-        </app-problem-support-view>
+        </app-problem-support>
 
         <div class="flex flex-row justify-end mr-14">
             <button mat-stroked-button color="primary" color="warn" class="button-normal">

@@ -1,72 +1,58 @@
-<div class="flex flex-col w-full h-full">
-    <div class="flex flex-row w-full pt-2 pb-2 items-center">
-            <h1 class="flex-auto">Create Team</h1>
+<ng-container *ngIf="{ activeTeam : activeTeam$ | async } as data">
+    <div class="flex flex-col w-full h-full">
+        <div class="flex flex-row items-center">
+            <p class="flex-auto">
+                <span *ngIf="mode === 'create' ">Create Team</span>
+                <span *ngIf="mode === 'edit' ">Edit Team</span>
+            </p>
             <mat-slide-toggle class="flex-initial pr-5">
                 <span>Status : Active</span>
             </mat-slide-toggle>
-    </div>
-
-    <mat-divider></mat-divider>
-
-    <div class="flex flex-row mt-2 mb-2">
-        <div class="grid grid-cols-2 w-full gap-1">
-            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
-                <app-team-info-edit>
-
-                </app-team-info-edit>
-            </div>
-            
-            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
-                <app-team-contact-edit>
-
-                </app-team-contact-edit>
-            </div>
-        </div>
-    </div>
-
-    <div class="flex flex-col mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
-        <div class="flex items-center mb-1">
-                <h1 class="flex-auto">Team Member (3)</h1>
-                <button mat-flat-button color="primary" 
-                    (click)="openTeamMemberDialog()" class="flex-initial"
-                >
-                    Add Member
-                </button>
         </div>
 
         <mat-divider></mat-divider>
 
-        <!-- Content Team Member -->
-        <app-team-member-edit>
+        <div class="grid grid-cols-2">
+            <app-team-info-edit [team]="data.activeTeam" class="border-2 border-gray-300 rounded">
 
-        </app-team-member-edit>
-    </div>
+            </app-team-info-edit>
 
-    <div class="flex flex-col mt-2 mb-2 p-1 border-2 border-gray-300 rounded">
-        <div class="flex items-center mb-1">
-                <h1 class="flex-auto">Problem Support (2)</h1>
-                <button mat-flat-button color="primary" 
-                    (click)="openProblemDialog()" class="flex-initial"
-                >
-                    Add Problem
-                </button>
+        
+            <app-team-contact-edit [team]="data.activeTeam" class="border-2 border-gray-300 rounded">
+
+            </app-team-contact-edit>
         </div>
 
-        <mat-divider></mat-divider>
+        <app-team-member mode="edit"
+            [team]="data.activeTeam"
+            class="border-2 border-gray-300 rounded"
+            (clickAdd)="openTeamMemberDialog()"
+        >
 
-        <!-- Content Problem Support -->
-        <app-problem-support-edit>
+        </app-team-member>
 
-        </app-problem-support-edit>
+        
+        <app-problem-support mode="edit" 
+            [team]="data.activeTeam"
+            class="border-2 border-gray-300 rounded"
+            (clickAdd)="openProblemDialog()"
+        >
+
+        </app-problem-support>
+
+
+        <div class="flex flex-row justify-end">
+            <button mat-stroked-button color="primary"
+                class="button-normal"
+            >
+                Cancel
+            </button>
+            <button mat-flat-button color="primary"
+                class="button-normal"
+            >
+                Save
+            </button>
+        </div>
+
     </div>
-
-    <div class="flex flex-row justify-end gap-4 pr-4">
-        <button mat-flat-button color="primary">
-            Cancel
-        </button>
-        <button mat-flat-button color="primary">
-            Save
-        </button>
-    </div>
-
-</div>
+</ng-container>

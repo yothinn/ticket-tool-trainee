@@ -11,6 +11,7 @@ import { Observable, Subject, takeUntil } from 'rxjs';
 export class TeamInformationViewComponent implements OnInit, OnDestroy {
 
   @Output() closed = new EventEmitter<any>();
+  @Output() edit = new EventEmitter<any>();
 
   activeTeam$: Observable<Team> = this._teamService.activeTeam$;
 
@@ -31,6 +32,10 @@ export class TeamInformationViewComponent implements OnInit, OnDestroy {
 
   onClose(): void {
     this.closed.emit(undefined);
+  }
+
+  onEdit(): void {
+    this.edit.emit(undefined);
   }
 
 }

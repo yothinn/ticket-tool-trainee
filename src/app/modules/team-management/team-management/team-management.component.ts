@@ -21,6 +21,7 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
   teamResponse$?: Observable<PageResponse<Team[]>>;
 
   isViewMode: boolean = false;
+  teamInfoMode: 'create' | 'edit' = 'create';
 
   filters: FilterButton[] = [{ name: 'All', total: 20 }, { name: 'Active', total: 10 }, { name: 'InActive', total: 5 }];
   currFilter?: FilterButton;
@@ -65,6 +66,13 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
 
   onCreate(): void {
     this.isViewMode = false;
+    this.teamInfoMode = 'create';
+    this._openDetail();
+  }
+
+  onTeamEdit(): void {
+    this.isViewMode = false;
+    this.teamInfoMode = 'edit';
     this._openDetail();
   }
 

@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Team } from 'app/core/team/team.types';
 
 @Component({
   selector: 'app-team-contact-edit',
   templateUrl: './team-contact-edit.component.html',
   styleUrls: ['./team-contact-edit.component.scss']
 })
-export class TeamContactEditComponent implements OnInit {
+export class TeamContactEditComponent implements OnInit, OnChanges {
+
+  @Input() team?: Team;
 
   contactForm?: FormGroup;
 
@@ -18,6 +21,10 @@ export class TeamContactEditComponent implements OnInit {
     this.contactForm = this.createContactForm();
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.team);
+  }
+
   createContactForm(): FormGroup {
     return this.formBuilder.group({
       contactName: ['', Validators.required],
@@ -25,6 +32,7 @@ export class TeamContactEditComponent implements OnInit {
       contactMobile: ['', Validators.required]
     });
   }
+
   saveFrom(): void {
     const payload = this.contactForm?.value;
     console.log(payload);

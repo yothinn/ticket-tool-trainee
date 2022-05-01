@@ -1,7 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TeamService } from 'app/core/team/team.service';
-import { Subject } from 'rxjs';
+import { Team } from 'app/core/team/team.types';
+import { Observable, of, Subject } from 'rxjs';
 import { ProblemDialogComponent } from '../dialogs/problem-dialog/problem-dialog.component';
 import { TeamMemberDialogComponent } from '../dialogs/team-member-dialog/team-member-dialog.component';
 
@@ -10,7 +11,11 @@ import { TeamMemberDialogComponent } from '../dialogs/team-member-dialog/team-me
   templateUrl: './team-information-edit.component.html',
   styleUrls: ['./team-information-edit.component.scss']
 })
-export class TeamInformationEditComponent implements OnInit, OnDestroy {
+export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChanges {
+
+  @Input() mode: 'create' | 'edit' = 'create';
+
+  activeTeam$: Observable<any> = of({});
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 
@@ -25,6 +30,11 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this._unsubscribeAll.next(null);
     this._unsubscribeAll.complete();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.mode);
+    this.activeTeam$ = (this.mode === 'create') ? of(undefined) : this._teamService.activeTeam$;
   }
 
   openTeamMemberDialog(): void {

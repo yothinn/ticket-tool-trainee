@@ -9,16 +9,12 @@ import { TeamInfoEditComponent } from './components/team-info-edit/team-info-edi
 import { SharedModule } from 'app/shared/shared.module';
 import { TeamInformationEditComponent } from './team-information-edit/team-information-edit.component';
 import { TeamInformationViewComponent } from './team-information-view/team-information-view.component';
-import { TeamMemberViewComponent } from './components/team-member-view/team-member-view.component';
-import { TeamMemberEditComponent } from './components/team-member-edit/team-member-edit.component';
-import { ProblemSupportViewComponent } from './components/problem-support-view/problem-support-view.component';
-import { ProblemSupportEditComponent } from './components/problem-support-edit/problem-support-edit.component';
+import { TeamMemberComponent } from './components/team-member/team-member.component';
+import { ProblemSupportComponent } from './components/problem-support/problem-support.component';
 import { TeamMemberDialogComponent } from './dialogs/team-member-dialog/team-member-dialog.component';
 import { ProblemDialogComponent } from './dialogs/problem-dialog/problem-dialog.component';
 import { ProblemExpansionComponent } from './components/problem-expansion/problem-expansion.component';
 import { TeamCardListComponent } from './components/team-card-list/team-card-list.component';
-
-
 
 
 @NgModule({
@@ -31,10 +27,8 @@ import { TeamCardListComponent } from './components/team-card-list/team-card-lis
     TeamCardInfoComponent,
     TeamInformationEditComponent,
     TeamInformationViewComponent,
-    TeamMemberViewComponent,
-    TeamMemberEditComponent,
-    ProblemSupportViewComponent,
-    ProblemSupportEditComponent,
+    TeamMemberComponent,
+    ProblemSupportComponent,
     TeamMemberDialogComponent,
     ProblemDialogComponent,
     ProblemExpansionComponent,

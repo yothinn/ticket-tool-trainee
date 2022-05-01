@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Team } from 'app/core/team/team.types';
 
 @Component({
   selector: 'app-team-info-edit',
   templateUrl: './team-info-edit.component.html',
   styleUrls: ['./team-info-edit.component.scss']
 })
-export class TeamInfoEditComponent implements OnInit {
+export class TeamInfoEditComponent implements OnInit, OnChanges {
 
+  @Input() team?: Team;
   infoFrom?: FormGroup;
 
   constructor(
@@ -16,6 +18,10 @@ export class TeamInfoEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.infoFrom = this.createInfoForm();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+      
   }
 
   createInfoForm(): FormGroup {

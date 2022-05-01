@@ -10,8 +10,14 @@ export const teams: Team[] = [
         contactName: 'teamFirstName1 teamLastName',
         contactEmail: 'team@ais.co.th',
         contactMobile: '012356789',
-        status: 'assigned',
-        members: [],
+        status: 'active',
+        members: [
+            {
+                firstName: 'test',
+                lastName: 'test1',
+                email: 'test@ais.co.th'
+            }
+        ],
 
         created: new Date('2022-04-25'),
         createBy: 'user1 user',
@@ -26,7 +32,7 @@ export const teams: Team[] = [
         contactName: 'teamFirstName2 teamLastName',
         contactEmail: 'team@ais.co.th',
         contactMobile: '012356789',
-        status: 'assigned',
+        status: 'active',
         members: [],
 
         created: new Date('2022-04-25'),
@@ -42,7 +48,7 @@ export const teams: Team[] = [
         contactName: 'teamFirstName3 teamLastName',
         contactEmail: 'team3@ais.co.th',
         contactMobile: '012356789',
-        status: 'assigned',
+        status: 'active',
         members: [],
 
         created: new Date('2022-04-25'),
@@ -58,7 +64,7 @@ export const teams: Team[] = [
         contactName: 'teamFirstName4 teamLastName',
         contactEmail: 'team4@ais.co.th',
         contactMobile: '012356789',
-        status: 'assigned',
+        status: 'active',
         members: [],
 
         created: new Date('2022-04-25'),
@@ -74,7 +80,7 @@ export const teams: Team[] = [
         contactName: 'teamFirstName5 teamLastName',
         contactEmail: 'team5@ais.co.th',
         contactMobile: '012356789',
-        status: 'assigned',
+        status: 'active',
         members: [],
 
         created: new Date('2022-04-25'),
@@ -90,7 +96,7 @@ export const teams: Team[] = [
         contactName: 'teamFirstName6 teamLastName',
         contactEmail: 'team@ais.co.th',
         contactMobile: '012356789',
-        status: 'assigned',
+        status: 'active',
         members: [],
 
         created: new Date('2022-04-25'),
@@ -106,7 +112,7 @@ export const teams: Team[] = [
         contactName: 'teamFirstName7 teamLastName',
         contactEmail: 'team7@ais.co.th',
         contactMobile: '012356789',
-        status: 'assigned',
+        status: 'active',
         members: [],
 
         created: new Date('2022-04-25'),
@@ -122,7 +128,7 @@ export const teams: Team[] = [
         contactName: 'teamFirstName8 teamLastName',
         contactEmail: 'team8@ais.co.th',
         contactMobile: '012356789',
-        status: 'Assigned',
+        status: 'active',
         members: [],
 
         created: new Date('2022-04-25'),
@@ -138,7 +144,7 @@ export const teams: Team[] = [
         contactName: 'teamFirstName9 teamLastName',
         contactEmail: 'team9@ais.co.th',
         contactMobile: '012356789',
-        status: 'assigned',
+        status: 'active',
         members: [],
 
         created: new Date('2022-04-25'),
@@ -154,7 +160,7 @@ export const teams: Team[] = [
         contactName: 'teamFirstName10 teamLastName',
         contactEmail: 'team10@ais.co.th',
         contactMobile: '012356789',
-        status: 'assigned',
+        status: 'active',
         members: [],
 
         created: new Date('2022-04-25'),
