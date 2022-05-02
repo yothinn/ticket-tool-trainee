@@ -9,7 +9,7 @@
                                 Search
                             </span>
                             <mat-form-field appearance="outline">
-                                <input matInput placeholder="Input">
+                                <input matInput placeholder="ค้นหาชื่อทีม">
                                 <mat-icon matSuffix>search</mat-icon>
                             </mat-form-field>
                         </div>
@@ -23,14 +23,14 @@
 
                     </app-filter-button>
 
-                    <!-- <div class="grid grid-cols-5">
+                    <div class="grid grid-cols-5">
                         <p class="col-span-2"></p>
                         <p class="font-semibold">Status</p>
                         <p class="font-semibold">Created</p>
                         <p class="font-semibold">Updated</p>
                     </div>
                 
-                    <mat-divider></mat-divider> -->
+                    <mat-divider></mat-divider>
                 </div>
 
                 <app-team-card-list  #teamListComp [teams]="teamResponse.data" (selected)="onViewOpened($event)">

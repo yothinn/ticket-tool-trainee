@@ -1,7 +1,7 @@
 
-<mat-card class="flex flex-col p-2 min-h-26 border-box gap-y-2">
+<div class="flex flex-col p-2 min-h-26 border-box gap-y-2 shadow-md">
     <div class="flex flex-row items-center">
-        <p class="flex-auto text-3xl text-primary font-semibold gap-x-1">
+        <p class="flex-auto text-3xl tracking-wide text-primary font-semibold gap-x-1">
             <span>Team Member</span>
             <span *ngIf="team?.members?.length > 0">
                 ({{ team?.members?.length }})
@@ -16,13 +16,15 @@
         </button>
     </div>
 
-    <mat-divider [inset]="true"></mat-divider>
+    <mat-divider></mat-divider>
 
-    <div class="group flex flex-row px-2 items-center"
-        [ngClass]="{ 'hover:card-hover' : mode === 'edit' }"
-    >
-        <div class="flex-auto grid grid-cols-2">
-            <ng-container *ngFor="let member of team?.members; let i = index">
+  
+    <ng-container *ngFor="let member of team?.members; let i = index">
+        <div class="group flex flex-row px-2 items-center"
+            [ngClass]="{ 'hover:card-hover' : mode === 'edit' }"
+        >
+            <div class="flex-auto grid grid-cols-2">
+            
                 <p class="break-all">
                     <span> {{ i + 1 }}. </span>
                     <span>{{ member.firstName + ' ' + member.lastName}}</span>
@@ -30,17 +32,17 @@
                 <p>
                     {{ member.email }}
                 </p>
+            </div>
+
+            <ng-container *ngIf="mode === 'edit' ">
+                <mat-icon class="cursor-pointer button-icon invisible group-hover:visible 
+                    hover:text-warn-500 items-center flex-initial"
+                    svgIcon="delete"
+                >
+                </mat-icon>
             </ng-container>
+        
         </div>
-
-        <ng-container *ngIf="mode === 'edit' ">
-            <mat-icon class="cursor-pointer button-icon invisible group-hover:visible 
-                hover:text-warn-500 items-center flex-initial"
-                svgIcon="delete"
-            >
-            </mat-icon>
-        </ng-container>
-
-    </div>
+    </ng-container>
    
-</mat-card>
+</div>

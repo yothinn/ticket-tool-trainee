@@ -1,8 +1,8 @@
 <ng-container *ngIf="activeTeam$ | async as activeTeam">
-    <div class="flex flex-col w-full gap-y-2 px-4 pb-4">
-        <div class="sticky top-0 flex flex-col">
-            <div class="flex flex-row py-2 items-center bg-default gap-x-2">
-                <p class="flex-auto text-5xl text-primary font-semibold">
+    <div class="flex flex-col w-full gap-y-2 px-2 pb-4">
+        <div class="z-20 sticky top-0 flex flex-col bg-default">
+            <div class="flex flex-row py-2 px-4 items-center  gap-x-2">
+                <p class="flex-auto text-[1.875rem] tracking-wider text-primary font-semibold">
                     Team Information
                 </p>
                 <span class="flex-initial ">Status : {{ activeTeam?.status | titlecase }}</span>
@@ -16,37 +16,41 @@
                     <mat-icon>close</mat-icon>
                 </button>
             </div>
-            <mat-divider></mat-divider>
+            <mat-divider class="mx-2"></mat-divider>
         </div>
 
-
-        <div class="grid grid-cols-2 gap-x-2">
-
+        <div class="flex flex-col px-1 gap-y-2">
             <app-team-info-view [team]="activeTeam">
             </app-team-info-view>
 
             <app-team-contact-view [team]="activeTeam">
             </app-team-contact-view>
 
-        </div>
+            <!-- <div class="grid grid-cols-2 gap-x-2">
 
-        
-        <app-team-member [team]="activeTeam">
-
-        </app-team-member>
-             
-        <app-problem-support [team]="activeTeam">
             
-        </app-problem-support>
 
-        <div class="flex flex-row justify-end mr-14">
-            <button mat-stroked-button color="primary" color="warn" class="button-normal">
-                <div class="flex gap-x-2">
-                    <mat-icon class="button-icon" svgIcon="delete">
-                    </mat-icon>
-                    <span>{{ 'Delete' | uppercase }}</span>
-                </div>
-            </button>
+            </div> -->
+
+            
+            <app-team-member [team]="activeTeam">
+
+            </app-team-member>
+                
+            <app-problem-support [team]="activeTeam">
+                
+            </app-problem-support>
+        
+
+            <div class="flex flex-row justify-end mr-15">
+                <button mat-stroked-button color="primary" color="warn" class="button-normal">
+                    <div class="flex gap-x-2">
+                        <mat-icon class="button-icon" svgIcon="delete">
+                        </mat-icon>
+                        <span>{{ 'Delete' | uppercase }}</span>
+                    </div>
+                </button>
+            </div>
         </div>
 
     </div>

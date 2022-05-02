@@ -6,7 +6,7 @@ export const teams: Team[] = [
     {
         id: 'TM00000001',
         name: 'Team Name 1',
-        description: 'Description 123456789',
+        description: 'Description 123456789 description description description description description description description description description description description description description description description description description description description description description description description description ',
         contactName: 'teamFirstName1 teamLastName',
         contactEmail: 'team@ais.co.th',
         contactMobile: '012356789',

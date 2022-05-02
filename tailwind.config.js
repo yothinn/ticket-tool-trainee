@@ -101,7 +101,9 @@ const config = {
             'xl'  : '1.125rem',
             '2xl' : '1.25rem',
             '3xl' : '1.5rem',
-            '4xl' : '2rem',
+            '4xl' : ['2rem', {
+                letterSpacing: '0.05em',
+              }],
             '5xl' : '2.25rem',
             '6xl' : '2.5rem',
             '7xl' : '3rem',
