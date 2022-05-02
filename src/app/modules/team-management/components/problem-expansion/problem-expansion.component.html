@@ -1,6 +1,6 @@
 <mat-accordion>
-    <mat-expansion-panel class="p-2" >
-        <mat-expansion-panel-header class="p-0">
+    <mat-expansion-panel class="p-2 hover:card-hover" hideToggle="true" #panel>
+        <mat-expansion-panel-header class="group p-0">
             <mat-panel-title>
                 <app-criticality-icon 
                     [text]="problem.criticality.name" 
@@ -12,6 +12,24 @@
                     {{ problem.name }} 
                 </p>
             </mat-panel-title>
+            <mat-panel-description >
+                <div class="w-full flex flex-row justify-end items-center gap-x-4">
+                    <mat-icon *ngIf="showDel"
+                        svgIcon="delete" 
+                        class="cursor-pointer invisible button-icon group-hover:visible hover:text-warn-500"
+                        (click)="remove.emit(problem)"
+                    >
+
+                    </mat-icon>
+                    <mat-icon *ngIf="!panel.expanded" class="text-primary">
+                        arrow_drop_down
+                    </mat-icon>
+                    <mat-icon *ngIf="panel.expanded" class="text-primary">
+                        arrow_drop_up
+                    </mat-icon>
+                </div>
+
+            </mat-panel-description>
         </mat-expansion-panel-header>
 
         <ng-template matExpansionPanelContent>

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Problem } from 'app/core/problem/problem.types';
 import { TeamService } from 'app/core/team/team.service';
 import { Observable, of, Subject } from 'rxjs';
 import { ProblemDialogComponent } from '../dialogs/problem-dialog/problem-dialog.component';
@@ -25,6 +26,14 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
     private _teamService: TeamService,
   ) { }
 
+  get isCreateMode(): boolean {
+    return this.mode === 'create';
+  }
+
+  get isEditMode(): boolean {
+    return this.mode === 'edit';
+  }
+
   ngOnInit(): void {
 
   }
@@ -36,7 +45,7 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log(this.mode);
-    this.activeTeam$ = (this.mode === 'create') ? of(undefined) : this._teamService.activeTeam$;
+    this.activeTeam$ = (this.isCreateMode) ? of(undefined) : this._teamService.activeTeam$;
   }
 
   openTeamMemberDialog(): void {
@@ -81,6 +90,23 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
 
   onEditSave(): void {
     this.closed.emit(true);
+  }
+
+  onDelTeamMember(event: any): void {
+    if (this.isCreateMode) {
+      // Delete only local
+    } else {
+      // Delete to backend
+    }
+
+  }
+
+  onDelProblem(info: {index: number; problem: Problem}): void {
+    if (this.isCreateMode) {
+      // Delete only local
+    } else {
+      // Delete to backend
+    }
   }
 
 }

@@ -16,6 +16,14 @@ export class TeamMemberComponent implements OnInit {
 
   constructor() { }
 
+  get isEditMode(): boolean {
+    return this.mode === 'edit';
+  }
+
+  get isViewMode(): boolean {
+    return this.mode === 'view';
+  }
+
   ngOnInit(): void {
   }
 

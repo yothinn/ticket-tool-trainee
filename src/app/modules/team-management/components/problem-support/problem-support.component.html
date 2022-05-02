@@ -1,13 +1,13 @@
 <div class="flex flex-col p-2 min-h-26 border-box gap-y-2 shadow-md">
     <div class="flex items-center">
-        <p class="flex-auto text-3xl tracking-wide text-primary font-semibold">
+        <p class="pl-2 flex-auto text-3xl tracking-wide text-primary font-semibold">
             <span>Problem Support</span>
             <span *ngIf="team?.problems?.length > 0">
                 ({{ team?.problems?.length }})
             </span> 
         </p>
         <button mat-flat-button color="primary"
-            *ngIf="mode === 'edit' " 
+            *ngIf="isEditMode" 
             class=" button-normal mr-4"
             (click)="clickAdd.emit(undefined)" 
         >
@@ -18,8 +18,12 @@
     <mat-divider></mat-divider>
 
     <div class="flex flex-col gap-y-2">
-        <ng-container  *ngFor="let problem of team?.problems" >
-            <app-problem-expansion  [problem]="problem" >
+        <ng-container  *ngFor="let problem of team?.problems; let i = index" >
+            <app-problem-expansion  
+                [showDel]="isEditMode"
+                [problem]="problem"
+                (remove)="onProblemDelete(problem, i)"
+            >
     
             </app-problem-expansion>
         </ng-container>
