@@ -19,6 +19,33 @@ export const teams: Team[] = [
             }
         ],
 
+        problems: [
+            {
+                id: '0001',
+                name: 'Problem Name1',
+                description: 'Problem Name Description',
+                status:'active',
+                criticality: {
+                    id: '',
+                    name: 'Critical',
+                    color: '#C42A2E',
+                    totalPeriod: '',
+                    acknowledgeTime: '',
+                    processTime: '',
+        
+                    created: new Date('2022-04-25'),
+                    createBy: 'Thanachai',
+                    updated: new Date('2022-04-25'),
+                    updateBy: 'Thanachai'
+                },
+        
+                created: new Date('2022-04-25'),
+                createBy: 'Thanachai',
+                updated: new Date('2022-04-25'),
+                updateBy: 'Thanachai'
+            },
+        ],
+
         created: new Date('2022-04-25'),
         createBy: 'user1 user',
 

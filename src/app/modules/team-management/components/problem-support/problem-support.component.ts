@@ -14,12 +14,11 @@ export class ProblemSupportComponent implements OnInit {
   @Output() clickAdd = new EventEmitter<any>();
   @Output() clickDel = new EventEmitter<any>();
 
-  data:object []=[
-    {text:'Critical',iconName:'circle',color:'#c42a2e',mode:0},
-    {text:'Medium',iconName:'circle',color:'#9bb94f',mode:0}
-  ]
+  // data:object []=[
+  //   {text:'Critical',iconName:'circle',color:'#c42a2e',mode:0},
+  //   {text:'Medium',iconName:'circle',color:'#9bb94f',mode:0}
+  // ]
 
-  panelOpenState = false;
   constructor() { }
 
   ngOnInit(): void {

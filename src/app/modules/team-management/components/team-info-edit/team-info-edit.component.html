@@ -1,18 +1,20 @@
-<div class="flex h-full w-full">
+<mat-card class="flex w-full p-2 border-box">
     <form [formGroup]="infoFrom" class="flex flex-col w-full">
-        <div class="flex flex-col w-full mt-1">
+        <div class="flex flex-col">
             <mat-label>Team Name</mat-label>
             <mat-form-field appearance="outline">
-                <input matInput formControlName="teamName" placeholder="Input">
+                <input matInput formControlName="teamName" placeholder="Team name">
             </mat-form-field>
         </div>
 
-        <div class="flex flex-col w-full mt-1">
+        <div class="flex flex-col">
             <mat-label>Team Description</mat-label>
             <mat-form-field appearance="outline">
-                <textarea matInput [rows]="3" formControlName="description"></textarea>
+                <textarea matInput [rows]="4" formControlName="description">
+
+                </textarea>
             </mat-form-field>
         </div>
 
     </form>
-</div>
+</mat-card>

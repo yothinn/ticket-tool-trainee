@@ -1,24 +1,24 @@
-<div class="flex h-full w-full">
-    <form [formGroup]="contactForm" class="flex flex-col w-full">
-        <div class="flex flex-col w-full mt-1">
+<mat-card class="flex w-full p-2 border-box ">
+    <form [formGroup]="contactForm"  class="flex flex-col w-full">
+        <div class="flex flex-col">
             <mat-label>Contact Name</mat-label>
             <mat-form-field appearance="outline">
                 <input matInput formControlName="contactName" placeholder="Input">
             </mat-form-field>
         </div>
 
-        <div class="flex flex-col w-full mt-1">
+        <div class="flex flex-col">
             <mat-label>Contact Email</mat-label>
             <mat-form-field appearance="outline">
                 <input matInput formControlName="contactEmail" placeholder="Input">
             </mat-form-field>
         </div>
 
-        <div class="flex flex-col w-full mt-1">
+        <div class="flex flex-col">
             <mat-label>Contact Mobile No</mat-label>
             <mat-form-field appearance="outline">
                 <input matInput formControlName="contactMobile" placeholder="Input">
             </mat-form-field>
         </div>
     </form>
-</div>
+</mat-card>

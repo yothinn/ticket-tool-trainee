@@ -1,7 +1,7 @@
 <ng-container *ngIf="{ activeTeam : activeTeam$ | async } as data">
-    <div class="flex flex-col w-full h-full">
+    <div class="flex flex-col w-full gap-y-2 px-4 pb-4">
         <div class="flex flex-row items-center">
-            <p class="flex-auto">
+            <p class="flex-auto text-5xl text-primary font-semibold">
                 <span *ngIf="mode === 'create' ">Create Team</span>
                 <span *ngIf="mode === 'edit' ">Edit Team</span>
             </p>
@@ -12,20 +12,39 @@
 
         <mat-divider></mat-divider>
 
-        <div class="grid grid-cols-2">
-            <app-team-info-edit [team]="data.activeTeam" class="border-2 border-gray-300 rounded">
+        <div class="grid grid-cols-2 gap-x-2">
+            <app-team-info-edit [team]="data.activeTeam">
 
             </app-team-info-edit>
-
+    
         
-            <app-team-contact-edit [team]="data.activeTeam" class="border-2 border-gray-300 rounded">
-
+            <app-team-contact-edit [team]="data.activeTeam">
+    
             </app-team-contact-edit>
         </div>
 
+        <!-- Edit Mode -->
+        <div *ngIf="mode === 'edit' " 
+            class="flex flex-row justify-end gap-x-2 mr-6"
+        >
+            <button mat-stroked-button color="primary"
+                class="button-normal"
+                (click)="onEditCancel()"
+            >
+                Cancel
+            </button>
+            <button mat-flat-button color="primary"
+                class="button-normal"
+                (click)="onEditSave()"
+            >
+                Save
+            </button>
+        </div>
+
+       
+
         <app-team-member mode="edit"
             [team]="data.activeTeam"
-            class="border-2 border-gray-300 rounded"
             (clickAdd)="openTeamMemberDialog()"
         >
 
@@ -34,21 +53,24 @@
         
         <app-problem-support mode="edit" 
             [team]="data.activeTeam"
-            class="border-2 border-gray-300 rounded"
             (clickAdd)="openProblemDialog()"
         >
 
         </app-problem-support>
 
-
-        <div class="flex flex-row justify-end">
+        <!-- Create Mode -->
+        <div *ngIf="mode === 'create' " 
+            class="flex flex-row justify-end gap-x-22 mr-6" 
+        >
             <button mat-stroked-button color="primary"
                 class="button-normal"
+                (click)="onCreateCancel()"
             >
                 Cancel
             </button>
             <button mat-flat-button color="primary"
                 class="button-normal"
+                (click)="onCreateSave()"
             >
                 Save
             </button>

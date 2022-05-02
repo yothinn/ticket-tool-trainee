@@ -22,25 +22,20 @@
 
         <div class="grid grid-cols-2 gap-x-2">
 
-            <app-team-info-view class="border-2 border-gray-300 rounded"
-                [team]="activeTeam"
-            >
+            <app-team-info-view [team]="activeTeam">
             </app-team-info-view>
 
-            <app-team-contact-view class="border-2 border-gray-300 rounded"
-                [team]="activeTeam"
-            >
+            <app-team-contact-view [team]="activeTeam">
             </app-team-contact-view>
-
 
         </div>
 
         
-        <app-team-member [team]="activeTeam" class="border-2 border-gray-300 rounded">
+        <app-team-member [team]="activeTeam">
 
         </app-team-member>
              
-        <app-problem-support [team]="activeTeam" class="border-2 border-gray-300 rounded">
+        <app-problem-support [team]="activeTeam">
             
         </app-problem-support>
 

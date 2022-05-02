@@ -5,4 +5,6 @@ export interface RequestData extends BaseInterface{
     keyName: string;
     displayName: string;
     controlType: string;
+
+    isRequired?: boolean;
 }

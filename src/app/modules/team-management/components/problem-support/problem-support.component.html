@@ -1,18 +1,28 @@
-<div>
+<mat-card class="flex flex-col p-2 min-h-26 border-box gap-y-2">
     <div class="flex items-center">
-        <h1 class="flex-auto">Problem Support (2)</h1>
+        <p class="flex-auto text-3xl text-primary font-semibold">
+            <span>Problem Support</span>
+            <span *ngIf="team?.problems?.length > 0">
+                ({{ team?.problems?.length }})
+            </span> 
+        </p>
         <button mat-flat-button color="primary"
             *ngIf="mode === 'edit' " 
-            class="flex-initial button-normal"
+            class=" button-normal mr-4"
             (click)="clickAdd.emit(undefined)" 
         >
             Add Problem
         </button>
     </div>
     
-    <mat-divider></mat-divider>
+    <mat-divider [inset]="true"></mat-divider>
 
-    <ng-container *ngFor="let item of data" class="flex flex-col w-full p-2">
-        <app-problem-expansion [data]="item" ></app-problem-expansion>
-    </ng-container>
-</div>
+    <div class="flex flex-col gap-y-2">
+        <ng-container  *ngFor="let problem of team?.problems" >
+            <app-problem-expansion  [problem]="problem" >
+    
+            </app-problem-expansion>
+        </ng-container>
+    </div>
+    
+</mat-card>

@@ -4,10 +4,10 @@
             <mat-expansion-panel-header class="p-0">
                 <mat-panel-title>
                     <app-criticality-icon 
-                        [text]="data.text" 
-                        [iconName]="data.iconName" 
-                        [color]="data.color"
-                        [mode]="data.mode">
+                        [text]="problem.criticality.name" 
+                        [color]="problem.criticality.color"
+                        mode="small"
+                    >
                     </app-criticality-icon>
                     <span> Problem Name 1 </span>
                 </mat-panel-title>

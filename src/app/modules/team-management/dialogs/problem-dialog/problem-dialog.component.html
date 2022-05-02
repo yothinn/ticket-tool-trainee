@@ -1,21 +1,23 @@
-<div class="flex flex-col w-full h-full p-1">
-    <div class="flex flex-row p-2 items-center">
-        <h1 class="flex-auto justify-start mr-4">Assign Problem to team : Team Name 1</h1>
-        <button class="flex-initial justify-center" mat-icon-button (click)="close()">
+<div class="flex flex-col w-full h-full">
+    <div class="flex flex-row items-center">
+        <h1 class="flex-auto">Assign Problem to team : Team Name 1</h1>
+        <button class="flex-initial" mat-icon-button (click)="close()">
             <mat-icon>close</mat-icon>
         </button>
     </div>
 
-    <mat-divider class="mb-2"></mat-divider>
+    <mat-divider></mat-divider>
 
-    <div class="flex flex-row w-full items-center">
+    <div class="flex flex-row items-center">
         <mat-form-field appearance="outline" 
-            class="flex-auto mt-auto mb-auto mr-4"
+            class="flex-auto"
         >
             <mat-label>Search</mat-label>
             <input matInput placeholder="Input">
         </mat-form-field>
-        <p class="flex-initial">0 person selected</p>
+        <p class="flex-initial">
+            0 person selected
+        </p>
     </div>
 
     <div class="flex flex-col h-5/6 mb-6 overflow-auto">
@@ -30,7 +32,7 @@
         </div>
 
         <div *ngFor="let item of data" 
-            class="grid grid-cols-5 p-4 border-b-2 
+            class="grid grid-cols-5 p-2 border-b-2 
                 border-neutral-300 hover:bg-gray-300"
         >
         <div> 
@@ -44,19 +46,24 @@
         <div>{{item.category}}</div>
         <app-criticality-icon 
                 [text]="item.criticality.text" 
-                [iconName]="item.criticality.iconName" 
                 [color]="item.criticality.color"
-                [mode]="criticalityMode"
+                mode="medium"
             >                       
         </app-criticality-icon>
         </div>
     </div>
 
-    <div class="flex flex-row justify-end gap-2">
-        <button mat-flat-button color="primary" (click)="close()">
+    <div class="flex flex-row justify-end gap-x-2">
+        <button mat-stroked-button color="primary" 
+            class="button-normal"
+            (click)="close()"
+        >
             Cancel
         </button>
-        <button mat-flat-button color="primary">
+        <button mat-flat-button color="primary"
+            class="button-normal"
+            (click)="save()"
+        >
             Save
         </button>
     </div>

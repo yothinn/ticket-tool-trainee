@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { CriticalityMode } from 'app/shared/components/criticality-icon/criticality-icon.component';
+import { ProblemService } from 'app/core/problem/problem.service';
+
 
 @Component({
   selector: 'app-problem-dialog',
@@ -8,11 +9,11 @@ import { CriticalityMode } from 'app/shared/components/criticality-icon/critical
   styleUrls: ['./problem-dialog.component.scss']
 })
 export class ProblemDialogComponent implements OnInit {
-  criticalityMode = CriticalityMode.medium;
   data: any[];
 
   constructor(
-    public dialogRef: MatDialogRef<ProblemDialogComponent>
+    public dialogRef: MatDialogRef<ProblemDialogComponent>,
+    private _problemService: ProblemService,
   ) { }
 
   ngOnInit(): void {
@@ -121,6 +122,10 @@ export class ProblemDialogComponent implements OnInit {
 
   close(): void {
     this.dialogRef.close();
+  }
+
+  save(): void {
+
   }
 
 }

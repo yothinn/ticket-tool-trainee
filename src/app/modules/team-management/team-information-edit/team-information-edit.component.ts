@@ -63,4 +63,20 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
     });
   }
 
+  onCreateCancel(): void {
+
+  }
+
+  onCreateSave(): void {
+
+  }
+
+  onEditCancel(): void {
+
+  }
+
+  onEditSave(): void {
+
+  }
+
 }

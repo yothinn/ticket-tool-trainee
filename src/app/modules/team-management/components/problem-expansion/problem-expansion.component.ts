@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Problem } from 'app/core/problem/problem.types';
 
 @Component({
   selector: 'app-problem-expansion',
@@ -6,12 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./problem-expansion.component.scss']
 })
 export class ProblemExpansionComponent implements OnInit {
-  @Input() data: any;
+
+  @Input() problem: Problem;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.data);
+
   }
 
 }

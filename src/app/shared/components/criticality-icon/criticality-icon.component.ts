@@ -1,10 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-export enum CriticalityMode {
-  small,
-  medium
-}
-
 @Component({
   selector: 'app-criticality-icon',
   templateUrl: './criticality-icon.component.html',
@@ -12,16 +7,12 @@ export enum CriticalityMode {
 })
 export class CriticalityIconComponent implements OnInit {
 
-  @Input() iconUrl: string;
-  @Input() iconName: string;
+  @Input() iconName: string = 'brightness_1';
   @Input() text: string;
   @Input() color: string;
-  @Input() mode: CriticalityMode = CriticalityMode.small;
-
-  criticalityMode = CriticalityMode;
+  @Input() mode: 'small' | 'medium' = 'small';
 
   constructor() {
-    this.iconName = 'brightness_1';
   }
 
   ngOnInit(): void {

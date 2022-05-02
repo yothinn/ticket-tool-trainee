@@ -1,4 +1,5 @@
 import { BaseInterface } from '../base/baseInterface.types';
+import { Problem } from '../problem/problem.types';
 import { TeamMember } from './teamMember.types';
 
 export interface Team extends BaseInterface {
@@ -11,4 +12,5 @@ export interface Team extends BaseInterface {
     status: string;
 
     members?: TeamMember[];
+    problems?: Problem[];
 }
