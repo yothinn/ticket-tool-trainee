@@ -16,6 +16,7 @@
     
     .card-active {
         background-color: var(--fuse-secondary-600) !important;
+        @apply rounded-lg #{'!important'};
     }
 
     .card-hover {

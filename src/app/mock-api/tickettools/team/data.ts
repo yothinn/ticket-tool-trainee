@@ -59,7 +59,7 @@ export const teams: Team[] = [
         contactName: 'teamFirstName2 teamLastName',
         contactEmail: 'team@ais.co.th',
         contactMobile: '012356789',
-        status: 'active',
+        status: 'inactive',
         members: [],
 
         created: new Date('2022-04-25'),

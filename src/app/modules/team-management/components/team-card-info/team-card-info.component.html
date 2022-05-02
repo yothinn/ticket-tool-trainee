@@ -10,7 +10,11 @@
             {{team?.description}}
         </span>
     </p>
-    <p> {{team?.status | titlecase}} </p>
+    <p class="text-primary"
+        [ngClass]="{ 'text-warn-500' : team?.status !== teamStatus.active }"
+    > 
+        {{team?.status | titlecase}} 
+    </p>
     
     <p class="flex flex-col">
         <span>

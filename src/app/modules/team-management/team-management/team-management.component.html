@@ -3,13 +3,16 @@
         <mat-drawer-content cdkscrollable class="flex flex-col">
             <ng-container *ngIf="teamResponse$ | async as teamResponse">
                 <div class="flex flex-col px-4 flex-auto max-w-6xl mx-auto gap-y-2">
-                    <div class="z-20 sticky top-0 flex flex-col bg-default">
+                    <div class="z-20 sticky top-0 flex flex-col bg-default gap-y-2">
                         <div class="flex flex-row gap-x-2 items-end">
                             <div class="flex flex-col flex-auto">
                                 <span class="text-xl pl-4">
                                     Search
                                 </span>
-                                <mat-form-field appearance="outline">
+                                <mat-form-field appearance="outline" 
+                                    class="w-3/4"
+                                    [ngClass]="{ 'w-full' : drawerDetail.opened }"
+                                >
                                     <input matInput placeholder="ค้นหาชื่อทีม">
                                     <mat-icon matSuffix>search</mat-icon>
                                 </mat-form-field>
@@ -24,6 +27,7 @@
 
                         </app-filter-button>
 
+                        <!-- Card Header !! For sticky-->
                         <div class="grid grid-cols-5">
                             <p class="col-span-2"></p>
                             <p class="font-semibold">Status</p>

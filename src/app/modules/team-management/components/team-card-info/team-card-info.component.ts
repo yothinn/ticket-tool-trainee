@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Team } from 'app/core/team/team.types';
+import { TeamStatus } from 'app/core/team/teamStatus.enum';
 
 @Component({
   selector: 'app-team-card-info',
@@ -10,7 +11,10 @@ export class TeamCardInfoComponent implements OnInit {
 
   @Input() team?: Team;
   @Input() actived: boolean = false;
+
   @Output() selected = new EventEmitter<Team>();
+
+  teamStatus = TeamStatus;
 
   constructor() { }
 

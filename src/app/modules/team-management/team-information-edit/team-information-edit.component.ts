@@ -2,7 +2,9 @@ import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, S
 import { MatDialog } from '@angular/material/dialog';
 import { Problem } from 'app/core/problem/problem.types';
 import { TeamService } from 'app/core/team/team.service';
-import { Observable, of, Subject } from 'rxjs';
+import { Team } from 'app/core/team/team.types';
+import { TeamStatus } from 'app/core/team/teamStatus.enum';
+import { Observable, of, Subject, tap } from 'rxjs';
 import { ProblemDialogComponent } from '../dialogs/problem-dialog/problem-dialog.component';
 import { TeamMemberDialogComponent } from '../dialogs/team-member-dialog/team-member-dialog.component';
 
@@ -17,6 +19,7 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
 
   @Output() closed = new EventEmitter<boolean>();
 
+  isActiveStatus: boolean = false;
   activeTeam$: Observable<any> = of({});
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
@@ -45,7 +48,15 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log(this.mode);
-    this.activeTeam$ = (this.isCreateMode) ? of(undefined) : this._teamService.activeTeam$;
+
+    if (this.isCreateMode) {
+      this.activeTeam$ = of(undefined);
+    } else {
+      this.activeTeam$ = this._teamService.activeTeam$
+        .pipe(
+          tap((team: Team) => this.isActiveStatus = (team.status === TeamStatus.active) )
+        );
+    }
   }
 
   openTeamMemberDialog(): void {

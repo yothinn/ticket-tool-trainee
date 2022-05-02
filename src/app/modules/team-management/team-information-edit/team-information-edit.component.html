@@ -6,8 +6,17 @@
                     <span *ngIf="isCreateMode">Create Team</span>
                     <span *ngIf="isEditMode">Edit Team</span>
                 </p>
-                <mat-slide-toggle class="flex-initial pr-5">
-                    <span>Status : Active</span>
+                <mat-slide-toggle 
+                    class="flex-initial pr-5"
+                    color="primary"
+                    [(ngModel)]="isActiveStatus"
+                >
+                    <span *ngIf="isActiveStatus">
+                        Status : Active
+                    </span>
+                    <span *ngIf="!isActiveStatus" class="text-warn-500">
+                        Status : InActive
+                    </span>
                 </mat-slide-toggle>
             </div>
     
