@@ -24,5 +24,14 @@ export class IconsModule
 
         // Ais icon
         this._matIconRegistry.addSvgIcon('delete', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icon-delete.svg'));
+        this._matIconRegistry.addSvgIcon('external', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icon-external.svg'));
+        this._matIconRegistry.addSvgIcon('home', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icon-home.svg'));
+        this._matIconRegistry.addSvgIcon('myticket', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icon-myticket.svg'));
+        this._matIconRegistry.addSvgIcon('problem', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icon-problem.svg'));
+        this._matIconRegistry.addSvgIcon('report', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icon-report.svg'));
+        this._matIconRegistry.addSvgIcon('sla', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icon-sla.svg'));
+        this._matIconRegistry.addSvgIcon('team', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icon-team.svg'));
+        this._matIconRegistry.addSvgIcon('ticket', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icon-ticket.svg'));
+        this._matIconRegistry.addSvgIcon('user_management', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icon-user-management.svg'));
     }
 }

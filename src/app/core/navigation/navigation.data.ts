@@ -10,35 +10,35 @@ export const defaultNavigation: FuseNavigationItem[] = [
         id   : 'dashboard',
         title: 'Dashboard',
         type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
+        icon : 'home',
         link : '/dashboard'
     },
     {
         id   : 'reports',
         title: 'Reports',
         type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
+        icon : 'report',
         link : '/reports'
     },
     {
         id   : 'myTicket',
         title: 'My Ticket',
         type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
+        icon : 'myticket',
         link : '/myticket'
     },
     {
         id   : 'ticketManagement',
         title: 'Ticket Management',
         type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
+        icon : 'ticket',
         link : '/ticket-management'
     },
     {
         id   : 'problemManagement',
         title: 'Problem Management',
         type : 'collapsable',
-        icon : 'heroicons_outline:chart-pie',
+        icon : 'problem',
         // link : '/system/problem-management',
         children: [
             {
@@ -75,14 +75,14 @@ export const defaultNavigation: FuseNavigationItem[] = [
         id   : 'teamManagement',
         title: 'Team Management',
         type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
+        icon : 'team',
         link : '/team-management'
     },
     {
         id   : 'slaManagement',
         title: 'SLA Management',
         type : 'collapsable',
-        icon : 'heroicons_outline:chart-pie',
+        icon : 'sla',
         // link : '/system/problem-management',
         children: [
             {
@@ -112,7 +112,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
         id   : 'userManagement',
         title: 'User Management',
         type : 'collapsable',
-        icon : 'heroicons_outline:chart-pie',
+        icon : 'user_management',
         // link : '/system/problem-management',
         children: [
             {
