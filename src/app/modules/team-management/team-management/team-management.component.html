@@ -1,66 +1,67 @@
-<mat-drawer-container class="w-full h-full flex flex-auto">
-    <mat-drawer-content cdkscrollable class="absolute inset-0">
-        <ng-container *ngIf="teamResponse$ | async as teamResponse">
-            <div class="flex flex-col px-4 flex-auto max-w-6xl mx-auto gap-y-2">
-                <div class="z-20 sticky top-0 flex flex-col bg-default">
-                    <div class="flex flex-row gap-x-2 items-end">
-                        <div class="flex flex-col flex-auto">
-                            <span class="text-xl pl-4">
-                                Search
-                            </span>
-                            <mat-form-field appearance="outline">
-                                <input matInput placeholder="ค้นหาชื่อทีม">
-                                <mat-icon matSuffix>search</mat-icon>
-                            </mat-form-field>
+<div class="absolute inset-0 flex flex-col min-w-o overflow-hidden">
+    <mat-drawer-container class="h-full flex-auto">
+        <mat-drawer-content cdkscrollable class="flex flex-col">
+            <ng-container *ngIf="teamResponse$ | async as teamResponse">
+                <div class="flex flex-col px-4 flex-auto max-w-6xl mx-auto gap-y-2">
+                    <div class="z-20 sticky top-0 flex flex-col bg-default">
+                        <div class="flex flex-row gap-x-2 items-end">
+                            <div class="flex flex-col flex-auto">
+                                <span class="text-xl pl-4">
+                                    Search
+                                </span>
+                                <mat-form-field appearance="outline">
+                                    <input matInput placeholder="ค้นหาชื่อทีม">
+                                    <mat-icon matSuffix>search</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <div class="flex-initial pb-1" >
+                                <button  class="button-normal" mat-flat-button color="primary" (click)="onTeamEdit('create')">
+                                    {{ 'Create' | uppercase }}
+                                </button>
+                            </div>
                         </div>
-                        <div class="flex-initial pb-1" >
-                            <button  class="button-normal" mat-flat-button color="primary" (click)="onTeamEdit('create')">
-                                {{ 'Create' | uppercase }}
-                            </button>
+                        <app-filter-button [buttons]="filters" (selected)="onFilter($event)" >
+
+                        </app-filter-button>
+
+                        <div class="grid grid-cols-5">
+                            <p class="col-span-2"></p>
+                            <p class="font-semibold">Status</p>
+                            <p class="font-semibold">Created</p>
+                            <p class="font-semibold">Updated</p>
                         </div>
+                    
+                        <mat-divider></mat-divider>
                     </div>
-                    <app-filter-button [buttons]="filters" (selected)="onFilter($event)" >
 
-                    </app-filter-button>
-
-                    <div class="grid grid-cols-5">
-                        <p class="col-span-2"></p>
-                        <p class="font-semibold">Status</p>
-                        <p class="font-semibold">Created</p>
-                        <p class="font-semibold">Updated</p>
-                    </div>
+                    <app-team-card-list  #teamListComp [teams]="teamResponse.data" (selected)="onViewOpened($event)">
+                    </app-team-card-list>   
                 
-                    <mat-divider></mat-divider>
+                    <app-paginator class="pr-4" 
+                        [pageNo]="teamResponse.pageNo"
+                        [pageSize]="teamResponse.pageSize"
+                        [totalRecord]="teamResponse.totalRecord"
+                    >
+                    </app-paginator>
                 </div>
+            </ng-container>
+        </mat-drawer-content>
 
-                <app-team-card-list  #teamListComp [teams]="teamResponse.data" (selected)="onViewOpened($event)">
-                </app-team-card-list>   
-              
-                <app-paginator class="pr-4" 
-                    [pageNo]="teamResponse.pageNo"
-                    [pageSize]="teamResponse.pageSize"
-                    [totalRecord]="teamResponse.totalRecord"
-                >
-                </app-paginator>
-            </div>
-        </ng-container>
-    </mat-drawer-content>
-
-    <mat-drawer #drawerDetail class="w-6/12" 
-        [mode]="isViewMode ? 'side' : 'over' " position="end"
-        disableClose="true"
-    >
-        <app-team-information-view *ngIf="isViewMode" (closed)="onViewClosed($event)"
-            (edit)="onTeamEdit('edit')"
+        <mat-drawer #drawerDetail class="lg:w-full xl:w-160 w-full" 
+            [mode]="isViewMode ? 'side' : 'over' " position="end"
+            disableClose="true"
         >
-        </app-team-information-view>
-        <app-team-information-edit 
-            *ngIf="!isViewMode"
-            [mode]="teamInfoMode"
-            (closed)="onTeamEditClosed($event)"
-        >
+            <app-team-information-view *ngIf="isViewMode" 
+                (closed)="onViewClosed($event)"
+                (edit)="onTeamEdit('edit')"
+            >
+            </app-team-information-view>
+            <app-team-information-edit *ngIf="!isViewMode"
+                [mode]="teamInfoMode"
+                (closed)="onTeamEditClosed($event)"
+            >
+            </app-team-information-edit>
+        </mat-drawer>
 
-        </app-team-information-edit>
-    </mat-drawer>
-
-</mat-drawer-container>
+    </mat-drawer-container>
+</div>

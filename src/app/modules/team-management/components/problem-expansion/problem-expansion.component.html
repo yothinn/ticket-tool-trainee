@@ -14,18 +14,18 @@
             </mat-panel-title>
             <mat-panel-description >
                 <div class="w-full flex flex-row justify-end items-center gap-x-4">
-                    <mat-icon *ngIf="showDel"
-                        svgIcon="delete" 
-                        class="cursor-pointer invisible button-icon group-hover:visible hover:text-warn-500"
-                        (click)="remove.emit(problem)"
-                    >
-
-                    </mat-icon>
                     <mat-icon *ngIf="!panel.expanded" class="text-primary">
                         arrow_drop_down
                     </mat-icon>
                     <mat-icon *ngIf="panel.expanded" class="text-primary">
                         arrow_drop_up
+                    </mat-icon>
+
+                    <mat-icon *ngIf="showDel"
+                        svgIcon="delete" 
+                        class="cursor-pointer invisible button-icon group-hover:visible hover:text-warn-500"
+                        (click)="remove.emit(problem)"
+                    >
                     </mat-icon>
                 </div>
 
