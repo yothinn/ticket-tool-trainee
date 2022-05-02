@@ -18,17 +18,29 @@
 
     <mat-divider [inset]="true"></mat-divider>
 
-    <div class="grid grid-cols-2">
-        <ng-container *ngFor="let member of team?.members; let i = index">
-            <p class="break-all">
-                <span> {{ i + 1 }}. </span>
-                <span>{{ member.firstName + ' ' + member.lastName}}</span>
-            </p>
-            <p>
-                {{ member.email }}
-            </p>
+    <div class="group flex flex-row px-2 items-center"
+        [ngClass]="{ 'hover:card-hover' : mode === 'edit' }"
+    >
+        <div class="flex-auto grid grid-cols-2">
+            <ng-container *ngFor="let member of team?.members; let i = index">
+                <p class="break-all">
+                    <span> {{ i + 1 }}. </span>
+                    <span>{{ member.firstName + ' ' + member.lastName}}</span>
+                </p>
+                <p>
+                    {{ member.email }}
+                </p>
+            </ng-container>
+        </div>
+
+        <ng-container *ngIf="mode === 'edit' ">
+            <mat-icon class="cursor-pointer min-w-5 min-h-5 w-5 h-5 group-hover:visible hover:text-warn items-center flex-initial">
+                delete
+            </mat-icon>
         </ng-container>
 
+
     </div>
+
    
 </mat-card>

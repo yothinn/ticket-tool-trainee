@@ -14,7 +14,7 @@
                             </mat-form-field>
                         </div>
                         <div class="flex-initial pb-1" >
-                            <button  class="button-normal" mat-flat-button color="primary" (click)="onCreate()">
+                            <button  class="button-normal" mat-flat-button color="primary" (click)="onTeamEdit('create')">
                                 {{ 'Create' | uppercase }}
                             </button>
                         </div>
@@ -48,14 +48,16 @@
 
     <mat-drawer #drawerDetail class="w-6/12" 
         [mode]="isViewMode ? 'side' : 'over' " position="end"
+        disableClose="true"
     >
         <app-team-information-view *ngIf="isViewMode" (closed)="onViewClosed($event)"
-            (edit)="onTeamEdit()"
+            (edit)="onTeamEdit('edit')"
         >
         </app-team-information-view>
         <app-team-information-edit 
             *ngIf="!isViewMode"
             [mode]="teamInfoMode"
+            (closed)="onTeamEditClosed($event)"
         >
 
         </app-team-information-edit>

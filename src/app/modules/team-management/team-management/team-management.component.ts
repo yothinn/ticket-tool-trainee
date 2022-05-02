@@ -64,16 +64,16 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
     this.teamListComp.activeTeam = undefined;
   }
 
-  onCreate(): void {
+  onTeamEdit(mode: 'create' | 'edit'): void {
+
     this.isViewMode = false;
-    this.teamInfoMode = 'create';
+    this.teamInfoMode = mode;
     this._openDetail();
   }
 
-  onTeamEdit(): void {
-    this.isViewMode = false;
-    this.teamInfoMode = 'edit';
-    this._openDetail();
+  onTeamEditClosed(event: boolean): void {
+    // True is save, false is cancel
+    this.drawerDetail.toggle();
   }
 
   onFilter(filter: FilterButton): void {

@@ -1,7 +1,6 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TeamService } from 'app/core/team/team.service';
-import { Team } from 'app/core/team/team.types';
 import { Observable, of, Subject } from 'rxjs';
 import { ProblemDialogComponent } from '../dialogs/problem-dialog/problem-dialog.component';
 import { TeamMemberDialogComponent } from '../dialogs/team-member-dialog/team-member-dialog.component';
@@ -15,6 +14,8 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
 
   @Input() mode: 'create' | 'edit' = 'create';
 
+  @Output() closed = new EventEmitter<boolean>();
+
   activeTeam$: Observable<any> = of({});
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
@@ -25,6 +26,7 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
   ) { }
 
   ngOnInit(): void {
+
   }
 
   ngOnDestroy(): void {
@@ -40,7 +42,8 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
   openTeamMemberDialog(): void {
     const dialogRef = this._dialog.open(TeamMemberDialogComponent, {
       height:'580px',
-      width: '90%'
+      width: '90%',
+      disableClose: true,
       // data: {},
     });
 
@@ -53,7 +56,8 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
   openProblemDialog(): void {
     const dialogRef = this._dialog.open(ProblemDialogComponent, {
       height:'580px',
-      width: '90%'
+      width: '90%',
+      disableClose: true,
       // data: {},
     });
 
@@ -64,19 +68,19 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
   }
 
   onCreateCancel(): void {
-
+    this.closed.emit(false);
   }
 
   onCreateSave(): void {
-
+    this.closed.emit(true);
   }
 
   onEditCancel(): void {
-
+    this.closed.emit(false);
   }
 
   onEditSave(): void {
-
+    this.closed.emit(true);
   }
 
 }

@@ -10,29 +10,29 @@ import { Team } from 'app/core/team/team.types';
 export class TeamInfoEditComponent implements OnInit, OnChanges {
 
   @Input() team?: Team;
-  infoFrom?: FormGroup;
+
+  infoForm?: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
+    private _formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.infoFrom = this.createInfoForm();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-      
+    this.infoForm = this.initInfoForm(this.team);
   }
 
-  createInfoForm(): FormGroup {
-    return this.formBuilder.group({
-      teamName: ['', Validators.required],
-      description: ['', Validators.required]
+  initInfoForm(team?: Team): FormGroup {
+    return this._formBuilder.group({
+      teamName: [team?.name || '', Validators.required],
+      description: [team?.description || '', Validators.required]
     });
   }
 
   saveFrom(): void {
-    const payload = this.infoFrom?.value;
+    const payload = this.infoForm?.value;
     console.log(payload);
   }
 

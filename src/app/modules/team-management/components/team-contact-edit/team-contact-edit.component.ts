@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Team } from 'app/core/team/team.types';
 
 @Component({
@@ -14,22 +14,21 @@ export class TeamContactEditComponent implements OnInit, OnChanges {
   contactForm?: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
+    private _formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.contactForm = this.createContactForm();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.team);
+    this.contactForm = this.initContactForm(this.team);
   }
 
-  createContactForm(): FormGroup {
-    return this.formBuilder.group({
-      contactName: ['', Validators.required],
-      contactEmail: ['', Validators.required],
-      contactMobile: ['', Validators.required]
+  initContactForm(team?: Team): FormGroup {
+    return this._formBuilder.group({
+      contactName: [team?.contactName || '', Validators.required],
+      contactEmail: [team?.contactEmail || '', Validators.required],
+      contactMobile: [team?.contactMobile || '', Validators.required]
     });
   }
 

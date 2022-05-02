@@ -22,6 +22,16 @@
                     color: var(--fuse-primary-500) !important;
                 }    
             }
+
+            textarea.mat-input-element {
+                color: var(--fuse-primary-500);
+    
+                &::placeholder {
+                    color: var(--fuse-primary-500) !important;
+                }    
+            }
+
+            
     
         }
 
