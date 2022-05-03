@@ -5,22 +5,28 @@ import { HolidayService } from 'app/core/holiday/holiday.service';
 import { Holiday } from 'app/core/holiday/holiday.types';
 import { GetHolidayParameter } from 'app/core/parameters/getHolidayParameter.entity';
 import { Observable } from 'rxjs';
-import { SlaHolidayEditDialogsComponent } from '../dialogs/sla-holiday-edit-dialogs/sla-holiday-edit-dialogs.component';
+import { HolidayEditDialogComponent } from '../dialogs/holiday-edit-dialog/holiday-edit-dialog.component';
 
 @Component({
-  selector: 'app-sla-holiday',
-  templateUrl: './sla-holiday.component.html',
-  styleUrls: ['./sla-holiday.component.scss']
+  selector: 'app-holiday',
+  templateUrl: './holiday.component.html',
+  styleUrls: ['./holiday.component.scss']
 })
-export class SlaHolidayComponent implements OnInit {
+export class HolidayComponent implements OnInit {
 
-  holidayResponse$: Observable<PageResponse<Holiday[]>>;
+  holidayResponse$?: Observable<PageResponse<Holiday[]>>;
+
+  holidays: any[] = [
+    {value: 'master-0', viewValue: 'Master1'},
+    {value: 'master-1', viewValue: 'Master2'},
+    {value: 'master-2', viewValue: 'Master3'},
+  ];
 
   constructor(
     private _dialog: MatDialog,
     private _holidayService: HolidayService
   ) {
-    this.getSlaHoliday();
+    this.getHoliday()
   }
 
   ngOnInit(): void {
@@ -29,24 +35,29 @@ export class SlaHolidayComponent implements OnInit {
   openHolidayDialog(data?: {index: number; holiday: Holiday}): void {
     console.log(data);
 
-    const dialogRef = this._dialog.open(SlaHolidayEditDialogsComponent, {
-      height:'230px',
+    const dialogRef = this._dialog.open(HolidayEditDialogComponent, {
+      height:'420px',
       width: '40%',
       data: data?.holiday
     });
 
-    dialogRef.afterClosed().subscribe((causeName: string) => {
+    dialogRef.afterClosed().subscribe((holidayName: string) => {
       console.log('The dialog was closed');
-      // if (holidayName) {
-      //   // Save to backend
-      // }
+      if (holidayName) {
+        // Save to backend
+      }
     });
   }
 
-  getSlaHoliday(): void {
+  getHoliday(): void {
     const params = new GetHolidayParameter();
 
     this.holidayResponse$ = this._holidayService.getSlaHoliday(params);
   }
 
+  onEdit(event: any ): void {
+    console.log(event);
+  }
+
+  
 }

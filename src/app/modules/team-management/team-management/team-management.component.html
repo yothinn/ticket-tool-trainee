@@ -19,11 +19,14 @@
                             </div>
                             <div class="flex-initial pb-1" >
                                 <button  class="button-normal" mat-flat-button color="primary" (click)="onTeamEdit('create')">
-                                    {{ 'Create' | uppercase }}
+                                    CREATE
                                 </button>
                             </div>
                         </div>
-                        <app-filter-button [buttons]="filters" (selected)="onFilter($event)" >
+                        <app-filter-button [buttons]="filters" 
+                            [active]="currFilter"
+                            (selected)="onFilter($event)" 
+                        >
 
                         </app-filter-button>
 

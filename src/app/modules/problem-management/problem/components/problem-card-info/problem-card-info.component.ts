@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Problem } from 'app/core/problem/problem.types';
+import { ProblemStatus } from 'app/core/problem/problemStatus.enum';
 
 @Component({
   selector: 'app-problem-card-info',
@@ -8,7 +9,8 @@ import { Problem } from 'app/core/problem/problem.types';
 })
 export class ProblemCardInfoComponent implements OnInit {
 
-  @Input() problemData?: Problem;
+  @Input() problem?: Problem;
+  problemStatus = ProblemStatus;
 
   constructor() { }
 

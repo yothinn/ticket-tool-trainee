@@ -344,17 +344,22 @@
 
         .mat-button-toggle + .mat-button-toggle {
             background-clip: padding-box;
+            border-left: 1px solid var(--fuse-primary) !important;
         }
     }
 
     .mat-button-toggle {
+        // border: none !important;
+        border: 1px solid var(--fuse-primary);
+        min-width: 130px;
+        width: 130px;
         border-radius: 9999px;
         overflow: hidden;
-        border: none !important;
         font-weight: 500;
 
         &.mat-button-toggle-checked {
-
+            @apply bg-primary #{'!important'};
+            
             .mat-button-toggle-label-content {
                 @apply text-default #{'!important'};
             }
@@ -362,7 +367,8 @@
 
         .mat-button-toggle-label-content {
             padding: 0 20px;
-            @apply text-secondary;
+            // @apply text-secondary;
+            @apply text-primary;
         }
 
         .mat-ripple {

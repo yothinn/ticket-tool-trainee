@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
-import { SlaHolidayComponent } from './sla-holiday/sla-holiday.component';
+import { HolidayComponent } from './holiday/holiday.component';
 
 const routes: Route[] = [
     {
         path: '',
-        component: SlaHolidayComponent,
+        component: HolidayComponent,
         data: { breadcrumb: null }
     }
 ];
@@ -16,4 +16,4 @@ const routes: Route[] = [
         RouterModule.forChild(routes)
     ],
 })
-export class SlaHolidayRoutingModule { }
+export class HolidayRoutingModule { }

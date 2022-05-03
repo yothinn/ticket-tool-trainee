@@ -1,12 +1,15 @@
-<div class="flex flex-col w-full">
-    <div class="grid grid-cols-2">
-        <p>Team Name</p>
-        <p class="break-all">Problem Nameeeeeeeeeeeeeeeeee</p>
-    </div>
-    <div class="grid grid-cols-1">
-        <p>Description</p>
-        <p class="break-all">
-            <span>Description22222222222222222222222222222222222</span>
-        </p>
-    </div>
+<div class="grid grid-cols-6  gap-x-2 p-2 border-box shadow-md">
+    <p class="text-primary">
+        Team Name
+    </p>
+    <p class="col-span-5 break-all">
+        {{problem?.name}}
+    </p>
+
+    <p class="text-primary">
+        Description
+    </p>
+    <p class="col-span-5 break-all">
+        {{problem?.description}}
+    </p>
 </div>
