@@ -1,19 +1,34 @@
-<div class="grid grid-flow-col grid-cols-5 pt-2 pb-2 hover:bg-gray-300 cursor-pointer">
+<div class="grid grid-flow-col grid-cols-5 pt-2 pb-2 cursor-pointer hover:card-hover">
     <div class="flex flex-row col-span-2"> 
         <app-criticality-icon class="pt-4" text='Critical'></app-criticality-icon> 
         <div class=" flex flex-col">
             <span>
-                {{problemData?.name}}
+                {{problem?.name}}
             </span>
             <span>
-                {{problemData?.description}}
+                {{problem?.description}}
             </span>
         </div>
     </div>
-    <div>{{problemData?.status}}</div>
-    <div class="flex flex-col">
+    <!-- TODO เปลี่ยน  active string to boolean -->
+    <div 
+        [ngClass]="{ 
+            'text-warn-500' : problem?.status !== problemStatus.active, 
+            'text-primary' : problem?.status === problemStatus.active
+        }"
+    >
+        {{problem?.status}}
+    </div>
+    <div> 
+        {{problem?.category?.name}}
+    </div>
+    <div >
+        {{problem?.teamOwner?.name}}
+    </div>
+
+    <!-- <div class="flex flex-col">
         <span>
-            {{problemData?.createBy}}
+            {{problemData?.category?.name}}
         </span>
         <span>
             {{ problemData?.created | date:'dd/MM/yyyy'}}
@@ -22,11 +37,11 @@
 
     <div class="flex flex-col">
         <span>
-            {{problemData?.updateBy}}
+            {{problemData?.teamOwner?.name}}
         </span>
         <span>
             {{ problemData?.updated | date:'dd/MM/yyyy' }}
         </span>
-    </div>
+    </div> -->
 
 </div>

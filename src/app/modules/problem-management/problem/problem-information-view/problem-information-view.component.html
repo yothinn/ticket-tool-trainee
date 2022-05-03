@@ -1,72 +1,54 @@
-<div class="flex flex-col w-full h-full">
-    <div class="flex flex-row pt-2 pb-2 items-center gap-2">
-        <h1 class="flex-auto">Create Information</h1>
-        <span class="flex-initial ">Status : Active</span>
-        <button mat-flat-button class="flex-initial text-center" color="primary">
-            Edit
-        </button>
-        <button mat-icon-button class="flex-initial">
-            <mat-icon>close</mat-icon>
-        </button>
-    </div>
+<ng-container *ngIf="activeProblems$ | async as activeProblems">
+    <div class="flex flex-col w-full gap-y-2 px-2 pb-4">
+        <div class="z-20 sticky top-0 flex flex-col bg-default">
+            <div class="flex flex-row py-2 px-4 items-center  gap-x-2">
+                <p class="flex-auto text-[1.875rem] tracking-wider text-primary font-semibold">
+                    Problem Information
+                </p>
 
-    <mat-divider></mat-divider>
+                <span class="flex-initial ">Status : {{ activeProblems?.status | titlecase }}</span>
 
-    <div class="flex flex-row mt-2 mb-2">
-        <div class="grid grid-cols-2 w-full gap-1">
-            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
+                <button mat-flat-button class="button-normal flex-initial text-center" color="primary">
+                    Edit
+                </button>
 
-                <app-problem-info-view>
-
-                </app-problem-info-view>
-
+                <button mat-icon-button class="flex-initial" (click)="onClose()">
+                    <mat-icon>close</mat-icon>
+                </button>
             </div>
 
-            <div class="mr-1 p-1 border-2 border-gray-300 rounded">
+            <mat-divider class="mx-2"></mat-divider>
+        </div>
 
-                <app-problem-control-view>
+        <div class="flex flex-col px-1 gap-y-2">
+            <app-problem-info-view [problem]='activeProblems'>
+            </app-problem-info-view>
 
-                </app-problem-control-view>
+            <app-problem-control-view [problem]='activeProblems'>
+            </app-problem-control-view>
 
+            <app-request-data>
+            </app-request-data>
+
+            <div class="flex flex-row mt-2 mb-2 gap-2">
+                <span>External Operation</span>
+                <mat-slide-toggle class="flex-initial">
+                </mat-slide-toggle>
+            </div>
+
+            <app-team-owner [problem]='activeProblems'>
+
+            </app-team-owner>
+
+            <div class="flex flex-row justify-end mr-15">
+                <button mat-stroked-button color="primary" color="warn" class="button-normal">
+                    <div class="flex gap-x-2">
+                        <mat-icon class="button-icon" svgIcon="delete">
+                        </mat-icon>
+                        <span>'DELETE' </span>
+                    </div>
+                </button>
             </div>
         </div>
     </div>
-
-    <div class="flex flex-col mb-2 p-1 border-2 border-gray-300 rounded">
-        <h1 class="mb-1">Request Data</h1>
-
-        <mat-divider></mat-divider>
-
-        <!-- Content Request Data -->
-        <app-request-data-view>
-            
-        </app-request-data-view>
-
-    </div>
-
-    <div class="flex flex-row mt-2 mb-2 gap-2">
-        <span>External Operation</span>
-        <mat-slide-toggle class="flex-initial">
-            
-        </mat-slide-toggle>
-    </div>
-    
-
-    <div class="flex flex-col mb-2 p-1 border-2 border-gray-300 rounded">
-        <h1 class="mb-1">Team Owner</h1>
-
-        <!-- Content Team Owner -->
-        <mat-divider></mat-divider>
-
-        <app-team-owner-view>
-
-        </app-team-owner-view>
-    </div>
-
-    <div class="flex flex-row justify-end pr-7">
-        <button mat-flat-button color="primary">
-            Delete
-        </button>
-    </div>
-
-</div>
+</ng-container>

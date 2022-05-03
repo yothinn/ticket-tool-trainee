@@ -1,24 +1,28 @@
-<div class="flex flex-col w-full">
-    <div class="grid grid-cols-3">
-        <p>Criticality</p>
-        <p class="flex flex-row col-span-2 break-all">
-            <span> Critical 4 Hrs </span>
-            <app-criticality-icon ></app-criticality-icon> 
+<div  class="grid grid-cols-6  gap-x-2 p-2 border-box shadow-md">
+
+        <p class="text-primary" >Criticality</p>
+        <p class="flex flex-row col-span-5 break-all">
+            <span> {{problem?.criticality?.name}}{{' '}}{{problem?.criticality?.acknowledgeTime}}</span>
+            <app-criticality-icon class="p-1"
+                [color]="problem?.criticality?.color"
+            >
+            </app-criticality-icon> 
         </p>
 
-        <p>Category</p>
-        <p class="col-span-2 break-all">Product Category</p>
+        <p class="text-primary" >Category</p>
+        <p class="col-span-5 break-all">{{problem?.category?.name}}</p>
 
-        <p>Created</p>
-        <p class="col-span-2 break-all">Thanayut Test1</p>
-
-        <p></p>
-        <p class="col-span-2 break-all">10 Mar 2022 20:00</p>
-
-        <p>Updated</p>
-        <p class="col-span-2 break-all">Thanayut Test1</p>
+        <p class="text-primary" >Created</p>
+        <p class="col-span-5 break-all">{{problem?.category?.createBy}}</p>
 
         <p></p>
-        <p class="col-span-2 break-all">10 Mar 2022 20:00</p>
-    </div>
+        <p class="col-span-5 break-all">{{problem?.created | date:'dd/MM/yyyy'}}</p>
+
+        <p class="text-primary" >Updated</p>
+        <p class="col-span-5 break-all">{{problem?.updateBy}}</p>
+
+        <p></p>
+        <p class="col-span-5 break-all">{{problem?.updated | date:'dd/MM/yyyy'}}</p>
+
 </div>
+

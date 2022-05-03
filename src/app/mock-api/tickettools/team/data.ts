@@ -25,6 +25,35 @@ export const teams: Team[] = [
                 name: 'Problem Name1',
                 description: 'Problem Name Description',
                 status:'active',
+
+                category: {
+                    id:'ddd',
+                    name:'dd',
+                    created: new Date('2022-04-25'),
+                    createBy: 'Thanachai',
+                    updated: new Date('2022-04-25'),
+                    updateBy: 'Thanachai'
+                },
+                teamOwner:{
+                    id: '',
+                    name: '',
+                    description: '',
+                    contactName: '',
+                    contactEmail: '',
+                    contactMobile: '',
+                    status: '',
+                
+                    members: [{
+                        firstName: '',
+                        lastName: '',
+                        email: '',
+                    }],
+                    created: new Date('2022-04-25'),
+                    createBy: 'Thanachai',
+                    updated: new Date('2022-04-25'),
+                    updateBy: 'Thanachai'
+        
+                },
                 criticality: {
                     id: '',
                     name: 'Critical',
@@ -44,6 +73,7 @@ export const teams: Team[] = [
                 updated: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
+            
         ],
 
         created: new Date('2022-04-25'),

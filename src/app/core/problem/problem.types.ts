@@ -7,7 +7,10 @@ export interface Problem extends BaseInterface{
     id: string;
     name: string;
     description: string;
+    category: ProblemCategory;
     status: string;
+    teamOwner: Team;
+    // teamOwner:string;
 
     criticality: Criticality;
     // category: ProblemCategory;
