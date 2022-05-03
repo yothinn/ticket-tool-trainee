@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatButtonToggleChange } from '@angular/material/button-toggle';
 import { FilterButton } from './filter-button-interface';
 
 @Component({
@@ -9,6 +10,7 @@ import { FilterButton } from './filter-button-interface';
 export class FilterButtonComponent implements OnInit {
 
   @Input() buttons?: FilterButton[];
+  @Input() active?: FilterButton;
 
   @Output() selected: EventEmitter<FilterButton> = new EventEmitter();
 
@@ -18,7 +20,8 @@ export class FilterButtonComponent implements OnInit {
     console.log(this.buttons);
   }
 
-  onClick(button: FilterButton): void {
-    this.selected.emit(button);
+  onSelected(buttonToggle: MatButtonToggleChange): void {
+    console.log(buttonToggle.value);
+    this.selected.emit(buttonToggle.value);
   }
 }

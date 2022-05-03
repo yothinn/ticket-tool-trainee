@@ -23,7 +23,10 @@
                                 </button>
                             </div>
                         </div>
-                        <app-filter-button [buttons]="filters" (selected)="onFilter($event)" >
+                        <app-filter-button [buttons]="filters" 
+                            [active]="currFilter"
+                            (selected)="onFilter($event)" 
+                        >
 
                         </app-filter-button>
 
