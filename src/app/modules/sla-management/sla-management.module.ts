@@ -5,12 +5,14 @@ import { SharedModule } from 'app/shared/shared.module';
 
 
 
+
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     SlaManagementRoutingModule,
-    SharedModule
+    SharedModule,
+    
   ]
 })
 export class SlaManagementModule { }

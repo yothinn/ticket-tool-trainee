@@ -1,0 +1,27 @@
+<div class="grid grid-cols-5 py-2 hover:bg-gray-300 cursor-pointer">
+    <p> 
+        {{ holiday.name }}
+    </p>
+    <p> 
+        {{ holiday.date }}
+    </p>
+    <p> 
+        {{ holiday.isWholeDay }}
+    </p>
+    <p> 
+        {{ holiday.startTime + ' - ' + holiday.endTime}} 
+    </p>
+    <div class="flex flex-row gap-x-2 items-center "> 
+        <mat-icon (click)="onSelectEdit(holiday)"> 
+            edit 
+        </mat-icon>
+        <ng-container *ngIf="isEditMode">
+            <mat-icon class="cursor-pointer button-icon invisible group-hover:visible 
+                hover:text-warn-500 items-center flex-initial"
+                svgIcon="delete"
+            >
+            </mat-icon>
+        </ng-container>
+    </div>
+</div>
+ 

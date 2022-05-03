@@ -1,0 +1,45 @@
+<div class="flex flex-col w-full h-full gap-2" >
+    <div class="flex flex-row gap-2">
+        <h1 class="flex-auto justify-start " *ngIf="isNew"> Add Holiday </h1>
+        <h1 class="flex-auto justify-start " *ngIf="!isNew"> Edit Holiday </h1>
+        <button class="flex-initial" mat-icon-button (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-radio-group aria-label="option" class="flex flex-row gap-2">
+        <mat-radio-button value="1">Whole Day</mat-radio-button>
+        <mat-radio-button value="2">Custom</mat-radio-button>
+    </mat-radio-group>
+
+    <div class="flex flex-row">
+        <div class="grid grid-rows-2 w-full">
+            <mat-form-field >
+                <mat-label>Holiday Name</mat-label>
+                <input matInput [(ngModel)]="holidayName">
+            </mat-form-field>
+            
+            <!-- <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field> -->
+        </div>
+        <div class="grid grid-rows-2 w-full">
+            <p>test</p>
+            <p>test2</p>
+        </div>
+    </div>
+
+    <div class="flex flex-row justify-end gap-x-2 ">
+        <button mat-flat-button color="primary" (click)="close()">
+            Cancel
+        </button>
+        <button mat-flat-button color="primary" (click)="save()" [disabled]="!holidayName">
+            OK
+        </button>
+    </div>
+</div>
