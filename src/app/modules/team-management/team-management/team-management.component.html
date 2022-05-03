@@ -20,7 +20,9 @@
                                 </mat-form-field>
                             </div>
                             <div class="flex-initial pb-1" >
-                                <button  class="button-normal" mat-flat-button color="primary" (click)="onTeamEdit('create')">
+                                <button  class="button-normal" mat-flat-button color="primary" 
+                                    (click)="onTeamEdit('create')"
+                                >
                                     CREATE
                                 </button>
                             </div>
@@ -43,7 +45,10 @@
                         <mat-divider></mat-divider>
                     </div>
 
-                    <app-team-card-list  #teamListComp [teams]="teamResponse.data" (selected)="onViewOpened($event)">
+                    <app-team-card-list  #teamListComp 
+                        [teams]="teamResponse.data" 
+                        (selected)="onViewOpened($event)"
+                    >
                     </app-team-card-list>   
                 
                     <app-paginator class="pr-4" 

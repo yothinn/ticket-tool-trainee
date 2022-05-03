@@ -42,7 +42,7 @@ export const problems: Problem[] = [
             id: '',
             name: 'Critical',
             color: '#C42A2E',
-            totalPeriod: '',
+            totalPeriod: '4 Hrs',
             acknowledgeTime: '4 Hrs',
             processTime: '',
 
@@ -96,7 +96,7 @@ export const problems: Problem[] = [
             id: '',
             name: 'Critical',
             color: '#C42A2E',
-            totalPeriod: '',
+            totalPeriod: '5 Hrs',
             acknowledgeTime: '5 Hrs',
             processTime: '',
 
@@ -112,7 +112,7 @@ export const problems: Problem[] = [
         updateBy: 'Thanachai'
     },
     {
-        id: '0001',
+        id: '0003',
         name: 'Problem Name1',
         description: 'Problem Name Description',
         category: {
@@ -166,7 +166,7 @@ export const problems: Problem[] = [
         updateBy: 'Thanachai'
     },
     {
-        id: '0001',
+        id: '0004',
         name: 'Problem Name1',
         description: 'Problem Name Description',
         category: {
@@ -220,7 +220,7 @@ export const problems: Problem[] = [
         updateBy: 'Thanachai'
     },
     {
-        id: '0001',
+        id: '0005',
         name: 'Problem Name1',
         description: 'Problem Name Description',
         category: {
@@ -274,7 +274,7 @@ export const problems: Problem[] = [
         updateBy: 'Thanachai'
     },
     {
-        id: '0001',
+        id: '0006',
         name: 'Problem Name1',
         description: 'Problem Name Description',
         category: {
@@ -328,7 +328,7 @@ export const problems: Problem[] = [
         updateBy: 'Thanachai'
     },
     {
-        id: '0001',
+        id: '0007',
         name: 'Problem Name1',
         description: 'Problem Name Description',
         category: {
@@ -382,7 +382,7 @@ export const problems: Problem[] = [
         updateBy: 'Thanachai'
     },
     {
-        id: '0001',
+        id: '0008',
         name: 'Problem Name1',
         description: 'Problem Name Description',
         category: {
@@ -436,7 +436,7 @@ export const problems: Problem[] = [
         updateBy: 'Thanachai'
     },
     {
-        id: '0001',
+        id: '0009',
         name: 'Problem Name1',
         description: 'Problem Name Description',
         category: {
@@ -490,7 +490,7 @@ export const problems: Problem[] = [
         updateBy: 'Thanachai'
     },
     {
-        id: '0001',
+        id: '00010',
         name: 'Problem Name1',
         description: 'Problem Name Description',
         category: {
@@ -544,7 +544,7 @@ export const problems: Problem[] = [
         updateBy: 'Thanachai'
     },
     {
-        id: '0001',
+        id: '00011',
         name: 'Problem Name1',
         description: 'Problem Name Description',
         category: {

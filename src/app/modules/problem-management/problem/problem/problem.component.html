@@ -2,35 +2,31 @@
     <mat-drawer-container class="h-full flex-auto ">
         <mat-drawer-content cdkscrollable class="flex flex-col">
             <ng-container *ngIf="{
-                problemResponse : problemsResponse$ | async ,
-                problemCategoriesResponse : problemCategoriesResponse$ | async ,
-                teamsResponse : teamsResponse$ | async 
-            }  as data"
+                    problemResponse : problemsResponse$ | async ,
+                    problemCategoriesResponse : problemCategoriesResponse$ | async ,
+                    teamsResponse : teamsResponse$ | async 
+                }  as data"
             >
-            <!-- {{data.problemCategories | json }} -->
                 <div class="flex flex-col px-4 flex-auto gap-y-2 max-w-6xl mx-auto">
                     <div class=" sticky top-0 flex flex-col bg-default gap-y-2">
                         <div class="flex flex-row gap-x-2 items-end">
 
                             <div class="flex flex-row flex-auto flex-wrap gap-x-4">
                                 <div class="flex flex-col  flex-auto">
-                                    <span class="text-xl">
+                                    <span class="text-xl pl-4">
                                         Search
                                     </span>
                                     <mat-form-field appearance="outline"
-                                    [ngClass]="{ 
-                                        'w-full' : drawerDetail.opened,
-                                        'w-3/4' : !drawerDetail.opened
-                                    }"
+                                        class="w-full"
                                         >
                                         <input matInput placeholder="input">
                                         <mat-icon matSuffix>search</mat-icon>
                                     </mat-form-field>
                                 </div>
 
-                                <div class="flex flex-row flex-initial gap-4">
+                                <div class="flex flex-row flex-initial gap-x-4 gap-y-2">
                                     <div class="flex flex-col"> 
-                                        <span class="text-xl">
+                                        <span class="text-xl pl-4">
                                             Category
                                         </span>
                                         <mat-form-field appearance="outline">
@@ -46,7 +42,7 @@
                                     </div>
 
                                     <div class="flex flex-col ">
-                                        <span class="text-xl ">
+                                        <span class="text-xl pl-4">
                                             Team
                                         </span>
 
@@ -66,7 +62,8 @@
 
                             <div class="flex flex-initial pt-6 self-start">
                                 <button class="button-normal" mat-flat-button color="primary"
-                                    (click)="onCreate('create')">
+                                    (click)="onProblemEdit('create')"
+                                >
                                     CREATE
                                 </button>
                             </div>
@@ -87,12 +84,15 @@
                     </div>
                     <app-problem-card-list 
                         [problems]="data?.problemResponse?.data"
-                        (selected)="onViewOpened($event)">
-
+                        (selected)="onViewOpened($event)"
+                    >
                     </app-problem-card-list>
 
-                    <app-paginator class="pr-4">
-
+                    <app-paginator class="pr-4"
+                        [pageNo]="data?.problemResponse?.pageNo"
+                        [pageSize]="data?.problemResponse?.pageSize"
+                        [totalRecord]="data?.problemResponse?.totalRecord"
+                    >
                     </app-paginator>
                 </div>
             </ng-container>
@@ -103,17 +103,14 @@
             position="end" 
             disableClose="true"
         >
-            <app-problem-information-view 
-                *ngIf="isViewMode"
+            <app-problem-information-view *ngIf="isViewMode"
                 (closed)="onViewClosed($event)"
             >
             </app-problem-information-view>
 
-            <app-problem-information-edit 
-                *ngIf="!isViewMode" 
-                
-            >
-            <!-- [mode]="teamInfoMode" -->
+            <app-problem-information-edit *ngIf="!isViewMode" 
+                [mode]="teamInfoMode"
+            >            
             </app-problem-information-edit>
 
         </mat-drawer>

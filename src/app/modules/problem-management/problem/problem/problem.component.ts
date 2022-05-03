@@ -29,7 +29,7 @@ export class ProblemComponent implements OnInit, OnDestroy {
 
 
   isViewMode: boolean = false;
-  teamInfoMode: 'create' | 'edit' = 'create';
+  problemInfoMode: 'create' | 'edit' = 'create';
 
   filters: FilterButton[] = [{ name: 'All', total: 20 }, { name: 'Active', total: 10 }, { name: 'InActive', total: 5 }];
 
@@ -39,7 +39,6 @@ export class ProblemComponent implements OnInit, OnDestroy {
     private _problemService: ProblemService,
     private _problemCategoryService: ProblemCategoryService,
     private _teamService: TeamService
-
   ) {
     this.getProblemsData();
   }
@@ -63,11 +62,10 @@ export class ProblemComponent implements OnInit, OnDestroy {
     this.teamsResponse$ = this._teamService.getTeams(paramsTeam);
   }
 
-  onCreate(): void {
+  onProblemEdit(mode: 'create' | 'edit' ): void {
     this.isViewMode = false;
-    if (!this.drawerDetail.opened) {
-      this.drawerDetail?.toggle();
-    }
+    this.problemInfoMode = mode;
+    this._openDetail();
   }
 
   onViewClosed(): void {
@@ -82,13 +80,6 @@ export class ProblemComponent implements OnInit, OnDestroy {
     this.isViewMode = true;
     this._openDetail();
   }
-
-  // onTeamEdit(mode: 'create' | 'edit'): void {
-
-  //   this.isViewMode = false;
-  //   this.problemInfoMode = mode;
-  //   this._openDetail();
-  // }
 
   private _openDetail(): void {
     if (!this.drawerDetail.opened) {

@@ -56,7 +56,7 @@ const themes = {
             ...customPalettes.appSecondaryTheme,
             DEFAULT: customPalettes.appSecondaryTheme[500]
         },
-        neutral: {
+        neutral  : {
             ...customPalettes.appNeutralTheme,
             DEFAULT: customPalettes.appNeutralTheme[500]
         }

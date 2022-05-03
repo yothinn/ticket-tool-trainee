@@ -1238,7 +1238,8 @@
 
     .mat-select-placeholder {
         transition: none !important;
-        @apply text-hint #{'!important'};
+        // @apply text-hint #{'!important'};
+        @apply text-primary #{'!important'};
     }
 
     .mat-select-trigger {
