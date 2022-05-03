@@ -24,7 +24,7 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
   teamInfoMode: 'create' | 'edit' = 'create';
 
   filters: FilterButton[] = [{ name: 'All', total: 20 }, { name: 'Active', total: 10 }, { name: 'InActive', total: 5 }];
-  currFilter?: FilterButton;
+  currFilter?: FilterButton = this.filters[0];
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 

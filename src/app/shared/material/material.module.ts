@@ -15,6 +15,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import {MatCardModule} from '@angular/material/card';
     MatRadioModule,
     MatMenuModule,
     MatCardModule,
+    MatButtonToggleModule,
   ],
   exports:[
     MatSidenavModule,
@@ -53,6 +56,8 @@ import {MatCardModule} from '@angular/material/card';
     MatRadioModule,
     MatMenuModule,
     MatCardModule,
+    MatButtonModule,
+    MatButtonToggleModule,
   ]
 })
 export class MaterialModule { }

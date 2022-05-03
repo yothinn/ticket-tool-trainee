@@ -11,13 +11,11 @@ import { ProblemControlViewComponent } from './components/problem-control-view/p
 import { ProblemControlEditComponent } from './components/problem-control-edit/problem-control-edit.component';
 import { ProblemInfoEditComponent } from './components/problem-info-edit/problem-info-edit.component';
 import { ProblemInfoViewComponent } from './components/problem-info-view/problem-info-view.component';
-import { RequestDataEditComponent } from './components/request-data-edit/request-data-edit.component';
-import { RequestDataViewComponent } from './components/request-data-view/request-data-view.component';
-import { TeamOwnerViewComponent } from './components/team-owner-view/team-owner-view.component';
-import { TeamOwnerEditComponent } from './components/team-owner-edit/team-owner-edit.component';
+import { TeamOwnerComponent} from './components/team-owner/team-owner.component';
 import { RequestDataDialogComponent } from './dialogs/request-data-dialog/request-data-dialog.component';
 import { TeamOwnerDialogComponent } from './dialogs/team-owner-dialog/team-owner-dialog.component';
 import { RequestDataMenuComponent } from './components/request-data-menu/request-data-menu.component';
+import { RequestDataComponent } from './components/request-data/request-data.component';
 
 
 
@@ -32,13 +30,11 @@ import { RequestDataMenuComponent } from './components/request-data-menu/request
     ProblemControlEditComponent,
     ProblemInfoEditComponent,
     ProblemInfoViewComponent,
-    RequestDataEditComponent,
-    RequestDataViewComponent,
-    TeamOwnerViewComponent,
-    TeamOwnerEditComponent,
     RequestDataDialogComponent,
     TeamOwnerDialogComponent,
-    RequestDataMenuComponent
+    RequestDataMenuComponent,
+    RequestDataComponent,
+    TeamOwnerComponent
   ],
   imports: [
     CommonModule,

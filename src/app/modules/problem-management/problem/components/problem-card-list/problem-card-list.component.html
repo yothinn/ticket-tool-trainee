@@ -1,16 +1,16 @@
 <div class="flex flex-col w-full">
-    <div class="grid grid-cols-5 pt-5">
+    <!-- <div class="grid grid-cols-5 pt-5">
         <div class="col-span-2"></div>
         <div><strong>Status</strong></div>
         <div><strong>Created</strong></div>
         <div><strong>Updated</strong></div>
     </div>
 
-    <mat-divider></mat-divider>
+    <mat-divider></mat-divider> -->
 
-    <ng-container *ngFor="let problem of problemDatas">
+    <ng-container *ngFor="let problem of problems">
         <app-problem-card-info 
-            [problemData]="problem" (click)="onDetail($event)"
+            [problem]="problem" (click)="onDetail(problem)"
         >
 
         </app-problem-card-info>
