@@ -13,7 +13,7 @@
     <ng-container *ngFor="let team of teams; let i = index">
         <app-team-card-info [team]="team" 
             [actived]="team.id === activeTeam?.id"
-            (selected)="onSelected($event, i)"
+            (selected)="onSelected($event)"
         >
         </app-team-card-info>
 

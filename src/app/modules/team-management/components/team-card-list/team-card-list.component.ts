@@ -24,7 +24,7 @@ export class TeamCardListComponent implements OnInit, OnChanges {
       console.log(this.activeTeam);
   }
 
-  onSelected(team: Team, index: number): void {
+  onSelected(team: Team): void {
     this.activeTeam = team;
 
     this.selected.emit(team);
