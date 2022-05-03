@@ -16,7 +16,7 @@ export class ProblemCardListComponent implements OnInit {
     // console.log(this.problemDatas)
   }
 
-  onDetail(problem: Problem): void {
+  onSelect(problem: Problem): void {
     this.selected.emit(problem);
   }
   

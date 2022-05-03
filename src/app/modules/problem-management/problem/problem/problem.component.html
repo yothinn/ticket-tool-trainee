@@ -18,7 +18,11 @@
                                         Search
                                     </span>
                                     <mat-form-field appearance="outline"
-                                        [ngClass]="{ 'w-full' : drawerDetail.opened }">
+                                    [ngClass]="{ 
+                                        'w-full' : drawerDetail.opened,
+                                        'w-3/4' : !drawerDetail.opened
+                                    }"
+                                        >
                                         <input matInput placeholder="input">
                                         <mat-icon matSuffix>search</mat-icon>
                                     </mat-form-field>
