@@ -8,44 +8,24 @@ import { RequestData } from 'app/core/request-data/request-data.types';
 })
 export class RequestDataListComponent implements OnInit {
 
-  @Input() requestDatas?: RequestData[];
+  @Input() requestData?: RequestData[];
 
   @Output() edit = new EventEmitter<any>();
 
   @Output() selected = new EventEmitter<RequestData>();
 
-  dateMock: any[];
-
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.requestDatas);
-
-    this.dateMock = [
-      {
-        keyName: 'ticketNo',
-        displayName: 'Ticket No',
-        controlType: 'textbox'
-      },
-      {
-        keyName: 'ticketNo',
-        displayName: 'Ticket No',
-        controlType: 'textbox'
-      },
-    ]
+    console.log(this.requestData);
   }
 
 
-  onSelectEdit(request: RequestData, index: number): void {
+  onSelectEdit(request: RequestData): void {
     this.edit.emit({
-      index: index,
-      requestData: request,
+      requestData: request
     });
   }
 
-  onDetail(item: RequestData): void {
-    console.log(item);
-    this.selected.emit(item);
-  }
 
 }

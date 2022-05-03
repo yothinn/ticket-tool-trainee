@@ -10,11 +10,20 @@ export class RequestDataInfoComponent implements OnInit {
 
   @Input() requestData: RequestData;
 
-  @Input() requestDatas?: any;
-
   @Output() edit = new EventEmitter<RequestData>();
 
+  @Input() mode: 'edit' | 'view' = 'view';
+
+
   constructor() { }
+
+  get isEditMode(): boolean {
+    return this.mode === 'edit';
+  }
+
+  get isViewMode(): boolean {
+    return this.mode === 'view';
+  }
 
   ngOnInit(): void {
   }

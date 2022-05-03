@@ -1,20 +1,34 @@
 <div class="grid grid-cols-4 py-2 hover:bg-gray-300 cursor-pointer">
+    
     <p>
-        {{requestDatas.keyName}}
+        {{requestData.keyName}}
     </p>
     <p>
-        {{requestDatas.displayName}}
+        {{requestData.displayName}}
     </p>
     <p>
-        {{requestDatas.controlType}} 
+        {{requestData.controlType}} 
     </p>
-    <div class="flex flex-row gap-x-4">
-        <mat-icon (click)="onSelectEdit(requestData)">
-            edit  
-        </mat-icon>
-        <mat-icon> 
-            delete 
-        </mat-icon>
+
+    <div [ngClass]="{ 'hover:card-hover' : isEditMode }">
+        <ng-container *ngIf="isEditMode">
+            <div class="flex flex-row gap-x-4">
+                <mat-icon (click)="onSelectEdit(requestData)" 
+                    class="cursor-pointer button-icon invisible group-hover:visible 
+                    hover:text-warn-500 items-center flex-initial"
+                    svgIcon="delete"
+                >  
+                edit
+                </mat-icon>
+                <mat-icon class="cursor-pointer button-icon invisible group-hover:visible 
+                    hover:text-warn-500 items-center flex-initial"
+                    svgIcon="delete"
+                >
+                delete
+                </mat-icon>
+            </div>
+    </ng-container>
+
     </div>
+        
 </div>
-<!-- (click)="onSelectEdit(requestData)" -->

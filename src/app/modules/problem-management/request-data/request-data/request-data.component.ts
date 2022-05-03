@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSidenav } from '@angular/material/sidenav';
 import { PageResponse } from 'app/core/base/pageResponse.types';
 import { GetRequestDataParameter } from 'app/core/parameters/getRequestDataParameter.entity';
 import { RequestDataService } from 'app/core/request-data/request-data.service';
@@ -26,7 +27,7 @@ export class RequestDataComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openRequestDataDialog(data?: {index: number; requestData: RequestData}): void {
+  openRequestDataDialog(data?: {requestData: RequestData}): void {
     console.log(data);
 
     const dialogRef = this._dialog.open(RequestDataEditDialogComponent, {
@@ -35,9 +36,9 @@ export class RequestDataComponent implements OnInit {
       data: data?.requestData
     });
 
-    dialogRef.afterClosed().subscribe((requesty: string) => {
+    dialogRef.afterClosed().subscribe((request: string) => {
       console.log('The dialog was closed');
-      if (requesty) {
+      if (request) {
         // Save to backend
       }
     });

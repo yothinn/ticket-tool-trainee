@@ -12,7 +12,7 @@ export class RequestDataEditDialogComponent implements OnInit {
   requestData?: RequestData;
   isNew: boolean = true;
 
-  requesty: string = '';
+  request: string = '';
 
   constructor(
     @Inject(MAT_DIALOG_DATA) private _data: any,
@@ -22,7 +22,7 @@ export class RequestDataEditDialogComponent implements OnInit {
   ngOnInit(): void {
     this.requestData = this._data;
     this.isNew = (this.requestData) ? false : true;
-    this.requesty = this.requestData?.keyName;
+    this.request = this.requestData?.keyName;
 
     console.log(this._data);
   }
@@ -33,7 +33,7 @@ export class RequestDataEditDialogComponent implements OnInit {
   }
 
   save(): void {
-    this._dialogRef.close(this.requesty);
+    this._dialogRef.close(this.request);
   }
 
 }
