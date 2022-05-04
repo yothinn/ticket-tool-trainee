@@ -26,14 +26,9 @@ export class TeamInfoEditComponent implements OnInit, OnChanges {
 
   initInfoForm(team?: Team): FormGroup {
     return this._formBuilder.group({
-      teamName: [team?.name || '', Validators.required],
+      name: [team?.name || '', Validators.required],
       description: [team?.description || '', Validators.required]
     });
-  }
-
-  saveFrom(): void {
-    const payload = this.infoForm?.value;
-    console.log(payload);
   }
 
 }

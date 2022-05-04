@@ -21,7 +21,7 @@ import { ProblemCardListComponent } from '../components/problem-card-list/proble
 })
 export class ProblemComponent implements OnInit, OnDestroy {
   @ViewChild('drawerDetail') drawerDetail: MatSidenav;
-  // @ViewChild('problemListComp') problemListComp: ProblemCardListComponent;
+  @ViewChild('problemListComp') problemListComp: ProblemCardListComponent;
 
   problemsResponse$?: Observable<PageResponse<Problem[]>>;
   problemCategoriesResponse$?: Observable<PageResponse<ProblemCategory[]>>;
@@ -40,7 +40,7 @@ export class ProblemComponent implements OnInit, OnDestroy {
     private _problemCategoryService: ProblemCategoryService,
     private _teamService: TeamService
   ) {
-    this.getProblemsData();
+    this.getProblems();
   }
 
   ngOnInit(): void {
@@ -52,26 +52,22 @@ export class ProblemComponent implements OnInit, OnDestroy {
   }
 
 
-  getProblemsData(): void{
-    const paramsProBlem = new GetProblemParameter();
-    const paramsCategory = new GetProblemCategoryParameter();
-    const paramsTeam = new GetTeamParameter();
+  getProblems(): void{
+    const param = new GetProblemParameter();
 
-    this.problemsResponse$ = this._problemService.getProblems(paramsProBlem);
-    this.problemCategoriesResponse$ = this._problemCategoryService.getProblemCategories(paramsCategory);
-    this.teamsResponse$ = this._teamService.getTeams(paramsTeam);
+    this.problemsResponse$ = this._problemService.getProblems(param);
   }
 
-  onProblemEdit(mode: 'create' | 'edit' ): void {
-    this.isViewMode = false;
-    this.problemInfoMode = mode;
-    this._openDetail();
+  getProblemCategories(): void {
+    const param = new GetProblemCategoryParameter();
+
+    this.problemCategoriesResponse$ = this._problemCategoryService.getProblemCategories(param);
   }
 
-  onViewClosed(): void {
-    this.drawerDetail.toggle();
-    this._problemService.activeProblem = undefined;
-    // this.problemListComp.activeTeam = undefined;
+  getTeams(): void {
+    const param = new GetTeamParameter();
+
+    this.teamsResponse$ = this._teamService.getTeams(param);
   }
 
   onViewOpened(problem: Problem): void {
@@ -80,6 +76,29 @@ export class ProblemComponent implements OnInit, OnDestroy {
     this.isViewMode = true;
     this._openDetail();
   }
+
+  onViewClosed(): void {
+    this.drawerDetail.toggle();
+    this._problemService.activeProblem = undefined;
+    this.problemListComp.activeProblem = undefined;
+  }
+
+  onProblemEdit(mode: 'create' | 'edit' ): void {
+    this.isViewMode = false;
+    this.problemInfoMode = mode;
+
+    this._problemService.activeProblem = undefined;
+    this.problemListComp.activeProblem = undefined;
+
+    this._openDetail();
+  }
+
+  onProblemEditClosed(event: boolean): void {
+    // True is save, false is cancel
+    this.drawerDetail.toggle();
+  }
+
+
 
   private _openDetail(): void {
     if (!this.drawerDetail.opened) {

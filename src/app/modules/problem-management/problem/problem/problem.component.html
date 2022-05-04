@@ -83,6 +83,7 @@
                         <mat-divider></mat-divider>
                     </div>
                     <app-problem-card-list 
+                        #problemListComp
                         [problems]="data?.problemResponse?.data"
                         (selected)="onViewOpened($event)"
                     >
@@ -105,11 +106,14 @@
         >
             <app-problem-information-view *ngIf="isViewMode"
                 (closed)="onViewClosed($event)"
+                (edit)="onProblemEdit('edit')"
+
             >
             </app-problem-information-view>
 
             <app-problem-information-edit *ngIf="!isViewMode" 
-                [mode]="teamInfoMode"
+                [mode]="problemInfoMode"
+                (closed)="onProblemEditClosed($event)"
             >            
             </app-problem-information-edit>
 
