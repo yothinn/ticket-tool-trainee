@@ -1,15 +1,19 @@
-<div class="grid grid-cols-4 py-2 hover:bg-gray-300 cursor-pointer">
+<div class="group grid grid-cols-4 py-2 hover:card-hover">
     <p>
         {{ problemCategory.id }}
     </p>
     <p class="col-span-2">
         {{ problemCategory.name }}
     </p>
-    <div class="flex flex-row gap-x-4">
-        <mat-icon (click)="onSelectEdit(problemCategory)">
+    <div class="flex flex-row gap-x-4 items-center">
+        <mat-icon class="cursor-pointer invisible group-hover:visible hover:text-warn-500"
+            (click)="edit.emit(problemCategory)"
+        >
             edit 
         </mat-icon>
-        <mat-icon> 
+        <mat-icon class="cursor-pointer invisible group-hover:visible hover:text-warn-500"
+            (click)="delete.emit(problemCategory)"
+        > 
             delete 
         </mat-icon>
     </div>

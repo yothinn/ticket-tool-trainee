@@ -11,14 +11,11 @@ export class ProblemCategoryInfoComponent implements OnInit {
   @Input() problemCategory?: ProblemCategory;
 
   @Output() edit = new EventEmitter<ProblemCategory>();
+  @Output() delete = new EventEmitter<ProblemCategory>()
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSelectEdit(problemCategory: ProblemCategory): void {
-    this.edit.emit(problemCategory);
-  }
-  //เก็บข้อมูลมาไว้ที่ category ใช้ edit ในการเรียกใช้ข้อมูล
 }
