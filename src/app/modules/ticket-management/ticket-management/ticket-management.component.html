@@ -1,40 +1,62 @@
-<mat-drawer-container class="w-full h-full">
-    <mat-drawer-content class="flex flex-col h-full w-full">
-        <div class="flex flex-row h-15 ">
-            <div class="w-5/6 mt-auto mb-auto mr-4">
-                <mat-form-field appearance="outline" class="w-full">
-                    <mat-label>Search</mat-label>
-                    <input matInput placeholder="Input">
-                </mat-form-field>
-            </div>
+<div class="absolute inset-0 flex flex-col min-w-o overflow-hidden">
+    <mat-drawer-container  class="h-full flex-auto">
+        <mat-drawer-content cdkscrollable class="flex flex-col">
+            <ng-container *ngIf="ticketResponse$ | async as ticketResponse">
+                <div class="flex flex-col px-4 flex-auto w-full max-w-6xl mx-auto gap-y-2">
+                    <div class="z-20 sticky top-0 flex flex-col bg-white gap-y-2">
+                        <div class="flex flex-row gap-x-2 items-end">
+                            <div class="flex flex-col"
+                                [ngClass]="{ 
+                                    'w-full' : drawerDetail.opened,
+                                    'w-3/5' : !drawerDetail.opened
+                                }"
+                            >
+                                <span class="text-xl pl-4">
+                                    Search
+                                </span>
+                                <mat-form-field appearance="outline">
+                                    <input matInput placeholder="Search Team">
+                                    <mat-icon matSuffix>search</mat-icon>
+                                </mat-form-field>
+                            </div>
 
-            <mat-form-field appearance="outline"
-                class="flex-initial mt-auto mb-auto mr-4"
+                            <div class="flex flex-col flex-initial">
+                                <span class="text-xl pl-4">Sort By</span>
+                                <mat-form-field appearance="outline">
+                                    <mat-select>
+                                        <mat-option value="one">First option</mat-option>
+                                        <mat-option value="two">Second option</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <app-ticket-card-list #ticketListComp (selected)="onViewOpened($event)">
+
+                    </app-ticket-card-list>
+
+                    <app-paginator class="pr-4"
+                        [pageNo]="ticketResponse.pageNo"
+                        [pageSize]="ticketResponse.pageSize"
+                        [totalRecord]="ticketResponse.totalRecord"
+                    >
+
+                    </app-paginator>
+                </div>
+            </ng-container>
+
+        </mat-drawer-content>
+
+        <mat-drawer #drawerDetail class="lg:w-full xl:w-160 w-full"
+            [mode]="isViewMode ? 'side' : 'over' " position="end"
+        >
+            <app-ticket-information-view *ngIf="isViewMode"
+                (closed)="onViewClosed()"
             >
-                <mat-label>Sort By</mat-label>
-                <mat-select>
-                    <mat-option value="one">First option</mat-option>
-                    <mat-option value="two">Second option</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-
-        <app-ticket-card-list (selectTeam)="onDetail($event)">
-
-        </app-ticket-card-list>
-
-        <app-paginator></app-paginator>
-
-    </mat-drawer-content>
-
-    <mat-drawer #drawerDetail style="width: 50%;" 
-        [mode]="isViewMode ? 'side' : 'over' " position="end"
-    >
-        <div class="p-2">
-            <app-ticket-information-view *ngIf="isViewMode">
 
             </app-ticket-information-view>
-        </div>
-    </mat-drawer>
+        </mat-drawer>
 
-</mat-drawer-container>
+    </mat-drawer-container>
+</div>

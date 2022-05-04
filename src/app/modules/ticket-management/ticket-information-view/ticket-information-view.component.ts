@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TicketAnalyzeDialogComponent } from '../dialogs/ticket-analyze-dialog/ticket-analyze-dialog.component';
+import { TicketChangeDialogComponent } from '../dialogs/ticket-change-dialog/ticket-change-dialog.component';
 
 
 @Component({
@@ -10,23 +11,44 @@ import { TicketAnalyzeDialogComponent } from '../dialogs/ticket-analyze-dialog/t
 })
 export class TicketInformationViewComponent implements OnInit {
 
+  @Output() closed = new EventEmitter<any>();
+
   constructor(
-    public dialog: MatDialog
+    private _dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
   }
 
-    openTicketDialog(): void {
-      const dialogRef = this.dialog.open(TicketAnalyzeDialogComponent, {
-        height:'580px',
-        width: '60%'
-        // data: {},
-      });
-  
-      dialogRef.afterClosed().subscribe((result: any) => {
-        console.log('The dialog was closed');
-        // this.animal = result;
-      });
-    }
+  openTicketAnalyzeDialog(): void {
+    const dialogRef = this._dialog.open(TicketAnalyzeDialogComponent, {
+      height:'580px',
+      width: '60%',
+      disableClose: true,
+      // data: {},
+    });
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
+  }
+
+  openTicketAcceptDialog(): void {
+    const dialogRef = this._dialog.open(TicketChangeDialogComponent, {
+      height:'480px',
+      width: '30%',
+      disableClose: true
+      // data: {},
+    });
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
+  }
+
+  onClose(): void {
+    this.closed.emit(undefined);
+  }
 }

@@ -15,10 +15,10 @@
     </div>
 
     <div class="flex flex-row justify-end gap-3 ">
-        <button mat-flat-button color="primary" (click)="close()">
-            Cancel
+        <button mat-stroked-button color="primary" class="button-normal" (click)="close()">
+            CANCEL
         </button>
-        <button mat-flat-button color="primary" (click)="save()" [disabled]="!categoryName">
+        <button mat-flat-button color="primary" class="button-normal" (click)="save()" [disabled]="!categoryName">
             OK
         </button>
     </div>

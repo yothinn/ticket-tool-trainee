@@ -2,9 +2,10 @@
    
     <mat-divider></mat-divider>
 
-    <ng-container *ngFor="let item of dateMock">
+    <ng-container *ngFor="let ticket of dateMock">
         <app-my-ticket-card-info  
-            [myTicketData]="item" (click)="onDetail(item)"
+            [myTicketData]="ticket" 
+            (selected)="onSelected(ticket)"
         >
         </app-my-ticket-card-info>
         <mat-divider></mat-divider>

@@ -10,8 +10,8 @@ export class MyTicketCardListComponent implements OnInit {
 
   @Input() tickets: Ticket[];
   @Input() activeTicket?: Ticket;
-  
-  @Output() selected = new EventEmitter<any>();
+
+  @Output() selected = new EventEmitter<Ticket>();
 
   dateMock: any[];
 
@@ -148,8 +148,9 @@ export class MyTicketCardListComponent implements OnInit {
     ];
   }
 
-  onDetail(item: any): void {
-    console.log(item);
-    this.selected.emit(item);
+  onSelected(ticket: Ticket): void {
+    this.activeTicket = ticket;
+
+    this.selected.emit(ticket);
   }
 }

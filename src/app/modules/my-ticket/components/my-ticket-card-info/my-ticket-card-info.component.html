@@ -1,4 +1,7 @@
-<div class="grid grid-cols-5 p-2 cursor-pointer hover:card-hover">
+<div class="grid grid-cols-5 p-2 cursor-pointer hover:card-hover"
+    [ngClass]="{ 'card-active' : actived }"
+    (click)="onSelected()"
+>
     <p class="grid grid-col-0 col-span-1">
         <span>
             {{myTicketData.myTicketTk}}
