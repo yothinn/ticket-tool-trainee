@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Ticket } from 'app/core/ticket/ticket.types';
 
 @Component({
   selector: 'app-my-ticket-card-list',
@@ -7,6 +8,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class MyTicketCardListComponent implements OnInit {
 
+  @Input() tickets: Ticket[];
+  @Input() activeTicket?: Ticket;
+  
   @Output() selected = new EventEmitter<any>();
 
   dateMock: any[];
