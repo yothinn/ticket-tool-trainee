@@ -39,6 +39,7 @@
 
                     <app-problem-category-list [problemCategories]="problemCategoryResponse.data"
                         (edit)="openProblemCategoryDialog($event)"
+                        (del)="onDeleteProblemCategory($event)"
                     > 
                     </app-problem-category-list>  
                 

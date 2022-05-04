@@ -11,7 +11,7 @@ export class ProblemCategoryInfoComponent implements OnInit {
   @Input() problemCategory?: ProblemCategory;
 
   @Output() edit = new EventEmitter<ProblemCategory>();
-  @Output() delete = new EventEmitter<ProblemCategory>()
+  @Output() del = new EventEmitter<ProblemCategory>();
 
   constructor() { }
 

@@ -1,26 +1,61 @@
-<mat-drawer-container class=" w-full h-full">
-    <mat-drawer-content class="flex flex-col p-4">
-        <ng-container *ngIf="problemCauseResponse$ | async as problemCausesResponse">
-            <div class="flex flex-row gap-x-4">
-                <mat-form-field appearance="outline" class="flex-auto">
-                    <mat-label>Search</mat-label>
-                    <input matInput placeholder="Input">
-                </mat-form-field>
-
-                <button mat-flat-button color="primary" (click)="openProblemCauseDialog()">
-                    Add Problem Cause
-                </button>
-            </div>
-
-            <app-problem-cause-list [problemCauses]="problemCausesResponse.data" 
-                (edit)="openProblemCauseDialog($event)">
-            >
+<div class="absolute inset-0 flex flex-col flex-auto min-w-0 overflow-hidden">
+    <mat-drawer-container class="h-full flex-auto">
+        <mat-drawer-content cdkscrollable class="flex flex-col p-4">
+            <ng-container *ngIf="problemCauseResponse$ | async as problemCauseResponse">
+                <div class="flex flex-col px-4 w-full gap-y-2 max-w-4xl mx-auto">
+                    <div class="sticky top-0 flex flex-col bg-default gap-y-2">
+                        <div class="flex flex-row gap-x-2 items-end">
+                            <div class="flex flex-col  flex-auto">
+                                <span class="text-xl pl-4">
+                                    Search
+                                </span>
+                                <mat-form-field appearance="outline"
+                                    class="w-full"
+                                >
+                                    <input matInput placeholder="Search Problem Casue">
+                                    <mat-icon matSuffix>search</mat-icon>
+                                </mat-form-field>
+                            </div>
             
-            </app-problem-cause-list>
+                            <div class="flex flex-initial pb-1">
+                                <button mat-flat-button color="primary" 
+                                    class="button-normal"
+                                    (click)="openProblemCauseDialog()"
+                                >
+                                    Add Cause
+                                </button>
+                            </div>
+                        </div>
 
-            <app-paginator>
+                         <div class="grid grid-cols-4">
+                            <p class="font-semibold">No</p>
+                            <p class="font-semibold col-span-2">
+                                Problem Cause
+                            </p>
+                        </div>
 
-            </app-paginator>
-        </ng-container>
-    </mat-drawer-content>
-</mat-drawer-container>
+                        <mat-divider></mat-divider>
+                    </div>
+
+                    <app-problem-cause-list [problemCauses]="problemCauseResponse.data" 
+                        (edit)="openProblemCauseDialog($event)"
+                        (del)="onDeleteProblemCause($event)"
+                    >
+                    >
+                    
+                    </app-problem-cause-list>
+
+                    <app-paginator class="pr-4"
+                        [pageNo]="problemCauseResponse.pageNo"
+                        [pageSize]="problemCauseResponse.pageSize"
+                        [totalRecord]="problemCauseResponse.totalRecord"
+                    >
+
+                    </app-paginator>
+                </div>
+
+               
+            </ng-container>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>
