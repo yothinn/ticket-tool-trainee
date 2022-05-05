@@ -1,15 +1,8 @@
 <div class="flex flex-col w-full">
-    <!-- <div class="grid grid-cols-5">
-        <p><strong>Holiday Name</strong></p>
-        <p><strong>Date</strong></p>
-        <p></p>
-        <p><strong>Hours</strong></p>
-    </div>
+    
 
-    <mat-divider></mat-divider> -->
-
-    <ng-container *ngFor="let holidayData of holidays; let i = index" >
-        <app-holiday-info [holiday]="holidayData" 
+    <ng-container *ngFor="let holiday of holidays; let i = index" >
+        <app-holiday-info [holiday]="holiday" 
             (edit)="onSelectEdit($event, i)"
             (del)="del.emit( {index: i, holiday: $event} )"
         >

@@ -19,7 +19,7 @@ export class HolidayService {
     private _httpClient: HttpClient
   ) { }
 
-  getSlaHoliday(param: GetHolidayParameter): Observable<PageResponse<Holiday[]>> {
+  getHolidays(param: GetHolidayParameter): Observable<PageResponse<Holiday[]>> {
     const options = { params: param.toHttpParams() };
 
     return this._httpClient.get<PageResponse<Holiday[]>>(this.apiUrl.holidayUrl, options);
