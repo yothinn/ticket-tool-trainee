@@ -9,11 +9,7 @@ import { TicketChangeDialogComponent } from '../../dialogs/ticket-change-dialog/
 })
 export class TicketInfoViewComponent implements OnInit {
 
-  @Output() accept = new EventEmitter<any>();
-  @Output() reject = new EventEmitter<any>();
-
   constructor(
-    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
