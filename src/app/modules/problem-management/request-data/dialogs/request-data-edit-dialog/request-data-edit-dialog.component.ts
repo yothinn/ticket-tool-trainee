@@ -12,6 +12,7 @@ export class RequestDataEditDialogComponent implements OnInit {
   requestData?: RequestData;
   // isNew: boolean = true;
 
+  controlType = 'textbox';
   request: string = '';
 
   constructor(
