@@ -11,6 +11,7 @@ export class FilterButtonComponent implements OnInit {
 
   @Input() buttons?: FilterButton[];
   @Input() active?: FilterButton;
+  @Input() multiple: boolean = false;
 
   @Output() selected: EventEmitter<FilterButton> = new EventEmitter();
 

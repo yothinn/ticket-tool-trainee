@@ -7,17 +7,20 @@ import { Problem } from 'app/core/problem/problem.types';
   styleUrls: ['./problem-card-list.component.scss']
 })
 export class ProblemCardListComponent implements OnInit {
+
   @Input() problems?: Problem[];
+  @Input() activeProblem?: Problem;
+
   @Output() selected = new EventEmitter<Problem>();
 
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.problemDatas)
   }
 
-  onDetail(problem: Problem): void {
+  onSelect(problem: Problem): void {
+    this.activeProblem = problem;
+
     this.selected.emit(problem);
   }
-  
 }

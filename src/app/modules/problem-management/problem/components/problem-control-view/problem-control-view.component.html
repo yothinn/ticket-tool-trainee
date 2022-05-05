@@ -2,9 +2,11 @@
 
         <p class="text-primary" >Criticality</p>
         <p class="flex flex-row col-span-5 break-all">
-            <span> {{problem?.criticality?.name}}{{' '}}{{problem?.criticality?.acknowledgeTime}}</span>
-            <app-criticality-icon class="p-1"
+            <!-- <span> {{problem?.criticality?.name}}{{' '}}{{problem?.criticality?.acknowledgeTime}}</span> -->
+            <app-criticality-icon
+                [text]="problem?.criticality?.name + ' ' + problem?.criticality?.totalPeriod"
                 [color]="problem?.criticality?.color"
+                mode="medium-right"
             >
             </app-criticality-icon> 
         </p>

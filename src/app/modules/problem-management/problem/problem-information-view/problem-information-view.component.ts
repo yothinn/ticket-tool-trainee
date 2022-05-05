@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { ProblemService } from 'app/core/problem/problem.service';
 import { Problem } from 'app/core/problem/problem.types';
+import { ProblemStatus } from 'app/core/problem/problemStatus.enum';
 import { Observable, Subject } from 'rxjs';
 
 @Component({
@@ -11,10 +12,14 @@ import { Observable, Subject } from 'rxjs';
 export class ProblemInformationViewComponent implements OnInit, OnDestroy {
 
   @Output() closed = new EventEmitter<any>();
-  activeProblems$: Observable<Problem> = this._problemService.activeProblem$;
+  @Output() edit = new EventEmitter<any>();
+
+  activeProblem$: Observable<Problem> = this._problemService.activeProblem$;
+
+  problemStatus = ProblemStatus;
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
-  
+
   constructor(
     private _problemService: ProblemService,
   ) { }
@@ -29,5 +34,9 @@ export class ProblemInformationViewComponent implements OnInit, OnDestroy {
 
   onClose(): void {
     this.closed.emit(undefined);
+  }
+
+  onEdit(): void {
+    this.edit.emit(undefined);
   }
 }

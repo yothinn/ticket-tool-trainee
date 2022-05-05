@@ -8,17 +8,17 @@
     <mat-divider></mat-divider>
 
     <div class="flex flex-col">
-        <mat-label>Category Name</mat-label>
+        <mat-label class="text-xl">Category Name</mat-label>
         <mat-form-field appearance="outline">
             <input matInput [(ngModel)]="categoryName">
         </mat-form-field>
     </div>
 
     <div class="flex flex-row justify-end gap-3 ">
-        <button mat-flat-button color="primary" (click)="close()">
-            Cancel
+        <button mat-stroked-button color="primary" class="button-normal" (click)="close()">
+            CANCEL
         </button>
-        <button mat-flat-button color="primary" (click)="save()" [disabled]="!categoryName">
+        <button mat-flat-button color="primary" class="button-normal" (click)="save()" [disabled]="!categoryName">
             OK
         </button>
     </div>

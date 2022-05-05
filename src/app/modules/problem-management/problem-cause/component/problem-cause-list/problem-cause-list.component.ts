@@ -10,7 +10,8 @@ export class ProblemCauseListComponent implements OnInit {
 
   @Input() problemCauses?: ProblemCause[];
 
-  @Output() edit= new EventEmitter<any>();
+  @Output() edit = new EventEmitter<any>();
+  @Output() del = new EventEmitter<any>();
 
   constructor(
   ) { }
@@ -20,22 +21,4 @@ export class ProblemCauseListComponent implements OnInit {
     console.log(this.problemCauses);
   }
 
-  onSelectEdit(cause: ProblemCause, index: number): void {
-    this.edit.emit({
-      index: index,
-      problemCause: cause,
-    });
-  }
-
-  // openProblemCauseDialog(problemCause: any): void {
-  //   const dialogRef = this._dialog.open(ProblemCauseEditDialogsComponent, {
-  //     height:'230px',
-  //     width: '40%',
-  //     data: problemCause
-  //   });
-
-  //   dialogRef.afterClosed().subscribe((result: any) => {
-  //     console.log('The dialog was closed');
-  //   });
-  // }
 }

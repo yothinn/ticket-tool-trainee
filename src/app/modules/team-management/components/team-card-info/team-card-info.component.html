@@ -10,8 +10,10 @@
             {{team?.description}}
         </span>
     </p>
-    <p class="text-primary"
-        [ngClass]="{ 'text-warn-500' : team?.status !== teamStatus.active }"
+    <p [ngClass]="{ 
+            'text-warn-500' : team?.status !== teamStatus.active,
+            'text-primary' : team?.status === teamStatus.active
+        }"
     > 
         {{team?.status | titlecase}} 
     </p>

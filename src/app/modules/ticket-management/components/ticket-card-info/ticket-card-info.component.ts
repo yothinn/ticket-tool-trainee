@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Ticket } from 'app/core/ticket/ticket.types';
 
 @Component({
   selector: 'app-ticket-card-info',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TicketCardInfoComponent implements OnInit {
 
+  @Input() ticket?: Ticket;
+  @Input() actived: boolean = false;
+
+  @Output() selected = new EventEmitter<Ticket>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelected(): void {
+    this.selected.emit(this.ticket);
   }
 
 }

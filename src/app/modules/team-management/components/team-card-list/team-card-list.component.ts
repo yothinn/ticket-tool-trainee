@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { PageResponse } from 'app/core/base/pageResponse.types';
 import { Team } from 'app/core/team/team.types';
 
 @Component({

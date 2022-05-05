@@ -1,4 +1,4 @@
-<ng-container *ngIf="activeProblems$ | async as activeProblems">
+<ng-container *ngIf="activeProblem$ | async as activeProblem">
     <div class="flex flex-col w-full gap-y-2 px-2 pb-4">
         <div class="z-20 sticky top-0 flex flex-col bg-default">
             <div class="flex flex-row py-2 px-4 items-center  gap-x-2">
@@ -6,10 +6,16 @@
                     Problem Information
                 </p>
 
-                <span class="flex-initial ">Status : {{ activeProblems?.status | titlecase }}</span>
+                <span class="flex-initial"
+                    [ngClass]="{ 'text-warn-500' : activeProblem?.status !== problemStatus.active }"
+                >
+                    Status : {{ activeProblem?.status | titlecase }}
+                </span>
 
-                <button mat-flat-button class="button-normal flex-initial text-center" color="primary">
-                    Edit
+                <button mat-flat-button class="button-normal flex-initial text-center" color="primary"
+                    (click)="onEdit()"
+                >
+                    EDIT
                 </button>
 
                 <button mat-icon-button class="flex-initial" (click)="onClose()">
@@ -21,10 +27,10 @@
         </div>
 
         <div class="flex flex-col px-1 gap-y-2">
-            <app-problem-info-view [problem]='activeProblems'>
+            <app-problem-info-view [problem]='activeProblem'>
             </app-problem-info-view>
 
-            <app-problem-control-view [problem]='activeProblems'>
+            <app-problem-control-view [problem]='activeProblem'>
             </app-problem-control-view>
 
             <app-request-data>
@@ -36,7 +42,7 @@
                 </mat-slide-toggle>
             </div>
 
-            <app-team-owner [problem]='activeProblems'>
+            <app-team-owner [problem]='activeProblem'>
 
             </app-team-owner>
 
@@ -45,7 +51,7 @@
                     <div class="flex gap-x-2">
                         <mat-icon class="button-icon" svgIcon="delete">
                         </mat-icon>
-                        <span>'DELETE' </span>
+                        <span>DELETE</span>
                     </div>
                 </button>
             </div>

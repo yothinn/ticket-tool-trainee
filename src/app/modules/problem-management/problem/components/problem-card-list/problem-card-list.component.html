@@ -10,7 +10,9 @@
 
     <ng-container *ngFor="let problem of problems">
         <app-problem-card-info 
-            [problem]="problem" (click)="onDetail(problem)"
+            [problem]="problem" 
+            [actived]="problem.id === activeProblem?.id"
+            (selected)="onSelect(problem)"
         >
 
         </app-problem-card-info>

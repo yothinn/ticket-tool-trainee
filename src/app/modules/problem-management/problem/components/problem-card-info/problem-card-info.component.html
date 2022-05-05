@@ -1,47 +1,37 @@
-<div class="grid grid-flow-col grid-cols-5 pt-2 pb-2 cursor-pointer hover:card-hover">
+<div class="grid grid-cols-5 py-2 cursor-pointer hover:card-hover"
+    [ngClass]="{ 'card-active' : actived }"
+    (click)="onSelected()"
+>
     <div class="flex flex-row col-span-2"> 
-        <app-criticality-icon class="pt-4" text='Critical'></app-criticality-icon> 
-        <div class=" flex flex-col">
+        <app-criticality-icon 
+            [text]="problem.criticality.name" 
+            [color]="problem.criticality.color"
+            mode="small"
+        >
+        </app-criticality-icon> 
+        <div class="flex flex-row flex-wrap gap-x-2">
+            <span> 
+                {{problem?.id}} 
+            </span>
             <span>
                 {{problem?.name}}
             </span>
-            <span>
-                {{problem?.description}}
-            </span>
         </div>
     </div>
-    <!-- TODO เปลี่ยน  active string to boolean -->
-    <div 
-        [ngClass]="{ 
+    <div [ngClass]="{ 
             'text-warn-500' : problem?.status !== problemStatus.active, 
             'text-primary' : problem?.status === problemStatus.active
         }"
     >
-        {{problem?.status}}
+        {{problem?.status | titlecase}}
     </div>
     <div> 
-        {{problem?.category?.name}}
+        {{problem?.category?.name | titlecase}}
     </div>
     <div >
-        {{problem?.teamOwner?.name}}
+        {{problem?.teamOwner?.name | titlecase}}
     </div>
-
-    <!-- <div class="flex flex-col">
-        <span>
-            {{problemData?.category?.name}}
-        </span>
-        <span>
-            {{ problemData?.created | date:'dd/MM/yyyy'}}
-        </span>
+    <div class="pl-16 pr-4 col-span-5">
+        {{problem.description}}
     </div>
-
-    <div class="flex flex-col">
-        <span>
-            {{problemData?.teamOwner?.name}}
-        </span>
-        <span>
-            {{ problemData?.updated | date:'dd/MM/yyyy' }}
-        </span>
-    </div> -->
-
 </div>

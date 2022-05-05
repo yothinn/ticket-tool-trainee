@@ -1,4 +1,4 @@
-<div class="flex flex-col w-full gap-3 ">
+<div class="flex flex-col p-2 border-box shadow-md">
     <div class="grid grid-cols-4 gap-2">
         <p>Criticality:</p>
         <p>Critical 4Hrs</p>
@@ -21,12 +21,17 @@
         <p>10 Mar 2022 20.00</p>
     </div>
 
-    <div class="flex flex-row justify-end gap-3 ">
-        <button mat-flat-button class="flex-initial" color="primary">
-            Reject
+    <div class="flex flex-row justify-end gap-x-2 mr-15">
+        <button mat-stroked-button color="warn" 
+            class="flex-initial button-normal"
+            (click)="reject.emit(undefined)"
+        >
+            REJECT
         </button>
-        <button mat-flat-button color="primary" (click)="openTicketChangeDialog()" class="flex-initial">
-            Asscept
+        <button mat-flat-button color="primary" 
+            class="flex-initial button-normal"
+            (click)="accept.emit(undefined)">
+            ACCEPT  
         </button>
     </div>
 </div>

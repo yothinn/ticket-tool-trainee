@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { TeamService } from 'app/core/team/team.service';
 import { Team } from 'app/core/team/team.types';
+import { TeamStatus } from 'app/core/team/teamStatus.enum';
 import { Observable, Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -14,6 +15,7 @@ export class TeamInformationViewComponent implements OnInit, OnDestroy {
   @Output() edit = new EventEmitter<any>();
 
   activeTeam$: Observable<Team> = this._teamService.activeTeam$;
+  teamStatus = TeamStatus;
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 

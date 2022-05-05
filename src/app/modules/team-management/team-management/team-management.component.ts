@@ -68,6 +68,10 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
 
     this.isViewMode = false;
     this.teamInfoMode = mode;
+
+    this._teamService.activeTeam = undefined;
+    this.teamListComp.activeTeam = undefined;
+
     this._openDetail();
   }
 

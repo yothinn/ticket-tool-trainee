@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TicketChangeDialogComponent } from '../../dialogs/ticket-change-dialog/ticket-change-dialog.component';
 
@@ -9,24 +9,14 @@ import { TicketChangeDialogComponent } from '../../dialogs/ticket-change-dialog/
 })
 export class TicketInfoViewComponent implements OnInit {
 
+  @Output() accept = new EventEmitter<any>();
+  @Output() reject = new EventEmitter<any>();
+
   constructor(
     public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
-  }
-
-  openTicketChangeDialog(): void {
-    const dialogRef = this.dialog.open(TicketChangeDialogComponent, {
-      height:'480px',
-      width: '30%'
-      // data: {},
-    });
-
-    dialogRef.afterClosed().subscribe((result: any) => {
-      console.log('The dialog was closed');
-      // this.animal = result;
-    });
   }
 
 }

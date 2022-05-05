@@ -10,7 +10,7 @@
         <mat-divider></mat-divider> -->
     
 
-    <ng-container *ngFor="let team of teams; let i = index">
+    <ng-container *ngFor="let team of teams;">
         <app-team-card-info [team]="team" 
             [actived]="team.id === activeTeam?.id"
             (selected)="onSelected($event)"

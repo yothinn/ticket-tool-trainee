@@ -1,8 +1,8 @@
-<div class="absolute inset-0 flex flex-col min-w-o overflow-hidden">
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-hidden">
     <mat-drawer-container class="h-full flex-auto">
         <mat-drawer-content cdkscrollable class="flex flex-col">
             <ng-container *ngIf="teamResponse$ | async as teamResponse">
-                <div class="flex flex-col px-4 flex-auto max-w-6xl mx-auto gap-y-2">
+                <div class="flex flex-col px-4 flex-auto w-full max-w-6xl mx-auto gap-y-2">
                     <div class="z-20 sticky top-0 flex flex-col bg-default gap-y-2">
                         <div class="flex flex-row gap-x-2 items-end">
                             <div class="flex flex-col flex-auto">
@@ -10,15 +10,19 @@
                                     Search
                                 </span>
                                 <mat-form-field appearance="outline" 
-                                    class="w-3/4"
-                                    [ngClass]="{ 'w-full' : drawerDetail.opened }"
+                                    [ngClass]="{ 
+                                        'w-full' : drawerDetail.opened,
+                                        'w-3/4' : !drawerDetail.opened
+                                    }"
                                 >
-                                    <input matInput placeholder="ค้นหาชื่อทีม">
+                                    <input matInput placeholder="Search Team">
                                     <mat-icon matSuffix>search</mat-icon>
                                 </mat-form-field>
                             </div>
                             <div class="flex-initial pb-1" >
-                                <button  class="button-normal" mat-flat-button color="primary" (click)="onTeamEdit('create')">
+                                <button  class="button-normal" mat-flat-button color="primary" 
+                                    (click)="onTeamEdit('create')"
+                                >
                                     CREATE
                                 </button>
                             </div>
@@ -41,7 +45,10 @@
                         <mat-divider></mat-divider>
                     </div>
 
-                    <app-team-card-list  #teamListComp [teams]="teamResponse.data" (selected)="onViewOpened($event)">
+                    <app-team-card-list  #teamListComp 
+                        [teams]="teamResponse.data" 
+                        (selected)="onViewOpened($event)"
+                    >
                     </app-team-card-list>   
                 
                     <app-paginator class="pr-4" 
