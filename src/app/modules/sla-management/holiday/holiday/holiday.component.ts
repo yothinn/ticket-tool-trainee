@@ -32,13 +32,14 @@ export class HolidayComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openHolidayDialog(data?: {index: number; holiday: Holiday}): void {
+  openHolidayDialog(data?: {index: number; holidays: Holiday}): void {
     console.log(data);
 
     const dialogRef = this._dialog.open(HolidayEditDialogComponent, {
       height:'420px',
       width: '40%',
-      data: data?.holiday
+      disableClose: true,
+      data: data?.holidays
     });
 
     dialogRef.afterClosed().subscribe((holidayName: string) => {
@@ -55,8 +56,8 @@ export class HolidayComponent implements OnInit {
     this.holidayResponse$ = this._holidayService.getSlaHoliday(params);
   }
 
-  onEdit(event: any ): void {
-    console.log(event);
+  onDeleteHoliday(data: {holiday: Holiday}): void {
+    console.log(data);
   }
 
   

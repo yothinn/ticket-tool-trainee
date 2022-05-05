@@ -1,42 +1,42 @@
-<div class="grid grid-cols-6 p-2 border-box shadow-md">
+<div class="grid grid-cols-6 lg:grid-cols-5 p-2 border-box shadow-md">
     <p class="text-primary">
         Contact
     </p>
-    <p class="col-span-5 break-all">
+    <p class="col-span-5 lg:col-span-4 break-all">
         {{ team?.contactName }}
     </p>
 
     <p class="text-primary">
         Email
     </p>
-    <p class="col-span-5 break-all">
+    <p class="col-span-5 lg:col-span-4 break-all">
         {{ team?.contactEmail }}
     </p>
 
     <p class="text-primary">
         Mobile
     </p>
-    <p class="col-span-5 break-all">
+    <p class="col-span-5 lg:col-span-4 break-all">
         {{ team?.contactMobile }}
     </p>
 
     <p class="text-primary">
         Created
     </p>
-    <p class="col-span-5 break-all">
+    <p class="col-span-5 lg:col-span-4 lg:col-span-4 break-all">
         {{ team?.createBy }}
     </p>
 
     <p></p>
-    <p class="col-span-5 break-all">{{ team?.created | date }}</p>
+    <p class="col-span-5 lg:col-span-4 break-all">{{ team?.created | date : 'dd/MM/YYYY hh:mm a' }}</p>
 
     <p class="text-primary">
         Updated
     </p>
-    <p class="col-span-5 break-all">
+    <p class="col-span-5 lg:col-span-4 break-all">
         {{ team?.updateBy }}
     </p>
 
     <p></p>
-    <p class="col-span-5 break-all">{{ team?.updated | date}} </p>
+    <p class="col-span-5 lg:col-span-4 break-all">{{ team?.updated | date : 'dd/MM/YYYY hh:mm a'}} </p>
 </div>

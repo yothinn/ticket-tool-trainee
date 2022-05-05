@@ -11,6 +11,7 @@ import { TicketCardInfoComponent } from './components/ticket-card-info/ticket-ca
 import { SharedModule } from 'app/shared/shared.module';
 import { TicketAnalyzeDialogComponent } from './dialogs/ticket-analyze-dialog/ticket-analyze-dialog.component';
 import { TicketChangeDialogComponent } from './dialogs/ticket-change-dialog/ticket-change-dialog.component';
+import { TicketManagementViewComponent } from './ticket-management-view/ticket-management-view.component';
 
 
 
@@ -25,7 +26,8 @@ import { TicketChangeDialogComponent } from './dialogs/ticket-change-dialog/tick
     TicketCardListComponent,
     TicketCardInfoComponent,
     TicketAnalyzeDialogComponent,
-    TicketChangeDialogComponent
+    TicketChangeDialogComponent,
+    TicketManagementViewComponent
   ],
   imports: [
     CommonModule,

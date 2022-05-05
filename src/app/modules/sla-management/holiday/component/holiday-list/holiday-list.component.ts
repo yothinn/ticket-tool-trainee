@@ -11,6 +11,7 @@ export class HolidayListComponent implements OnInit {
   @Input() holidays?: Holiday[];
 
   @Output() edit = new EventEmitter<any>();
+  @Output() del = new EventEmitter<Holiday>();
 
   constructor() { }
 

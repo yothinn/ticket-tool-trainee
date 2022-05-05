@@ -10,17 +10,15 @@
             >
                 ANALYZE
             </button>
-            <button mat-icon-button class="flex-initial" (click)="onClose()">
+            <!-- <button mat-icon-button class="flex-initial" (click)="onClose()">
                 <mat-icon>close</mat-icon>
-            </button>
+            </button> -->
         </div>
     
         <mat-divider></mat-divider>
     </div>
     <div class="flex flex-col px-1 gap-y-2">
-        <app-ticket-info-view
-            (accept)="openTicketAcceptDialog()"
-        >
+        <app-ticket-info-view>
 
         </app-ticket-info-view>
 
@@ -29,6 +27,20 @@
 
         <app-ticket-contact-info-view>
         </app-ticket-contact-info-view>
+    </div>
+
+    <div class="flex flex-row justify-end gap-x-2 mr-15">
+        <button mat-stroked-button color="warn" 
+            class="flex-initial button-normal"
+        >
+            REJECT
+        </button>
+        <button mat-flat-button color="primary" 
+            class="flex-initial button-normal"
+            (click)="openTicketAcceptDialog()"
+        >
+            ACCEPT  
+        </button>
     </div>
 
 </div>

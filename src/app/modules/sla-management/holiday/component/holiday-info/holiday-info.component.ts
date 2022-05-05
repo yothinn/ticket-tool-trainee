@@ -11,11 +11,12 @@ export class HolidayInfoComponent implements OnInit {
   @Input() holiday: Holiday;
 
   @Output() edit = new EventEmitter<Holiday>();
+  @Output() del = new EventEmitter<Holiday>();
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.holiday)
+    console.log(this.holiday);
   }
 
   onSelectEdit(holiday: Holiday): void {
