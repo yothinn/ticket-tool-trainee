@@ -16,6 +16,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 
 
@@ -39,6 +41,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatMenuModule,
     MatCardModule,
     MatButtonToggleModule,
+    MatTabsModule,
   ],
   exports:[
     MatSidenavModule,
@@ -58,6 +61,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatCardModule,
     MatButtonModule,
     MatButtonToggleModule,
+    MatTabsModule
   ]
 })
 export class MaterialModule { }
