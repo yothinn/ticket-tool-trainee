@@ -1,4 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Holiday } from 'app/core/holiday/holiday.types';
 
@@ -11,7 +12,10 @@ export class HolidayEditDialogComponent implements OnInit {
 
   holiday?: Holiday;
   isNew: boolean = true;
+  
   holidayName: string = '';
+  controlForm: FormGroup;
+  
 
   constructor(
     @Inject(MAT_DIALOG_DATA) private _data: any,
@@ -25,6 +29,10 @@ export class HolidayEditDialogComponent implements OnInit {
 
     console.log(this._data);
   }
+
+  // get isNew(): boolean {
+  //   return (this.holiday) ? false : true;
+  // }
 
   close(): void {
     this._dialogRef.close(undefined);

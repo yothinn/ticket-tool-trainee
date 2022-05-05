@@ -1,4 +1,4 @@
-<div class="group grid grid-cols-5 py-2 hover:bg-gray-300 cursor-pointer">
+<div class="group grid grid-cols-5 py-2 hover:card-hover">
     <p> 
         {{ holiday.name }}
     </p>
@@ -12,17 +12,16 @@
         {{ holiday.startTime + ' - ' + holiday.endTime}} 
     </p>
     <div class="flex flex-row gap-x-2 items-center" > 
-        <mat-icon (click)="onSelectEdit(holiday)" class="cursor-pointer button-icon invisible group-hover:visible 
-            hover:text-warn-500 items-center flex-initial"> 
+        <mat-icon class="cursor-pointer invisible group-hover:visible hover:text-warn-500"
+            (click)="onSelectEdit(holiday)"
+        > 
             edit 
         </mat-icon>
-        <ng-container>
-            <mat-icon class="cursor-pointer button-icon invisible group-hover:visible 
-                hover:text-warn-500 items-center flex-initial"
-                svgIcon="delete"
-            >
-            </mat-icon>
-        </ng-container>
+        <mat-icon class="cursor-pointer invisible group-hover:visible hover:text-warn-500"   
+            (click)="del.emit(holiday)"
+        > 
+            delete 
+        </mat-icon>
     </div>
 </div>
  

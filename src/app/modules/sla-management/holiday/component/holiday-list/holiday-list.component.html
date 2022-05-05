@@ -8,8 +8,11 @@
 
     <mat-divider></mat-divider> -->
 
-    <ng-container *ngFor="let holidayData of holidays" >
-        <app-holiday-info [holiday]="holidayData" (edit)="onSelectEdit($event)">
+    <ng-container *ngFor="let holidayData of holidays; let i = index" >
+        <app-holiday-info [holiday]="holidayData" 
+            (edit)="onSelectEdit($event, i)"
+            (del)="del.emit( {index: i, holiday: $event} )"
+        >
         </app-holiday-info>
 
         <mat-divider></mat-divider>
