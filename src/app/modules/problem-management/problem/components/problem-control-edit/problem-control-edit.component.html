@@ -1,24 +1,26 @@
-<div class="flex flex-col w-full">
-    <!-- <form> -->
+<div class="flex w-full p-2 border-box shadow-md">
+    <form [formGroup]="controlForm" class="flex flex-col w-full">
         <div class="flex flex-col">
-            <mat-label>Problem Name</mat-label>
+            <mat-label class="text-xl">Problem Name</mat-label>
             <mat-form-field appearance="outline">
-                <!-- <mat-label>Please Select</mat-label> -->
                 <mat-select placeholder="Please Select">
-                    <mat-option value='Test'> Test </mat-option>
+                    <mat-option value='Test'> 
+                        Test 
+                    </mat-option>
                 </mat-select>
           </mat-form-field>
         </div>
 
 
         <div class="flex flex-col">
-            <mat-label>Category</mat-label>
+            <mat-label class="text-xl">Category</mat-label>
             <mat-form-field appearance="outline">
-                <!-- <mat-label>Please Select</mat-label> -->
                 <mat-select placeholder="Please Select">
-                    <mat-option value='Test'> Test </mat-option>
+                    <mat-option value='Test'> 
+                        Test 
+                    </mat-option>
                 </mat-select>
           </mat-form-field>
         </div>
-    <!-- </form> -->
+    </form>
 </div>

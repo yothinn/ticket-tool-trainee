@@ -27,12 +27,19 @@ export class ProblemCategoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getProblemCategories(): void {
+    const params = new GetProblemCategoryParameter();
+
+    this.problemCategoryResponse$ = this._problemCategoryService.getProblemCategories(params);
+  }
+
   openProblemCategoryDialog(data?: {index: number; problemCategory: ProblemCategory}): void {
     console.log(data);
 
     const dialogRef = this._dialog.open(ProblemCategoryEditDialogsComponent, {
       height:'230px',
       width: '40%',
+      disableClose: true,
       data: data?.problemCategory
     });
 
@@ -44,9 +51,9 @@ export class ProblemCategoryComponent implements OnInit {
     });
   }
 
-  getProblemCategories(): void {
-    const params = new GetProblemCategoryParameter();
-
-    this.problemCategoryResponse$ = this._problemCategoryService.getProblemCategories(params);
+  onDeleteProblemCategory(data?: {index: number; problemCategory: ProblemCategory}): void {
+    console.log(data);
   }
+
+
 }

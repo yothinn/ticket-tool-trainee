@@ -12,7 +12,6 @@ import { ProblemControlEditComponent } from './components/problem-control-edit/p
 import { ProblemInfoEditComponent } from './components/problem-info-edit/problem-info-edit.component';
 import { ProblemInfoViewComponent } from './components/problem-info-view/problem-info-view.component';
 import { TeamOwnerComponent} from './components/team-owner/team-owner.component';
-import { RequestDataDialogComponent } from './dialogs/request-data-dialog/request-data-dialog.component';
 import { TeamOwnerDialogComponent } from './dialogs/team-owner-dialog/team-owner-dialog.component';
 import { RequestDataMenuComponent } from './components/request-data-menu/request-data-menu.component';
 import { RequestDataComponent } from './components/request-data/request-data.component';
@@ -30,7 +29,6 @@ import { RequestDataComponent } from './components/request-data/request-data.com
     ProblemControlEditComponent,
     ProblemInfoEditComponent,
     ProblemInfoViewComponent,
-    RequestDataDialogComponent,
     TeamOwnerDialogComponent,
     RequestDataMenuComponent,
     RequestDataComponent,

@@ -10,7 +10,7 @@ export class CriticalityIconComponent implements OnInit {
   @Input() iconName: string = 'brightness_1';
   @Input() text: string;
   @Input() color: string;
-  @Input() mode: 'small' | 'medium' = 'small';
+  @Input() mode: 'small' | 'medium-left' | 'medium-right' = 'small';
 
   constructor() {
   }

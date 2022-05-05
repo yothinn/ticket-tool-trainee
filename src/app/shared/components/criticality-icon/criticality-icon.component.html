@@ -10,8 +10,8 @@
     </span>
 </div>
 
-<div *ngIf="mode === 'medium' " 
-    class="flex flex-row items-center h-auto w-auto" 
+<div *ngIf="mode === 'medium-left' " 
+    class="flex flex-row items-center h-auto w-auto gap-x-2" 
 >
     <mat-icon *ngIf="!iconUrl" [ngStyle]="{'color': color}">
         {{iconName}}
@@ -19,4 +19,15 @@
     <span>
         {{text}}
     </span>
+</div>
+
+<div *ngIf="mode === 'medium-right' " 
+    class="flex flex-row items-center h-auto w-auto gap-x-2" 
+>
+    <span>
+        {{text}}
+    </span>
+    <mat-icon *ngIf="!iconUrl" [ngStyle]="{'color': color}">
+        {{iconName}}
+    </mat-icon>
 </div>

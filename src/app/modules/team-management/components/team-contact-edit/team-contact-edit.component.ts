@@ -32,9 +32,4 @@ export class TeamContactEditComponent implements OnInit, OnChanges {
     });
   }
 
-  saveFrom(): void {
-    const payload = this.contactForm?.value;
-    console.log(payload);
-  }
-
 }

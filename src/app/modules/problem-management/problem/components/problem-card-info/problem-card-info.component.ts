@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Problem } from 'app/core/problem/problem.types';
 import { ProblemStatus } from 'app/core/problem/problemStatus.enum';
 
@@ -10,6 +10,11 @@ import { ProblemStatus } from 'app/core/problem/problemStatus.enum';
 export class ProblemCardInfoComponent implements OnInit {
 
   @Input() problem?: Problem;
+
+  @Input() actived: boolean = false;
+
+  @Output() selected = new EventEmitter<Problem>();
+
   problemStatus = ProblemStatus;
 
   constructor() { }
@@ -18,6 +23,7 @@ export class ProblemCardInfoComponent implements OnInit {
 
   }
 
-
-
+  onSelected(): void {
+    this.selected.emit(this.problem);
+  }
 }

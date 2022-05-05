@@ -23,7 +23,10 @@
     <div>
 </div> -->
 
-<div class="grid grid-cols-6 pt-2 pb-2 hover:bg-gray-300 cursor-pointer">
+<div class="grid grid-cols-5 p-2 cursor-pointer hover:card-hover"
+    [ngClass]="{ 'card-active' : actived }"
+    (click)="onSelected()"
+>
     <div class="flex felx-row"> 
         <app-criticality-icon></app-criticality-icon> 
 
@@ -49,4 +52,3 @@
     </div>
 </div>
 
-<mat-divider></mat-divider>

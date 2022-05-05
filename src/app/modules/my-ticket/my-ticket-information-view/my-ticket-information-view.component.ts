@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-my-ticket-information-view',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyTicketInformationViewComponent implements OnInit {
 
+  @Output() closed = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onClose(): void {
+    this.closed.emit(undefined);
   }
 
 }

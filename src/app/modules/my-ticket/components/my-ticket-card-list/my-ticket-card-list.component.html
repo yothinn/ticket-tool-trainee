@@ -1,19 +1,14 @@
-<div class="flex flex-col h-full w-full">
-    <!-- <div class="grid grid-cols-5">
-        <p class="col-span-3"></p>
-        <p><strong>Status</strong></p>
-        <p><strong>Opened</strong></p>
-
-    </div> -->
-
+<div class="flex flex-col w-full">
+   
     <mat-divider></mat-divider>
 
-    <div class="h-100 overflow-auto">
-        <app-my-ticket-card-info *ngFor="let item of dateMock" 
-            [myTicketData]="item" (click)="onDetail(item)"
+    <ng-container *ngFor="let ticket of dateMock">
+        <app-my-ticket-card-info  
+            [myTicketData]="ticket" 
+            (selected)="onSelected(ticket)"
         >
-
         </app-my-ticket-card-info>
-    </div>
+        <mat-divider></mat-divider>
+    </ng-container>
 
 </div>

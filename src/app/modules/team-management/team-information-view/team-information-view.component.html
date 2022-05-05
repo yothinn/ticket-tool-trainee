@@ -5,7 +5,11 @@
                 <p class="flex-auto text-[1.875rem] tracking-wider text-primary font-semibold">
                     Team Information
                 </p>
-                <span class="flex-initial ">Status : {{ activeTeam?.status | titlecase }}</span>
+                <span class="flex-initial"
+                    [ngClass]="{ 'text-warn-500' : activeTeam?.status !== teamStatus.active }"
+                >
+                    Status : {{ activeTeam?.status | titlecase }}
+                </span>
                 
                 <button mat-flat-button class="button-normal flex-initial text-center" color="primary"
                     (click)="onEdit()"

@@ -11,6 +11,7 @@ export class ProblemCategoryListComponent implements OnInit {
   @Input() problemCategories?: ProblemCategory[];
 
   @Output() edit = new EventEmitter<any>();
+  @Output() del = new EventEmitter<any>();
 
   constructor() { }
 
@@ -19,11 +20,4 @@ export class ProblemCategoryListComponent implements OnInit {
     console.log(this.problemCategories);
   }
 
-  onSelectEdit(category: ProblemCategory, index: number): void {
-    this.edit.emit({
-      index: index,
-      problemCategory: category
-    });
-  }
-  // เก็บข้อมูลทั้ง index และ ข้อมูลcategory
 }

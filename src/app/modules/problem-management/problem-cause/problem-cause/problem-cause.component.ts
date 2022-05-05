@@ -27,12 +27,20 @@ export class ProblemCauseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getProblemCauses(): void {
+    const params = new GetProblemCauseParameter();
+
+    this.problemCauseResponse$ = this._problemCauseService.getProblemCauses(params);
+  }
+
+
   openProblemCauseDialog(data?: {index: number; problemCause: ProblemCause}): void {
     console.log(data);
 
     const dialogRef = this._dialog.open(ProblemCauseEditDialogsComponent, {
       height:'230px',
       width: '40%',
+      disableClose: true,
       data: data?.problemCause
     });
 
@@ -44,14 +52,10 @@ export class ProblemCauseComponent implements OnInit {
     });
   }
 
-  getProblemCauses(): void {
-    const params = new GetProblemCauseParameter();
-
-    this.problemCauseResponse$ = this._problemCauseService.getProblemCauses(params);
+  onDeleteProblemCause(data: {index: number; problemCause: ProblemCause}): void {
+    console.log(data);
   }
 
-  onEdit(event: any ): void {
-    console.log(event);
-  }
+
 
 }

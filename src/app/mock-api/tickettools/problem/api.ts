@@ -37,7 +37,7 @@ export class ProblemMockApi
             message: 'success',
             pageNo: 1,
             pageSize: 20,
-            totalRecord: 30,
+            totalRecord: 11,
             data: cloneDeep(this._problems)
         };
 

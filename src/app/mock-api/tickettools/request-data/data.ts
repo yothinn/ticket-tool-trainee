@@ -36,4 +36,82 @@ export const requestDatas: RequestData[] = [
         updated: new Date('2022-04-25'),
         updateBy: ''
     },
+    {
+        id: 'PB0000004',
+        keyName: 'ticketNo4',
+        displayName: 'Ticket No4',
+        controlType: 'textbox4',
+
+        created: new Date('2022-04-25'),
+        createBy: '',
+        updated: new Date('2022-04-25'),
+        updateBy: ''
+    },
+    {
+        id: 'PB0000005',
+        keyName: 'ticketNo5',
+        displayName: 'Ticket No5',
+        controlType: 'textbox5',
+
+        created: new Date('2022-04-25'),
+        createBy: '',
+        updated: new Date('2022-04-25'),
+        updateBy: ''
+    },
+    {
+        id: 'PB0000006',
+        keyName: 'ticketNo6',
+        displayName: 'Ticket No6',
+        controlType: 'textbox6',
+
+        created: new Date('2022-04-25'),
+        createBy: '',
+        updated: new Date('2022-04-25'),
+        updateBy: ''
+    },
+    {
+        id: 'PB0000007',
+        keyName: 'ticketNo7',
+        displayName: 'Ticket No7',
+        controlType: 'textbox7',
+
+        created: new Date('2022-04-25'),
+        createBy: '',
+        updated: new Date('2022-04-25'),
+        updateBy: ''
+    },
+    {
+        id: 'PB0000008',
+        keyName: 'ticketNo8',
+        displayName: 'Ticket No8',
+        controlType: 'textbox8',
+
+        created: new Date('2022-04-25'),
+        createBy: '',
+        updated: new Date('2022-04-25'),
+        updateBy: ''
+    },
+    {
+        id: 'PB0000009',
+        keyName: 'ticketNo9',
+        displayName: 'Ticket No9',
+        controlType: 'textbox9',
+
+        created: new Date('2022-04-25'),
+        createBy: '',
+        updated: new Date('2022-04-25'),
+        updateBy: ''
+    },
+    {
+        id: 'PB0000010',
+        keyName: 'ticketNo10',
+        displayName: 'Ticket No10',
+        controlType: 'textbox10',
+
+        created: new Date('2022-04-25'),
+        createBy: '',
+        updated: new Date('2022-04-25'),
+        updateBy: ''
+    }
+    
 ];

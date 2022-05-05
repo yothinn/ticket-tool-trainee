@@ -1,25 +1,56 @@
-<mat-drawer-container class=" w-full h-full">
-    <mat-drawer-content class="flex flex-col p-4">
-        <ng-container *ngIf="problemCategoryResponse$ | async as problemCategoryResponse">
-            <div class="flex flex-row gap-x-4 ">
-                <mat-form-field appearance="outline" class="flex-auto">
-                    <mat-label>Search</mat-label>
-                    <input matInput placeholder="Input">
-                </mat-form-field>
-
-                <button mat-flat-button color="primary" (click)="openProblemCategoryDialog()">
-                    Add Problem Category
-                </button>
-            </div>
-
-            <app-problem-category-list [problemCategories]="problemCategoryResponse.data"
-                (edit)="openProblemCategoryDialog($event)"
-            > 
-            </app-problem-category-list>  
-        
-            <app-paginator>
-            </app-paginator>
+<div class="absolute inset-0 flex flex-col flex-auto min-w-0 overflow-hidden">
+    <mat-drawer-container class="h-full flex-auto ">
+        <mat-drawer-content cdkscrollable class="flex flex-col">
+            <ng-container *ngIf="problemCategoryResponse$ | async as problemCategoryResponse">
+                <div class="flex flex-col px-4 w-full gap-y-2 max-w-4xl mx-auto">
+                    <div class=" sticky top-0 flex flex-col bg-default gap-y-2">
+                        <div class="flex flex-row gap-x-2 items-end">
+                            <div class="flex flex-col  flex-auto">
+                                <span class="text-xl pl-4">
+                                    Search
+                                </span>
+                                <mat-form-field appearance="outline"
+                                    class="w-full"
+                                >
+                                    <input matInput placeholder="Search Category">
+                                    <mat-icon matSuffix>search</mat-icon>
+                                </mat-form-field>
+                            </div>
             
-        </ng-container>
-    </mat-drawer-content>
-</mat-drawer-container>
+                            <div class="flex flex-initial pb-1">
+                                <button mat-flat-button color="primary" 
+                                    class="button-normal"
+                                    (click)="openProblemCategoryDialog()"
+                                >
+                                    Add Category
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-4">
+                            <p class="font-semibold">No</p>
+                            <p class="font-semibold col-span-2">
+                                Category
+                            </p> 
+                        </div>
+                    
+                        <mat-divider></mat-divider>
+                    </div>
+
+                    <app-problem-category-list [problemCategories]="problemCategoryResponse.data"
+                        (edit)="openProblemCategoryDialog($event)"
+                        (del)="onDeleteProblemCategory($event)"
+                    > 
+                    </app-problem-category-list>  
+                
+                    <app-paginator class="pr-4"
+                        [pageNo]="problemCategoryResponse.pageNo"
+                        [pageSize]="problemCategoryResponse.pageSize"
+                        [totalRecord]="problemCategoryResponse.totalRecord"
+                    >
+                    </app-paginator>
+                </div>
+            </ng-container>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>
