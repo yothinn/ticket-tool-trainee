@@ -10,13 +10,12 @@
         {{requestData.controlType}} 
     </p>
 
-    <div [ngClass]="{ 'hover:card-hover' : isEditMode }">
-        <ng-container *ngIf="isEditMode">
-            <div class="flex flex-row gap-x-4">
-                <mat-icon (click)="onSelectEdit(requestData)" 
-                    class="cursor-pointer button-icon invisible group-hover:visible 
-                    hover:text-warn-500 items-center flex-initial"
-                    svgIcon="delete"
+    <div>
+        
+            <div class=" group flex flex-row gap-x-4 ">
+                <mat-icon class="cursor-pointer button-icon invisible group-hover:visible 
+                    hover:text-warn-500 items-center flex-initial" 
+                    (click)="onSelectEdit(requestData)" 
                 >  
                 edit
                 </mat-icon>
@@ -24,10 +23,8 @@
                     hover:text-warn-500 items-center flex-initial"
                     svgIcon="delete"
                 >
-                delete
                 </mat-icon>
             </div>
-    </ng-container>
 
     </div>
         

@@ -11,7 +11,7 @@ import { TicketChangeDialogComponent } from '../dialogs/ticket-change-dialog/tic
 })
 export class TicketInformationViewComponent implements OnInit {
 
-  @Output() closed = new EventEmitter<any>();
+  // @Output() closed = new EventEmitter<any>();
 
   constructor(
     private _dialog: MatDialog
@@ -48,7 +48,7 @@ export class TicketInformationViewComponent implements OnInit {
     });
   }
 
-  onClose(): void {
-    this.closed.emit(undefined);
-  }
+  // onClose(): void {
+  //   this.closed.emit(undefined);
+  // }
 }

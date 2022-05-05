@@ -1,0 +1,21 @@
+<mat-tab-group class="absolute inset-0 overflow-y-hidden">
+    <mat-tab label="Ticket Information">
+        <ng-template matTabContent>
+            <app-ticket-information-view>
+                
+            </app-ticket-information-view>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Conversion">
+        Conversion
+    </mat-tab>
+    <mat-tab label="History">
+        History
+    </mat-tab>
+</mat-tab-group>
+<div class="absolute top-0 right-8">
+    <button mat-icon-button (click)="onClose()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
