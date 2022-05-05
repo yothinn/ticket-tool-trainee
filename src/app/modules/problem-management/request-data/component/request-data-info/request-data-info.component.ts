@@ -12,13 +12,11 @@ export class RequestDataInfoComponent implements OnInit {
 
   @Output() edit = new EventEmitter<RequestData>();
 
+  @Output() del = new EventEmitter<RequestData>();
+
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  onSelectEdit(requestData: RequestData): void {
-    this.edit.emit(requestData);
   }
 
 }

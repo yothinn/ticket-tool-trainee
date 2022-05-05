@@ -1,20 +1,22 @@
 <div class="flex flex-col w-full">
-    <div class="grid grid-cols-4">
+    <!-- <div class="grid grid-cols-4">
         <p class="font-semibold">Key Name</p>
         <p class="font-semibold">Display Name</p>
         <p class="font-semibold">Control Type</p>
         <p></p>
     </div>
 
-    <mat-divider></mat-divider>
+    <mat-divider></mat-divider> -->
+    <!-- (edit)="onSelectEdit($event)" -->
 
-    <ng-container *ngFor="let request of requestData" >
-        <app-request-data-info [requestData]="request" (edit)="onSelectEdit($event)">
+    <ng-container *ngFor="let request of requestData; let i = index" >
+        <app-request-data-info [requestData]="request" 
+            (edit)="edit.emit({index: i, requestData: request})"
+            (del)="del.emit({index: i, requestData: request}) "
+        >
         </app-request-data-info>
         
-        
-        <mat-divider [inset]="true"></mat-divider>
-
+        <mat-divider ></mat-divider>
     </ng-container>
 
 </div>
