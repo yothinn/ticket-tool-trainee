@@ -17,6 +17,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -42,6 +44,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatCardModule,
     MatButtonToggleModule,
     MatTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports:[
     MatSidenavModule,
@@ -61,7 +65,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatCardModule,
     MatButtonModule,
     MatButtonToggleModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class MaterialModule { }

@@ -26,7 +26,7 @@ export class HolidayComponent implements OnInit {
     private _dialog: MatDialog,
     private _holidayService: HolidayService
   ) {
-    this.getHoliday()
+    this.getHolidays();
   }
 
   ngOnInit(): void {
@@ -50,10 +50,10 @@ export class HolidayComponent implements OnInit {
     });
   }
 
-  getHoliday(): void {
-    const params = new GetHolidayParameter();
+  getHolidays(): void {
+    const param = new GetHolidayParameter();
 
-    this.holidayResponse$ = this._holidayService.getSlaHoliday(params);
+    this.holidayResponse$ = this._holidayService.getHolidays(param);
   }
 
   onDeleteHoliday(data: {holiday: Holiday}): void {
