@@ -1,4 +1,4 @@
-<mat-drawer-container class=" w-full h-full border-100">
+<mat-drawer-container class=" w-full h-full ">
     <mat-drawer-content class="flex flex-col p-4 ">
         <ng-container *ngIf="holidayResponse$ | async as holidayResponse">
             <span class="text-xl pl-4 ">
@@ -13,7 +13,9 @@
                     </mat-select>
                 </mat-form-field>
                 
-                <button class="button-normal text-center" mat-flat-button color="primary" (click)="openHolidayDialog()">
+                <button class="button-normal text-center" mat-flat-button color="primary"
+                    (click)="openHolidayDialog()"
+                >
                     ADD HOLIDAY
                 </button>
             </div>

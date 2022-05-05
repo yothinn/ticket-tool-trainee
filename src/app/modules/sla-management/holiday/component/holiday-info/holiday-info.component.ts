@@ -9,19 +9,10 @@ import { Holiday } from 'app/core/holiday/holiday.types';
 export class HolidayInfoComponent implements OnInit {
 
   @Input() holiday: Holiday;
-  @Input() mode: 'edit' | 'view' = 'view';
 
   @Output() edit = new EventEmitter<Holiday>();
 
   constructor() { }
-
-  get isEditMode(): boolean {
-    return this.mode === 'edit';
-  }
-
-  get isViewMode(): boolean {
-    return this.mode === 'view';
-  }
 
   ngOnInit(): void {
     console.log(this.holiday)
