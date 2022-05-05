@@ -27,12 +27,13 @@ export class RequestDataComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openRequestDataDialog(data?: {requestData: RequestData}): void {
+  openRequestDataDialog(data?: {index: number; requestData: RequestData}): void {
     console.log(data);
 
     const dialogRef = this._dialog.open(RequestDataEditDialogComponent, {
-      height:'230px',
-      width: '40%',
+      height:'430px',
+      width: '30%',
+      disableClose: true,
       data: data?.requestData
     });
 
@@ -50,8 +51,9 @@ export class RequestDataComponent implements OnInit {
     this.requestDataResponse$ = this._requestDataService.getRequestData(params);
   }
 
-  onEdit(event: any ): void {
-    console.log(event);
-  }
+  onDeleteRequestData(data?: {index: number; requestData: RequestData}): void {
+    console.log(data);
 
+  }
+  
 }

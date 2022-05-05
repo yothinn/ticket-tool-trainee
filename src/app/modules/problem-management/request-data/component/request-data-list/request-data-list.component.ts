@@ -12,6 +12,8 @@ export class RequestDataListComponent implements OnInit {
 
   @Output() edit = new EventEmitter<any>();
 
+  @Output() del = new EventEmitter<any>();
+
   @Output() selected = new EventEmitter<RequestData>();
 
   constructor() { }
@@ -20,12 +22,10 @@ export class RequestDataListComponent implements OnInit {
     console.log(this.requestData);
   }
 
-
-  onSelectEdit(request: RequestData): void {
-    this.edit.emit({
-      requestData: request
-    });
-  }
-
+  // onSelectEdit(request: RequestData): void {
+  //   this.edit.emit({
+  //     requestData: request
+  //   });
+  // }
 
 }

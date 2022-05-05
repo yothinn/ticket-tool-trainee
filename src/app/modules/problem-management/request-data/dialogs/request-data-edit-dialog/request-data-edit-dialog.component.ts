@@ -10,7 +10,7 @@ import { RequestData } from 'app/core/request-data/request-data.types';
 export class RequestDataEditDialogComponent implements OnInit {
 
   requestData?: RequestData;
-  isNew: boolean = true;
+  // isNew: boolean = true;
 
   request: string = '';
 
@@ -21,10 +21,14 @@ export class RequestDataEditDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.requestData = this._data;
-    this.isNew = (this.requestData) ? false : true;
+    // this.isNew = (this.requestData) ? false : true;
     this.request = this.requestData?.keyName;
 
     console.log(this._data);
+  }
+
+  get isNew(): boolean {
+    return (this.requestData) ? false : true;
   }
 
 
