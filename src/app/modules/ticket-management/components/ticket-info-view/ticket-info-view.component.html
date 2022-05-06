@@ -1,25 +1,33 @@
-<div class="flex flex-col p-2 border-box shadow-md">
-    <div class="grid grid-cols-4 gap-2">
-        <p>Criticality:</p>
-        <p>Critical 4Hrs</p>
-        <p>Status</p>
-        <p>Opened</p>
+<div class="grid  grid-cols-6 lg:grid-cols-5 p-2 border-box shadow-md">
+    <p class="text-primary">Status</p>
+    <p class="col-span-5 lg:col-span-4">Opened</p>
 
-        <p>Problem Name</p>
-        <p>Ticket Problem name</p>
-        <p>Category</p>
-        <p>Product Problem</p>
+    <p class="text-primary">Criticality</p>
+    <app-criticality-icon
+        color="#C42A2E"
+        text="Critical 4Hrs"
+        mode="medium-right"
+        class="col-span-5 lg:col-span-4"
+    >
+        
+    </app-criticality-icon>
 
-        <p>Description</p>
-        <p>Description 1 Description 1 Description 1 Description 1 Description 1 Description 1</p>
-        <p></p>
-        <p></p>
+    <p class="text-primary">Category</p>
+    <p class="col-span-5 lg:col-span-4">Product Problem</p>
 
-        <p>Team Owner</p>
-        <p>team Owner name</p>
-        <p>Last Update</p>
-        <p>10 Mar 2022 20.00</p>
-    </div>
+    <p class="text-primary">Problem Name</p>
+    <p class="col-span-5 lg:col-span-4">Ticket Problem name</p>
+
+    <p class="text-primary">Description</p>
+    <p class="col-span-5 lg:col-span-4 break-all">
+        Description 1 Description 1 Description 1 Description 1 Description 1 Description 1
+    </p>
+
+    <p class="text-primary">Team Owner</p>
+    <p class="col-span-5 lg:col-span-4">team Owner name</p>
+
+    <p class="text-primary">Last Update</p>
+    <p class="col-span-5 lg:col-span-4">10 Mar 2022 20.00</p>
 </div>
 
 

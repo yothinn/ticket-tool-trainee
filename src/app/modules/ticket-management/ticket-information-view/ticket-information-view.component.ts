@@ -1,5 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { TicketService } from 'app/core/ticket/ticket.service';
+import { Ticket } from 'app/core/ticket/ticket.types';
+import { Observable } from 'rxjs';
 import { TicketAnalyzeDialogComponent } from '../dialogs/ticket-analyze-dialog/ticket-analyze-dialog.component';
 import { TicketChangeDialogComponent } from '../dialogs/ticket-change-dialog/ticket-change-dialog.component';
 
@@ -11,10 +14,11 @@ import { TicketChangeDialogComponent } from '../dialogs/ticket-change-dialog/tic
 })
 export class TicketInformationViewComponent implements OnInit {
 
-  // @Output() closed = new EventEmitter<any>();
+  activeTicket$: Observable<Ticket> = this._ticketService.activeTicket$;
 
   constructor(
-    private _dialog: MatDialog
+    private _dialog: MatDialog,
+    private _ticketService: TicketService,
   ) { }
 
   ngOnInit(): void {

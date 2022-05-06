@@ -1,6 +1,6 @@
 import { BaseInterface } from '../base/baseInterface.types';
 import { Problem } from '../problem/problem.types';
-import { TeamMember } from './teamMember.types';
+import { TeamMember } from './team-member.types';
 
 export interface Team extends BaseInterface {
     id: string;

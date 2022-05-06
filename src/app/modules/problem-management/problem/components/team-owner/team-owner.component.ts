@@ -9,7 +9,7 @@ import { Problem } from 'app/core/problem/problem.types';
 export class TeamOwnerComponent implements OnInit {
 
   @Input() problem?: Problem;
-  @Input() mode: 'edit' | 'view' = 'view';
+  @Input() mode: 'create' | 'edit' | 'view' = 'view';
 
   @Output() clickAdd = new EventEmitter<any>();
   @Output() clickDel = new EventEmitter<any>();
@@ -22,6 +22,10 @@ export class TeamOwnerComponent implements OnInit {
 
   get isViewMode(): boolean {
     return this.mode === 'view';
+  }
+
+  get isCreateMode(): boolean {
+    return this.mode === 'create';
   }
 
   ngOnInit(): void {
