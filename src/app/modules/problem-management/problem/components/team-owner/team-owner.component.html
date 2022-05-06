@@ -5,11 +5,12 @@
             Team Owner
         </p>
         <button mat-flat-button color="primary" 
-            *ngIf="isEditMode"
-            class="button-normal mr-4"
+            *ngIf="isEditMode || isCreateMode"
+            class="button-large mr-4"
             (click)="clickAdd.emit(undefined)"
         >
-            Add Member
+            <span *ngIf="isCreateMode">ADD MEMBER</span>
+            <span *ngIf="isEditMode">EDIT MEMBER</span>
         </button>
     </div>
 
