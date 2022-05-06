@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Ticket } from 'app/core/ticket/ticket.types';
 
 @Component({
   selector: 'app-ticket-contact-info-view',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ticket-contact-info-view.component.scss']
 })
 export class TicketContactInfoViewComponent implements OnInit {
+
+  @Input() ticket: Ticket;
 
   constructor() { }
 

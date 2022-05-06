@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { TeamService } from 'app/core/team/team.service';
 import { Team } from 'app/core/team/team.types';
-import { TeamStatus } from 'app/core/team/teamStatus.enum';
+import { TeamStatus } from 'app/core/team/team-status.enum';
 import { Observable, Subject, takeUntil } from 'rxjs';
 
 @Component({

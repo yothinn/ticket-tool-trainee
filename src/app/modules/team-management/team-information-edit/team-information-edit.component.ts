@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Problem } from 'app/core/problem/problem.types';
 import { TeamService } from 'app/core/team/team.service';
 import { Team } from 'app/core/team/team.types';
-import { TeamStatus } from 'app/core/team/teamStatus.enum';
+import { TeamStatus } from 'app/core/team/team-status.enum';
 import { Observable, of, Subject, tap } from 'rxjs';
 import { ProblemDialogComponent } from '../dialogs/problem-dialog/problem-dialog.component';
 import { TeamMemberDialogComponent } from '../dialogs/team-member-dialog/team-member-dialog.component';

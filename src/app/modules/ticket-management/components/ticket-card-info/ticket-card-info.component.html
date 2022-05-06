@@ -1,34 +1,13 @@
-<!-- <div class="grid grid-cols-6 p-3 border-b-2 border-neutral-300">
-    <div class="flex flex-row"> 
-        <app-criticality-icon></app-criticality-icon> 
-        <div class="flex flex-col">
-            <span> TK00000003</span>
-            <span> Categoty</span>
-        </div>
-    </div>
-
-    <div class="col-span-3 flex flex-col">
-        <span> Ticket Problem name 1</span>
-        <span> Product Problem</span>
-    </div>
-
-    <div class="flex flex-col">
-        <span> status</span>
-        <span> created</span>
-    </div>
-
-    <div class="flex flex-col">
-        <span>Opened</span>
-        <span> 10 Mar 2022 20:00 </span>
-    <div>
-</div> -->
-
 <div class="grid grid-cols-5 p-2 cursor-pointer hover:card-hover"
     [ngClass]="{ 'card-active' : actived }"
-    (click)="onSelected()"
+    (click)="selected.emit(ticket)"
 >
     <div class="flex felx-row"> 
-        <app-criticality-icon></app-criticality-icon> 
+        <app-criticality-icon
+            color="#C42A2E"
+            text="criticality"
+        >
+        </app-criticality-icon> 
 
         <div class="flex flex-col">
             <span> TK00000003</span>
