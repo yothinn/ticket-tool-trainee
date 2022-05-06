@@ -10,7 +10,6 @@ import { ProblemCategory } from 'app/core/problem-category/problem-category.type
 export class ProblemCategoryEditDialogsComponent implements OnInit {
 
   problemCategory?: ProblemCategory;
-  isNew: boolean = true;
 
   categoryName: string = '';
 
@@ -19,9 +18,13 @@ export class ProblemCategoryEditDialogsComponent implements OnInit {
     private _dialogRef: MatDialogRef<ProblemCategoryEditDialogsComponent>,
   ) { }
 
+  get isNew(): boolean {
+    return this.problemCategory ? false : true;
+  }
+
   ngOnInit(): void {
-    this.problemCategory = this._data;
-    this.isNew = (this.problemCategory) ? false : true;
+
+  this.problemCategory = this._data;
     this.categoryName = this.problemCategory?.name;
 
     console.log(this._data);

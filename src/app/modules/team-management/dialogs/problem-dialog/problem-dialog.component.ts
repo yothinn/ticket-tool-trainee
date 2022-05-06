@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProblemService } from 'app/core/problem/problem.service';
+import { Team } from 'app/core/team/team.types';
 
 
 @Component({
@@ -9,12 +10,18 @@ import { ProblemService } from 'app/core/problem/problem.service';
   styleUrls: ['./problem-dialog.component.scss']
 })
 export class ProblemDialogComponent implements OnInit {
+
+  team?: Team;
+
   data: any[];
 
   constructor(
-    public dialogRef: MatDialogRef<ProblemDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) private _data: any,
+    private _dialogRef: MatDialogRef<ProblemDialogComponent>,
     private _problemService: ProblemService,
-  ) { }
+  ) { 
+    this.team = this._data.team;
+  }
 
   ngOnInit(): void {
     // console.log(this.criticalityMode)
@@ -121,11 +128,11 @@ export class ProblemDialogComponent implements OnInit {
   }
 
   close(): void {
-    this.dialogRef.close();
+    this._dialogRef.close();
   }
 
   save(): void {
-
+    this._dialogRef.close();
   }
 
 }

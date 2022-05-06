@@ -10,22 +10,22 @@ import { ProblemCause } from 'app/core/problem-cause/problem-cause.types';
 export class ProblemCauseEditDialogsComponent implements OnInit {
 
   problemCause?: ProblemCause;
-  isNew: boolean = true;
-
   causeName: string = '';
 
   constructor(
     @Inject(MAT_DIALOG_DATA) private _data: any,
     private _dialogRef: MatDialogRef<ProblemCauseEditDialogsComponent>,
-
   ) { }
+
+  get isNew(): boolean {
+    return this.problemCause ? false : true;
+  }
 
   ngOnInit(): void {
     this.problemCause = this._data;
-    this.isNew = (this.problemCause) ? false : true;
     this.causeName = this.problemCause?.name;
 
-    console.log(this._data);
+    // console.log(this._data);
   }
 
 
