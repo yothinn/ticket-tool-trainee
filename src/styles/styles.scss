@@ -7,7 +7,11 @@
 
 @layer base {
     .button-normal {
-        @apply text-3xl h-10 max-h-10 w-32 #{'!important'};
+        @apply text-3xl h-10 max-h-10 min-w-32 #{'!important'};
+    }
+
+    .button-large {
+        @apply text-3xl h-10 max-h-10 min-w-[13.4375rem] #{'!important'};
     }
 
     .button-icon {

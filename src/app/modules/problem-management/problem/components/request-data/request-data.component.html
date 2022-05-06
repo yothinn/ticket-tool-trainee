@@ -4,11 +4,12 @@
             Request Data
         </p>
         <button mat-flat-button color="primary" 
-            *ngIf="isEditMode"
-            class="button-normal mr-4"
+            *ngIf="isEditMode || isCreateMode"
+            class="button-large mr-4"
             (click)="clickAdd.emit(undefined)"
         >
-            Add Request Data
+            <span *ngIf="isCreateMode">ADD REQUEST DATA</span>
+            <span *ngIf="isEditMode">ADD REQUEST DATA</span>
         </button>        
 
             <!-- <app-request-data-menu class="flex-initial" [requestData]='requestData'>
