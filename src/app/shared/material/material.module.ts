@@ -19,9 +19,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
-
-
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [],
@@ -45,7 +43,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatButtonToggleModule,
     MatTabsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatChipsModule,
   ],
   exports:[
     MatSidenavModule,
@@ -67,7 +66,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatButtonToggleModule,
     MatTabsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatChipsModule,
   ]
 })
 export class MaterialModule { }
