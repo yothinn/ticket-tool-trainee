@@ -6,7 +6,7 @@ export const holidays: Holiday[] = [
     {
         id: 'PB0000001',
         name: 'New Year1',
-        date: new Date('2022-12-31'),
+        date: new Date('2022-01-12'),
         isWholeDay: true,
         startTime: '00:00',
         endTime: '00:00',

@@ -20,6 +20,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatChipsModule} from '@angular/material/chips';
+import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+
 
 @NgModule({
   declarations: [],
@@ -45,6 +47,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MatDatepickerModule,
     MatNativeDateModule,
     MatChipsModule,
+    NgxMatTimepickerModule,
   ],
   exports:[
     MatSidenavModule,
@@ -68,6 +71,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MatDatepickerModule,
     MatNativeDateModule,
     MatChipsModule,
+    NgxMatTimepickerModule,
   ]
 })
 export class MaterialModule { }
