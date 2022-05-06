@@ -37,14 +37,15 @@ export class HolidayComponent implements OnInit {
 
     const dialogRef = this._dialog.open(HolidayEditDialogComponent, {
       height:'420px',
-      width: '40%',
+      width: '45%',
       disableClose: true,
       data: data?.holidays
     });
 
-    dialogRef.afterClosed().subscribe((holidayName: string) => {
+    dialogRef.afterClosed().subscribe((holiday: Holiday) => {
       console.log('The dialog was closed');
-      if (holidayName) {
+      if (holiday) {
+        console.log(holiday)
         // Save to backend
       }
     });

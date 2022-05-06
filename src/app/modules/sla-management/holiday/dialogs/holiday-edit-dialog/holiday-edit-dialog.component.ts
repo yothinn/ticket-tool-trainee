@@ -1,7 +1,9 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { coerceStringArray } from '@angular/cdk/coercion';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Holiday } from 'app/core/holiday/holiday.types';
+import { values } from 'lodash';
 
 @Component({
   selector: 'app-holiday-edit-dialog',
@@ -10,29 +12,31 @@ import { Holiday } from 'app/core/holiday/holiday.types';
 })
 export class HolidayEditDialogComponent implements OnInit {
 
-  holiday?: Holiday;
-  isNew: boolean = true;
+  @Input() holiday: Holiday;
   
   holidayName: string = '';
-  controlForm: FormGroup;
+  dialogForm: FormGroup;
+  isValid: boolean = true;
   
 
   constructor(
     @Inject(MAT_DIALOG_DATA) private _data: any,
     private _dialogRef: MatDialogRef<HolidayEditDialogComponent>,
-  ) { }
+    private _formBuilder: FormBuilder
+    ) {}
+
+  get isNew(): boolean {
+    return (this.holiday) ? false : true;
+  }
   
   ngOnInit(): void {
     this.holiday = this._data;
-    this.isNew = (this.holiday) ? false : true;
     this.holidayName = this.holiday?.name;
-
+    this.dialogForm = this.initDialogForm(this._data)
+    
     console.log(this._data);
   }
 
-  // get isNew(): boolean {
-  //   return (this.holiday) ? false : true;
-  // }
 
   close(): void {
     this._dialogRef.close(undefined);
@@ -40,5 +44,23 @@ export class HolidayEditDialogComponent implements OnInit {
 
   save(): void {
     this._dialogRef.close(this.holiday);
+  }
+
+  initDialogForm(holiday?: Holiday): FormGroup {
+    return this._formBuilder.group({
+      holidayName: [holiday?.name || '', Validators.required],
+      date: [holiday?.date || '', Validators.required],
+      start: [holiday?.startTime || '', Validators.required],
+      end: [holiday?.endTime || '', Validators.required]
+      
+    });
+  }
+
+  onChangeStatus(event: any ): void {
+    console.log(event);
+  }
+
+  changeValue(valid: boolean) {
+    this.isValid = valid
   }
 }
