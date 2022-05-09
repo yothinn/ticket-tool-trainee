@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Team } from 'app/core/team/team.types';
-import { TeamStatus } from 'app/core/team/teamStatus.enum';
+import { TeamStatus } from 'app/core/team/team-status.enum';
 
 @Component({
   selector: 'app-team-card-info',

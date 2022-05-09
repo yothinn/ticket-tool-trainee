@@ -1,44 +1,76 @@
-<div class="flex flex-col w-full h-full p-1" >
-    <div class="flex flex-row ">
-        <h1 class="flex-auto justify-start " *ngIf="isNew"> Add Request Data </h1>
-        <h1 class="flex-auto justify-start " *ngIf="!isNew"> Edit Request Data </h1>
-        <button class="flex-initial" mat-icon-button (click)="close()">
-            <mat-icon>close</mat-icon>
-        </button>
-    </div>
-    <mat-divider></mat-divider>
-
+<div class="flex flex-col w-full h-full gap-y-2" >
     <div class="flex flex-col">
-        <mat-label> Key Name </mat-label>
-        <mat-form-field appearance="outline">
-            <input matInput [(ngModel)]="request">
-        </mat-form-field>
+        <div class="flex flex-row ">
+            <p class="flex-auto text-[1.875rem] font-semibold " *ngIf="isNew"> ADD REQUEST DATA </p>
+            <p class="flex-auto text-[1.875rem] font-semibold " *ngIf="!isNew"> EDIT REQUEST DATA </p>
+            <button class="flex-initial" mat-icon-button (click)="close()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <mat-divider></mat-divider>
     </div>
 
-    <div class="flex flex-col">
-        <mat-label> Display Name </mat-label>
-        <mat-form-field appearance="outline">
-            <input matInput [(ngModel)]="request">
-        </mat-form-field>
-    </div>
+    
+    <form [formGroup]="requestForm" >
+        <div class="flex flex-col w-full">
+            <div class="flex flex-col">
+                <mat-label class="text-xl pl-4"> Key Name </mat-label>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="keyName" placeholder="Key Name">
+                </mat-form-field>
+            </div>
+        
+            <div class="flex flex-col">
+                <mat-label class="text-xl pl-4"> Display Name </mat-label>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="displayName" placeholder="Display Name">
+                </mat-form-field>
+            </div>
+        
+            <div class="flex flex-col">
+                <mat-label class="text-xl pl-4"> Control Type</mat-label>
+                <mat-form-field appearance="outline">
+                    
+                    <mat-select (selectionChange)="onChange($event)">
+                        <mat-option value="textbox">Textbox</mat-option>
+                        <mat-option value="textarea">Textarea</mat-option>
+                        <mat-option value="AutoComplete list">AutoComplete list</mat-option>
+                        <mat-option value="DropDown List">DropDown List</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
 
-    <div class="flex flex-col">
-        <mat-label> control Type</mat-label>
-            <mat-form-field appearance="outline">
-                <mat-select>
-                    <mat-option value="textbox">Textbox</mat-option>
-                    <mat-option value="textarea">Textarea</mat-option>
-                </mat-select>
-            </mat-form-field>
-    </div>
-   
+            <div class="flex flex-col" *ngIf="showValueList">
+                <mat-label class="text-xl pl-4">Value List</mat-label>
+                <mat-form-field class="example-chip-list" appearance="outline">
+                    <mat-chip-list #chipList aria-label="Fruit selection">
+                        <mat-chip *ngFor="let value of valueLists" (removeValue)="removeValue(value)">
+                            {{value}}
+                            <button matChipRemove>
+                                <mat-icon>cancel</mat-icon>
+                            </button>
+                        </mat-chip>
+                        <input 
+                            [matChipInputFor]="chipList"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                            [matChipInputAddOnBlur]="addValue"
+                            (matChipInputTokenEnd)="addValueList($event)">
+                    </mat-chip-list>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+
     <div class="flex flex-row justify-end gap-x-2 ">
-        <button mat-flat-button color="primary" (click)="close()">
+        <button mat-stroked-button color="primary" class="button-normal" (click)="close()">
             CANCEL
         </button>
-        <button mat-flat-button color="primary" (click)="save()" [disabled]="!request">
+        <button mat-flat-button color="primary" class="button-normal" (click)="save()" 
+            [disabled]="!request"
+        >
             OK
         </button>
     </div>
+
 </div>
 

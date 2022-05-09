@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, S
 import { MatDialog } from '@angular/material/dialog';
 import { ProblemService } from 'app/core/problem/problem.service';
 import { Problem } from 'app/core/problem/problem.types';
-import { ProblemStatus } from 'app/core/problem/problemStatus.enum';
+import { ProblemStatus } from 'app/core/problem/problem-status.enum';
 import { Observable, of, Subject, tap } from 'rxjs';
 import { TeamOwnerDialogComponent } from '../dialogs/team-owner-dialog/team-owner-dialog.component';
 

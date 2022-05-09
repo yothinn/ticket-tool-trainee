@@ -7,11 +7,12 @@
             </span> 
         </p>
         <button mat-flat-button color="primary"
-            *ngIf="isEditMode" 
+            *ngIf="isEditMode || isCreateMode" 
             class=" button-normal mr-4"
             (click)="clickAdd.emit(undefined)" 
         >
-            Add Problem
+            <span *ngIf="isCreateMode">ADD PROBLEM</span>
+            <span *ngIf="isEditMode">EDIT PROBLEM</span>
         </button>
     </div>
     
@@ -20,9 +21,9 @@
     <div class="flex flex-col gap-y-2">
         <ng-container  *ngFor="let problem of team?.problems; let i = index" >
             <app-problem-expansion  
-                [showDel]="isEditMode"
+                [showDel]="isEditMode || isCreateMode"
                 [problem]="problem"
-                (remove)="onProblemDelete(problem, i)"
+                (remove)=" clickDel.emit( { index: index, problem: problem } );"
             >
     
             </app-problem-expansion>

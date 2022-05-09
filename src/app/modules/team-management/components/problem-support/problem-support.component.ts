@@ -10,7 +10,7 @@ import { Team } from 'app/core/team/team.types';
 export class ProblemSupportComponent implements OnInit {
 
   @Input() team?: Team;
-  @Input() mode: 'edit' | 'view' = 'view';
+  @Input() mode: 'create' | 'edit' | 'view' = 'view';
 
   @Output() clickAdd = new EventEmitter<any>();
   @Output() clickDel = new EventEmitter<any>();
@@ -25,14 +25,11 @@ export class ProblemSupportComponent implements OnInit {
     return this.mode === 'view';
   }
 
-  ngOnInit(): void {
+  get isCreateMode(): boolean {
+    return this.mode === 'create';
   }
 
-  onProblemDelete(problem: Problem, index: number): void {
-    this.clickDel.emit({
-      index: index,
-      problem: problem
-    });
+  ngOnInit(): void {
   }
 
 }

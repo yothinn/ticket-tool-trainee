@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { ProblemService } from 'app/core/problem/problem.service';
 import { Problem } from 'app/core/problem/problem.types';
-import { ProblemStatus } from 'app/core/problem/problemStatus.enum';
+import { ProblemStatus } from 'app/core/problem/problem-status.enum';
 import { Observable, Subject } from 'rxjs';
 
 @Component({

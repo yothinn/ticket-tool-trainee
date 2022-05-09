@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Ticket } from 'app/core/ticket/ticket.types';
 import { TicketChangeDialogComponent } from '../../dialogs/ticket-change-dialog/ticket-change-dialog.component';
 
 @Component({
@@ -8,6 +9,8 @@ import { TicketChangeDialogComponent } from '../../dialogs/ticket-change-dialog/
   styleUrls: ['./ticket-info-view.component.scss']
 })
 export class TicketInfoViewComponent implements OnInit {
+
+  @Input() ticket: Ticket;
 
   constructor(
   ) { }

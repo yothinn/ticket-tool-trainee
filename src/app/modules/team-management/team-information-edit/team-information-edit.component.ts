@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Problem } from 'app/core/problem/problem.types';
 import { TeamService } from 'app/core/team/team.service';
 import { Team } from 'app/core/team/team.types';
-import { TeamStatus } from 'app/core/team/teamStatus.enum';
+import { TeamStatus } from 'app/core/team/team-status.enum';
 import { Observable, of, Subject, tap } from 'rxjs';
 import { ProblemDialogComponent } from '../dialogs/problem-dialog/problem-dialog.component';
 import { TeamMemberDialogComponent } from '../dialogs/team-member-dialog/team-member-dialog.component';
@@ -59,12 +59,14 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
     }
   }
 
-  openTeamMemberDialog(): void {
+  openTeamMemberDialog(team?: Team): void {
     const dialogRef = this._dialog.open(TeamMemberDialogComponent, {
       height:'580px',
       width: '90%',
       disableClose: true,
-      // data: {},
+      data: {
+        team: team
+      },
     });
 
     dialogRef.afterClosed().subscribe((result: any) => {
@@ -73,12 +75,14 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
     });
   }
 
-  openProblemDialog(): void {
+  openProblemDialog(team?: Team): void {
     const dialogRef = this._dialog.open(ProblemDialogComponent, {
       height:'580px',
       width: '90%',
       disableClose: true,
-      // data: {},
+      data: {
+        team: team
+      },
     });
 
     dialogRef.afterClosed().subscribe((result: any) => {

@@ -7,7 +7,10 @@
                 </p>
 
                 <span class="flex-initial"
-                    [ngClass]="{ 'text-warn-500' : activeProblem?.status !== problemStatus.active }"
+                    [ngClass]="{ 
+                        'text-warn-500' : activeProblem?.status !== problemStatus.active,
+                        'text-primary' : activeProblem?.status === problemStatus.active
+                    }"
                 >
                     Status : {{ activeProblem?.status | titlecase }}
                 </span>

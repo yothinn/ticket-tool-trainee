@@ -8,11 +8,12 @@
             </span> 
         </p>
         <button mat-flat-button color="primary" 
-            *ngIf="isEditMode"
+            *ngIf="isEditMode || isCreateMode"
             class="button-normal mr-4"
             (click)="clickAdd.emit(undefined)"
         >
-            Add Member
+            <span *ngIf="isCreateMode">ADD MEMBER</span>
+            <span *ngIf="isEditMode">EDIT MEMBER</span>
         </button>
     </div>
 
@@ -21,7 +22,7 @@
   
     <ng-container *ngFor="let member of team?.members; let i = index">
         <div class="group flex flex-row px-4 py-2 items-center"
-            [ngClass]="{ 'hover:card-hover' : isEditMode }"
+            [ngClass]="{ 'hover:card-hover' : isEditMode || isCreateMode }"
         >
             <div class="flex-auto grid grid-cols-2">
             
@@ -34,7 +35,7 @@
                 </p>
             </div>
 
-            <ng-container *ngIf="isEditMode">
+            <ng-container *ngIf="isEditMode || isCreateMode">
                 <mat-icon class="cursor-pointer button-icon invisible group-hover:visible 
                     hover:text-warn-500 items-center flex-initial"
                     svgIcon="delete"

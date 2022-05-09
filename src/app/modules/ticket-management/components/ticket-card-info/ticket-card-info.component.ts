@@ -18,8 +18,4 @@ export class TicketCardInfoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSelected(): void {
-    this.selected.emit(this.ticket);
-  }
-
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Team } from 'app/core/team/team.types';
 
 @Component({
   selector: 'app-team-member-dialog',
@@ -8,11 +9,16 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class TeamMemberDialogComponent implements OnInit {
 
+  team?: Team;
+
   dataMock: any[];
 
   constructor(
-    public dialogRef: MatDialogRef<TeamMemberDialogComponent>
-  ) { }
+    @Inject(MAT_DIALOG_DATA) private _data: any,
+    private _dialogRef: MatDialogRef<TeamMemberDialogComponent>
+  ) {
+    this.team = this._data.team;
+  }
 
   ngOnInit(): void {
     this.dataMock = [
@@ -83,7 +89,10 @@ export class TeamMemberDialogComponent implements OnInit {
   }
 
   close(): void {
-    this.dialogRef.close();
+    this._dialogRef.close();
   }
 
+  save(): void {
+    this._dialogRef.close();
+  }
 }
