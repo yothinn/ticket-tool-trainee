@@ -1,9 +1,9 @@
-<div class="group grid grid-cols-5 py-2 hover:card-hover">
+<div class="group grid grid-cols-5 p-2 hover:card-hover">
     <p> 
         {{ holiday.name }}
     </p>
     <p> 
-        {{ holiday.date }}
+        {{ holiday.date | date: 'dd/MM/yy hh:mm:ss a' }}
     </p>
     <p> 
         {{ holiday.isWholeDay }}

@@ -32,20 +32,21 @@ export class HolidayComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openHolidayDialog(data?: {index: number; holidays: Holiday}): void {
+  openHolidayDialog(data?: {index: number; holiday: Holiday}): void {
     console.log(data);
 
     const dialogRef = this._dialog.open(HolidayEditDialogComponent, {
-      height:'420px',
-      width: '45%',
+      height:'400px',
+      width: '40%',
       disableClose: true,
-      data: data?.holidays
+      data: data?.holiday
     });
 
     dialogRef.afterClosed().subscribe((holiday: Holiday) => {
       console.log('The dialog was closed');
       if (holiday) {
-        console.log(holiday)
+        console.log(holiday);
+        
         // Save to backend
       }
     });
@@ -60,6 +61,4 @@ export class HolidayComponent implements OnInit {
   onDeleteHoliday(data: {holiday: Holiday}): void {
     console.log(data);
   }
-
-  
 }
