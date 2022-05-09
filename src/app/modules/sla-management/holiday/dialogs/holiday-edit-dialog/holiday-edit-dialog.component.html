@@ -1,27 +1,30 @@
-<div class=" flex flex-col w-full h-full" >
-    <div class="flex flex-row gap-2">
-        <p class="flex-auto text-[1.875rem] font-semibold " *ngIf="isNew"> Add Holiday </p>
-        <p class="flex-auto text-[1.875rem] font-semibold " *ngIf="!isNew"> Edit Holiday </p>
-        <button class="flex-initial" mat-icon-button (click)="close()">
-            <mat-icon>close</mat-icon>
-        </button>
-    </div>
-    
-    <mat-divider></mat-divider>
-
+<div class=" flex flex-col w-full h-full gap-2" >
     <div class="flex flex-col">
-        <!-- เปลียน onChange เป็น formcontrol -->
-        <form [formGroup]="dialogForm" class="flex flex-col " >
-            <mat-radio-group (change)="onChangeStatus($event)" aria-label="option" class="flex flex-row gap-2">
-                <mat-radio-button value="Whole">Whole Day</mat-radio-button>
-                <mat-radio-button value="Custom">Custom</mat-radio-button>
+        <div class="flex flex-row gap-2">
+            <p class="flex-auto text-[1.875rem] font-semibold " *ngIf="isNew"> ADD HOLIDAY </p>
+            <p class="flex-auto text-[1.875rem] font-semibold " *ngIf="!isNew"> EDIT HOLIDAY </p>
+            <button class="flex-initial" mat-icon-button (click)="close()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+
+    <div class="flex flex-col flex-w gap-2">
+        <form [formGroup]="holidayForm" class="flex flex-col " >
+            <mat-radio-group aria-label="option" 
+                class="flex flex-row  gap-x-8"
+                formControlName="isWholeDay"
+            >
+                <mat-radio-button [value]="true">Whole Day</mat-radio-button>
+                <mat-radio-button [value]="false">Custom</mat-radio-button>
             </mat-radio-group>
-    
-            <div class="flex flex-row gap-x-2 ">
-                <div class="grid grid-rows-2  ">
+
+            <div class="flex flex-row flex-wrap gap-x-10 ">
+                <div class="flex flex-col flex-auto ">
                     <mat-label class="text-xl">Holiday Name</mat-label>
                     <mat-form-field appearance="outline">
-                        <input matInput formControlName="holidayName" placeholder="Input">
+                        <input matInput formControlName="name" placeholder="Holiday Name">
                     </mat-form-field>
                     
                     <mat-label class="text-xl">Date</mat-label>
@@ -32,39 +35,34 @@
                     </mat-form-field>
                 </div>
 
-                <div class="grid grid-cols-3 w-full">
+                <div class="flex flex-col flex-auto">
                     <p class="text-xl">Start</p>
-                    <ngx-mat-timepicker-field [disabled]="true" class="grid col-span-2" color="warn"
+                    <!-- <input matInput [ngxTimepicker]="picker">                   -->
+                    <ngx-mat-timepicker-field
+                        [disabled]="holidayForm.get('isWholeDay').value" 
+                        class="grid col-span-2" color="warn"
                         [defaultTime]="'12:00 AM'">
-                    </ngx-mat-timepicker-field>
+                    </ngx-mat-timepicker-field>                    
 
                     <p class="text-xl">To</p>
-                    <ngx-mat-timepicker-field class="grid col-span-2" color="warn"
+                    <ngx-mat-timepicker-field
+                        [disabled]="holidayForm.get('isWholeDay').value"
+                        class="grid col-span-2" color="warn"
                         [defaultTime]="'12:00 AM'">
                     </ngx-mat-timepicker-field>
                 </div>
-
-                <!-- <div class="grid grid-cols-3 w-full" *ngIf="!isValid" [disabled]="!isValid">
-                    <p class="text-xl">Start</p>
-                    <ngx-mat-timepicker-field class="grid col-span-2" color="warn"
-                        [defaultTime]="'01:00 AM'">
-                    </ngx-mat-timepicker-field>
-
-                    <p class="text-xl">To</p>
-                    <ngx-mat-timepicker-field class="grid col-span-2" color="warn"
-                        [defaultTime]="'01:00 AM'">
-                    </ngx-mat-timepicker-field>
-                </div> -->
             </div>
         </form>
     </div>
     
 
-    <div class="flex flex-row justify-end gap-y-2 ">
+    <div class="flex flex-row justify-end gap-x-2 ">
         <button mat-stroked-button class="button-normal text-center" color="primary" (click)="close()">
             CANCEL
         </button>
-        <button mat-flat-button class="button-normal text-center" color="primary" (click)="save()" [disabled]="!holidayName">
+        <button mat-flat-button class="button-normal text-center" color="primary" (click)="save()"
+            [disabled]="holidayForm.invalid"
+        >
             OK
         </button>
     </div>
