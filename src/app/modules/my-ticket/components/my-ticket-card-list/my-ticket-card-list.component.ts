@@ -31,6 +31,10 @@ export class MyTicketCardListComponent implements OnInit {
         created: {
           date: '10 Mar 2022 20:00',
           Name: 'Opened'
+        },
+        updated: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Opened'
         }
       },
       {
@@ -45,6 +49,10 @@ export class MyTicketCardListComponent implements OnInit {
         created: {
           date: '10 Mar 2022 20:00',
           Name: 'Waited to approne'
+        },
+        updated: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Opened'
         }
       },
       {
@@ -59,6 +67,10 @@ export class MyTicketCardListComponent implements OnInit {
         created: {
           date: '10 Mar 2022 20:00',
           Name: 'Assigned'
+        },
+        updated: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Opened'
         }
       },
       {
@@ -73,6 +85,10 @@ export class MyTicketCardListComponent implements OnInit {
         created: {
           date: '10 Mar 2022 20:00',
           Name: 'On process'
+        },
+        updated: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Opened'
         }
       },
       {
@@ -85,6 +101,10 @@ export class MyTicketCardListComponent implements OnInit {
           Name: 'Status'
         },
         created: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Opened'
+        },
+        updated: {
           date: '10 Mar 2022 20:00',
           Name: 'Opened'
         }
@@ -101,6 +121,10 @@ export class MyTicketCardListComponent implements OnInit {
         created: {
           date: '10 Mar 2022 20:00',
           Name: 'Waited to approne'
+        },
+        updated: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Opened'
         }
       },
       {
@@ -115,6 +139,10 @@ export class MyTicketCardListComponent implements OnInit {
         created: {
           date: '10 Mar 2022 20:00',
           Name: 'Assigned'
+        },
+        updated: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Opened'
         }
       },
       {
@@ -129,6 +157,10 @@ export class MyTicketCardListComponent implements OnInit {
         created: {
           date: '10 Mar 2022 20:00',
           firstName: 'On process'
+        },
+        updated: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Opened'
         }
       },
       {
@@ -141,6 +173,10 @@ export class MyTicketCardListComponent implements OnInit {
           Name: 'Status'
         },
         created: {
+          date: '10 Mar 2022 20:00',
+          Name: 'Opened'
+        },
+        updated: {
           date: '10 Mar 2022 20:00',
           Name: 'Opened'
         }

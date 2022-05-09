@@ -7,24 +7,25 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./my-ticket-info-edit.component.scss']
 })
 export class MyTicketInfoEditComponent implements OnInit {
-  infoFrom?: FormGroup;
+  infoForm?: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.infoFrom = this.createInfoForm();
+    this.infoForm = this.initInfoForm();
   }
-  createInfoForm(): FormGroup {
+
+  initInfoForm(): FormGroup {
     return this.formBuilder.group({
       
       description: ['', Validators.required]
     });
   }
 
-  saveFrom(): void {
-    const payload = this.infoFrom?.value;
+  save(): void {
+    const payload = this.infoForm?.value;
     console.log(payload);
   }
 

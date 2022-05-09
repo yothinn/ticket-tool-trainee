@@ -18,7 +18,7 @@
                             <div class="flex flex-col flex-initial">
                                 <span class="text-xl pl-4">Sort By</span>
                                 <mat-form-field appearance="outline">
-                                    <mat-select>
+                                    <mat-select placeholder="Date Ascendening">
                                         <mat-option value="one">First option</mat-option>
                                         <mat-option value="two">Second option</mat-option>
                                     </mat-select>
@@ -33,7 +33,19 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="flex-row">
+                            <div class="grid grid-cols-4 w-11/12">
+                                <p class="font-semibold ">Ticket</p>
+                                <p class="font-semibold">Category</p>
+                                <p class="font-semibold">Status</p>
+                                <p class="font-semibold">Updated</p>
+                            </div>
+                            <div class="w-1/12"> </div>
+                        </div>
+
+                        <mat-divider></mat-divider>
                     </div>
+                    
                     <app-my-ticket-card-list #ticketListComp (selected)="onViewOpened($event)">
 
                     </app-my-ticket-card-list>
@@ -53,11 +65,12 @@
         <mat-drawer #drawerDetail class="lg:w-128 xl:w-160 md:w-full"
             [mode]="isViewMode ? 'side' : 'over' " position="end"
         >
-            <app-my-ticket-information-view *ngIf="isViewMode"
+            <app-my-ticket-management-view *ngIf="isViewMode"
                 (closed)="onViewClosed()"
             >
+            
+            </app-my-ticket-management-view>
 
-            </app-my-ticket-information-view>
             <app-my-ticket-information-edit *ngIf="!isViewMode">
                 
             </app-my-ticket-information-edit>

@@ -1,71 +1,68 @@
-<!-- <p>my-ticket-info-edit works!</p> -->
-<div class="flex h-full w-full">
-    <form [formGroup]="infoFrom" class="flex flex-col w-full gap-4">
-         <!-- <div class="flex flex-col w-full mt-1"> -->
+<!-- <div class="p-8"> -->
+<div class="flex flex-col gap-4 px-2 py-4">
+    <form [formGroup]="infoForm">
+        <div class="flex flex-col">
+            <span class="text-xl pl-4">
+                Select the problem category
+            </span>
             <mat-form-field class="w-full mt-1" appearance="outline">
-            <mat-label>Select the problem category</mat-label>
-                <mat-select>
+                <mat-select placeholder="problem category">
                     <mat-option value="one">First option</mat-option>
                     <mat-option value="two">Second option</mat-option>
                 </mat-select>
-             </mat-form-field>
-         <!-- </div> -->
-
-         <!-- <div class="flex flex-col w-full mt-1"> -->
-            <mat-form-field class="w-full mt-1" appearance="outline">
-            <mat-label>Select the problem name</mat-label>
-                <mat-select>
-                    <mat-option value="one">First option</mat-option>
-                    <mat-option value="two">Second option</mat-option>
-                </mat-select>
-             </mat-form-field>
-         <!-- </div> -->
-
-         <!-- <div class="flex flex-col w-full mt-1"> -->
-            <mat-form-field class="w-full mt-1" appearance="outline">
-            <mat-label> Order No </mat-label>
-                <mat-select>
-                    <mat-option value="one">First option</mat-option>
-                    <mat-option value="two">Second option</mat-option>
-                </mat-select>
-             </mat-form-field>
-         <!-- </div> -->
-    
-        <!-- <div class="flex flex-col w-full mt-1"> -->
-            <mat-form-field class="w-full mt-1" appearance="outline">
-                <mat-label> Description </mat-label>
-                <textarea matInput [rows]="3" formControlName="description"></textarea>
             </mat-form-field>
-        <!-- </div> -->
-    </form>
-</div>
+        </div>
 
-<div class="flex flex-row justify-start gap-3 mt-2 ">
-    <div class="grid grid-cols-4 gap-4">
-        <div class="grid grid-col-2 col-span-2">
-            <button mat-stroked-button color="primary">
+        <div class="flex flex-col">
+            <span class="text-xl pl-4">
+                Select the problem name
+            </span>
+            <mat-form-field class="w-full mt-1" appearance="outline">
+                <mat-select placeholder="problem name">
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="flex flex-col">
+            <span class="text-xl pl-4">
+                Order No
+            </span>
+            <mat-form-field class="w-full mt-1" appearance="outline">
+                <mat-select placeholder="order No">
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="flex flex-col">
+            <span class="text-xl pl-4">
+                Description
+            </span>
+            <mat-form-field class="w-full mt-1" appearance="outline">
+                <textarea placeholder="description" matInput [rows]="3" formControlName="description"></textarea>
+            </mat-form-field>
+        </div>
+    </form>
+
+    <div class="grid grid-cols-5 w-full">
+        <div class="col-span-3">
+            <button class="mr-3 button-normal" mat-stroked-button color="primary">
                 ATTACH FILE
             </button>
+            <label>(JPG/PNG/PDF)</label>
         </div>
-        <div class="grid grid-col-2  col-span-1">
-            <button mat-stoked-button color="primary">
+        <div class="col-span-2  flex justify-end gap-4">
+            <button mat-stroked-button color="primary" class="button-normal">
                 CANCEL
             </button>
-        </div>
-        <div class="grid grid-col-3  col-span-1">
-            <button mat-flat-button color="primary" (click)="saveFrom()">
+            <button mat-flat-button color="primary" class="button-normal" (click)="save()">
                 SUMMIT
             </button>
         </div>
     </div>
-   
 </div>
-
-<!-- <div class="grid grid-cols-4 gap-9">
-    <div>01</div>
-    <div>09</div>
-    <div>09</div>
-    <div>09</div>
-  </div> -->
 
 
