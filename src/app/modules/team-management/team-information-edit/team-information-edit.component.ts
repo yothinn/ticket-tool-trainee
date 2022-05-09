@@ -59,12 +59,14 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
     }
   }
 
-  openTeamMemberDialog(): void {
+  openTeamMemberDialog(team?: Team): void {
     const dialogRef = this._dialog.open(TeamMemberDialogComponent, {
       height:'580px',
       width: '90%',
       disableClose: true,
-      // data: {},
+      data: {
+        team: team
+      },
     });
 
     dialogRef.afterClosed().subscribe((result: any) => {
@@ -73,12 +75,14 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
     });
   }
 
-  openProblemDialog(): void {
+  openProblemDialog(team?: Team): void {
     const dialogRef = this._dialog.open(ProblemDialogComponent, {
       height:'580px',
       width: '90%',
       disableClose: true,
-      // data: {},
+      data: {
+        team: team
+      },
     });
 
     dialogRef.afterClosed().subscribe((result: any) => {

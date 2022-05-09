@@ -9,7 +9,7 @@ import { Team } from 'app/core/team/team.types';
 export class TeamMemberComponent implements OnInit {
 
   @Input() team?: Team;
-  @Input() mode: 'edit' | 'view' = 'view';
+  @Input() mode: 'create' | 'edit' | 'view' = 'view';
 
   @Output() clickAdd = new EventEmitter<any>();
   @Output() clickDel = new EventEmitter<any>();
@@ -22,6 +22,10 @@ export class TeamMemberComponent implements OnInit {
 
   get isViewMode(): boolean {
     return this.mode === 'view';
+  }
+
+  get isCreateMode(): boolean {
+    return this.mode === 'create';
   }
 
   ngOnInit(): void {

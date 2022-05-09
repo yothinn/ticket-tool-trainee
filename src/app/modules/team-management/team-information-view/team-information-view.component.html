@@ -3,10 +3,13 @@
         <div class="z-20 sticky top-0 flex flex-col bg-white">
             <div class="flex flex-row py-2 px-4 items-center  gap-x-2">
                 <p class="flex-auto text-[1.875rem] tracking-wide text-primary font-semibold">
-                    Team Information
+                    TEAM INFORMATION
                 </p>
                 <span class="flex-initial"
-                    [ngClass]="{ 'text-warn-500' : activeTeam?.status !== teamStatus.active }"
+                    [ngClass]="{ 
+                        'text-warn-500' : activeTeam?.status !== teamStatus.active,
+                        'text-primary' : activeTeam?.status === teamStatus.active
+                    }"
                 >
                     Status : {{ activeTeam?.status | titlecase }}
                 </span>
@@ -29,20 +32,13 @@
 
             <app-team-contact-view [team]="activeTeam">
             </app-team-contact-view>
-
-            <!-- <div class="grid grid-cols-2 gap-x-2">
-            </div> -->
-
             
             <app-team-member [team]="activeTeam">
-
             </app-team-member>
                 
             <app-problem-support [team]="activeTeam">
-                
             </app-problem-support>
         
-
             <div class="flex flex-row justify-end mr-15">
                 <button mat-stroked-button color="primary" color="warn" class="button-normal">
                     <div class="flex gap-x-2">

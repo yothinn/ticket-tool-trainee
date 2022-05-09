@@ -1,6 +1,9 @@
-<div class="flex flex-col w-full h-full p-1" >
-    <div class="flex flex-row ">
-        <h1 class="flex-auto justify-start "> Create Problem Category </h1>
+<div class="flex flex-col w-full h-full gap-y-2" >
+    <div class="flex flex-row">
+        <p class="flex-auto justify-start text-[1.875rem] font-semibold">
+            <span *ngIf="isNew">CREATE PROBLEM CATEGORY</span>
+            <span *ngIf="!isNew">EDIT PROBLEM CATEGORY</span>
+        </p>
         <button class="flex-initial" mat-icon-button (click)="close()">
             <mat-icon>close</mat-icon>
         </button>
@@ -8,13 +11,13 @@
     <mat-divider></mat-divider>
 
     <div class="flex flex-col">
-        <mat-label class="text-xl">Category Name</mat-label>
+        <mat-label class="text-xl pl-4">Category Name</mat-label>
         <mat-form-field appearance="outline">
             <input matInput [(ngModel)]="categoryName">
         </mat-form-field>
     </div>
 
-    <div class="flex flex-row justify-end gap-3 ">
+    <div class="flex flex-row justify-end gap-3 mt-2">
         <button mat-stroked-button color="primary" class="button-normal" (click)="close()">
             CANCEL
         </button>
