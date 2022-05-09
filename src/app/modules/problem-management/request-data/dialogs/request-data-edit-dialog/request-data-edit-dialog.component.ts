@@ -20,9 +20,11 @@ export class RequestDataEditDialogComponent implements OnInit {
 
   request: string = '';
 
-  addOnBlur = true;
+  showValueList: boolean = false;
+
+  addValue = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
-  requestValue:string[]; 
+  valueLists: string[] = [];
 
   constructor(
     @Inject(MAT_DIALOG_DATA) private _data: any,
@@ -44,7 +46,7 @@ export class RequestDataEditDialogComponent implements OnInit {
 
   }
 
-  initRequestDataForm(request:RequestData): FormGroup {
+  initRequestDataForm(request: RequestData): FormGroup {
     return this._formBuilder.group({
       keyName: [request?.keyName || '', Validators.required],
       displayName: [request?.displayName || '', Validators.required],
@@ -52,31 +54,44 @@ export class RequestDataEditDialogComponent implements OnInit {
 
     });
   }
+  //------------ valueList -----------------
 
-  add(event: MatChipInputEvent): void {
+  addValueList(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
 
     if (value) {
-      this.requestValue.push(value);
+      this.valueLists.push(value);
     }
 
     event.chipInput!.clear();
   }
 
-  remove(requestValue: string): void {
-    const index = this.requestValue.indexOf(requestValue);
+  removeValue(valueList: string): void {
+    const index = this.valueLists.indexOf(valueList);
 
     if (index >= 0) {
-      this.requestValue.splice(index, 1);
+      this.valueLists.splice(index, 1);
     }
   }
+
+  onChange(event: any): void{
+    console.log(event);
+    this.showValueList = event.value;
+    // if(this.showValueList == true){
+    //   this.showValueList = false;
+    // }else{
+    //   this.showValueList = true;
+    // }
+  }
+
+  //-----------------------------
 
   close(): void {
     this._dialogRef.close(undefined);
   }
 
   save(): void {
-    this._dialogRef.close(this.request);
+    this._dialogRef.close(this.initRequestDataForm);
   }
 
 }

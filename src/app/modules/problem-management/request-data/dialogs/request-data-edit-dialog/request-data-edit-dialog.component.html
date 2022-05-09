@@ -1,8 +1,8 @@
 <div class="flex flex-col w-full h-full gap-y-2" >
     <div class="flex flex-col">
         <div class="flex flex-row ">
-            <p class="flex-auto text-[1.875rem] font-semibold " *ngIf="isNew"> Add Request Data </p>
-            <p class="flex-auto text-[1.875rem] font-semibold " *ngIf="!isNew"> Edit Request Data </p>
+            <p class="flex-auto text-[1.875rem] font-semibold " *ngIf="isNew"> ADD REQUEST DATA </p>
+            <p class="flex-auto text-[1.875rem] font-semibold " *ngIf="!isNew"> EDIT REQUEST DATA </p>
             <button class="flex-initial" mat-icon-button (click)="close()">
                 <mat-icon>close</mat-icon>
             </button>
@@ -14,35 +14,38 @@
     <form [formGroup]="requestForm" >
         <div class="flex flex-col w-full">
             <div class="flex flex-col">
-                <mat-label class="text-xl"> Key Name </mat-label>
+                <mat-label class="text-xl pl-4"> Key Name </mat-label>
                 <mat-form-field appearance="outline">
-                    <input matInput formControlName="keyName" placeholder="Input">
+                    <input matInput formControlName="keyName" placeholder="Key Name">
                 </mat-form-field>
             </div>
         
             <div class="flex flex-col">
-                <mat-label class="text-xl"> Display Name </mat-label>
+                <mat-label class="text-xl pl-4"> Display Name </mat-label>
                 <mat-form-field appearance="outline">
-                    <input matInput formControlName="displayName" placeholder="Input">
+                    <input matInput formControlName="displayName" placeholder="Display Name">
                 </mat-form-field>
             </div>
         
             <div class="flex flex-col">
-                <mat-label class="text-xl"> Control Type</mat-label>
+                <mat-label class="text-xl pl-4"> Control Type</mat-label>
                 <mat-form-field appearance="outline">
-                    <mat-select>
+                    
+                    <mat-select (selectionChange)="onChange($event)">
                         <mat-option value="textbox">Textbox</mat-option>
                         <mat-option value="textarea">Textarea</mat-option>
+                        <mat-option value="AutoComplete list">AutoComplete list</mat-option>
+                        <mat-option value="DropDown List">DropDown List</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
 
-            <div class="flex flex-col">
-                <mat-label class="text-xl">Value List</mat-label>
+            <div class="flex flex-col" *ngIf="showValueList">
+                <mat-label class="text-xl pl-4">Value List</mat-label>
                 <mat-form-field class="example-chip-list" appearance="outline">
                     <mat-chip-list #chipList aria-label="Fruit selection">
-                        <mat-chip *ngFor="let list of requestValue" (removed)="remove(list)">
-                        <!-- {{list.keyName}} -->
+                        <mat-chip *ngFor="let value of valueLists" (removeValue)="removeValue(value)">
+                            {{value}}
                             <button matChipRemove>
                                 <mat-icon>cancel</mat-icon>
                             </button>
@@ -50,8 +53,8 @@
                         <input 
                             [matChipInputFor]="chipList"
                             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                            [matChipInputAddOnBlur]="addOnBlur"
-                            (matChipInputTokenEnd)="add($event)">
+                            [matChipInputAddOnBlur]="addValue"
+                            (matChipInputTokenEnd)="addValueList($event)">
                     </mat-chip-list>
                 </mat-form-field>
             </div>
@@ -59,10 +62,12 @@
     </form>
 
     <div class="flex flex-row justify-end gap-x-2 ">
-        <button mat-stroked-button color="primary" (click)="close()">
+        <button mat-stroked-button color="primary" class="button-normal" (click)="close()">
             CANCEL
         </button>
-        <button mat-flat-button color="primary" (click)="save()" [disabled]="!request">
+        <button mat-flat-button color="primary" class="button-normal" (click)="save()" 
+            [disabled]="!request"
+        >
             OK
         </button>
     </div>
