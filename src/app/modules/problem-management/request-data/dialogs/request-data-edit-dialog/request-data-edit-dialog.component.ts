@@ -14,8 +14,7 @@ import { values } from 'lodash';
 export class RequestDataEditDialogComponent implements OnInit {
 
   requestData?: RequestData;
-  // isNew: boolean = true;
-
+  
   requestForm?: FormGroup;
 
   request: string = '';
@@ -51,7 +50,7 @@ export class RequestDataEditDialogComponent implements OnInit {
       keyName: [request?.keyName || '', Validators.required],
       displayName: [request?.displayName || '', Validators.required],
       controlType: [request?.controlType, Validators.required],
-
+      valueList: [ '', Validators.required]
     });
   }
   //------------ valueList -----------------
@@ -65,23 +64,27 @@ export class RequestDataEditDialogComponent implements OnInit {
 
     event.chipInput!.clear();
   }
+  removeValue(valueLists: string): void {
+    console.log(valueLists)
 
-  removeValue(valueList: string): void {
-    const index = this.valueLists.indexOf(valueList);
+    const index = this.valueLists.indexOf(valueLists);
 
     if (index >= 0) {
       this.valueLists.splice(index, 1);
     }
   }
 
-  onChange(event: any): void{
-    console.log(event);
-    this.showValueList = event.value;
-    // if(this.showValueList == true){
-    //   this.showValueList = false;
-    // }else{
-    //   this.showValueList = true;
-    // }
+  onChangeValueList(event: any): void{
+      if(event.vaule == 'textbox'){
+        this.showValueList = false;
+      }else if(event.value == 'textarea'){
+        this.showValueList = true;
+      }else if(event.value == 'AutoComplete list'){
+        this.showValueList = true;
+      }else if(event.value == 'DropDown List'){
+        this.showValueList = false;
+      }
+    console.log(event); 
   }
 
   //-----------------------------
@@ -91,7 +94,9 @@ export class RequestDataEditDialogComponent implements OnInit {
   }
 
   save(): void {
-    this._dialogRef.close(this.initRequestDataForm);
+    const payload: any = this.requestForm?.getRawValue();
+    this._dialogRef.close(payload);
+    console.log(payload);
   }
 
 }

@@ -1,6 +1,6 @@
-<div class="flex flex-col w-full h-full gap-y-2" >
+<div class="flex flex-col w-full h-full gap-y-2">
     <div class="flex flex-col">
-        <div class="flex flex-row ">
+        <div class="flex flex-row">
             <p class="flex-auto text-[1.875rem] font-semibold " *ngIf="isNew"> ADD REQUEST DATA </p>
             <p class="flex-auto text-[1.875rem] font-semibold " *ngIf="!isNew"> EDIT REQUEST DATA </p>
             <button class="flex-initial" mat-icon-button (click)="close()">
@@ -10,9 +10,8 @@
         <mat-divider></mat-divider>
     </div>
 
-    
-    <form [formGroup]="requestForm" >
-        <div class="flex flex-col w-full">
+    <div class="flex flex-col w-full overflow-auto">
+        <form [formGroup]="requestForm">
             <div class="flex flex-col">
                 <mat-label class="text-xl pl-4"> Key Name </mat-label>
                 <mat-form-field appearance="outline">
@@ -31,8 +30,8 @@
                 <mat-label class="text-xl pl-4"> Control Type</mat-label>
                 <mat-form-field appearance="outline">
                     
-                    <mat-select (selectionChange)="onChange($event)">
-                        <mat-option value="textbox">Textbox</mat-option>
+                    <mat-select (selectionChange)="onChangeValueList($event)" >
+                        <mat-option value="textbox" >Textbox</mat-option>
                         <mat-option value="textarea">Textarea</mat-option>
                         <mat-option value="AutoComplete list">AutoComplete list</mat-option>
                         <mat-option value="DropDown List">DropDown List</mat-option>
@@ -43,8 +42,8 @@
             <div class="flex flex-col" *ngIf="showValueList">
                 <mat-label class="text-xl pl-4">Value List</mat-label>
                 <mat-form-field class="example-chip-list" appearance="outline">
-                    <mat-chip-list #chipList aria-label="Fruit selection">
-                        <mat-chip *ngFor="let value of valueLists" (removeValue)="removeValue(value)">
+                    <mat-chip-list #chipList aria-label="valueLists selection">
+                        <mat-chip *ngFor="let value of valueLists" (removed)="removeValue(value)">
                             {{value}}
                             <button matChipRemove>
                                 <mat-icon>cancel</mat-icon>
@@ -54,19 +53,20 @@
                             [matChipInputFor]="chipList"
                             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                             [matChipInputAddOnBlur]="addValue"
-                            (matChipInputTokenEnd)="addValueList($event)">
+                            (matChipInputTokenEnd)="addValueList($event)"
+                            matInput formControlName="valueList">
                     </mat-chip-list>
                 </mat-form-field>
-            </div>
-        </div>
-    </form>
+            </div> 
+        </form>
+    </div>
 
     <div class="flex flex-row justify-end gap-x-2 ">
         <button mat-stroked-button color="primary" class="button-normal" (click)="close()">
             CANCEL
         </button>
         <button mat-flat-button color="primary" class="button-normal" (click)="save()" 
-            [disabled]="!request"
+            [disabled]="!requestForm"
         >
             OK
         </button>
