@@ -14,11 +14,10 @@ export class MyTicketCardInfoComponent implements OnInit {
 
   @Output() selected = new EventEmitter<Ticket>();
 
-  @Input() myTicketData?: any;
-
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.ticket)
   }
 
   onSelected(): void {

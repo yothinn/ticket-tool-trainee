@@ -1,4 +1,4 @@
-<div class="grid grid-cols-5 p-2 cursor-pointer hover:card-hover"
+<!-- <div class="grid grid-cols-5 p-2 cursor-pointer hover:card-hover"
     [ngClass]="{ 'card-active' : actived }"
     (click)="selected.emit(ticket)"
 >
@@ -29,5 +29,39 @@
         <span>Opened</span>
         <span> 10 Mar 2022 20:00 </span>
     </div>
-</div>
+</div> -->
 
+<div class="flex cursor-pointer hover:card-hover p-2 " *ngIf="ticket">
+    <div class="grid grid-cols-5 w-11/12" 
+        [ngClass]="{ 'card-active' : actived }" 
+        (click)="selected.emit(ticket)"
+    >
+        <div class="flex flex-row col-span-2">
+            <app-criticality-icon 
+                [color]="ticket?.problem?.criticality?.color" 
+                [text]="ticket?.problem?.criticality?.name"
+            >
+            </app-criticality-icon>
+            <span class="text-primary">
+                {{ticket?.id}}
+            </span>
+        </div>
+        <div>
+            {{ticket?.problem?.category?.name}}
+        </div>
+        <div class="text-primary">
+            {{ticket?.problem?.status}}
+        </div>
+        <div>
+            {{ticket.updated | date}}
+        </div>
+        <div class="pl-16 col-span-5">
+            {{ticket.problem.name}}
+        </div>
+    </div>
+    <div class="flex items-center w-1/12">
+        <button mat-icon-button class="font-medium min-h-6 w-6 h-6 bg-primary ">
+            90
+        </button>
+    </div>
+</div>

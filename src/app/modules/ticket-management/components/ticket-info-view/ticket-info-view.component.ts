@@ -16,6 +16,7 @@ export class TicketInfoViewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // console.log(this.ticket)
   }
 
 }

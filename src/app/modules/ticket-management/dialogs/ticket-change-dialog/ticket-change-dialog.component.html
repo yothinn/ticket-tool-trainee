@@ -1,62 +1,66 @@
-<div class="flex flex-col w-full h-full gap-3">
+<div class="flex flex-col h-full gap-3">
     <div class="flex flex-row items-center ">
-        <h1 class="flex-auto">Chang Status</h1>
-        <button class="flex-initial" mat-icon-button (click)="close()">
+        <span class="flex-auto font-semibold text-[1.875rem]">
+            CHANGE STATUS
+        </span>
+        <button class="flex-initial" (click)="close()" mat-icon-button>
             <mat-icon>close</mat-icon>
         </button>
     </div>
 
     <mat-divider></mat-divider>
-    <div class="flex flex-row w-full">
-        <div class="grid grid-cols-2 gap-2 w-full">
-            <p>Ticket No :</p>
-            <p>123456789123</p>
+    
+    <div class="overflow-auto">
+        <div class="flex flex-row ">
+            <div class="grid grid-cols-2 gap-2 w-full">
+                <p>Ticket No :</p>
+                <p>123456789123</p>
 
-            <p>Problem Name :</p>
-            <p>Ticket Problem</p>
+                <p>Problem Name :</p>
+                <p>Ticket Problem</p>
+            </div>
+
+            <mat-radio-group (change)="onChangeStatus($event)" aria-label="Option">
+                <mat-radio-button value="Closed" (click)="changeValue(true)">Closed</mat-radio-button>
+                <mat-radio-button value="Unresolved" (click)="changeValue(false)">Unresolved</mat-radio-button>
+            </mat-radio-group>
         </div>
 
-        <mat-radio-group (change)="onChangeStatus($event)" aria-label="Option">
-            <mat-radio-button value="Closed" (click)="changeValue(true)">Closed</mat-radio-button>
-            <mat-radio-button value="Unresolved" (click)="changeValue(false)">Unresolved</mat-radio-button>
-        </mat-radio-group>
-    </div>
-    
 
-    <div class="flex flex-col w-full " *ngIf="isValid">        
-        <p>Problem Cause</p>
-        <mat-form-field appearance="outline">
-            <mat-label>Please Select</mat-label>
-            <mat-select>
-                <mat-option *ngFor="let Cause of Causes" [value]="Cause.value">
-                    {{Cause.viewValue}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        
-        <mat-label>Reason</mat-label>
-        <mat-form-field appearance="outline" >
-            <textarea matInput [rows]="3"></textarea>
-        </mat-form-field>
-    </div>
+        <div class="flex flex-col " *ngIf="isValid">
+            <span class="text-xl">Problem Cause</span>
+            <mat-form-field appearance="outline">
+                <mat-select placeholder="Please Select">
+                    <mat-option *ngFor="let Cause of Causes" [value]="Cause.value">
+                        {{Cause.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
 
-    <div class="flex flex-col w-full " *ngIf="!isValid">        
-        <p>Problem Cause</p>
-        <mat-form-field appearance="outline">
-            <mat-label>Please Select</mat-label>
-            <mat-select>
-                <mat-option *ngFor="let Cause of Causes" [value]="Cause.value">
-                    {{Cause.viewValue}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        
-        <mat-label>Solution</mat-label>
-        <mat-form-field appearance="outline" >
-            <textarea matInput [rows]="3"></textarea>
-        </mat-form-field>
-    </div>
+            <mat-label>Reason</mat-label>
+            <mat-form-field appearance="outline">
+                <textarea matInput [rows]="10" placeholder="Text">ddd</textarea>
+            </mat-form-field>
 
+        </div>
+
+
+        <div class="flex flex-col" *ngIf="!isValid">
+            <span class="text-xl">Problem Cause</span>
+            <mat-form-field appearance="outline">
+                <mat-select placeholder="Please Select">
+                    <mat-option *ngFor="let Cause of Causes" [value]="Cause.value">
+                        {{Cause.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-label>Solution</mat-label>
+            <mat-form-field appearance="outline">
+                <textarea matInput [rows]="3" placeholder="Text"></textarea>
+            </mat-form-field>
+        </div>
+    </div>
     <div class="flex flex-row justify-end gap-3 ">
         <button mat-stroked-button color="primary" class="button-normal">
             CANCEL

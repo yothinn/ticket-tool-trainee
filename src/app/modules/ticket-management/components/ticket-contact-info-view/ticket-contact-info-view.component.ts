@@ -13,6 +13,7 @@ export class TicketContactInfoViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.ticket)
   }
 
 }

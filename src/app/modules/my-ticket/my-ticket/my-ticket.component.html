@@ -46,7 +46,10 @@
                         <mat-divider></mat-divider>
                     </div>
                     
-                    <app-my-ticket-card-list #ticketListComp (selected)="onViewOpened($event)">
+                    <app-my-ticket-card-list #ticketListComp 
+                        [tickets]="ticketResponse.data"
+                        (selected)="onViewOpened($event)"
+                    >
 
                     </app-my-ticket-card-list>
 

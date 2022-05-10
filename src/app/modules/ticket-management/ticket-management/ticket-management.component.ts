@@ -55,7 +55,7 @@ export class TicketManagementComponent implements OnInit {
   }
 
   onViewOpened(ticket: Ticket): void {
-    console.log(ticket);
+    // console.log(ticket);
 
     this._ticketService.activeTicket = ticket;
 

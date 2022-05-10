@@ -41,21 +41,21 @@
     <div class="grid grid-cols-4 w-11/12"
         (click)="onSelected()">
         <div>
-            {{myTicketData.myTicketTk}}
+            {{ ticket?.id }}
         </div>
 
         <div>
-            {{myTicketData.myTicketCategcry}}
+            {{ ticket?.problem?.category?.name }}
         </div>
         <div class="text-primary">
-            {{ myTicketData.updated.Name}}
+            {{ ticket?.problem?.status }}
         </div>
         <div>
-            {{ myTicketData.updated.date}}
+            {{ ticket?.updated | date}}
         </div>
 
         <div class="pr-4 col-span-4">
-            {{myTicketData.myTicketName}}
+            {{ ticket?.problem?.name }}
         </div>
     </div>
 

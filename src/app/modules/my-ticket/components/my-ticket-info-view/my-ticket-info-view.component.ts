@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Ticket } from 'app/core/ticket/ticket.types';
 
 @Component({
   selector: 'app-my-ticket-info-view',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyTicketInfoViewComponent implements OnInit {
 
+  @Input() ticket: Ticket[];
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.ticket)
   }
 
 }

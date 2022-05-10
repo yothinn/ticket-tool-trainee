@@ -1,21 +1,36 @@
-<div class="grid  grid-cols-6 lg:grid-cols-5 p-2 border-box shadow-md">
+<div *ngIf="ticket" class="grid  grid-cols-6 lg:grid-cols-5 p-2 border-box shadow-md">
     <p class="text-primary">Status</p>
     <p class="col-span-5 lg:col-span-4 text-primary">Open</p>
 
     <p class="text-primary">Category</p>
-    <p class="col-span-5 lg:col-span-4">Product Problem</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.problem?.category?.name}}</p>
 
     <p class="text-primary">Problem Name</p>
-    <p class="col-span-5 lg:col-span-4">Ticket Problem name1</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.problem?.name}}</p>
 
 
     <p class="text-primary">Description</p>
     <p class="col-span-5 lg:col-span-4 break-all">
-        Description 1 Description 1 Description 1 Description 1 Description 1 Description 1
+        {{ticket?.problem?.description}}
     </p>
 
     <p class="text-primary">Last Updated</p>
-    <p class="col-span-5 lg:col-span-4">10 Mar 2022 20.00</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
+    <p class="text-primary">Last Updated</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
+    <p class="text-primary">Last Updated</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
+    <p class="text-primary">Last Updated</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
+    <p class="text-primary">Last Updated</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
+    <p class="text-primary">Last Updated</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
+    <p class="text-primary">Last Updated</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
+    <p class="text-primary">Last Updated</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
+    
 
 </div>
 

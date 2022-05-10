@@ -19,14 +19,14 @@ export class TicketChangeDialogComponent implements OnInit {
   ];
 
   constructor(
-    public dialogRef: MatDialogRef<TicketChangeDialogComponent>
+    private _dialogRef: MatDialogRef<TicketChangeDialogComponent>
   ) { }
 
   ngOnInit(): void {
   }
 
   close(): void {
-    this.dialogRef.close();
+    this._dialogRef.close();
   }
 
   onChangeStatus(event: any ): void {

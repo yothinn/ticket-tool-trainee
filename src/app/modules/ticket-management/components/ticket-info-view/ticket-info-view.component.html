@@ -4,8 +4,8 @@
 
     <p class="text-primary">Criticality</p>
     <app-criticality-icon
-        color="#C42A2E"
-        text="Critical 4Hrs"
+        [color]="ticket?.problem?.criticality?.color"
+        [text]="ticket?.problem?.criticality?.name + ' ' + ticket?.problem?.criticality?.acknowledgeTime"
         mode="medium-right"
         class="col-span-5 lg:col-span-4"
     >
@@ -13,21 +13,21 @@
     </app-criticality-icon>
 
     <p class="text-primary">Category</p>
-    <p class="col-span-5 lg:col-span-4">Product Problem</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.problem?.category?.name}}</p>
 
     <p class="text-primary">Problem Name</p>
-    <p class="col-span-5 lg:col-span-4">Ticket Problem name</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.problem?.name}}</p>
 
     <p class="text-primary">Description</p>
     <p class="col-span-5 lg:col-span-4 break-all">
-        Description 1 Description 1 Description 1 Description 1 Description 1 Description 1
+        {{ticket?.problem?.description}} 
     </p>
 
     <p class="text-primary">Team Owner</p>
-    <p class="col-span-5 lg:col-span-4">team Owner name</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.problem?.teamOwner.name}} </p>
 
     <p class="text-primary">Last Update</p>
-    <p class="col-span-5 lg:col-span-4">10 Mar 2022 20.00</p>
+    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
 </div>
 
 

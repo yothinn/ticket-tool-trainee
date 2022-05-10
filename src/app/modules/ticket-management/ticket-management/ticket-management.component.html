@@ -32,6 +32,7 @@
                             >
 
                            </app-filter-button>
+                           
                         </div>
 
                         <div class="flex flex-row gap-x-4">
@@ -42,12 +43,22 @@
 
                             </app-filter-button>
 
-                           
                         </div>
 
+                        <div class="flex-row">
+                            <div class="grid grid-cols-5 w-11/12">
+                                <p class="font-semibold col-span-2 pl-18">Ticket</p>
+                                <p class="font-semibold">Category</p>
+                                <p class="font-semibold">Status</p>
+                                <p class="font-semibold">Updated</p>
+                            </div>
+                            <div class="w-1/12"> </div>
+                        </div>
+                        
+                        <mat-divider></mat-divider>
                     </div>
 
-                    <app-ticket-card-list #ticketListComp (selected)="onViewOpened($event)">
+                    <app-ticket-card-list [tickets]="ticketResponse.data" #ticketListComp (selected)="onViewOpened($event)">
 
                     </app-ticket-card-list>
 
