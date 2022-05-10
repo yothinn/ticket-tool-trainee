@@ -9,6 +9,8 @@ import { MyTicketInformationEditComponent } from './my-ticket-information-edit/m
 import { MyTicketInfoViewComponent } from './components/my-ticket-info-view/my-ticket-info-view.component';
 import { MyTicketInfoEditComponent } from './components/my-ticket-info-edit/my-ticket-info-edit.component';
 import { SharedModule } from 'app/shared/shared.module';
+import { MyTicketManagementViewComponent } from './my-ticket-management-view/my-ticket-management-view.component';
+import { MyTicketOrderInfoViewComponent } from './components/my-ticket-order-info-view/my-ticket-order-info-view.component';
 
 
 
@@ -20,7 +22,9 @@ import { SharedModule } from 'app/shared/shared.module';
     MyTicketInformationViewComponent,
     MyTicketInformationEditComponent,
     MyTicketInfoViewComponent,
-    MyTicketInfoEditComponent
+    MyTicketInfoEditComponent,
+    MyTicketManagementViewComponent,
+    MyTicketOrderInfoViewComponent
   ],
   imports: [
     CommonModule,
