@@ -24,13 +24,15 @@ export class TicketInformationViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openTicketAnalyzeDialog(): void {
+  openTicketAnalyzeDialog(ticket?: Ticket): void {
     // console.log(ticket)
     const dialogRef = this._dialog.open(TicketAnalyzeDialogComponent, {
-      height:'580px',
-      width: '60%',
+      height:'480px',
+      width: '55%',
       disableClose: true,
-      // data: {},
+      data: {
+        ticket: ticket
+      },
     });
 
     dialogRef.afterClosed().subscribe((result: any) => {
@@ -39,12 +41,14 @@ export class TicketInformationViewComponent implements OnInit {
     });
   }
 
-  openTicketAcceptDialog(): void {
+  openTicketAcceptDialog(ticket?: Ticket): void {
     const dialogRef = this._dialog.open(TicketChangeDialogComponent, {
-      height:'480px',
-      width: '30%',
-      disableClose: true
-      // data: {},
+      height:'520px',
+      width: '35%',
+      disableClose: true,
+      data: {
+        ticket: ticket
+      },
     });
 
     dialogRef.afterClosed().subscribe((result: any) => {

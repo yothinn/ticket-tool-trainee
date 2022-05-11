@@ -59,17 +59,15 @@ export class MyTicketComponent implements OnInit, OnDestroy {
     this.ticketListComp.activeTicket = undefined;
   }
 
-  onDetail(item: any): void {
-    console.log(item);
-    this.isViewMode = true;
-    this.drawerDetail?.toggle();
-  }
-
-  onCreate(): void {
+  onCreateOpened(): void {
     this.isViewMode = false;
     if (!this.drawerDetail.opened) {
       this.drawerDetail?.toggle();
     }
+  }
+
+  onCreateClosed(event: boolean): void {
+    this.drawerDetail.toggle();
   }
 
   private _openDetail(): void {

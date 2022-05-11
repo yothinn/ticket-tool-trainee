@@ -13,21 +13,21 @@
     <div class="flex flex-col w-full overflow-auto">
         <form [formGroup]="requestForm">
             <div class="flex flex-col">
-                <mat-label class="text-xl pl-4"> Key Name </mat-label>
+                <mat-label class="text-xl"> Key Name </mat-label>
                 <mat-form-field appearance="outline">
                     <input matInput formControlName="keyName" placeholder="Key Name">
                 </mat-form-field>
             </div>
         
             <div class="flex flex-col">
-                <mat-label class="text-xl pl-4"> Display Name </mat-label>
+                <mat-label class="text-xl"> Display Name </mat-label>
                 <mat-form-field appearance="outline">
                     <input matInput formControlName="displayName" placeholder="Display Name">
                 </mat-form-field>
             </div>
         
             <div class="flex flex-col">
-                <mat-label class="text-xl pl-4"> Control Type</mat-label>
+                <mat-label class="text-xl"> Control Type</mat-label>
                 <mat-form-field appearance="outline">
                     
                     <mat-select (selectionChange)="onChangeValueList($event)" >
@@ -40,7 +40,7 @@
             </div>
 
             <div class="flex flex-col" *ngIf="showValueList">
-                <mat-label class="text-xl pl-4">Value List</mat-label>
+                <mat-label class="text-xl">Value List</mat-label>
                 <mat-form-field class="example-chip-list" appearance="outline">
                     <mat-chip-list #chipList aria-label="valueLists selection">
                         <mat-chip *ngFor="let value of valueLists" (removed)="removeValue(value)">

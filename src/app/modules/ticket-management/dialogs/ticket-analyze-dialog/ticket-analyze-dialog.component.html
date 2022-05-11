@@ -10,68 +10,92 @@
 
     <mat-divider></mat-divider>
 
-    <div class="flex md:flex-row flex-col overflow-auto p-2">
+    <div class="flex md:flex-row flex-col gap-x-2 overflow-auto p-2">
         <div class="grid grid-cols-3 w-full">
             <p>Ticket No:</p>
-            <p class="col-span-2 text-primary">T000000000001</p>
+            <p class="col-span-2 text-primary">
+                {{ ticket.id }}
+            </p>
 
             <p>Description</p>
-            <p class="col-span-2 text-primary">Description 1 Description line2 Description line 3 </p>
+            <p class="col-span-2 text-primary break-all">
+                Description 1 Description line2 Description line 3 
+            </p>
 
             <p>Status:</p>
-            <p class="col-span-2 text-primary">wait</p>
+            <p class="col-span-2 text-primary">
+                wait
+            </p>
 
             <p>Reason for reject:</p>
-            <p class="col-span-2 text-primary">Text..............</p>
+            <p class="col-span-2 text-primary">
+                Text..............
+            </p>
                  
             <p>Last Update:</p>
-            <p class="col-span-2 text-primary">10 Mar 2022 20.00</p> 
+            <p class="col-span-2 text-primary">
+                10 Mar 2022 20.00
+            </p> 
         </div>
 
-        <div class="grid grid-cols w-full">
-            <span class="text-xl">Problem Name</span>
-            <mat-form-field appearance="outline">
-                <mat-select placeholder="Please Select">
-                    <mat-option *ngFor="let problem of problems" [value]="problem.value">
-                        {{problem.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-            
-            <span class="text-xl">Problem Category</span>   
-            <mat-form-field appearance="outline">
-                <mat-select placeholder="Please Select">
-                    <mat-option *ngFor="let problem of problems" [value]="problem.value">
-                        {{problem.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
+        <div class="flex flex-col w-full">
+            <div class="flex flex-col">
+                <span class="text-xl">Problem Name</span>
+                <mat-form-field appearance="outline">
+                    <mat-select placeholder="Please Select">
+                        <mat-option *ngFor="let problem of problems" [value]="problem.value">
+                            {{problem.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
 
-            <span class="text-xl">Criticality</span>  
-            <mat-form-field appearance="outline">
-                <mat-select placeholder="Please Select">
-                    <mat-option *ngFor="let problem of problems" [value]="problem.value">
-                        {{problem.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
+            <div class="flex flex-col">
+                <span class="text-xl">Problem Category</span>   
+                <mat-form-field appearance="outline">
+                    <mat-select placeholder="Please Select">
+                        <mat-option *ngFor="let problem of problems" [value]="problem.value">
+                            {{problem.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
 
-            <span class="text-xl">Assign to team</span>  
-            <mat-form-field appearance="outline">
-                <mat-select placeholder="Please Select">
-                    <mat-option *ngFor="let problem of problems" [value]="problem.value">
-                        {{problem.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>           
+            <div class="flex flex-col">
+                <span class="text-xl">Criticality</span>  
+                <mat-form-field appearance="outline">
+                    <mat-select placeholder="Please Select">
+                        <mat-option *ngFor="let problem of problems" [value]="problem.value">
+                            {{problem.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+            <div class="flex flex-col">
+                <span class="text-xl">Assign to team</span>  
+                <mat-form-field appearance="outline">
+                    <mat-select placeholder="Please Select">
+                        <mat-option *ngFor="let problem of problems" [value]="problem.value">
+                            {{problem.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>           
+            </div>
+
         </div>
     </div>
 
     <div class="flex flex-row justify-end gap-3 ">
-        <button mat-stroked-button color="primary" class="button-normal">
+        <button mat-stroked-button color="primary" class="button-normal"
+            (click)="close()"
+        >
             CANCEL
         </button>
-        <button mat-flat-button color="primary" class="button-normal">
+        <button mat-flat-button color="primary" class="button-normal"
+            (click)="save()"
+        >
             SAVE
         </button>
     </div>

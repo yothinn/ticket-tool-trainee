@@ -18,7 +18,6 @@ export class TicketCardListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.tickets)
   }
 
   onSelected(ticket: Ticket): void {

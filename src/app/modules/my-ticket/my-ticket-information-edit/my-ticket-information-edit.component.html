@@ -1,14 +1,16 @@
 <div class="flex flex-col w-full h-full px-6">
     <div class="flex flex-row py-2 items-center gap-2">
-        <h1 class="flex-auto text-[1.875rem] tracking-wider text-primary font-semibold">CREATE PROBLEM</h1>
+        <p class="flex-auto text-[1.875rem] tracking-wider text-primary font-semibold">
+            CREATE TICKET
+        </p>
     </div>
 
     <mat-divider class="mx-2"></mat-divider>
 
-    <div class="flex flex-col mt-2 mb-2 p-2 border-box shadow-md">
+    <div class="flex flex-col p-2 border-box shadow-md">
 
         <!-- Content Order Info -->
-        <app-my-ticket-info-edit>
+        <app-my-ticket-info-edit (closed)="onCreateTicket($event)">
 
         </app-my-ticket-info-edit>
     </div>

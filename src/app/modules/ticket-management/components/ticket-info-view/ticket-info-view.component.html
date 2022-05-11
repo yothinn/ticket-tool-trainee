@@ -13,10 +13,14 @@
     </app-criticality-icon>
 
     <p class="text-primary">Category</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.problem?.category?.name}}</p>
+    <p class="col-span-5 lg:col-span-4">
+        {{ticket?.problem?.category?.name}}
+    </p>
 
     <p class="text-primary">Problem Name</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.problem?.name}}</p>
+    <p class="col-span-5 lg:col-span-4">
+        {{ticket?.problem?.name}}
+    </p>
 
     <p class="text-primary">Description</p>
     <p class="col-span-5 lg:col-span-4 break-all">
@@ -24,10 +28,14 @@
     </p>
 
     <p class="text-primary">Team Owner</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.problem?.teamOwner.name}} </p>
+    <p class="col-span-5 lg:col-span-4">
+        {{ticket?.problem?.teamOwner.name}} 
+    </p>
 
     <p class="text-primary">Last Update</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
+    <p class="col-span-5 lg:col-span-4">
+        {{ticket?.updated | date: 'dd/MM/yyyy hh:mm a'}}
+    </p>
 </div>
 
 

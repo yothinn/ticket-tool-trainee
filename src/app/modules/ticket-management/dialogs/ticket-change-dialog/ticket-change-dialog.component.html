@@ -10,62 +10,61 @@
 
     <mat-divider></mat-divider>
     
-    <div class="overflow-auto">
-        <div class="flex flex-row ">
-            <div class="grid grid-cols-2 gap-2 w-full">
-                <p>Ticket No :</p>
-                <p>123456789123</p>
+    <div class="overflow-auto flex flex-col gap-y-2 px-2">
+        <mat-radio-group [(ngModel)]="status" class="flex flex-row" color="primary">
+            <mat-radio-button [value]="ticketStatus.closed" class="w-1/3">
+                {{ ticketStatus.closed | titlecase }}
+            </mat-radio-button>
+            <mat-radio-button [value]="ticketStatus.unresolved" class="w-2/3">
+                {{ ticketStatus.unresolved | titlecase }}
+            </mat-radio-button>
+        </mat-radio-group>
 
-                <p>Problem Name :</p>
-                <p>Ticket Problem</p>
+        <div class="flex flex-row flex-wrap">
+            <p class="w-1/3">Ticket No :</p>
+            <p class="w-2/3">123456789123</p>
+
+            <p class="w-1/3">Problem Name :</p>
+            <p class="w-2/3">Ticket Problem</p>
+        </div>
+
+        <form [formGroup]="causeForm">
+            <div class="flex flex-col">
+                <span class="text-xl">Problem Cause</span>
+                <mat-form-field appearance="outline">
+                    <mat-select placeholder="Please Select" formControlName="cause">
+                        <mat-option *ngFor="let cause of causes" [value]="cause.value">
+                            {{cause.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+    
+                <div class="flex flex-col">
+                    <mat-label class="text-xl" *ngIf="status === ticketStatus.unresolved">
+                        Reason
+                    </mat-label>
+                    <mat-label class="text-xl" *ngIf="status === ticketStatus.closed">
+                        Solution
+                    </mat-label>
+                    <mat-form-field appearance="outline">
+                        <textarea matInput [rows]="4" placeholder="Text" formControlName="solution">
+
+                        </textarea>
+                    </mat-form-field>
+                </div>
+    
             </div>
-
-            <mat-radio-group (change)="onChangeStatus($event)" aria-label="Option">
-                <mat-radio-button value="Closed" (click)="changeValue(true)">Closed</mat-radio-button>
-                <mat-radio-button value="Unresolved" (click)="changeValue(false)">Unresolved</mat-radio-button>
-            </mat-radio-group>
-        </div>
-
-
-        <div class="flex flex-col " *ngIf="isValid">
-            <span class="text-xl">Problem Cause</span>
-            <mat-form-field appearance="outline">
-                <mat-select placeholder="Please Select">
-                    <mat-option *ngFor="let Cause of Causes" [value]="Cause.value">
-                        {{Cause.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-
-            <mat-label>Reason</mat-label>
-            <mat-form-field appearance="outline">
-                <textarea matInput [rows]="10" placeholder="Text">ddd</textarea>
-            </mat-form-field>
-
-        </div>
-
-
-        <div class="flex flex-col" *ngIf="!isValid">
-            <span class="text-xl">Problem Cause</span>
-            <mat-form-field appearance="outline">
-                <mat-select placeholder="Please Select">
-                    <mat-option *ngFor="let Cause of Causes" [value]="Cause.value">
-                        {{Cause.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-
-            <mat-label>Solution</mat-label>
-            <mat-form-field appearance="outline">
-                <textarea matInput [rows]="3" placeholder="Text"></textarea>
-            </mat-form-field>
-        </div>
+        </form>
     </div>
     <div class="flex flex-row justify-end gap-3 ">
-        <button mat-stroked-button color="primary" class="button-normal">
+        <button mat-stroked-button color="primary" class="button-normal" 
+            (click)="close()"
+        >
             CANCEL
         </button>
-        <button mat-flat-button color="primary" class="button-normal">
+        <button mat-flat-button color="primary" class="button-normal"
+            (click)="save()"
+        >
             SAVE
         </button>
     </div>

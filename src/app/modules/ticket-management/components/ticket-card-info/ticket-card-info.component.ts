@@ -16,12 +16,6 @@ export class TicketCardInfoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.ticket)
-  }
-
-  selecteTicket(ticket:Ticket){
-    this.selected.emit(ticket)
-    console.log(ticket)
   }
 
 }

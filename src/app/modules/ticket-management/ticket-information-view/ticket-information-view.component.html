@@ -3,11 +3,11 @@
         <div class="z-20 sticky top-0 flex flex-col bg-default">
             <div class="flex flex-row py-2 px-4 items-center  gap-x-2">
                 <p class="flex-auto text-[1.875rem] tracking-wider text-primary font-semibold">
-                    Ticket No : TK 0000000
+                    {{ activeTicket.id | uppercase }}
                 </p>
                 <button mat-flat-button color="primary"
                     class="button-normal flex-initial mr-8" 
-                    (click)="openTicketAnalyzeDialog()" 
+                    (click)="openTicketAnalyzeDialog(activeTicket)" 
                 >
                     ANALYZE
                 </button>
@@ -39,7 +39,7 @@
             </button>
             <button mat-flat-button color="primary" 
                 class="flex-initial button-normal"
-                (click)="openTicketAcceptDialog()"
+                (click)="openTicketAcceptDialog(activeTicket)"
             >
                 ACCEPT  
             </button>

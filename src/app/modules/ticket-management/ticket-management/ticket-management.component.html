@@ -7,7 +7,7 @@
                         <div class="flex flex-row gap-x-2 items-end">
                             <div class="flex flex-row flex-auto min-w-0 flex-wrap gap-x-2">
                                 <div class="flex flex-col flex-auto">
-                                    <span class="text-xl pl-4">
+                                    <span class="text-xl">
                                         Search
                                     </span>
                                     <mat-form-field appearance="outline">
@@ -17,7 +17,7 @@
                                 </div>
     
                                 <div class="flex flex-col flex-initial">
-                                    <span class="text-xl pl-4">Sort By</span>
+                                    <span class="text-xl">Sort By</span>
                                     <mat-form-field appearance="outline">
                                         <mat-select>
                                             <mat-option value="one">First option</mat-option>
@@ -76,6 +76,7 @@
 
         <mat-drawer #drawerDetail class="lg:w-128 xl:w-160 md:w-full"
             [mode]="isViewMode ? 'side' : 'over' " position="end"
+            disableClose="true"
         >
             <app-ticket-management-view *ngIf="isViewMode"
                 (closed)="onViewClosed()"

@@ -31,8 +31,8 @@
     </div>
 </div> -->
 
-<div class="flex cursor-pointer hover:card-hover p-2 " *ngIf="ticket">
-    <div class="grid grid-cols-5 w-11/12" 
+<div class="flex cursor-pointer hover:card-hover p-2 gap-x-2" *ngIf="ticket">
+    <div class="grid grid-cols-5 gap-x-2 w-11/12" 
         [ngClass]="{ 'card-active' : actived }" 
         (click)="selected.emit(ticket)"
     >
@@ -46,18 +46,18 @@
                 {{ticket?.id}}
             </span>
         </div>
-        <div>
+        <p>
             {{ticket?.problem?.category?.name}}
-        </div>
-        <div class="text-primary">
+        </p>
+        <p class="text-primary">
             {{ticket?.problem?.status}}
-        </div>
-        <div>
-            {{ticket.updated | date}}
-        </div>
-        <div class="pl-16 col-span-5">
+        </p>
+        <p>
+            {{ticket.updated | date : 'dd/MM/yyyy hh:mm a'}}
+        </p>
+        <p class="pl-16 col-span-5">
             {{ticket.problem.name}}
-        </div>
+        </p>
     </div>
     <div class="flex items-center w-1/12">
         <button mat-icon-button class="font-medium min-h-6 w-6 h-6 bg-primary ">

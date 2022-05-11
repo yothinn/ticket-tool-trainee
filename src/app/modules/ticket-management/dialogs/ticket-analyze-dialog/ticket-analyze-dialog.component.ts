@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Ticket } from 'app/core/ticket/ticket.types';
 
 @Component({
   selector: 'app-ticket-analyze-dialog',
@@ -8,21 +9,30 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class TicketAnalyzeDialogComponent implements OnInit {
 
+  ticket: Ticket;
+
   problems: any[] = [
     {value: 'problem-0', viewValue: 'problem1'},
     {value: 'problem-1', viewValue: 'problem2'},
     {value: 'problem-2', viewValue: 'problem3'},
   ];
-  
+
   constructor(
-    public dialogRef: MatDialogRef<TicketAnalyzeDialogComponent>
-  ) { }
+    @Inject(MAT_DIALOG_DATA) private _data: any,
+    private _dialogRef: MatDialogRef<TicketAnalyzeDialogComponent>
+  ) {
+    this.ticket = this._data.ticket;
+  }
 
   ngOnInit(): void {
   }
 
   close(): void {
-    this.dialogRef.close();
+    this._dialogRef.close();
+  }
+
+  save(): void {
+    this._dialogRef.close();
   }
 }
 

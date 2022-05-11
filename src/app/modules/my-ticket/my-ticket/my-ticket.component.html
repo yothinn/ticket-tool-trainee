@@ -6,7 +6,7 @@
                     <div class="z-20 sticky top-0 flex flex-col bg-default gap-y-2">
                         <div class="flex flex-row gap-x-2 items-end">
                             <div class="flex flex-col flex-auto">
-                                <span class="text-xl pl-4">
+                                <span class="text-xl">
                                     Search
                                 </span>
                                 <mat-form-field appearance="outline" class="w-full">
@@ -16,7 +16,7 @@
                             </div>
 
                             <div class="flex flex-col flex-initial">
-                                <span class="text-xl pl-4">Sort By</span>
+                                <span class="text-xl">Sort By</span>
                                 <mat-form-field appearance="outline">
                                     <mat-select placeholder="Date Ascendening">
                                         <mat-option value="one">First option</mat-option>
@@ -27,7 +27,7 @@
                             
                             <div class="flex-initial pb-1" >
                                 <button  class="button-normal" mat-flat-button color="primary" 
-                                    (click)="onCreate()"
+                                    (click)="onCreateOpened()"
                                 >
                                     CREATE
                                 </button>
@@ -67,6 +67,7 @@
 
         <mat-drawer #drawerDetail class="lg:w-128 xl:w-160 md:w-full"
             [mode]="isViewMode ? 'side' : 'over' " position="end"
+            disableClose="true"
         >
             <app-my-ticket-management-view *ngIf="isViewMode"
                 (closed)="onViewClosed()"
@@ -74,7 +75,9 @@
             
             </app-my-ticket-management-view>
 
-            <app-my-ticket-information-edit *ngIf="!isViewMode">
+            <app-my-ticket-information-edit *ngIf="!isViewMode"
+                (closed)="onCreateClosed($event)"
+            >
                 
             </app-my-ticket-information-edit>
         </mat-drawer>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./my-ticket-info-edit.component.scss']
 })
 export class MyTicketInfoEditComponent implements OnInit {
+
+  @Output() closed = new EventEmitter<any>();
+
   infoForm?: FormGroup;
 
   constructor(
@@ -24,9 +27,15 @@ export class MyTicketInfoEditComponent implements OnInit {
     });
   }
 
-  save(): void {
+  cancel(): void {
+    this.closed.emit(undefined);
+  }
+
+  summit(): void {
     const payload = this.infoForm?.value;
     console.log(payload);
+
+    this.closed.emit(payload);
   }
 
 }

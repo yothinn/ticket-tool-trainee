@@ -46,7 +46,7 @@ export class HolidayComponent implements OnInit {
       console.log('The dialog was closed');
       if (holiday) {
         console.log(holiday);
-        
+
         // Save to backend
       }
     });
