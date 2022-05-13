@@ -31,5 +31,14 @@
     .border-box {
         border-color: var(--fuse-secondary-600) !important;
         @apply border-2 rounded-2xl #{'!important'};
-    }    
+    }
+    
+    /**
+    * 13/5/2022 Yothin
+    * REMARK : when response at md size that component must insert min-height 
+    * if it wasn't insert min-height , height become zero. I don't know what happen
+    */
+    .min-height {
+        min-height: calc(100vh - 4rem);
+    }
 }
