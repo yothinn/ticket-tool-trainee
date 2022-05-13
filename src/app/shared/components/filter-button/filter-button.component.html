@@ -7,7 +7,7 @@
     <mat-button-toggle *ngFor="let button of buttons"
         [value]="button"       
     >
-        <span>{{ button.name | titlecase }} ({{button.total}})</span>
+        <span>{{ button.status | titlecase }} ({{button.total}})</span>
 
     </mat-button-toggle>
 </mat-button-toggle-group>

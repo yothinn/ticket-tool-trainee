@@ -31,7 +31,7 @@ export class ProblemComponent implements OnInit, OnDestroy {
   isViewMode: boolean = false;
   problemInfoMode: 'create' | 'edit' = 'create';
 
-  filters: FilterButton[] = [{ name: 'All', total: 20 }, { name: 'Active', total: 10 }, { name: 'InActive', total: 5 }];
+  filters: FilterButton[] = [{ status: 'all', total: 20 }, { status: 'active', total: 10 }, { status: 'inactive', total: 5 }];
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 

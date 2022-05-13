@@ -22,19 +22,19 @@ export class TicketManagementComponent implements OnInit {
   ticketResponse$?: Observable<PageResponse<Ticket[]>>;
 
   filters: FilterButton[] = [
-    { name: 'All', total: 100 },
-    { name: 'wait for approve', total: 10 },
-    { name: 'wait for reassign', total: 5 },
-    { name: 'assigned', total: 5 },
-    { name: 'processing', total: 5 },
-    { name: 'closed', total: 5 },
-    { name: 'unresolved', total: 5 },
-    { name: 'cancelled', total: 5 },
+    { status: 'All', total: 100 },
+    { status: 'wait for approve', total: 10 },
+    { status: 'wait for reassign', total: 5 },
+    { status: 'assigned', total: 5 },
+    { status: 'processing', total: 5 },
+    { status: 'closed', total: 5 },
+    { status: 'unresolved', total: 5 },
+    { status: 'cancelled', total: 5 },
   ];
   currFilter?: FilterButton = this.filters[0];
 
   myTaskFilters: FilterButton[] = [
-    { name: 'My Task', total: 0 },
+    { status: 'My Task', total: 0 },
   ];
 
   isViewMode: boolean = false;

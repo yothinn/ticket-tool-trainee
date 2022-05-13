@@ -1,4 +1,4 @@
 export interface FilterButton {
-    name: string;
+    status: string;
     total: number;
 }
