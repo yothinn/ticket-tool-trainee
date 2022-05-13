@@ -17,6 +17,7 @@ import { ShortcutsModule } from 'app/layout/common/shortcuts/shortcuts.module';
 import { UserModule } from 'app/layout/common/user/user.module';
 import { SharedModule } from 'app/shared/shared.module';
 import { ClassicLayoutComponent } from 'app/layout/layouts/vertical/classic/classic.component';
+import { BreadcrumbModule } from 'app/layout/common/breadcrumb/breadcrumb.module';
 
 @NgModule({
     declarations: [
@@ -39,7 +40,8 @@ import { ClassicLayoutComponent } from 'app/layout/layouts/vertical/classic/clas
         SearchModule,
         ShortcutsModule,
         UserModule,
-        SharedModule
+        SharedModule,
+        BreadcrumbModule
     ],
     exports     : [
         ClassicLayoutComponent

@@ -5,6 +5,7 @@ import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
 import { Navigation } from 'app/core/navigation/navigation.types';
 import { NavigationService } from 'app/core/navigation/navigation.service';
+import { environment } from 'environments/environment';
 
 @Component({
     selector     : 'classic-layout',
@@ -15,6 +16,9 @@ export class ClassicLayoutComponent implements OnInit, OnDestroy
 {
     isScreenSmall: boolean;
     navigation: Navigation;
+
+    appName: string = environment.appName;
+
     private _unsubscribeAll: Subject<any> = new Subject<any>();
 
     /**
