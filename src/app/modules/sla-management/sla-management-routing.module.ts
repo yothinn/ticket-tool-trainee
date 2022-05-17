@@ -7,6 +7,11 @@ const routes: Routes = [
         path: 'holiday',
         loadChildren: () => import('./holiday/holiday.module').then(m => m.HolidayModule),
         data: { breadcrumb: 'Holiday' }
+    },
+    {
+        path: 'criticality',
+        loadChildren: () => import('./criticality/criticality.module').then(m => m.CriticalityModule),
+        data: { breadcrumb: 'Criticality' }
     }
     // {
     //     path: 'problem-category',
