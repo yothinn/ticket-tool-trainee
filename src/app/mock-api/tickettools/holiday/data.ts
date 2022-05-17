@@ -8,8 +8,8 @@ export const holidays: Holiday[] = [
         name: 'New Year1',
         date: new Date('2022-01-12'),
         isWholeDay: true,
-        startTime: '00:00',
-        endTime: '00:00',
+        startTime: '12:00',
+        endTime: '03:00',
 
         created: new Date('2022-04-25'),
         createBy: '',

@@ -32,7 +32,7 @@ export class TicketInformationViewComponent implements OnInit {
       disableClose: true,
       data: {
         ticket: ticket
-      },
+      }
     });
 
     dialogRef.afterClosed().subscribe((result: any) => {
@@ -48,7 +48,7 @@ export class TicketInformationViewComponent implements OnInit {
       disableClose: true,
       data: {
         ticket: ticket
-      },
+      }
     });
 
     dialogRef.afterClosed().subscribe((result: any) => {

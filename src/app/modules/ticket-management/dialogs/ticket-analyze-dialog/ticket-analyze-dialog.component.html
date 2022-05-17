@@ -14,27 +14,27 @@
         <div class="grid grid-cols-3 w-full">
             <p>Ticket No:</p>
             <p class="col-span-2 text-primary">
-                {{ ticket.id }}
+                {{ ticket?.id }}
             </p>
 
             <p>Description</p>
             <p class="col-span-2 text-primary break-all">
-                Description 1 Description line2 Description line 3 
+                {{ ticket?.problem?.description }}
             </p>
 
             <p>Status:</p>
             <p class="col-span-2 text-primary">
-                wait
+                {{ticket?.problem?.status}}
             </p>
 
             <p>Reason for reject:</p>
             <p class="col-span-2 text-primary">
-                Text..............
+                
             </p>
                  
             <p>Last Update:</p>
             <p class="col-span-2 text-primary">
-                10 Mar 2022 20.00
+                {{ticket?.updated | date}}
             </p> 
         </div>
 

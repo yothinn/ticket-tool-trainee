@@ -33,13 +33,19 @@ export class HolidayComponent implements OnInit {
   }
 
   openHolidayDialog(data?: {index: number; holiday: Holiday}): void {
-    console.log(data);
+    // console.log(data.index);
+    // console.log(data.index);
+    // console.log(data.holiday);
+
 
     const dialogRef = this._dialog.open(HolidayEditDialogComponent, {
       height:'400px',
       width: '40%',
       disableClose: true,
-      data: data?.holiday
+      data: {
+          index:data?.index,
+          holiday:data?.holiday
+        }
     });
 
     dialogRef.afterClosed().subscribe((holiday: Holiday) => {
