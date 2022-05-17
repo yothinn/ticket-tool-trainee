@@ -1,1 +1,37 @@
-<p>criticality-info works!</p>
+<div class="group grid grid-col gap-x-4 hover:card-hover w-full">
+    <form [formGroup]="criticalityForm" class="grid grid-cols-5 gap-x-4" >
+
+        <app-criticality-icon>
+        </app-criticality-icon>
+        
+
+        <div class="grid grid-col ">
+            <mat-form-field appearance="outline">
+                <input matInput  placeholder="4 H">
+            </mat-form-field>
+        </div>
+        <div class="grid grid-col">
+            <mat-form-field appearance="outline">
+                <input matInput  placeholder="4 H">
+            </mat-form-field>
+        </div>
+        <div class="grid grid-col">
+            <mat-form-field appearance="outline">
+                <input matInput  placeholder="4 H">
+            </mat-form-field>
+        </div>
+        
+        <div class="flex flex-row gap-x-2 items-center  " > 
+            <mat-icon class="cursor-pointer invisible group-hover:visible hover:text-warn-500"
+                (click)="'edit.emit(criticality)'"
+            > 
+                edit 
+            </mat-icon>
+            <mat-icon class="cursor-pointer invisible group-hover:visible hover:text-warn-500"   
+                (click)="'del.emit(criticality)'"
+            > 
+                delete 
+            </mat-icon>
+        </div>
+    </form>
+</div>

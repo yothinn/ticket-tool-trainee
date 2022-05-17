@@ -11,5 +11,4 @@ export class CriticalityListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
