@@ -12,7 +12,12 @@ const routes: Routes = [
         path: 'criticality',
         loadChildren: () => import('./criticality/criticality.module').then(m => m.CriticalityModule),
         data: { breadcrumb: 'Criticality' }
-    }
+    },
+    {
+        path: 'workingDay',
+        loadChildren: () => import('./working-day/working-day.module').then(m => m.WorkingDayModule),
+        data: { breadcrumb: 'Working Day' }
+    },
     // {
     //     path: 'problem-category',
     //     loadChildren: () => import('./problem-category/problem-category.module').then(m => m.ProblemCategoryModule),
