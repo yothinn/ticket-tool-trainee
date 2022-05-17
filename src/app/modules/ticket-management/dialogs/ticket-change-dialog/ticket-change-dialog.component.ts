@@ -34,7 +34,6 @@ export class TicketChangeDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.causeForm = this.initCauseForm();
   }
 

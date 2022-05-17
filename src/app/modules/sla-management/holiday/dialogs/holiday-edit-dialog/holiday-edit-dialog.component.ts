@@ -27,10 +27,10 @@ export class HolidayEditDialogComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.holiday = this._data;
+    this.holiday = this._data?.holiday;
     this.holidayForm = this.initHolidayForm(this.holiday);
     
-    console.log(this._data);
+    console.log(this.holiday);
   }
 
 
@@ -45,6 +45,7 @@ export class HolidayEditDialogComponent implements OnInit {
   }
 
   initHolidayForm(holiday?: Holiday): FormGroup {
+    // console.log(holiday)
     return this._formBuilder.group({
       isWholeDay: [holiday?.isWholeDay || true, Validators.required],
       name: [holiday?.name || '', Validators.required],
@@ -57,4 +58,5 @@ export class HolidayEditDialogComponent implements OnInit {
   changeValue(valid: boolean) {
     this.isValid = valid;
   }
+
 }

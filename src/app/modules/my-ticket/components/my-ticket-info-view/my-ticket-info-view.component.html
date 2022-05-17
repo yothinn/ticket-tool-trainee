@@ -3,10 +3,14 @@
     <p class="col-span-5 lg:col-span-4 text-primary">Open</p>
 
     <p class="text-primary">Category</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.problem?.category?.name}}</p>
+    <p class="col-span-5 lg:col-span-4">
+        {{ticket?.problem?.category?.name}}
+    </p>
 
     <p class="text-primary">Problem Name</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.problem?.name}}</p>
+    <p class="col-span-5 lg:col-span-4">
+        {{ticket?.problem?.name}}
+    </p>
 
 
     <p class="text-primary">Description</p>
@@ -15,22 +19,9 @@
     </p>
 
     <p class="text-primary">Last Updated</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
-    <p class="text-primary">Last Updated</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
-    <p class="text-primary">Last Updated</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
-    <p class="text-primary">Last Updated</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
-    <p class="text-primary">Last Updated</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
-    <p class="text-primary">Last Updated</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
-    <p class="text-primary">Last Updated</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
-    <p class="text-primary">Last Updated</p>
-    <p class="col-span-5 lg:col-span-4">{{ticket?.updated | date}}</p>
-    
+    <p class="col-span-5 lg:col-span-4">
+        {{ticket?.updated | date: 'dd/MM/yyyy hh:mm a'}}
+    </p>
 
 </div>
 

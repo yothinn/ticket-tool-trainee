@@ -31,6 +31,7 @@
                 }    
             }
 
+
             
     
         }
@@ -60,3 +61,10 @@
     border-top-width: 2px !important;
 }
 
+.message-icon{
+    &.mat-icon-button{
+        border: 2px solid var(--fuse-primary) !important;
+        color: var(--fuse-warn-500) !important;
+      
+    }
+}
