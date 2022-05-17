@@ -3,7 +3,7 @@
 
     <ng-container *ngFor="let holiday of holidays; let i = index" >
         <app-holiday-info [holiday]="holiday" 
-            (edit)="onSelectEdit($event, i)"
+            (edit)="edit.emit({index: i, holiday: $event})"
             (del)="del.emit( {index: i, holiday: $event} )"
         >
         </app-holiday-info>
