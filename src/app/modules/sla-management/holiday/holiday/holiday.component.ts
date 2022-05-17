@@ -33,11 +33,6 @@ export class HolidayComponent implements OnInit {
   }
 
   openHolidayDialog(data?: {index: number; holiday: Holiday}): void {
-    // console.log(data.index);
-    // console.log(data.index);
-    // console.log(data.holiday);
-
-
     const dialogRef = this._dialog.open(HolidayEditDialogComponent, {
       height:'400px',
       width: '40%',

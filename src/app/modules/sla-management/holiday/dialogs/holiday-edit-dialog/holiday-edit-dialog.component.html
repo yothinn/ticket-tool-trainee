@@ -1,4 +1,4 @@
-<div class=" flex flex-col w-full h-full gap-2">
+<div class=" flex flex-col gap-2">
     <div class="flex flex-row gap-2">
         <p *ngIf="isNew" class="flex-auto text-[1.875rem] font-semibold " > ADD HOLIDAY </p>
         <p *ngIf="!isNew" class="flex-auto text-[1.875rem] font-semibold " > EDIT HOLIDAY </p>
@@ -7,6 +7,7 @@
         </button>
     </div>
     <mat-divider></mat-divider>
+
     <form [formGroup]="holidayForm">
         <mat-radio-group aria-label="option" class="flex flex-row gap-x-8" formControlName="isWholeDay">
             <mat-radio-button [value]="true">Whole Day</mat-radio-button>
@@ -28,7 +29,7 @@
                 </mat-form-field>
             </div>
 
-            <div class="flex flex-col" style="border:1px solid red ;">
+            <div class="flex flex-col">
                 <p class="text-xl">Start</p>
                 <ngx-mat-timepicker-field 
                     [disabled]="holidayForm.get('isWholeDay').value" 
