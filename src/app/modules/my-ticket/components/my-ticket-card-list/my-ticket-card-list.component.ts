@@ -16,8 +16,7 @@ export class MyTicketCardListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.tickets)
-    
+
   }
 
   onSelected(ticket: Ticket): void {
