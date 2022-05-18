@@ -14,7 +14,13 @@
                                     'w-3/4' : !drawerDetail.opened
                                 }"
                             >
-                                <input matInput placeholder="Search Team">
+                                <input matInput placeholder="Search Team" #searchCtrl>
+                                <mat-icon matSuffix *ngIf="isSearching"
+                                    class="cursor-pointer hover:text-warn-500"
+                                    (click)="onSearchCancel()"
+                                >
+                                    close
+                                </mat-icon>
                                 <mat-icon matSuffix>search</mat-icon>
                             </mat-form-field>
                         </div>
@@ -26,12 +32,14 @@
                             </button>
                         </div>
                     </div>
-                    <app-filter-button [buttons]="filters" 
-                        [active]="currFilter"
-                        (selected)="onFilter($event)" 
-                    >
+                    <ng-container *ngIf="allStatuses$ | async as allStatuses">
+                        <app-filter-button [buttons]="allStatuses" 
+                            [active]="currFilter"
+                            (selected)="onFilterStatus($event)" 
+                        >
+                        </app-filter-button>
+                    </ng-container>
 
-                    </app-filter-button>
 
                     <!-- Card Header !! For sticky-->
                     <div class="grid grid-cols-5">
@@ -62,7 +70,7 @@
             
         </mat-drawer-content>
 
-        <mat-drawer #drawerDetail class="lg:w-128 xl:w-160 md:w-full" 
+        <mat-drawer #drawerDetail class="lg:w-128 xl:w-160 sm:w-full" 
             [mode]="isViewMode ? 'side' : 'over' " position="end"
             disableClose="true"
         >

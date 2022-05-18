@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, map, Observable, of } from 'rxjs';
 import { PageResponse } from '../base/pageResponse.types';
 import { Response } from '../base/response.types';
 import { GetTeamParameter } from '../parameters/getTeamParameter.entity';
@@ -15,7 +15,7 @@ export class TeamService {
 
   readonly apiUrl = {
     getTeam: `${environment.apiUrl}/api/v1/teams`,
-    allStatus: `${environment.apiUrl}/api/v1/allstatus`,
+    allStatus: `${environment.apiUrl}/api/v1/teams/allstatus` ,
   };
 
   private _activeTeam: BehaviorSubject<Team> = new BehaviorSubject<Team>(undefined);
@@ -24,13 +24,12 @@ export class TeamService {
     private _httpClient: HttpClient
   ) { }
 
-  set activeTeam(team: Team) {
-    this._activeTeam.next(team);
-  }
-
-  // eslint-disable-next-line @typescript-eslint/member-ordering
   get activeTeam$(): Observable<Team> {
     return this._activeTeam.asObservable();
+  }
+
+  set activeTeam(team: Team) {
+    this._activeTeam.next(team);
   }
 
   getTeams(param: GetTeamParameter): Observable<PageResponse<Team[]>> {
@@ -39,14 +38,17 @@ export class TeamService {
     return this._httpClient.get<PageResponse<Team[]>>(this.apiUrl.getTeam, options);
   }
 
-  getTeam(id: string): Observable<Response<Team>> {
+  getTeam(id: string): Observable<Team> {
     const apiUrl = `${this.apiUrl.getTeam}/${id}`;
 
-    return this._httpClient.get<Response<Team>>(apiUrl);
+    return this._httpClient.get<Response<Team>>(apiUrl)
+      .pipe(map((response: Response<Team>) => response.data));
   }
 
-  getAllStatus(): Observable<Response<TeamStatusDto>> {
-    return this._httpClient.get<Response<TeamStatusDto>>(this.apiUrl.allStatus);
+  getAllStatus(): Observable<TeamStatusDto[]> {
+    console.log(this.apiUrl.allStatus);
+    return this._httpClient.get<Response<TeamStatusDto[]>>(this.apiUrl.allStatus)
+      .pipe(map((response: Response<TeamStatusDto[]>) => response.data));
   }
 
 }
