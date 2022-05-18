@@ -12,6 +12,7 @@ import { SharedModule } from 'app/shared/shared.module';
 import { TicketAnalyzeDialogComponent } from './dialogs/ticket-analyze-dialog/ticket-analyze-dialog.component';
 import { TicketChangeDialogComponent } from './dialogs/ticket-change-dialog/ticket-change-dialog.component';
 import { TicketManagementViewComponent } from './ticket-management-view/ticket-management-view.component';
+import { ConversationModule } from '../conversation/conversation.module';
 
 
 
@@ -32,7 +33,8 @@ import { TicketManagementViewComponent } from './ticket-management-view/ticket-m
   imports: [
     CommonModule,
     TicketManagementRoutingModule,
-    SharedModule
+    SharedModule,
+    ConversationModule
   ]
 })
 export class TicketManagementModule { }
