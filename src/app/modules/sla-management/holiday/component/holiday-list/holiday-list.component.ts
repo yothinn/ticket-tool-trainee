@@ -16,12 +16,6 @@ export class HolidayListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.holidays)
   }
 
-  onSelectEdit(holiday: Holiday): void {
-    this.edit.emit({
-      holidays: holiday
-    });
-  }
 }

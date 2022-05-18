@@ -22,10 +22,10 @@
 
         <div class="flex flex-row flex-wrap">
             <p class="w-1/3">Ticket No :</p>
-            <p class="w-2/3">123456789123</p>
+            <p class="w-2/3">{{ticket?.id}}</p>
 
             <p class="w-1/3">Problem Name :</p>
-            <p class="w-2/3">Ticket Problem</p>
+            <p class="w-2/3">{{ticket?.problem?.name}}</p>
         </div>
 
         <form [formGroup]="causeForm">

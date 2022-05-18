@@ -16,10 +16,6 @@ export class HolidayInfoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.holiday);
-  }
 
-  onSelectEdit(holiday: Holiday): void {
-    this.edit.emit(holiday);
   }
 }
