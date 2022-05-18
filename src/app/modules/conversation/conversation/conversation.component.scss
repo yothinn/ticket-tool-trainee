@@ -7,9 +7,7 @@
 
             .mat-tab-list {
                 .mat-tab-labels {
-                    // width: 80%;
-                    border: 0px solid var(--fuse-primary);
-                    border-radius: 10px !important;
+                    border: unset;
 
                     .mat-tab-label {
                         color: var(--fuse-primary) !important;
@@ -17,18 +15,14 @@
                         width: 130px;
 
                         &.mat-tab-label-active {
-                            background-color: white !important;
-                            // opacity: 0.2 !important;
-                            border-radius: 10px !important;
-                            color: black !important;
+                            color: var(--fuse-neutral-500) !important;
+                            @apply bg-default #{!important};
                         }
                     }
                 }
 
                 .mat-ink-bar {
-                    visibility: visible;
-                    left: 0px;
-                    width: 160px;
+                    display: block !important;
                 }
             }
         }
