@@ -1,5 +1,36 @@
-<div class="flex flex-col w-full gap-y-2 pb-4 mt-4" style="padding: 0 28px 0 16px;">
-    <div class="flex flex-col px-2 border-box">
+<div class="flex flex-col w-full pl-4 pr-3 py-2.5">
+    <div class="flex flex-col px-2 border-box my-2.5">
+        <div class="flex flex-row gap-x-4">
+            <mat-icon class="pt-2">account_circle</mat-icon>
+            <p class="flex flex-col">
+                <strong>Full Name</strong>
+                <span class="text-lg">18 Mar 2022 14:30</span>
+            </p>
+        </div>
+        <p class="flex flex-row pl-10 break-all">
+            testaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawer
+            werwerwererwererfssf
+        </p>
+
+        <mat-divider></mat-divider>
+
+        <div class="flex flex-col">
+            <p class="flex flex-row gap-x-4">
+                <span>Attachment (2)</span>
+                <span>ดาวน์โหลดทั้งหมด</span>
+            </p>
+            <p class="flex flex-row flex-wrap gap-x-4">
+                <span *ngFor="let item of [1,2,3,4,5]">Name File.pdf {{item}}</span>
+            </p>
+        </div>
+    </div>
+
+    <app-send-conversation>
+
+    </app-send-conversation>
+
+    <!-- <div class="flex flex-col px-2 border-box">
         <div class="flex flex-row gap-x-4">
             <p>icon</p>
             <p class="flex flex-col">
@@ -31,5 +62,5 @@
         <app-send-conversation>
 
         </app-send-conversation>
-    </div>
+    </div> -->
 </div>

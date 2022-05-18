@@ -1,5 +1,11 @@
-<div class="flex flex-col w-full gap-y-2 px-2 pb-4">
-    <div class="flex flex-row px-2">
-        11111111
+<div class="flex flex-col w-full pl-4 pr-3 py-2.5">
+    <div class="flex flex-col px-2 border-box my-2.5">
+        <div class="flex flex-row flex-wrap gap-x-4">
+            <div *ngFor="let item of [1,2,3,4,5,6,7,8,9]">
+                <img [src]="imgIcon" alt="" class="h-40 w-35">
+                <p>Name File.pdf</p>
+                <p>Download</p>
+            </div>
+        </div>
     </div>
 </div>
