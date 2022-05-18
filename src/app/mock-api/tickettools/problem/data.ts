@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { Problem } from 'app/core/problem/problem.types';
+import { TeamStatus } from 'app/core/team/team-status.enum';
 import * as moment from 'moment';
 
 export const problems: Problem[] = [
@@ -10,9 +11,9 @@ export const problems: Problem[] = [
         category: {
             id:'001',
             name:'System',
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
         status:'active',
@@ -23,16 +24,16 @@ export const problems: Problem[] = [
             contactName: '',
             contactEmail: '',
             contactMobile: '',
-            status: '',
+            status: TeamStatus.active,
         
             members: [{
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
             }],
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
 
         },
@@ -46,15 +47,15 @@ export const problems: Problem[] = [
             acknowledgeTime: '4 Hrs',
             processTime: '',
 
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -64,9 +65,9 @@ export const problems: Problem[] = [
         category: {
             id:'002',
             name:'Order',
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
         status:'active',
@@ -77,16 +78,16 @@ export const problems: Problem[] = [
             contactName: '',
             contactEmail: '',
             contactMobile: '',
-            status: '',
+            status: TeamStatus.active,
         
             members: [{
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
             }],
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
 
         },
@@ -100,15 +101,15 @@ export const problems: Problem[] = [
             acknowledgeTime: '5 Hrs',
             processTime: '',
 
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -118,9 +119,9 @@ export const problems: Problem[] = [
         category: {
             id:'001',
             name:'System',
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
         status:'active',
@@ -131,16 +132,16 @@ export const problems: Problem[] = [
             contactName: '',
             contactEmail: '',
             contactMobile: '',
-            status: '',
+            status: TeamStatus.active,
         
             members: [{
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
             }],
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
 
         },
@@ -154,15 +155,15 @@ export const problems: Problem[] = [
             acknowledgeTime: '',
             processTime: '',
 
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -172,9 +173,9 @@ export const problems: Problem[] = [
         category: {
             id:'001',
             name:'System',
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
         status:'active',
@@ -185,16 +186,16 @@ export const problems: Problem[] = [
             contactName: '',
             contactEmail: '',
             contactMobile: '',
-            status: '',
+            status: TeamStatus.active,
         
             members: [{
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
             }],
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
 
         },
@@ -208,15 +209,15 @@ export const problems: Problem[] = [
             acknowledgeTime: '',
             processTime: '',
 
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -226,9 +227,9 @@ export const problems: Problem[] = [
         category: {
             id:'001',
             name:'System',
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
         status:'inactive',
@@ -239,16 +240,16 @@ export const problems: Problem[] = [
             contactName: '',
             contactEmail: '',
             contactMobile: '',
-            status: '',
+            status: TeamStatus.active,
         
             members: [{
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
             }],
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
 
         },
@@ -262,15 +263,15 @@ export const problems: Problem[] = [
             acknowledgeTime: '',
             processTime: '',
 
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -280,9 +281,9 @@ export const problems: Problem[] = [
         category: {
             id:'001',
             name:'System',
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
         status:'inactive',
@@ -293,16 +294,16 @@ export const problems: Problem[] = [
             contactName: '',
             contactEmail: '',
             contactMobile: '',
-            status: '',
+            status: TeamStatus.active,
         
             members: [{
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
             }],
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
 
         },
@@ -316,15 +317,15 @@ export const problems: Problem[] = [
             acknowledgeTime: '',
             processTime: '',
 
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -334,9 +335,9 @@ export const problems: Problem[] = [
         category: {
             id:'001',
             name:'System',
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
         status:'inactive',
@@ -347,16 +348,16 @@ export const problems: Problem[] = [
             contactName: '',
             contactEmail: '',
             contactMobile: '',
-            status: '',
+            status: TeamStatus.active,
         
             members: [{
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
             }],
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
 
         },
@@ -370,15 +371,15 @@ export const problems: Problem[] = [
             acknowledgeTime: '',
             processTime: '',
 
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -388,9 +389,9 @@ export const problems: Problem[] = [
         category: {
             id:'001',
             name:'System',
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
         status:'active',
@@ -401,16 +402,16 @@ export const problems: Problem[] = [
             contactName: '',
             contactEmail: '',
             contactMobile: '',
-            status: '',
+            status: TeamStatus.active,
         
             members: [{
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
             }],
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
 
         },
@@ -424,15 +425,15 @@ export const problems: Problem[] = [
             acknowledgeTime: '',
             processTime: '',
 
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -442,9 +443,9 @@ export const problems: Problem[] = [
         category: {
             id:'001',
             name:'System',
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
         status:'active',
@@ -455,16 +456,16 @@ export const problems: Problem[] = [
             contactName: '',
             contactEmail: '',
             contactMobile: '',
-            status: '',
+            status: TeamStatus.active,
         
             members: [{
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
             }],
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
 
         },
@@ -478,15 +479,15 @@ export const problems: Problem[] = [
             acknowledgeTime: '',
             processTime: '',
 
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -496,9 +497,9 @@ export const problems: Problem[] = [
         category: {
             id:'001',
             name:'System',
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
         status:'active',
@@ -509,16 +510,16 @@ export const problems: Problem[] = [
             contactName: '',
             contactEmail: '',
             contactMobile: '',
-            status: '',
+            status: TeamStatus.active,
         
             members: [{
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
             }],
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
 
         },
@@ -532,15 +533,15 @@ export const problems: Problem[] = [
             acknowledgeTime: '',
             processTime: '',
 
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -550,9 +551,9 @@ export const problems: Problem[] = [
         category: {
             id:'001',
             name:'System',
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
         status:'active',
@@ -563,16 +564,16 @@ export const problems: Problem[] = [
             contactName: '',
             contactEmail: '',
             contactMobile: '',
-            status: '',
+            status: TeamStatus.active,
         
             members: [{
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
             }],
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
 
         },
@@ -586,15 +587,15 @@ export const problems: Problem[] = [
             acknowledgeTime: '',
             processTime: '',
 
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     

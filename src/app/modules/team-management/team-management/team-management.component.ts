@@ -5,6 +5,7 @@ import { GetTeamParameter } from 'app/core/parameters/getTeamParameter.entity';
 import { TeamService } from 'app/core/team/team.service';
 import { Team } from 'app/core/team/team.types';
 import { FilterButton } from 'app/shared/components/filter-button/filter-button-interface';
+import { DEF_PAGESIZE, Page } from 'app/shared/components/paginator/page.type';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { TeamCardListComponent } from '../components/team-card-list/team-card-list.component';
 
@@ -22,6 +23,8 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
 
   isViewMode: boolean = false;
   teamInfoMode: 'create' | 'edit' = 'create';
+
+  currPage: Page = { pageNo: 1, pageSize: DEF_PAGESIZE};
 
   filters: FilterButton[] = [{ status: 'all', total: 20 }, { status: 'active', total: 10 }, { status: 'inactive', total: 5 }];
   currFilter?: FilterButton = this.filters[0];
@@ -44,9 +47,12 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
   }
 
   getTeams(): void {
-    const params = new GetTeamParameter();
+    const param = new GetTeamParameter();
 
-    this.teamResponse$ = this._teamService.getTeams(params);
+    param.pageNo = this.currPage.pageNo;
+    param.pageSize = this.currPage.pageSize;
+
+    this.teamResponse$ = this._teamService.getTeams(param);
   }
 
   onViewOpened(team: Team): void {
@@ -81,6 +87,12 @@ export class TeamManagementComponent implements OnInit, OnDestroy {
     this.currFilter = filter;
 
     // call get team
+  }
+
+  onPageChange(page: Page): void {
+    this.currPage = page;
+
+    this.getTeams();
   }
 
   private _openDetail(): void {

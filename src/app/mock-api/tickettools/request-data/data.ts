@@ -9,9 +9,9 @@ export const requestDatas: RequestData[] = [
         displayName: 'Ticket No',
         controlType: 'textbox',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -20,9 +20,9 @@ export const requestDatas: RequestData[] = [
         displayName: 'Ticket No2',
         controlType: 'textbox2',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -31,9 +31,9 @@ export const requestDatas: RequestData[] = [
         displayName: 'Ticket No3',
         controlType: 'textbox3',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -42,9 +42,9 @@ export const requestDatas: RequestData[] = [
         displayName: 'Ticket No4',
         controlType: 'textbox4',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -53,9 +53,9 @@ export const requestDatas: RequestData[] = [
         displayName: 'Ticket No5',
         controlType: 'textbox5',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -64,9 +64,9 @@ export const requestDatas: RequestData[] = [
         displayName: 'Ticket No6',
         controlType: 'textbox6',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -75,9 +75,9 @@ export const requestDatas: RequestData[] = [
         displayName: 'Ticket No7',
         controlType: 'textbox7',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -86,9 +86,9 @@ export const requestDatas: RequestData[] = [
         displayName: 'Ticket No8',
         controlType: 'textbox8',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -97,9 +97,9 @@ export const requestDatas: RequestData[] = [
         displayName: 'Ticket No9',
         controlType: 'textbox9',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -108,9 +108,9 @@ export const requestDatas: RequestData[] = [
         displayName: 'Ticket No10',
         controlType: 'textbox10',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     }
     

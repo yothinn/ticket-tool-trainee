@@ -1,7 +1,7 @@
 export interface BaseInterface {
-    created: Date;
+    createdAt: Date;
     createBy: string;
 
-    updated?: Date;
+    updatedAt?: Date;
     updateBy?: string;
 }

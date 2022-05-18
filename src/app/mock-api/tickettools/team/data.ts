@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { TeamStatus } from 'app/core/team/team-status.enum';
 import { Team } from 'app/core/team/team.types';
 import * as moment from 'moment';
 
@@ -10,7 +11,7 @@ export const teams: Team[] = [
         contactName: 'teamFirstName1 teamLastName',
         contactEmail: 'team@ais.co.th',
         contactMobile: '012356789',
-        status: 'active',
+        status: TeamStatus.active,
         members: [
             {
                 firstName: 'test',
@@ -29,9 +30,9 @@ export const teams: Team[] = [
                 category: {
                     id:'ddd',
                     name:'dd',
-                    created: new Date('2022-04-25'),
+                    createdAt: new Date('2022-04-25'),
                     createBy: 'Thanachai',
-                    updated: new Date('2022-04-25'),
+                    updatedAt: new Date('2022-04-25'),
                     updateBy: 'Thanachai'
                 },
                 teamOwner:{
@@ -41,16 +42,16 @@ export const teams: Team[] = [
                     contactName: '',
                     contactEmail: '',
                     contactMobile: '',
-                    status: '',
+                    status: TeamStatus.active,
                 
                     members: [{
                         firstName: '',
                         lastName: '',
                         email: '',
                     }],
-                    created: new Date('2022-04-25'),
+                    createdAt: new Date('2022-04-25'),
                     createBy: 'Thanachai',
-                    updated: new Date('2022-04-25'),
+                    updatedAt: new Date('2022-04-25'),
                     updateBy: 'Thanachai'
         
                 },
@@ -62,24 +63,24 @@ export const teams: Team[] = [
                     acknowledgeTime: '',
                     processTime: '',
         
-                    created: new Date('2022-04-25'),
+                    createdAt: new Date('2022-04-25'),
                     createBy: 'Thanachai',
-                    updated: new Date('2022-04-25'),
+                    updatedAt: new Date('2022-04-25'),
                     updateBy: 'Thanachai'
                 },
         
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             
         ],
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'user1 user',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'user1 user'
     },
     {
@@ -89,13 +90,13 @@ export const teams: Team[] = [
         contactName: 'teamFirstName2 teamLastName',
         contactEmail: 'team@ais.co.th',
         contactMobile: '012356789',
-        status: 'inactive',
+        status: TeamStatus.inActive,
         members: [],
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'user2 user',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'user2 user'
     },
     {
@@ -105,13 +106,13 @@ export const teams: Team[] = [
         contactName: 'teamFirstName3 teamLastName',
         contactEmail: 'team3@ais.co.th',
         contactMobile: '012356789',
-        status: 'active',
+        status: TeamStatus.active,
         members: [],
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'user3 user',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'user3 user'
     },
     {
@@ -121,13 +122,13 @@ export const teams: Team[] = [
         contactName: 'teamFirstName4 teamLastName',
         contactEmail: 'team4@ais.co.th',
         contactMobile: '012356789',
-        status: 'active',
+        status: TeamStatus.active,
         members: [],
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'user4 user',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'user4 user'
     },
     {
@@ -137,13 +138,13 @@ export const teams: Team[] = [
         contactName: 'teamFirstName5 teamLastName',
         contactEmail: 'team5@ais.co.th',
         contactMobile: '012356789',
-        status: 'active',
+        status: TeamStatus.active,
         members: [],
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'user5 user',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'user5 user'
     },
     {
@@ -153,13 +154,13 @@ export const teams: Team[] = [
         contactName: 'teamFirstName6 teamLastName',
         contactEmail: 'team@ais.co.th',
         contactMobile: '012356789',
-        status: 'active',
+        status: TeamStatus.active,
         members: [],
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'user6 user',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'user6 user'
     },
     {
@@ -169,13 +170,13 @@ export const teams: Team[] = [
         contactName: 'teamFirstName7 teamLastName',
         contactEmail: 'team7@ais.co.th',
         contactMobile: '012356789',
-        status: 'active',
+        status: TeamStatus.active,
         members: [],
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'user7 user',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'user7 user'
     },
     {
@@ -185,13 +186,13 @@ export const teams: Team[] = [
         contactName: 'teamFirstName8 teamLastName',
         contactEmail: 'team8@ais.co.th',
         contactMobile: '012356789',
-        status: 'active',
+        status: TeamStatus.active,
         members: [],
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'user8 user',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'user8 user'
     },
     {
@@ -201,13 +202,13 @@ export const teams: Team[] = [
         contactName: 'teamFirstName9 teamLastName',
         contactEmail: 'team9@ais.co.th',
         contactMobile: '012356789',
-        status: 'active',
+        status: TeamStatus.active,
         members: [],
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'user9 user',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'user9 user'
     },
     {
@@ -217,13 +218,13 @@ export const teams: Team[] = [
         contactName: 'teamFirstName10 teamLastName',
         contactEmail: 'team10@ais.co.th',
         contactMobile: '012356789',
-        status: 'active',
+        status: TeamStatus.active,
         members: [],
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'user10 user',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'user10 user'
     },
 ];

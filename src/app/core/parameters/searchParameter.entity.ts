@@ -1,17 +1,18 @@
 import { HttpParams } from '@angular/common/http';
 
 export class SearchParameter {
-    public pageNo: number;
-    public pageSize: number;
+    public pageNo?: number;
+    public pageSize?: number;
+    public search?: string;
 
-    // use field name and concat ","  ex. "name,created,updated"
-    public sort?: string;
+    // use field name
+    public orderBy?: string;
     // value: "asc" or "desc" , default is desc
-    public sortType?: string;
+    public orderType?: string;
 
     constructor() {
         this.pageNo = 1;
-        this.pageSize = 20;
+        this.pageSize = 10;
     }
 
     public toHttpParams(): HttpParams {

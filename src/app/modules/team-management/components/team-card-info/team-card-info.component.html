@@ -23,7 +23,7 @@
             {{team?.createBy}}
         </span>
         <span>
-            {{ team?.created | date}}
+            {{ team?.createdAt | date: 'dd/MM/yyyy hh:mm a'}}
         </span>
     </p>
     <p class="flex flex-col">
@@ -31,7 +31,7 @@
             {{team?.updateBy}}
         </span>
         <span>
-            {{ team?.updated | date}}
+            {{ team?.updatedAt | date: 'dd/MM/yyyy hh:mm a'}}
         </span>
     </p>
 </div>

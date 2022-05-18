@@ -18,13 +18,13 @@
         <p class="col-span-5 lg:col-span-3 break-all">{{problem?.category?.createBy}}</p>
 
         <p></p>
-        <p class="col-span-5 lg:col-span-3 break-all">{{problem?.created | date: 'dd/MM/yyyy hh:mm a'}}</p>
+        <p class="col-span-5 lg:col-span-3 break-all">{{problem?.createdAt | date: 'dd/MM/yyyy hh:mm a'}}</p>
 
         <p class="text-primary" >Updated</p>
         <p class="col-span-5 lg:col-span-3 break-all">{{problem?.updateBy}}</p>
 
         <p></p>
-        <p class="col-span-5 lg:col-span-3 break-all">{{problem?.updated | date: 'dd/MM/yyyy hh:mm a'}}</p>
+        <p class="col-span-5 lg:col-span-3 break-all">{{problem?.updatedAt| date: 'dd/MM/yyyy hh:mm a'}}</p>
 
 </div>
 
