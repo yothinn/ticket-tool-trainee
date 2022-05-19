@@ -7,8 +7,8 @@
                 </p>
                 <span class="flex-initial"
                     [ngClass]="{ 
-                        'text-warn-500' : activeTeam?.status !== teamStatus.active,
-                        'text-primary' : activeTeam?.status === teamStatus.active
+                        'text-inactive' : activeTeam?.status !== teamStatus.active,
+                        'text-active' : activeTeam?.status === teamStatus.active
                     }"
                 >
                     Status : {{ activeTeam?.status | titlecase }}

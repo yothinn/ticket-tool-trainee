@@ -11,10 +11,10 @@
                     color="primary"
                     [(ngModel)]="isActiveStatus"
                 >
-                    <span *ngIf="isActiveStatus" class="text-primary">
+                    <span *ngIf="isActiveStatus" class="text-active">
                         Status : Active
                     </span>
-                    <span *ngIf="!isActiveStatus" class="text-warn-500">
+                    <span *ngIf="!isActiveStatus" class="text-inactive">
                         Status : InActive
                     </span>
                 </mat-slide-toggle>
