@@ -14,9 +14,15 @@ export const teams: Team[] = [
         status: TeamStatus.active,
         members: [
             {
+                id: '',
                 firstName: 'test',
                 lastName: 'test1',
-                email: 'test@ais.co.th'
+                email: 'test@ais.co.th',
+
+                createdAt: new Date('2022-04-25'),
+                createBy: 'Thanachai',
+                updatedAt: new Date('2022-04-25'),
+                updateBy: 'Thanachai'
             }
         ],
 
@@ -45,9 +51,15 @@ export const teams: Team[] = [
                     status: TeamStatus.active,
                 
                     members: [{
+                        id: '',
                         firstName: '',
                         lastName: '',
                         email: '',
+
+                        createdAt: new Date('2022-04-25'),
+                        createBy: 'Thanachai',
+                        updatedAt: new Date('2022-04-25'),
+                        updateBy: 'Thanachai'
                     }],
                     createdAt: new Date('2022-04-25'),
                     createBy: 'Thanachai',

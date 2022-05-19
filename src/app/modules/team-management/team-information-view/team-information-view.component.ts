@@ -1,8 +1,8 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { TeamService } from 'app/core/team/team.service';
 import { Team } from 'app/core/team/team.types';
 import { TeamStatus } from 'app/core/team/team-status.enum';
-import { Observable, Subject, takeUntil } from 'rxjs';
+import { Observable, Subject, takeUntil, switchMap, filter } from 'rxjs';
 
 @Component({
   selector: 'app-team-information-view',
@@ -13,8 +13,9 @@ export class TeamInformationViewComponent implements OnInit, OnDestroy {
 
   @Output() closed = new EventEmitter<any>();
   @Output() edit = new EventEmitter<any>();
+  @Output() del = new EventEmitter<any>();
 
-  activeTeam$: Observable<Team> = this._teamService.activeTeam$;
+  activeTeam$: Observable<Team>;
   teamStatus = TeamStatus;
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
@@ -24,7 +25,13 @@ export class TeamInformationViewComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-
+    this.activeTeam$ = this._teamService.activeTeam$
+      .pipe(
+        takeUntil(this._unsubscribeAll),
+        filter((team: Team) => team !== undefined),
+        // Get All Team info - team member and problem support
+        switchMap((team: Team) => this._teamService.getTeam(team.id)),
+      );
   }
 
   ngOnDestroy(): void {
@@ -32,12 +39,10 @@ export class TeamInformationViewComponent implements OnInit, OnDestroy {
     this._unsubscribeAll.complete();
   }
 
-  onClose(): void {
-    this.closed.emit(undefined);
-  }
-
-  onEdit(): void {
-    this.edit.emit(undefined);
+  onTeamDelete(id: string): void {
+    this._teamService.delete(id)
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe(_ => this.del.emit(undefined));
   }
 
 }

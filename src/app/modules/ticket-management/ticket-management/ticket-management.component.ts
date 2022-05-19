@@ -4,7 +4,7 @@ import { PageResponse } from 'app/core/base/pageResponse.types';
 import { GetTicketParameter } from 'app/core/parameters/getTicketParameter.entity';
 import { TicketService } from 'app/core/ticket/ticket.service';
 import { Ticket } from 'app/core/ticket/ticket.types';
-import { FilterButton } from 'app/shared/components/filter-button/filter-button-interface';
+import { FilterButton } from 'app/shared/components/filter-button/filter-button.type';
 import { Observable } from 'rxjs';
 import { TicketCardListComponent } from '../components/ticket-card-list/ticket-card-list.component';
 

@@ -27,9 +27,15 @@ export const problems: Problem[] = [
             status: TeamStatus.active,
         
             members: [{
+                id: '',
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
+
+                createdAt: new Date('2022-04-25'),
+                createBy: 'Thanachai',
+                updatedAt: new Date('2022-04-25'),
+                updateBy: 'Thanachai'
             }],
             createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
@@ -81,9 +87,15 @@ export const problems: Problem[] = [
             status: TeamStatus.active,
         
             members: [{
+                id: '',
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
+
+                createdAt: new Date('2022-04-25'),
+                createBy: 'Thanachai',
+                updatedAt: new Date('2022-04-25'),
+                updateBy: 'Thanachai'
             }],
             createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
@@ -135,9 +147,15 @@ export const problems: Problem[] = [
             status: TeamStatus.active,
         
             members: [{
+                id: '',
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
+
+                createdAt: new Date('2022-04-25'),
+                createBy: 'Thanachai',
+                updatedAt: new Date('2022-04-25'),
+                updateBy: 'Thanachai'
             }],
             createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
@@ -189,9 +207,15 @@ export const problems: Problem[] = [
             status: TeamStatus.active,
         
             members: [{
+                id: '',
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
+
+                createdAt: new Date('2022-04-25'),
+                createBy: 'Thanachai',
+                updatedAt: new Date('2022-04-25'),
+                updateBy: 'Thanachai'
             }],
             createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
@@ -243,9 +267,15 @@ export const problems: Problem[] = [
             status: TeamStatus.active,
         
             members: [{
+                id: '',
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
+
+                createdAt: new Date('2022-04-25'),
+                createBy: 'Thanachai',
+                updatedAt: new Date('2022-04-25'),
+                updateBy: 'Thanachai'
             }],
             createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
@@ -297,9 +327,15 @@ export const problems: Problem[] = [
             status: TeamStatus.active,
         
             members: [{
+                id: '',
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
+
+                createdAt: new Date('2022-04-25'),
+                createBy: 'Thanachai',
+                updatedAt: new Date('2022-04-25'),
+                updateBy: 'Thanachai'
             }],
             createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
@@ -351,9 +387,15 @@ export const problems: Problem[] = [
             status: TeamStatus.active,
         
             members: [{
+                id: '',
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
+
+                createdAt: new Date('2022-04-25'),
+                createBy: 'Thanachai',
+                updatedAt: new Date('2022-04-25'),
+                updateBy: 'Thanachai'
             }],
             createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
@@ -405,9 +447,15 @@ export const problems: Problem[] = [
             status: TeamStatus.active,
         
             members: [{
+                id: '',
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
+
+                createdAt: new Date('2022-04-25'),
+                createBy: 'Thanachai',
+                updatedAt: new Date('2022-04-25'),
+                updateBy: 'Thanachai'
             }],
             createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
@@ -459,9 +507,15 @@ export const problems: Problem[] = [
             status: TeamStatus.active,
         
             members: [{
+                id: '',
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
+
+                createdAt: new Date('2022-04-25'),
+                createBy: 'Thanachai',
+                updatedAt: new Date('2022-04-25'),
+                updateBy: 'Thanachai'
             }],
             createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
@@ -513,9 +567,15 @@ export const problems: Problem[] = [
             status: TeamStatus.active,
         
             members: [{
+                id: '',
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
+
+                createdAt: new Date('2022-04-25'),
+                createBy: 'Thanachai',
+                updatedAt: new Date('2022-04-25'),
+                updateBy: 'Thanachai'
             }],
             createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
@@ -567,9 +627,15 @@ export const problems: Problem[] = [
             status: TeamStatus.active,
         
             members: [{
+                id: '',
                 firstName: 'Thanachai',
                 lastName: 'Thanachai',
                 email: 'Thanachai',
+
+                createdAt: new Date('2022-04-25'),
+                createBy: 'Thanachai',
+                updatedAt: new Date('2022-04-25'),
+                updateBy: 'Thanachai'
             }],
             createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',

@@ -77,6 +77,7 @@
             <app-team-information-view *ngIf="isViewMode" 
                 (closed)="onViewClosed($event)"
                 (edit)="onTeamEdit('edit')"
+                (del)="onTeamDelete()"
             >
             </app-team-information-view>
             <app-team-information-edit *ngIf="!isViewMode"

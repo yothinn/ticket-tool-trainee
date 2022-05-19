@@ -2,11 +2,11 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } fr
 import { MatSidenav } from '@angular/material/sidenav';
 import { PageResponse } from 'app/core/base/pageResponse.types';
 import { GetTeamParameter } from 'app/core/parameters/getTeamParameter.entity';
-import { TeamStatusDto } from 'app/core/team/team-status.dto';
+import { TeamStatusDto } from 'app/core/team/dto/team-status.dto';
 import { TeamStatus } from 'app/core/team/team-status.enum';
 import { TeamService } from 'app/core/team/team.service';
 import { Team } from 'app/core/team/team.types';
-import { FilterButton } from 'app/shared/components/filter-button/filter-button-interface';
+import { FilterButton } from 'app/shared/components/filter-button/filter-button.type';
 import { DEF_PAGESIZE, Page } from 'app/shared/components/paginator/page.type';
 import { debounceTime, distinctUntilChanged, filter, fromEvent, map, Observable, Subject, switchMap, takeUntil, tap } from 'rxjs';
 import { TeamCardListComponent } from '../components/team-card-list/team-card-list.component';
@@ -25,6 +25,7 @@ export class TeamManagementComponent implements OnInit, OnDestroy, AfterViewInit
   teamResponse$?: Observable<PageResponse<Team[]>>;
   allStatuses$?: Observable<TeamStatusDto[]>;
   getTeams$: Subject<any> = new Subject<any>();
+  getAllStatus$: Subject<any> = new Subject<any>();
 
   isViewMode: boolean = false;
   teamInfoMode: 'create' | 'edit' = 'create';
@@ -40,7 +41,11 @@ export class TeamManagementComponent implements OnInit, OnDestroy, AfterViewInit
   ) {
 
     // Init get all status observer
-    this.allStatuses$ = this.getAllStatuses();
+    this.allStatuses$ = this.getAllStatus$.pipe(
+      takeUntil(this._unsubscribeAll),
+      debounceTime(300),
+      switchMap(_ => this.getAllStatuses())
+    );
 
     // Init get teams observer
     this.teamResponse$ = this.getTeams$.pipe(
@@ -60,6 +65,7 @@ export class TeamManagementComponent implements OnInit, OnDestroy, AfterViewInit
 
   ngAfterViewInit(): void {
     this.getTeams$.next('');
+    this.getAllStatus$.next('');
     this.registerSearch();
   }
 
@@ -86,8 +92,10 @@ export class TeamManagementComponent implements OnInit, OnDestroy, AfterViewInit
       .pipe(
         tap((statuses: TeamStatusDto[]) => {
           // Init current filter
-          if (statuses.length > 0) {
+          if (!this.currFilter && statuses.length > 0) {
             this.currFilter = statuses[0] as FilterButton;
+          } else {
+            this.currFilter = statuses.find(s => s.status === this.currFilter?.status);
           }
         })
       );
@@ -118,8 +126,6 @@ export class TeamManagementComponent implements OnInit, OnDestroy, AfterViewInit
   }
 
   onViewOpened(team: Team): void {
-    console.log(team);
-
     this._teamService.activeTeam = team;
 
     this.isViewMode = true;
@@ -140,8 +146,19 @@ export class TeamManagementComponent implements OnInit, OnDestroy, AfterViewInit
     this._openDetail();
   }
 
-  onTeamEditClosed(event: boolean): void {
+  onTeamEditClosed(isSave: boolean): void {
     // True is save, false is cancel
+    if (isSave) {
+      this.getTeams$.next('');
+      this.getAllStatus$.next('');
+    }
+
+    this.drawerDetail.toggle();
+  }
+
+  onTeamDelete(): void {
+    this.getTeams$.next('');
+    this.getAllStatus$.next('');
     this.drawerDetail.toggle();
   }
 

@@ -15,11 +15,11 @@
                 </span>
                 
                 <button mat-flat-button class="button-normal flex-initial text-center" color="primary"
-                    (click)="onEdit()"
+                    (click)="edit.emit(undefined)"
                 >
                     EDIT 
                 </button>
-                <button mat-icon-button class="flex-initial" (click)="onClose()">
+                <button mat-icon-button class="flex-initial" (click)="closed.emit(undefined)">
                     <mat-icon>close</mat-icon>
                 </button>
             </div>
@@ -40,7 +40,10 @@
             </app-problem-support>
         
             <div class="flex flex-row justify-end mr-15">
-                <button mat-stroked-button color="primary" color="warn" class="button-normal">
+                <button mat-stroked-button color="primary" color="warn" 
+                    class="button-normal"
+                    (click)="onTeamDelete(activeTeam.id)"
+                >
                     <div class="flex gap-x-2">
                         <mat-icon class="button-icon" svgIcon="delete">
                         </mat-icon>

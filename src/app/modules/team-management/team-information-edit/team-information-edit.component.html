@@ -25,12 +25,12 @@
 
 
         <div class="flex flex-col px-1 gap-y-2">
-            <app-team-info-edit [team]="data.activeTeam">
+            <app-team-info-edit [team]="data.activeTeam" #teamInfoComp>
 
             </app-team-info-edit>
     
         
-            <app-team-contact-edit [team]="data.activeTeam">
+            <app-team-contact-edit [team]="data.activeTeam" #teamContactComp>
     
             </app-team-contact-edit>
         
@@ -46,7 +46,7 @@
                 </button>
                 <button mat-flat-button color="primary"
                     class="button-normal"
-                    (click)="onEditSave()"
+                    (click)="onEditSave(data.activeTeam.id)"
                 >
                     SAVE
                 </button>
@@ -63,7 +63,7 @@
             </app-team-member>
     
             
-            <app-problem-support [mode]="mode" 
+            <app-problem-support [mode]="mode"
                 [team]="data.activeTeam"
                 (clickAdd)="openProblemDialog(data.activeTeam)"
                 (clickDel)="onDelProblem($event)"
