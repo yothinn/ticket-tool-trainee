@@ -1,14 +1,14 @@
-<div class="mt-8 ng-star-inserted">
+<div class="mt-8 ">
   <ol>
-    <!-- <li class="relative flex py-7 ng-star-inserted">
+    <!-- <li class="relative flex py-7 ">
         <div class="absolute top-7 left-5 w-0.5 h-full -ml-px 
-          bg-gray-300 dark:bg-gray-600 ng-star-inserted"
+          bg-gray-300 dark:bg-gray-600 "
         >
         </div>
   
         <div class="relative flex flex-auto">
           <div class="flex shrink-0 items-center justify-center w-10 h-10 
-            mr-4 rounded-full bg-gray-400 ng-star-inserted"
+            mr-4 rounded-full bg-gray-400 "
           >
             <mat-icon role="img" 
               class="mat-icon notranslate icon-size-5 text-white mat-icon-no-color" 
@@ -32,7 +32,7 @@
         </div>
   
         <div class="flex flex-col flex-auto items-start">
-          <div class="ng-star-inserted">Your submission has been accepted</div>
+          <p>Your submission has been accepted</p>
   
             <div class="flex flex-col sm:flex-row sm:items-center 
               mt-2 sm:mt-1 sm:space-x-2 text-md leading-5"
@@ -42,7 +42,7 @@
               </div>
             </div>
   
-            <div class="mt-4 py-4 px-5 rounded-lg bg-gray-200 dark:bg-gray-800 ng-star-inserted">
+            <div class="mt-4 py-4 px-5 rounded-lg bg-gray-200 dark:bg-gray-800 ">
               <div class="font-bold">Congratulations for your acceptance!</div><br>
               <div>Hi Brian,<br>Your submission has been accepted and you are ready 
                 to move into the next phase. Once you
@@ -53,32 +53,32 @@
         </div>
       </li> -->
 
-    <li *ngFor="let item of messageDatas; let i = indext;" 
-      class="relative flex py-7 ng-star-inserted"
+    <li *ngFor="let item of messageDatas; let i = index;" 
+      class="relative flex py-7"
     >
-      <div class="absolute top-7 left-5 w-0.5 h-full -ml-px 
-          bg-gray-300 dark:bg-gray-600 ng-star-inserted">
+      <div *ngIf="i !== messageDatas.length -1" class="absolute top-7 left-5 w-0.5 h-full -ml-px 
+          bg-gray-300 dark:bg-gray-600 border border-red-700">
       </div>
 
       <div class="relative flex flex-auto">
         <img class="shrink-0 w-10 h-10 mr-4 rounded-full 
-            overflow-hidden object-cover object-center ng-star-inserted" 
+            overflow-hidden object-cover object-center " 
             [src]="item.imgUser" alt="Activity image"
         >
 
         <div class="flex flex-col flex-auto items-start">
-          <div class="ng-star-inserted">
+          <p>
             {{item.firstName + ' ' + item.lastName}}
-          </div>
+          </p>
 
           <div class="flex flex-col sm:flex-row sm:items-center 
                 mt-2 sm:mt-1 sm:space-x-2 text-md leading-5">
             <div class="text-secondary text-black">
-              {{ item.dateTime | date:'MMM d, y, h:mm:ss a'}}
+              {{ item.dateTime | date:'dd/MM/yyyy HH:mm'}}
             </div>
           </div>
 
-          <div class="mt-4 py-4 px-5 w-full rounded-lg bg-gray-200 dark:bg-gray-800 ng-star-inserted">
+          <div class="mt-4 py-4 px-5 w-full rounded-lg bg-gray-200 dark:bg-gray-800">
             <p class="font-bold">{{item.message?.messageHeader}}</p>
             <br>
             <p class="text-xl break-words">
@@ -89,20 +89,20 @@
       </div>
     </li>
 
-    <li class="relative flex py-7 ng-star-inserted">
+    <!-- <li class="relative flex py-7 ">
         <div class="relative flex flex-auto">
           <img class="shrink-0 w-10 h-10 mr-4 rounded-full 
-            overflow-hidden object-cover object-center ng-star-inserted"
+            overflow-hidden object-cover object-center "
             src="assets/images/avatars/female-04.jpg" alt="Activity image"
           >
   
           <div class="flex flex-col flex-auto items-start">
-            <div class="ng-star-inserted">
+            <p>
               <strong>
                 Sophie Stone
               </strong> 
                 sent you a direct message
-            </div>
+            </p>
   
             <div class="flex flex-col sm:flex-row sm:items-center 
               mt-2 sm:mt-1 sm:space-x-2 text-md leading-5"
@@ -113,6 +113,6 @@
             </div>
           </div>
         </div>
-      </li>
+      </li> -->
   </ol>
 </div>
