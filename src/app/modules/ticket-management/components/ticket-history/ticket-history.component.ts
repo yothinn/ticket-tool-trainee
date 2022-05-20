@@ -7,11 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TicketHistoryComponent implements OnInit {
 
-  completed = true;
-
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
