@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Page } from './page.type';
 
 @Component({
   selector: 'app-paginator',
@@ -9,11 +10,11 @@ export class PaginatorComponent implements OnInit, OnChanges  {
 
   @Input() pageNo: number = 1;
   @Input() pageSize: number = 10;
-  @Input() totalRecord?: number;
+  @Input() totalRecords?: number;
   @Input() pageSizeOptions: number[] = [10, 20, 50];
   @Input() maxPageView: number = 5;
 
-  @Output() pageChanged: EventEmitter<any> = new EventEmitter();
+  @Output() pageChange: EventEmitter<any> = new EventEmitter();
 
   totalPages?: number;
   pageViews: number[] = [];
@@ -29,10 +30,10 @@ export class PaginatorComponent implements OnInit, OnChanges  {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-      if (this.totalRecord) {
-        this.totalPages = this._calTotalPages(this.pageSize, this.totalRecord);
+      if (this.totalRecords) {
+        this.totalPages = this._calTotalPages(this.pageSize, this.totalRecords);
 
-        console.log(this.totalRecord);
+        console.log(this.totalRecords);
       }
   }
 
@@ -69,7 +70,7 @@ export class PaginatorComponent implements OnInit, OnChanges  {
 
   clickPageNo(pageNo: number): void {
     this.pageNo = pageNo;
-    this.onPageChanged();
+    this.onPageChange();
   }
 
   //กดเลื่อนไปด้ายขวา
@@ -90,7 +91,7 @@ export class PaginatorComponent implements OnInit, OnChanges  {
       console.log(this.addNextPageGroup);
       this.pageNo = this.addNextPageGroup + 1;
 
-      this.onPageChanged();
+      this.onPageChange();
     }
 
 
@@ -108,7 +109,7 @@ export class PaginatorComponent implements OnInit, OnChanges  {
 
       this.pageNo = this.addNextPageGroup + 1;
 
-      this.onPageChanged();
+      this.onPageChange();
     }
 
   }
@@ -135,21 +136,21 @@ export class PaginatorComponent implements OnInit, OnChanges  {
     this.addNextPageGroup = Math.ceil((this.pageNo / this.maxPageView) - 1) * this.maxPageView;
 
     // Calculate total page
-    if (this.totalRecord) {
-      this.totalPages = this._calTotalPages(this.pageSize, this.totalRecord);
+    if (this.totalRecords) {
+      this.totalPages = this._calTotalPages(this.pageSize, this.totalRecords);
     }
 
-    this.onPageChanged();
+    this.onPageChange();
   }
 
-  onPageChanged(): void {
-    const page = {
+  onPageChange(): void {
+    const page: Page = {
       pageNo: this.pageNo,
       pageSize: this.pageSize
     };
 
-    console.log(page);
-    this.pageChanged.emit(page);
+    // console.log(page);
+    this.pageChange.emit(page);
   }
 
   private _calTotalPages(pageSize: number, totalRecords: number): number {

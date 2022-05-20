@@ -11,9 +11,9 @@ export const holidays: Holiday[] = [
         startTime: '12:00',
         endTime: '03:00',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -24,9 +24,9 @@ export const holidays: Holiday[] = [
         startTime: '00:00',
         endTime: '00:00',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -37,9 +37,9 @@ export const holidays: Holiday[] = [
         startTime: '00:00',
         endTime: '00:00',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -50,9 +50,9 @@ export const holidays: Holiday[] = [
         startTime: '00:00',
         endTime: '00:00',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -63,9 +63,9 @@ export const holidays: Holiday[] = [
         startTime: '00:00',
         endTime: '00:00',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -76,9 +76,9 @@ export const holidays: Holiday[] = [
         startTime: '00:00',
         endTime: '00:00',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -89,9 +89,9 @@ export const holidays: Holiday[] = [
         startTime: '00:00',
         endTime: '00:00',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -102,9 +102,9 @@ export const holidays: Holiday[] = [
         startTime: '00:00',
         endTime: '00:00',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -115,9 +115,9 @@ export const holidays: Holiday[] = [
         startTime: '00:00',
         endTime: '00:00',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
     {
@@ -128,9 +128,9 @@ export const holidays: Holiday[] = [
         startTime: '00:00',
         endTime: '00:00',
 
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: '',
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: ''
     },
 ];

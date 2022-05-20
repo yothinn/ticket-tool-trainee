@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PageResponse } from 'app/core/base/pageResponse.types';
 import { Criticality } from 'app/core/criticality/criticality.types';
@@ -11,6 +11,9 @@ import { CriticalEditDialogComponent } from '../dialogs/critical-edit-dialog/cri
   styleUrls: ['./criticality.component.scss']
 })
 export class CriticalityComponent implements OnInit {
+
+  // @Input() selectCriticality: Criticality;
+  // @Input() criticality: Criticality;
 
   criticalityResponse$?: Observable<PageResponse<Criticality[]>>
 
@@ -27,20 +30,34 @@ export class CriticalityComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openCriticalityDialog(): void {
+  openCriticalityDialog(data?: {index: number; criticality: Criticality}): void {
+    console.log(data);
     const dialogRef = this._dialog.open(CriticalEditDialogComponent, {
       height:'400px',
-      width: '40%',
+      width: '50%',
       disableClose: true,
+      data: {
+        criticality:data?.criticality
+      }   
     });
 
     dialogRef.afterClosed().subscribe((criticality: any) => {
       console.log('The dialog was closed');
-      if (criticality) {
-        console.log(criticality);
+      if (data) {
+        console.log(data);
 
         // Save to backend
       };
     });
+  }
+
+  // getCriticalitys(): void {
+  //   const param = new GetCriticalityParameter();
+
+  //   this.criticalityResponse$ = this._criticalityService.getCriticals(param);
+  // }
+
+  onDeleteCriticality(data?: {index: number; criticality: Criticality}): void {
+    console.log(data);
   }
 }

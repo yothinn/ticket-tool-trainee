@@ -21,6 +21,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatChipsModule} from '@angular/material/chips';
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
     MatDatepickerModule,
     MatNativeDateModule,
     MatChipsModule,
+    MatStepperModule,
     NgxMatTimepickerModule,
   ],
   exports:[
@@ -71,6 +73,7 @@ import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
     MatDatepickerModule,
     MatNativeDateModule,
     MatChipsModule,
+    MatStepperModule,
     NgxMatTimepickerModule,
   ]
 })

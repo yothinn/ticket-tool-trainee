@@ -1,8 +1,10 @@
-export interface User
-{
+import { BaseInterface } from '../base/baseInterface.types';
+
+export interface User extends BaseInterface {
     id: string;
-    name: string;
-    email: string;
+    firstName: string;
+    lastName: string;
+    email?: string;
     avatar?: string;
     status?: string;
 }

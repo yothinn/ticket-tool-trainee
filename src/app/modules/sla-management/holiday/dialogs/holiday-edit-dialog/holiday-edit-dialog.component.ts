@@ -39,9 +39,9 @@ export class HolidayEditDialogComponent implements OnInit {
   }
 
   save(): void {
-    const playload = this.holidayForm.getRawValue();
-    console.log(playload);
-    this._dialogRef.close(playload);
+    const payload = this.holidayForm.getRawValue();
+    console.log(payload);
+    this._dialogRef.close(payload);
   }
 
   initHolidayForm(holiday?: Holiday): FormGroup {

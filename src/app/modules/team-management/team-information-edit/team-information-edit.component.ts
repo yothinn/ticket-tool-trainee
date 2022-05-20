@@ -1,12 +1,16 @@
-import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Problem } from 'app/core/problem/problem.types';
 import { TeamService } from 'app/core/team/team.service';
 import { Team } from 'app/core/team/team.types';
 import { TeamStatus } from 'app/core/team/team-status.enum';
-import { Observable, of, Subject, tap } from 'rxjs';
+import { Observable, of, Subject, takeUntil, tap } from 'rxjs';
 import { ProblemDialogComponent } from '../dialogs/problem-dialog/problem-dialog.component';
 import { TeamMemberDialogComponent } from '../dialogs/team-member-dialog/team-member-dialog.component';
+import { TeamInfoEditComponent } from '../components/team-info-edit/team-info-edit.component';
+import { TeamContactEditComponent } from '../components/team-contact-edit/team-contact-edit.component';
+import { CreateTeamDto } from 'app/core/team/dto/create-team.dto';
+import { UpdateTeamDto } from 'app/core/team/dto/update-team.dto';
 
 @Component({
   selector: 'app-team-information-edit',
@@ -14,6 +18,9 @@ import { TeamMemberDialogComponent } from '../dialogs/team-member-dialog/team-me
   styleUrls: ['./team-information-edit.component.scss']
 })
 export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChanges {
+
+  @ViewChild('teamInfoComp') teamInfoComp: TeamInfoEditComponent;
+  @ViewChild('teamContactComp') teamContactComp: TeamContactEditComponent;
 
   @Input() mode: 'create' | 'edit' = 'create';
 
@@ -37,6 +44,10 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
     return this.mode === 'edit';
   }
 
+  get teamStatus(): TeamStatus {
+    return this.isActiveStatus ? TeamStatus.active : TeamStatus.inActive;
+  }
+
   ngOnInit(): void {
 
   }
@@ -47,7 +58,6 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.mode);
 
     if (this.isCreateMode) {
       this.activeTeam$ = of(undefined);
@@ -96,15 +106,38 @@ export class TeamInformationEditComponent implements OnInit, OnDestroy, OnChange
   }
 
   onCreateSave(): void {
-    this.closed.emit(true);
+    const teamInfo = this.teamInfoComp.getTeamInfo();
+    const teamContact = this.teamContactComp.getTeamContact();
+
+    const createDto: CreateTeamDto = {
+      ...teamInfo,
+      ...teamContact,
+      status: this.teamStatus,
+    };
+
+    this._teamService.create(createDto)
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe(_ => this.closed.emit(true));
   }
 
   onEditCancel(): void {
     this.closed.emit(false);
   }
 
-  onEditSave(): void {
-    this.closed.emit(true);
+  onEditSave(id: string): void {
+    const teamInfo = this.teamInfoComp.getTeamInfo();
+    const teamContact = this.teamContactComp.getTeamContact();
+
+    const updateDto: UpdateTeamDto = {
+      ...teamInfo,
+      ...teamContact,
+      status: this.teamStatus,
+    };
+
+    this._teamService.update(id, updateDto)
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe(_ => this.closed.emit(true));
+
   }
 
   onDelTeamMember(event: any): void {

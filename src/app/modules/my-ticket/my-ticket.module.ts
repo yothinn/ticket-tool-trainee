@@ -11,6 +11,7 @@ import { MyTicketInfoEditComponent } from './components/my-ticket-info-edit/my-t
 import { SharedModule } from 'app/shared/shared.module';
 import { MyTicketManagementViewComponent } from './my-ticket-management-view/my-ticket-management-view.component';
 import { MyTicketOrderInfoViewComponent } from './components/my-ticket-order-info-view/my-ticket-order-info-view.component';
+import { ConversationModule } from '../conversation/conversation.module';
 
 
 
@@ -29,7 +30,8 @@ import { MyTicketOrderInfoViewComponent } from './components/my-ticket-order-inf
   imports: [
     CommonModule,
     MyTicketRoutingModule,
-    SharedModule
+    SharedModule,
+    ConversationModule
   ]
 })
 export class MyTicketModule { }

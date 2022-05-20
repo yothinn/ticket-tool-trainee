@@ -32,6 +32,14 @@
         border-color: var(--fuse-secondary-600) !important;
         @apply border-2 rounded-2xl #{'!important'};
     }
+
+    .text-inactive {
+        @apply text-secondary-800 #{!important};
+    }
+
+    .text-active {
+        @apply text-primary #{!important};
+    }
     
     /**
     * 13/5/2022 Yothin

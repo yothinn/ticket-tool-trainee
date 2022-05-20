@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Ticket } from 'app/core/ticket/ticket.types';
 
 @Component({
   selector: 'app-my-ticket-information-edit',
@@ -14,7 +15,7 @@ export class MyTicketInformationEditComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onCreateTicket(info: any): void {
+  onCreateTicket(info?: Ticket): void {
     console.log(info);
     const isCancel = info ? false : true;
 

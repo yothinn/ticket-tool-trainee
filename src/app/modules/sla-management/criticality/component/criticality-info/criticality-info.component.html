@@ -1,37 +1,40 @@
-<div class="group grid grid-col gap-x-4 hover:card-hover w-full">
-    <form [formGroup]="criticalityForm" class="grid grid-cols-5 gap-x-4" >
-
-        <app-criticality-icon>
-        </app-criticality-icon>
-        
-
-        <div class="grid grid-col ">
-            <mat-form-field appearance="outline">
-                <input matInput  placeholder="4 H">
-            </mat-form-field>
-        </div>
-        <div class="grid grid-col">
-            <mat-form-field appearance="outline">
-                <input matInput  placeholder="4 H">
-            </mat-form-field>
-        </div>
-        <div class="grid grid-col">
-            <mat-form-field appearance="outline">
-                <input matInput  placeholder="4 H">
-            </mat-form-field>
+<div class="group grid grid-col gap-x-4 hover:card-hover w-full  ">
+    <form [formGroup]="criticalityForm"  class="grid grid-cols-5 pt-3 pb-3 gap-4 " >
+        <div class="grid col-span">
+            <app-criticality-icon
+                [text]="criticality?.name"
+                [color]="criticality?.color"
+                mode="small"
+            >
+            </app-criticality-icon>
+            <span>Critical</span>
         </div>
         
-        <div class="flex flex-row gap-x-2 items-center  " > 
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="total" placeholder="4 H">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="acknow" placeholder="4 H">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="process" placeholder="8 H">
+        </mat-form-field>
+        
+        <div class="flex flex-row gap-x-2 item-center"> 
             <mat-icon class="cursor-pointer invisible group-hover:visible hover:text-warn-500"
-                (click)="'edit.emit(criticality)'"
+                (click)="edit.emit(criticality)"
             > 
                 edit 
             </mat-icon>
             <mat-icon class="cursor-pointer invisible group-hover:visible hover:text-warn-500"   
-                (click)="'del.emit(criticality)'"
+                (click)="del.emit(criticality)"
             > 
                 delete 
             </mat-icon>
         </div>
     </form>
 </div>
+
+<mat-divider></mat-divider>
