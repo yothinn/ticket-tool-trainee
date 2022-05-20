@@ -7,10 +7,18 @@
         </ng-template>
     </mat-tab>
     <mat-tab label="CONVERSATION">
-        Conversion
+        <ng-template matTabContent>
+            <app-conversation>
+                
+            </app-conversation>
+        </ng-template>
     </mat-tab>
     <mat-tab label="HISTORY">
-        History
+        <ng-template matTabContent>
+            <app-ticket-history>
+                
+            </app-ticket-history>
+        </ng-template>
     </mat-tab>
 </mat-tab-group>
 <div class="absolute top-4 right-8">

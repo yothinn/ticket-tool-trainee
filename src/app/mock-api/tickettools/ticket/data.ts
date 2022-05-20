@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { TeamStatus } from 'app/core/team/team-status.enum';
 import { Ticket } from 'app/core/ticket/ticket.types';
 import * as moment from 'moment';
 
@@ -13,10 +14,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -27,11 +28,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -43,22 +44,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -71,10 +72,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00002',
                 name: 'Product Problem 2',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -85,11 +86,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -101,22 +102,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '5Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -129,10 +130,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -143,11 +144,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -159,22 +160,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -187,10 +188,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -201,11 +202,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -217,22 +218,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -245,10 +246,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -259,11 +260,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -275,22 +276,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -303,10 +304,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -317,11 +318,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -333,22 +334,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -361,10 +362,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -375,11 +376,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -391,22 +392,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -419,10 +420,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -433,11 +434,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -449,22 +450,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -477,10 +478,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -491,11 +492,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -507,22 +508,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -535,10 +536,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -549,11 +550,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -565,22 +566,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -593,10 +594,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -607,11 +608,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -623,22 +624,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -651,10 +652,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -665,11 +666,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -681,22 +682,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -709,10 +710,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -723,11 +724,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -739,22 +740,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -767,10 +768,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -781,11 +782,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -797,22 +798,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -825,10 +826,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -839,11 +840,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -855,22 +856,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     {
@@ -883,10 +884,10 @@ export const tickets: Ticket[] = [
             category: {
                 id: 'CT00001',
                 name: 'Product Problem',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             status: 'Assigned',
@@ -897,11 +898,11 @@ export const tickets: Ticket[] = [
                 contactName: 'Thanachai',
                 contactEmail: 'Thanachai@gmail.com',
                 contactMobile: '0123456789',
-                status: 'statusOwner',
-                created: new Date('2022-04-25'),
+                status: TeamStatus.active,
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
             // teamOwner:string;
@@ -913,22 +914,22 @@ export const tickets: Ticket[] = [
                 totalPeriod: '',
                 acknowledgeTime: '4Hrs',
                 processTime: 'Thanachai',
-                created: new Date('2022-04-25'),
+                createdAt: new Date('2022-04-25'),
                 createBy: 'Thanachai',
 
-                updated: new Date('2022-04-25'),
+                updatedAt: new Date('2022-04-25'),
                 updateBy: 'Thanachai'
             },
-            created: new Date('2022-04-25'),
+            createdAt: new Date('2022-04-25'),
             createBy: 'Thanachai',
 
-            updated: new Date('2022-04-25'),
+            updatedAt: new Date('2022-04-25'),
             updateBy: 'Thanachai'
         },
-        created: new Date('2022-04-25'),
+        createdAt: new Date('2022-04-25'),
         createBy: 'Thanachai',
 
-        updated: new Date('2022-04-25'),
+        updatedAt: new Date('2022-04-25'),
         updateBy: 'Thanachai'
     },
     // ,
@@ -936,10 +937,10 @@ export const tickets: Ticket[] = [
     //     id: '0001',
     //     problemId: '',
     //     problem: '',
-    //     created: new Date('2022-04-25'),
+    //     createdAt: new Date('2022-04-25'),
     //     createBy: '',
 
-    //     updated: new Date('2022-04-25'),
+    //     updatedAt: new Date('2022-04-25'),
     //     updateBy: ''
     // }
 ];

@@ -1,0 +1,18 @@
+<ng-container>
+    <div class="flex flex-col pl-5 text-3xl tracking-wide text-primary font-semibold gap-x-1">
+        <p>CONVERSATION</p>
+    </div>
+
+    <mat-tab-group>
+        <mat-tab label="{{'MESSAGE' + ' ' + '('+ dataTests.length +')'}}">
+            <app-message-view>
+
+            </app-message-view>
+        </mat-tab>
+        <mat-tab label="ATTACHMENT (2)">
+            <app-attachment-view>
+                
+            </app-attachment-view>
+        </mat-tab>
+      </mat-tab-group>
+</ng-container>

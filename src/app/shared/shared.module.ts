@@ -6,13 +6,15 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
 import { StatusIconsComponent } from './components/status-icons/status-icons.component';
 import { MaterialModule } from './material/material.module';
 import { CriticalityIconComponent } from './components/criticality-icon/criticality-icon.component';
+import { VerticalTimelineComponent } from './components/vertical-timeline/vertical-timeline.component';
 
 @NgModule({
     declarations: [
         FilterButtonComponent,
         PaginatorComponent,
         StatusIconsComponent,
-        CriticalityIconComponent
+        CriticalityIconComponent,
+        VerticalTimelineComponent
     ],
     imports: [
         CommonModule,
@@ -29,7 +31,8 @@ import { CriticalityIconComponent } from './components/criticality-icon/critical
         FilterButtonComponent,
         PaginatorComponent,
         StatusIconsComponent,
-        CriticalityIconComponent
+        CriticalityIconComponent,
+        VerticalTimelineComponent
     ]
 })
 export class SharedModule

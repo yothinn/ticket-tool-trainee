@@ -2,6 +2,11 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Team } from 'app/core/team/team.types';
 
+type TeamContact = {
+  contactName: string;
+  contactEmail: string;
+  contactMobile: string;
+};
 @Component({
   selector: 'app-team-contact-edit',
   templateUrl: './team-contact-edit.component.html',
@@ -30,6 +35,10 @@ export class TeamContactEditComponent implements OnInit, OnChanges {
       contactEmail: [team?.contactEmail || '', Validators.required],
       contactMobile: [team?.contactMobile || '', Validators.required]
     });
+  }
+
+  getTeamContact(): TeamContact {
+    return this.contactForm.getRawValue() as TeamContact;
   }
 
 }

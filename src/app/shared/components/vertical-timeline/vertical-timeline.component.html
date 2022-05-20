@@ -1,0 +1,118 @@
+<div class="mt-8 ng-star-inserted">
+  <ol>
+    <!-- <li class="relative flex py-7 ng-star-inserted">
+        <div class="absolute top-7 left-5 w-0.5 h-full -ml-px 
+          bg-gray-300 dark:bg-gray-600 ng-star-inserted"
+        >
+        </div>
+  
+        <div class="relative flex flex-auto">
+          <div class="flex shrink-0 items-center justify-center w-10 h-10 
+            mr-4 rounded-full bg-gray-400 ng-star-inserted"
+          >
+            <mat-icon role="img" 
+              class="mat-icon notranslate icon-size-5 text-white mat-icon-no-color" 
+              aria-hidden="true"
+              data-mat-icon-type="svg" data-mat-icon-name="star" 
+              data-mat-icon-namespace="heroicons_solid"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" 
+                fill="currentColor" fit="" height="100%" width="100%" 
+                preserveAspectRatio="xMidYMid meet" focusable="false"
+              >
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 
+                  00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 
+                  1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 
+                  0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 
+                  8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                >
+                </path>
+              </svg>
+          </mat-icon>
+        </div>
+  
+        <div class="flex flex-col flex-auto items-start">
+          <div class="ng-star-inserted">Your submission has been accepted</div>
+  
+            <div class="flex flex-col sm:flex-row sm:items-center 
+              mt-2 sm:mt-1 sm:space-x-2 text-md leading-5"
+            >
+              <div class="text-secondary text-black">
+                May 20, 10:10 AM 
+              </div>
+            </div>
+  
+            <div class="mt-4 py-4 px-5 rounded-lg bg-gray-200 dark:bg-gray-800 ng-star-inserted">
+              <div class="font-bold">Congratulations for your acceptance!</div><br>
+              <div>Hi Brian,<br>Your submission has been accepted and you are ready 
+                to move into the next phase. Once you
+                are ready, reach out to me and we will ...
+              </div>
+            </div>
+          </div>
+        </div>
+      </li> -->
+
+    <li *ngFor="let item of messageDatas; let i = indext;" 
+      class="relative flex py-7 ng-star-inserted"
+    >
+      <div class="absolute top-7 left-5 w-0.5 h-full -ml-px 
+          bg-gray-300 dark:bg-gray-600 ng-star-inserted">
+      </div>
+
+      <div class="relative flex flex-auto">
+        <img class="shrink-0 w-10 h-10 mr-4 rounded-full 
+            overflow-hidden object-cover object-center ng-star-inserted" 
+            [src]="item.imgUser" alt="Activity image"
+        >
+
+        <div class="flex flex-col flex-auto items-start">
+          <div class="ng-star-inserted">
+            {{item.firstName + ' ' + item.lastName}}
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center 
+                mt-2 sm:mt-1 sm:space-x-2 text-md leading-5">
+            <div class="text-secondary text-black">
+              {{ item.dateTime | date:'MMM d, y, h:mm:ss a'}}
+            </div>
+          </div>
+
+          <div class="mt-4 py-4 px-5 w-full rounded-lg bg-gray-200 dark:bg-gray-800 ng-star-inserted">
+            <p class="font-bold">{{item.message?.messageHeader}}</p>
+            <br>
+            <p class="text-xl break-words">
+              {{item.message?.messageContent}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="relative flex py-7 ng-star-inserted">
+        <div class="relative flex flex-auto">
+          <img class="shrink-0 w-10 h-10 mr-4 rounded-full 
+            overflow-hidden object-cover object-center ng-star-inserted"
+            src="assets/images/avatars/female-04.jpg" alt="Activity image"
+          >
+  
+          <div class="flex flex-col flex-auto items-start">
+            <div class="ng-star-inserted">
+              <strong>
+                Sophie Stone
+              </strong> 
+                sent you a direct message
+            </div>
+  
+            <div class="flex flex-col sm:flex-row sm:items-center 
+              mt-2 sm:mt-1 sm:space-x-2 text-md leading-5"
+            >
+              <div class="text-secondary text-black">
+                May 20, 1:35 AM
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+  </ol>
+</div>

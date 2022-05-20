@@ -18,7 +18,7 @@
             </p>
 
             <p>Description</p>
-            <p class="col-span-2 text-primary break-all">
+            <p class="col-span-2 text-primary break-words">
                 {{ ticket?.problem?.description }}
             </p>
 
@@ -34,7 +34,7 @@
                  
             <p>Last Update:</p>
             <p class="col-span-2 text-primary">
-                {{ticket?.updated | date: 'dd/MM/yyyy hh:mm a'}}
+                {{ticket?.updatedAt | date: 'dd/MM/yyyy hh:mm a'}}
             </p> 
         </div>
 

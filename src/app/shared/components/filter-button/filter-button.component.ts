@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatButtonToggleChange } from '@angular/material/button-toggle';
-import { FilterButton } from './filter-button-interface';
+import { FilterButton } from './filter-button.type';
 
 @Component({
   selector: 'app-filter-button',

@@ -1,4 +1,4 @@
-<div class="grid grid-cols-5 p-2 cursor-pointer hover:card-hover" 
+<div class="grid grid-cols-5 p-2 cursor-pointer hover:card-hover min-h-20" 
     [ngClass]="{ 'card-active' : actived }"
     (click)="onSelected()"
 >
@@ -11,8 +11,8 @@
         </span>
     </p>
     <p [ngClass]="{ 
-            'text-warn-500' : team?.status !== teamStatus.active,
-            'text-primary' : team?.status === teamStatus.active
+            'text-inactive' : team?.status !== teamStatus.active,
+            'text-active' : team?.status === teamStatus.active
         }"
     > 
         {{team?.status | titlecase}} 
@@ -23,7 +23,7 @@
             {{team?.createBy}}
         </span>
         <span>
-            {{ team?.created | date}}
+            {{ team?.createdAt | date: 'dd/MM/yyyy HH:mm '}}
         </span>
     </p>
     <p class="flex flex-col">
@@ -31,7 +31,7 @@
             {{team?.updateBy}}
         </span>
         <span>
-            {{ team?.updated | date}}
+            {{ team?.updatedAt | date: 'dd/MM/yyyy HH:mm'}}
         </span>
     </p>
 </div>

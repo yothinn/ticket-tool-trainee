@@ -1,0 +1,30 @@
+:host::ng-deep .mat-tab-group {
+    .mat-tab-header {
+        border-bottom: none !important;
+
+        .mat-tab-label-container {
+            padding: 0 28px 0 16px;
+
+            .mat-tab-list {
+                .mat-tab-labels {
+                    border: unset;
+
+                    .mat-tab-label {
+                        color: var(--fuse-primary) !important;
+                        min-width: 130px;
+                        width: 130px;
+
+                        &.mat-tab-label-active {
+                            color: var(--fuse-neutral-500) !important;
+                            @apply bg-default #{!important};
+                        }
+                    }
+                }
+
+                .mat-ink-bar {
+                    display: block !important;
+                }
+            }
+        }
+    }
+}

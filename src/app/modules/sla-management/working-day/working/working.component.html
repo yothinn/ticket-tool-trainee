@@ -1,0 +1,35 @@
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-hidden">
+    <mat-drawer-container class="h-full flex-auto ">
+        <mat-drawer-content cdkscrollable class="flex flex-col flex-auto p-4">
+            <div class="flex flex-col px-4 w-full gap-y-2 max-w-4xl mx-auto">
+                <div class=" sticky top-0 flex flex-col bg-default gap-y-2">
+                        <div class="flex flex-col flex-auto">
+                            <span class="text-xl">
+                                Select Team
+                            </span>
+                            <mat-form-field appearance="outline">
+                                <mat-select placeholder="Master">
+                                    <mat-option value="one">First option</mat-option>
+                                    <mat-option value="two">Second option</mat-option>
+                                    </mat-select>
+                            </mat-form-field>
+                    
+                            <span class="text-xl">
+                                Time Zone
+                            </span>
+                            <mat-form-field appearance="outline">
+                                <mat-select placeholder="Please Select">
+                                    <mat-option value="one">First option</mat-option>
+                                    <mat-option value="two">Second option</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        
+                        <app-working-week>
+
+                        </app-working-week>
+                </div>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

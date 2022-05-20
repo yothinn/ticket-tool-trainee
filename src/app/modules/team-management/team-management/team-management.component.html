@@ -1,50 +1,57 @@
 <div class="absolute inset-0 flex flex-col min-w-0 min-height overflow-hidden">
     <mat-drawer-container class="h-full flex-auto">
         <mat-drawer-content cdkscrollable class="flex flex-col">
-            <ng-container *ngIf="teamResponse$ | async as teamResponse">
-                <div class="flex flex-col px-4 flex-auto w-full max-w-6xl mx-auto gap-y-2">
-                    <div class="z-20 sticky top-0 flex flex-col bg-default gap-y-2">
-                        <div class="flex flex-row gap-x-2 items-end">
-                            <div class="flex flex-col flex-auto">
-                                <span class="text-xl">
-                                    Search
-                                </span>
-                                <mat-form-field appearance="outline" 
-                                    [ngClass]="{ 
-                                        'w-full' : drawerDetail.opened,
-                                        'w-3/4' : !drawerDetail.opened
-                                    }"
+            <div class="flex flex-col px-4 flex-auto w-full max-w-6xl mx-auto gap-y-2">
+                <div class="z-20 sticky top-0 flex flex-col bg-default gap-y-2">
+                    <div class="flex flex-row gap-x-2 items-end">
+                        <div class="flex flex-col flex-auto">
+                            <span class="text-xl">
+                                Search
+                            </span>
+                            <mat-form-field appearance="outline" 
+                                [ngClass]="{ 
+                                    'w-full' : drawerDetail.opened,
+                                    'w-3/4' : !drawerDetail.opened
+                                }"
+                            >
+                                <input matInput placeholder="Search Team" #searchCtrl>
+                                <mat-icon matSuffix *ngIf="isSearching"
+                                    class="cursor-pointer hover:text-warn-500"
+                                    (click)="onSearchCancel()"
                                 >
-                                    <input matInput placeholder="Search Team">
-                                    <mat-icon matSuffix>search</mat-icon>
-                                </mat-form-field>
-                            </div>
-                            <div class="flex-initial pb-1" >
-                                <button  class="button-normal" mat-flat-button color="primary" 
-                                    (click)="onTeamEdit('create')"
-                                >
-                                    CREATE
-                                </button>
-                            </div>
+                                    close
+                                </mat-icon>
+                                <mat-icon matSuffix>search</mat-icon>
+                            </mat-form-field>
                         </div>
-                        <app-filter-button [buttons]="filters" 
-                            [active]="currFilter"
-                            (selected)="onFilter($event)" 
-                        >
-
-                        </app-filter-button>
-
-                        <!-- Card Header !! For sticky-->
-                        <div class="grid grid-cols-5">
-                            <p class="pl-2 font-semibold col-span-2">Team Name</p>
-                            <p class="font-semibold">Status</p>
-                            <p class="font-semibold">Created</p>
-                            <p class="font-semibold">Updated</p>
+                        <div class="flex-initial pb-1" >
+                            <button  class="button-normal" mat-flat-button color="primary" 
+                                (click)="onTeamEdit('create')"
+                            >
+                                CREATE
+                            </button>
                         </div>
-                    
-                        <mat-divider></mat-divider>
                     </div>
+                    <ng-container *ngIf="allStatuses$ | async as allStatuses">
+                        <app-filter-button [buttons]="allStatuses" 
+                            [active]="currFilter"
+                            (selected)="onFilterStatus($event)" 
+                        >
+                        </app-filter-button>
+                    </ng-container>
 
+
+                    <!-- Card Header !! For sticky-->
+                    <div class="grid grid-cols-5">
+                        <p class="pl-2 font-semibold col-span-2">Team Name</p>
+                        <p class="font-semibold">Status</p>
+                        <p class="font-semibold">Created</p>
+                        <p class="font-semibold">Updated</p>
+                    </div>
+                
+                    <mat-divider></mat-divider>
+                </div>
+                <ng-container *ngIf="teamResponse$ | async as teamResponse">
                     <app-team-card-list  #teamListComp 
                         [teams]="teamResponse.data" 
                         (selected)="onViewOpened($event)"
@@ -54,20 +61,23 @@
                     <app-paginator class="pr-4" 
                         [pageNo]="teamResponse.pageNo"
                         [pageSize]="teamResponse.pageSize"
-                        [totalRecord]="teamResponse.totalRecord"
+                        [totalRecords]="teamResponse.totalRecords"
+                        (pageChange)="onPageChange($event)"
                     >
                     </app-paginator>
-                </div>
-            </ng-container>
+                </ng-container>
+            </div>
+            
         </mat-drawer-content>
 
-        <mat-drawer #drawerDetail class="lg:w-128 xl:w-160 md:w-full" 
+        <mat-drawer #drawerDetail class="lg:w-128 xl:w-160 sm:w-full" 
             [mode]="isViewMode ? 'side' : 'over' " position="end"
             disableClose="true"
         >
             <app-team-information-view *ngIf="isViewMode" 
                 (closed)="onViewClosed($event)"
                 (edit)="onTeamEdit('edit')"
+                (del)="onTeamDelete()"
             >
             </app-team-information-view>
             <app-team-information-edit *ngIf="!isViewMode"

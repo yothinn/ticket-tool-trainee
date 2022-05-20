@@ -2,6 +2,10 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Team } from 'app/core/team/team.types';
 
+type TeamInfo = {
+  name: string;
+  description: string;
+};
 @Component({
   selector: 'app-team-info-edit',
   templateUrl: './team-info-edit.component.html',
@@ -29,6 +33,10 @@ export class TeamInfoEditComponent implements OnInit, OnChanges {
       name: [team?.name || '', Validators.required],
       description: [team?.description || '', Validators.required]
     });
+  }
+
+  getTeamInfo(): TeamInfo {
+    return this.infoForm.getRawValue() as TeamInfo;
   }
 
 }

@@ -21,7 +21,7 @@ const secondaryPalette = {
     600: '#E8E8E8',
     700: '#B5B5B5',
     800: '#8C8C8C',
-    900: '6B6B6B'
+    900: '#6B6B6B'
 }
 
 const neutralPalette = {

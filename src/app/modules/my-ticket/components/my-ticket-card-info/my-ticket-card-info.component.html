@@ -1,45 +1,6 @@
-<!-- <div class="grid grid-cols-5 p-2 cursor-pointer hover:card-hover"
-    [ngClass]="{ 'card-active' : actived }"
-    (click)="onSelected()"
->
-    <p class="grid grid-col-0 col-span-1">
-        <span>
-            {{myTicketData.myTicketTk}}
-        </span>
-        <span>
-            {{myTicketData.myTicketCategcry}}
-        </span>
-
-    </p>
-    <p class="grid grid-cols-1 col-span-2">
-        <span>
-            {{myTicketData.myTicketName}}
-        </span>
-        <span>
-            {{myTicketData.myTicketCat}}
-        </span>
-    </p>
-    <p class="grid grid-cols-1">
-        <span>
-            {{myTicketData.status.Name}}
-        </span>
-        <span>
-            {{myTicketData.status.data}}
-        </span>
-    </p>
-    <p class="grid grid-cols-1">
-        <span>
-            {{myTicketData.created.Name}}
-        </span>
-        <span>
-            {{ myTicketData.created.date}}
-        </span>
-    </p>
-</div> -->
-
 <div class="flex cursor-pointer hover:card-hover p-2 ">
     <div class="grid grid-cols-4 w-11/12"
-        (click)="onSelected()">
+        (click)="selected.emit(ticket)">
         <div>
             {{ ticket?.id }}
         </div>
@@ -51,7 +12,7 @@
             {{ ticket?.problem?.status }}
         </div>
         <div>
-            {{ ticket?.updated | date: 'dd/MM/yyyy hh:mm a'}}
+            {{ ticket?.updatedAt | date: 'dd/MM/yyyy hh:mm a'}}
         </div>
 
         <div class="pr-4 col-span-4">
