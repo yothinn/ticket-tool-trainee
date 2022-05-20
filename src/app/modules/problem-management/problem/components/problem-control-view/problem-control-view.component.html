@@ -1,7 +1,7 @@
 <div  class="grid grid-cols-6 lg:grid-cols-4 gap-x-2 p-2 border-box shadow-md">
 
         <p class="text-primary" >Criticality</p>
-        <p class="flex flex-row col-span-5 lg:col-span-3 break-all">
+        <p class="flex flex-row col-span-5 lg:col-span-3 break-words">
             <!-- <span> {{problem?.criticality?.name}}{{' '}}{{problem?.criticality?.acknowledgeTime}}</span> -->
             <app-criticality-icon
                 [text]="problem?.criticality?.name + ' ' + problem?.criticality?.totalPeriod"
@@ -12,19 +12,19 @@
         </p>
 
         <p class="text-primary" >Category</p>
-        <p class="col-span-5  lg:col-span-3 break-all">{{problem?.category?.name}}</p>
+        <p class="col-span-5  lg:col-span-3 break-words">{{problem?.category?.name}}</p>
 
         <p class="text-primary" >Created</p>
-        <p class="col-span-5 lg:col-span-3 break-all">{{problem?.category?.createBy}}</p>
+        <p class="col-span-5 lg:col-span-3 break-words">{{problem?.category?.createBy}}</p>
 
         <p></p>
-        <p class="col-span-5 lg:col-span-3 break-all">{{problem?.createdAt | date: 'dd/MM/yyyy hh:mm a'}}</p>
+        <p class="col-span-5 lg:col-span-3 break-words">{{problem?.createdAt | date: 'dd/MM/yyyy hh:mm a'}}</p>
 
         <p class="text-primary" >Updated</p>
-        <p class="col-span-5 lg:col-span-3 break-all">{{problem?.updateBy}}</p>
+        <p class="col-span-5 lg:col-span-3 break-words">{{problem?.updateBy}}</p>
 
         <p></p>
-        <p class="col-span-5 lg:col-span-3 break-all">{{problem?.updatedAt| date: 'dd/MM/yyyy hh:mm a'}}</p>
+        <p class="col-span-5 lg:col-span-3 break-words">{{problem?.updatedAt| date: 'dd/MM/yyyy hh:mm a'}}</p>
 
 </div>
 

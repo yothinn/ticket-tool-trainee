@@ -13,6 +13,7 @@ import { TicketAnalyzeDialogComponent } from './dialogs/ticket-analyze-dialog/ti
 import { TicketChangeDialogComponent } from './dialogs/ticket-change-dialog/ticket-change-dialog.component';
 import { TicketManagementViewComponent } from './ticket-management-view/ticket-management-view.component';
 import { ConversationModule } from '../conversation/conversation.module';
+import { TicketHistoryComponent } from './components/ticket-history/ticket-history.component';
 
 
 
@@ -28,7 +29,8 @@ import { ConversationModule } from '../conversation/conversation.module';
     TicketCardInfoComponent,
     TicketAnalyzeDialogComponent,
     TicketChangeDialogComponent,
-    TicketManagementViewComponent
+    TicketManagementViewComponent,
+    TicketHistoryComponent
   ],
   imports: [
     CommonModule,
