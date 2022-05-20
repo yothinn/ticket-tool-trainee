@@ -1,9 +1,9 @@
-<div class="absolute inset-0 flex flex-col min-w-0 overflow-hidden">
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-auto">
     <mat-drawer-container class=" w-full h-full ">
-        <mat-drawer-content cdkScrollable class="flex flex-col ">                            
-            <div class="flex flex-initial gap-x-2">
+        <mat-drawer-content cdkScrollable class="flex flex-col "> 
+            <!-- <ng-container *ngIf="criticalityResponse$ | async as CriticalityResponse"> -->
                 <div class="flex flex-col px-4 flex-auto w-full max-w-6xl mx-auto gap-y-2">    
-                    <div class="z-20 sticky top-0 flex flex-col bg-default gap-y-2">
+                    <div class="z-20 sticky top-0 flex flex-col bg-default gap-y-2 ">
                         <span class="text-xl">
                             Select Team
                         </span>
@@ -15,7 +15,7 @@
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
-
+    
                             <div class="flex flex-initial gap-x-2">
                                 <button class="button-normal text-center" mat-flat-button color="primary"
                                     (click)="openCriticalityDialog()"
@@ -24,6 +24,9 @@
                                 </button>
                             </div>
                         </div>
+                        <div>
+                            
+                        </div>
                         <div class="grid grid-cols-5 font-semibold">
                             <p></p>
                             <p><strong>Total Period</strong></p>
@@ -31,11 +34,19 @@
                             <p><strong>Process Time</strong></p>
                             <p></p>
                         </div>
-
-                        <app-criticality-list></app-criticality-list>
-                    </div>             
+    
+                        <mat-divider></mat-divider>
+                    </div>
+                    
+                    <app-criticality-list 
+                        (edit)="openCriticalityDialog($event)"
+                        (del)="onDeleteCriticality($event)"
+                    > 
+                    </app-criticality-list>
                 </div>
-            </div>
+            <!-- </ng-container>                            -->
         </mat-drawer-content>
     </mat-drawer-container>
 </div>
+            
+            
