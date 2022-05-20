@@ -15,7 +15,7 @@ const routes: Routes = [
     },
     {
         path: 'workingDay',
-        loadChildren: () => import('./working-day/working-day.module').then(m => m.WorkingDayModule),
+        loadChildren: () => import('./working/working.module').then(m => m.WorkingModule),
         data: { breadcrumb: 'Working Day' }
     },
     // {

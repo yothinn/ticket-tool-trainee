@@ -1,13 +1,14 @@
-<div class="absolute inset-0 flex flex-col min-w-0 overflow-hidden">
+<div class="absolute inset-0 flex flex-col min-w-0 min-height overflow-hidden">
     <mat-drawer-container class="h-full flex-auto ">
         <mat-drawer-content cdkscrollable class="flex flex-col flex-auto p-4">
             <div class="flex flex-col px-4 w-full gap-y-2 max-w-4xl mx-auto">
-                <div class=" sticky top-0 flex flex-col bg-default gap-y-2">
+                <div class="z-20 sticky top-0 flex flex-col bg-default gap-y-2">
+                    <div class="flex flex-row gap-x-2 items-end">
                         <div class="flex flex-col flex-auto">
                             <span class="text-xl">
                                 Select Team
                             </span>
-                            <mat-form-field appearance="outline">
+                            <mat-form-field appearance="outline" class="w-full">
                                 <mat-select placeholder="Master">
                                     <mat-option value="one">First option</mat-option>
                                     <mat-option value="two">Second option</mat-option>
@@ -17,18 +18,36 @@
                             <span class="text-xl">
                                 Time Zone
                             </span>
-                            <mat-form-field appearance="outline">
+                            <mat-form-field appearance="outline" class="w-full">
                                 <mat-select placeholder="Please Select">
                                     <mat-option value="one">First option</mat-option>
                                     <mat-option value="two">Second option</mat-option>
                                 </mat-select>
                             </mat-form-field>
                         </div>
-                        
+                    </div>
+
+                    <h1 class="pl-2 flex-auto text-4xl tracking-wide text-primary font-semibold gap-x-1"> 
+                        Working Day & Time
+                    </h1>
+                    <div class="grid grid-cols-4">
+                        <p class="font-semibold col-span-2 pl-16">Working Day</p>
+                        <p class="font-semibold">Start</p>
+                        <p class="font-semibold">To</p>
+                    </div>
+
+                </div>     
                         <app-working-week>
 
                         </app-working-week>
-                </div>
+
+                        <div class="flex flex-row justify-end">
+                            <button mat-flat-button color="primary" 
+                                class="button-normal" (click)="save()" 
+                            >
+                                SAVE
+                            </button>
+                        </div>
             </div>
         </mat-drawer-content>
     </mat-drawer-container>

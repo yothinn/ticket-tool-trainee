@@ -1,0 +1,23 @@
+<div class="flex flex-col w-full">
+    <!-- <h1 class="pl-2 flex-auto text-4xl tracking-wide text-primary font-semibold gap-x-1"> 
+        Working Day & Time
+    </h1>
+    <div class="grid grid-cols-4">
+        <p class="font-semibold col-span-2 pl-16">Working Day</p>
+        <p class="font-semibold">Start</p>
+        <p class="font-semibold">To</p>
+    </div> -->
+
+    <mat-divider></mat-divider>
+
+    <ng-container *ngFor="let week of dayTypes; let i = index" >
+        <app-working-day [dayTypes]="week">
+        
+        </app-working-day>
+
+    </ng-container>
+    
+    <mat-divider></mat-divider>
+
+
+</div>

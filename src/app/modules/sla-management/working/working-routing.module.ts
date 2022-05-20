@@ -16,4 +16,4 @@ const routes: Route[] = [
         RouterModule.forChild(routes)
     ],
 })
-export class WorkingDayRoutingModule { }
+export class WorkingRoutingModule { }
