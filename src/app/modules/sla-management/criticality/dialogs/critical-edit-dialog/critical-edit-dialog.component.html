@@ -1,9 +1,8 @@
 <div class=" flex flex-col w-full h-full gap-2" >
-    <!-- <form [formGroup]="criticalityForm"> -->
     <div class="flex flex-col">
         <div class="flex flex-row ">
-            <p class="flex-auto text-[1.875rem] font-semibold "> ADD HOLIDAY </p>
-            <!-- <p class="flex-auto text-[1.875rem] font-semibold " *ngIf="!isNew"> EDIT HOLIDAY </p> -->
+            <p *ngIf="isNew" class="flex-auto text-[1.875rem] font-semibold "> CREATE CRITICALITY </p>
+            <p *ngIf="!isNew" class="flex-auto text-[1.875rem] font-semibold "> EDIT CRITICALITY </p>
             <p class="flex-auto">Team: Team Name 1</p>
             <button class="flex-initial" mat-icon-button (click)="close()">
                 <mat-icon>close</mat-icon>
@@ -11,18 +10,16 @@
         </div>
         <mat-divider></mat-divider>
     </div>
+    
+    <form [formGroup]="criticalDialogForm" class="grid grid-cols-2 gap-x-2 text-xl">
+        
+        <p></p>
+        <p>Acknowledge Time</p>
 
-    <div class="grid grid-cols-2 gap-x-2">
         <div class="flex flex-col">
             <mat-label>Criticality Name</mat-label>
             <mat-form-field appearance="outline">
-                <input matInput  placeholder="Input">
-            </mat-form-field>
-
-            <!-- color picker -->
-            <mat-label>Tag Color</mat-label>
-            <mat-form-field appearance="outline">
-                <input matInput  placeholder="Input">
+                <input matInput formControlName="name" placeholder="Input">
             </mat-form-field>
         </div>
 
@@ -30,47 +27,59 @@
             <div class="flex flex-col">
                 <mat-label>Day</mat-label>
                 <mat-form-field appearance="outline">
-                    <input matInput  placeholder="Day">
+                    <input matInput formControlName="acknow" placeholder="Day">
                 </mat-form-field>
             </div>
 
             <div class="flex flex-col">
                 <mat-label>Hour</mat-label>
                 <mat-form-field appearance="outline">
-                    <input matInput  placeholder="Hour">
+                    <input matInput formControlName="acknow" placeholder="Hour">
                 </mat-form-field>
             </div>
 
             <div class="flex flex-col">
                 <mat-label>Minute</mat-label>
                 <mat-form-field appearance="outline">
-                    <input matInput  placeholder="Minute">
-                </mat-form-field>
-            </div>
-
-            <div class="flex flex-col">
-                <mat-label>Day</mat-label>
-                <mat-form-field appearance="outline">
-                    <input matInput  placeholder="Day">
-                </mat-form-field>
-            </div>
-
-            <div class="flex flex-col">
-                <mat-label>Hour</mat-label>
-                <mat-form-field appearance="outline">
-                    <input matInput  placeholder="Hour">
-                </mat-form-field>
-            </div>
-
-            <div class="flex flex-col">
-                <mat-label>Minute</mat-label>
-                <mat-form-field appearance="outline">
-                    <input matInput  placeholder="Minute">
+                    <input matInput formControlName="acknow" placeholder="Minute">
                 </mat-form-field>
             </div>
         </div>
-    </div>
-    <!-- </form> -->
+
+        <p></p>
+        <p>Process Time</p>
+
+        <div class="flex flex-col">
+            <!-- color picker -->
+            <mat-label>Tag Color</mat-label>
+            <mat-form-field appearance="outline">
+                <input matInput formControlName="color" placeholder="#Color">
+            </mat-form-field>
+        </div>
+
+        <div class="grid grid-cols-3 gap-x-2">
+            <div class="flex flex-col">
+                <mat-label>Day</mat-label>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="acknow" placeholder="Day">
+                </mat-form-field>
+            </div>
+
+            <div class="flex flex-col">
+                <mat-label>Hour</mat-label>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="acknow" placeholder="Hour">
+                </mat-form-field>
+            </div>
+
+            <div class="flex flex-col">
+                <mat-label>Minute</mat-label>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="acknow" placeholder="Minute">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
 
     <p class=" text-right">Total Time: 0 Day 0 Hour 0 Minute</p>
 
@@ -80,6 +89,7 @@
             CANCEL
         </button>
         <button mat-flat-button class="button-normal text-center" color="primary" (click)="save()"
+            [disabled]="criticalDialogForm.invalid"
         >
             OK
         </button>

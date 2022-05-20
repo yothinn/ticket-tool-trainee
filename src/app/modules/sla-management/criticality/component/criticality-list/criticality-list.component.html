@@ -1,7 +1,11 @@
-<div class="flex flex-col w-full gap-y-2">
-    <app-criticality-info>
-
-    </app-criticality-info>
-
-    <mat-divider></mat-divider>
+<div class="flex flex-col h-full  ">
+    
+    <ng-container  *ngFor="let critical of timeMock; let i = index">
+        <app-criticality-info 
+            [criticality]="critical"
+            (edit)="edit.emit({index: i, criticality: $event})"
+            (del)="del.emit( {index: i,criticality: $event} )"
+        >
+        </app-criticality-info>
+    </ng-container>
 </div>
