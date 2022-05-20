@@ -10,7 +10,7 @@ import { ProblemService } from 'app/core/problem/problem.service';
 import { Problem } from 'app/core/problem/problem.types';
 import { TeamService } from 'app/core/team/team.service';
 import { Team } from 'app/core/team/team.types';
-import { FilterButton } from 'app/shared/components/filter-button/filter-button-interface';
+import { FilterButton } from 'app/shared/components/filter-button/filter-button.type';
 import { Observable, Subject } from 'rxjs';
 import { ProblemCardListComponent } from '../components/problem-card-list/problem-card-list.component';
 

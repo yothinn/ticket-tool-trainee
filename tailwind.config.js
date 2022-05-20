@@ -33,6 +33,10 @@ const themes = {
             ...colors.slate,
             DEFAULT: colors.slate[800]
         },
+        secondary : {
+            ...customPalettes.appSecondaryTheme,
+            DEFAULT: customPalettes.appSecondaryTheme[500]
+        },
         // warn     : {
         //     ...colors.red,
         //     DEFAULT: colors.red[600]
@@ -40,6 +44,10 @@ const themes = {
         warn     : {
             ...customPalettes.appWarnTheme,
             DEFAULT: customPalettes.appWarnTheme[500]
+        },
+        neutral  : {
+            ...customPalettes.appNeutralTheme,
+            DEFAULT: customPalettes.appNeutralTheme[500]
         },
         'on-warn': {
             500: colors.red['50']
@@ -51,14 +59,6 @@ const themes = {
         primary  : {
             ...customPalettes.appPrimaryTheme,
             DEFAULT: customPalettes.appPrimaryTheme[500]
-        },
-        secondary : {
-            ...customPalettes.appSecondaryTheme,
-            DEFAULT: customPalettes.appSecondaryTheme[500]
-        },
-        neutral  : {
-            ...customPalettes.appNeutralTheme,
-            DEFAULT: customPalettes.appNeutralTheme[500]
         }
     },
     'brand' : {
